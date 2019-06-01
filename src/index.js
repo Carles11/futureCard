@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
@@ -10,9 +12,11 @@ import './css/App.css';
 const elem = document.querySelector('.root');
 
 const wrapApp = (AppComponent, appStore) => (
-  <Provider store={appStore}>
-    <AppComponent />
-  </Provider>
+  <Router>
+    <Provider store={appStore}>
+      <AppComponent />
+    </Provider>
+  </Router>
 );
 
 ReactDOM.render(wrapApp(App, store), elem);
