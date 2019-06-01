@@ -1,15 +1,15 @@
 {
-  "extends": "airbnb",
-  "plugins": [
-    "compat"
-  ],
-  "rules": {
-    "semi": [2, "never"],
-    "no-unexpected-multiline": 2,
-    "compat/compat": 2
-  },
-  "env": {
-    "browser": true,
-    "jest": true
-  }
+    "extends": "airbnb",
+    "plugins": ["compat"],
+    "rules": {
+        "semi": [1, "always"],
+        "no-unexpected-multiline": 2,
+        "compat/compat": 2,
+        "no-underscore-dangle": [0, "allow"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    },
+    "env": {
+        "browser": true,
+        "jest": true
+    }
 }

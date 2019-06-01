@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
+import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-import App from './App.jsx';
+import App from './App';
 import './css/App.css';
 
 const elem = document.querySelector('.root');

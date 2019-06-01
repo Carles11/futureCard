@@ -1,13 +1,13 @@
-const path = require('path');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
-const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
-const SitemapPlugin = require('sitemap-webpack-plugin').default;
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const path = require('path')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default
+const SitemapPlugin = require('sitemap-webpack-plugin').default
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = dirname => ({
   output: {
@@ -37,10 +37,10 @@ module.exports = dirname => ({
       theme_color: '#262938',
       inject: true,
       icons: [
-        {
-          src: path.resolve('src/assets/image/icon.png'),
-          sizes: [192, 512], // multiple sizes
-        },
+        // {
+        //   src: path.resolve('src/assets/image/icon.png'),
+        //   sizes: [192, 512], // multiple sizes
+        // },
       ],
     }),
     new ImageminPlugin({
@@ -67,4 +67,4 @@ module.exports = dirname => ({
       },
     ],
   },
-});
+})
