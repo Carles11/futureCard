@@ -1,0 +1,45 @@
+body {
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(16px + (18 - 14) * ((100vw - 300px) / (1600 - 100)));
+  font-weight: 100;
+  color: #ffffff;
+  background: #262938;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Volkhov', serif;
+  line-height: 1.2;
+  font-weight: 100;
+}
+
+h1 {
+  font-size: calc(40px + (45 - 35) * ((100vw - 600px) / (1600 - 900)));
+}
+
+h2 {
+  font-size: calc(35px + (40 - 30) * ((100vw - 600px) / (1600 - 900)));
+}
+
+h2.tit-box {
+  font-size: calc(30px + (35 - 25) * ((100vw - 600px) / (1600 - 900)));
+}
+
+h3 {
+  font-size: calc(20px + (25 - 17) * ((100vw - 600px) / (1600 - 900)));
+}
+
+a {
+  color: #15b6cd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
