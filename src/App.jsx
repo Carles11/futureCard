@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 
 import Routes from './Routes';
+import Header from './components/layout/Header';
 
 const App = () => (
   <Fragment>
@@ -9,6 +10,7 @@ const App = () => (
       <link rel="canonical" href="https://futurecard.com" />
       <meta name="description" content="W" />
     </Helmet>
+    <Header />
     <Routes />
   </Fragment>
 );

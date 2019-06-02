@@ -1,8 +1,13 @@
-import { GET_PRODUCTS } from '../actionCreators/actionsType';
+import * as ACTION from '../actions/products/actionsType';
 
-export default function productReducer(state = ['Just a tiny product'], action) {
+const INITIAL_STATE = {
+  id: null,
+  name: '',
+};
+
+export default function productReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case GET_PRODUCTS:
+    case ACTION.GET_PRODUCTS:
       return action.payload;
     default:
       return state;

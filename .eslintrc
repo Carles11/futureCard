@@ -16,5 +16,12 @@
     "parserOptions": {
         "sourceType": "module",
         "allowImportExportEverywhere": true
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
     }
 }

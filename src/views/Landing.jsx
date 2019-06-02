@@ -1,5 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
-const Landing = () => <h1>Landing</h1>;
+import { Section } from '@src/css/elements';
 
-export default Landing;
+const Landing = ({ dictionary }) => {
+  const { data: DIC } = dictionary;
+
+  return (
+    <Section>
+      <Helmet
+        title="Welcome to futurecard.com"
+        meta={[
+          { name: 'description', content: 'description' },
+          { property: 'og:title', content: 'welcome to futurecard.com' },
+        ]}
+      />
+      <h1>{DIC.LANDING_TITLE}</h1>
+    </Section>
+  );
+};
+
+Landing.propTypes = {
+  dictionary: PropTypes.shape({ data: PropTypes.object.isRequired }).isRequired,
+};
+
+const mapStateToProps = ({ dictionary }) => ({
+  dictionary,
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Landing);
