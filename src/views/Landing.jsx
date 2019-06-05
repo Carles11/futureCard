@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { Section } from '@src/css/elements';
 import Layout from '@src/css/blocks/Layout';
+import Header from '@src/components/layout/Header';
 
 
 const Landing = ({ dictionary }) => {
@@ -20,8 +21,8 @@ const Landing = ({ dictionary }) => {
         ]}
       />
       <Layout.Landing>
+        <Header />
         <h1>{DIC.LANDING_TITLE}</h1>
-
       </Layout.Landing>
     </Section>
   );
