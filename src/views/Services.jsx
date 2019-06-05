@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Section } from '@src/css/elements';
+import Header from '@src/components/layout/Header';
+
 
 const Services = ({ dictionary }) => {
   const { data: DIC } = dictionary;
   return (
-      <Section>
-          <h1>{DIC.SERVICES_TITLE}</h1>
-        </Section>
+    <Section>
+      <Header />
+      <h1>{DIC.SERVICES_TITLE}</h1>
+    </Section>
   );
 };
 
