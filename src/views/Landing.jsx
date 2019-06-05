@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { Section } from '@src/css/elements';
+import Layout from '@src/css/blocks/Layout';
+
 
 const Landing = ({ dictionary }) => {
   const { data: DIC } = dictionary;
@@ -17,7 +19,10 @@ const Landing = ({ dictionary }) => {
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <h1>{DIC.LANDING_TITLE}</h1>
+      <Layout.Landing>
+        <h1>{DIC.LANDING_TITLE}</h1>
+
+      </Layout.Landing>
     </Section>
   );
 };
