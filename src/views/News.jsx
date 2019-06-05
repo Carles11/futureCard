@@ -4,14 +4,18 @@ import { connect } from 'react-redux';
 
 import { Section } from '@src/css/elements';
 import Header from '@src/components/layout/Header';
+import Layout from '@src/css/blocks/Layout';
 
 
 const News = ({ dictionary }) => {
   const { data: DIC } = dictionary;
   return (
     <Section>
-      <Header />
-      <h1>{DIC.NEWS_TITLE}</h1>
+      <Layout.Component>
+
+        <Header />
+        <h1>{DIC.NEWS_TITLE}</h1>
+      </Layout.Component>
     </Section>
   );
 };
