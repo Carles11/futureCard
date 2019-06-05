@@ -12,10 +12,10 @@ const Products = ({ dictionary }) => {
 
   return (
     <Section>
-      <Layout.Component>
+      <Layout.InternPage>
         <Header />
         <h1>{DIC.PRODUCTS_TITLE}</h1>
-      </Layout.Component>
+      </Layout.InternPage>
     </Section>
   );
 };

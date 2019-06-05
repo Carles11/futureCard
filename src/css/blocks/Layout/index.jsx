@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import Landing from './Landing';
+import InternPage from './InternPage';
 import Component from './Component';
 
 import Logo from './Logo';
@@ -15,6 +16,7 @@ Layout.Header.Logo = Logo;
 Layout.Header.Navigation = Navigation;
 Layout.Header.Navigation.Item = Item;
 Layout.Landing = Landing;
+Layout.InternPage = InternPage;
 Layout.Component = Component;
 
 

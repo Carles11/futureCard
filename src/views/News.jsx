@@ -11,11 +11,11 @@ const News = ({ dictionary }) => {
   const { data: DIC } = dictionary;
   return (
     <Section>
-      <Layout.Component>
+      <Layout.InternPage>
 
         <Header />
         <h1>{DIC.NEWS_TITLE}</h1>
-      </Layout.Component>
+      </Layout.InternPage>
     </Section>
   );
 };
