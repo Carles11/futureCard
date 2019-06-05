@@ -33,6 +33,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => we
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
+        favicon: './src/assets/logos/favicon.ico',
       }),
       new webpack.ProgressPlugin(),
     ],

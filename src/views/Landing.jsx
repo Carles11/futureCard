@@ -18,7 +18,6 @@ const Landing = ({ dictionary }) => {
         ]}
       />
       <h1>{DIC.LANDING_TITLE}</h1>
-      <h1>Holakease</h1>
     </Section>
   );
 };
