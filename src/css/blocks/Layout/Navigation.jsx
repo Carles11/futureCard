@@ -6,6 +6,11 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   width: auto;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export default Navigation;
