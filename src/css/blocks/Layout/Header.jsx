@@ -5,7 +5,7 @@ import withTheme from '@src/css/Theme';
 const Header = styled.header`
   display: flex;
   align-items: center;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

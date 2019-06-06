@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { Section } from '@src/css/elements';
 import Layout from '@src/css/blocks/Layout';
 
-import Header from '@src/components/layout/Header';
 import LandingNews from '@src/components/layout/LandingNews';
 
 
@@ -22,10 +21,12 @@ const Landing = ({ dictionary }) => {
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <Layout.Landing>
-        <Header />
-        <h1>{DIC.LANDING_TITLE}</h1>
-      </Layout.Landing>
+      <Layout.LandingBG>
+        <Layout.Landing>
+          <h1>{DIC.LANDING_TITLE}</h1>
+          <h3>{DIC.LANDING_SUBTITLE}</h3>
+        </Layout.Landing>
+      </Layout.LandingBG>
       <LandingNews />
     </Section>
   );
