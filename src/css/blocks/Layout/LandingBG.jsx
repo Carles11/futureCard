@@ -9,5 +9,7 @@ background-image: url(${IMG});
 background-size: cover;
 height: 100vh;
 background-repeat: no-repeat;
+background-position: center;
+
 `;
 export default withTheme(LandingBG);
