@@ -13,7 +13,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => we
     module: {
       rules: [
         {
-          test: /\.(js|jsx|ts|tsx)$/,
+          test: /\.(js|jsx)$/,
           use: {
             loader: 'babel-loader',
             options: {},

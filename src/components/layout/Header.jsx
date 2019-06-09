@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '@src/css/blocks/Layout';
 
-import logo from '@src/assets/image/logo_white.png';
+import logo from '@src/assets/image/logo.png';
 
 const NAVIGATION = [
   {

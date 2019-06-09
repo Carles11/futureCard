@@ -11,6 +11,7 @@ const Header = styled.header`
   width: 100%;
   height: 90px;
   z-index: 100;
+  color: ${props => props.theme.fontColor};
 `;
 
 export default withTheme(Header);
