@@ -18,16 +18,11 @@ const Burger = styled.div`
 `;
 
 const BurgerMenu = props => (
-  <nav>
-    <div />
-    <div />
-    <div />
-    <MainBurger onClick={props.handleClick}>
-      <Burger />
-      <Burger />
-      <Burger />
-    </MainBurger>
-  </nav>
+  <MainBurger onClick={props.visibility}>
+    <Burger />
+    <Burger />
+    <Burger />
+  </MainBurger>
 );
 
 export default BurgerMenu;

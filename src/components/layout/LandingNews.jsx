@@ -5,7 +5,7 @@ import Layout from '@src/css/blocks/Layout';
 
 const LandingNews = () => (
   <Layout.Component>
-    <h1>Important News on Landing Page</h1>
+    <h1>FutureCard News</h1>
   </Layout.Component>
 );
 

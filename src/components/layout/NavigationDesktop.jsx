@@ -4,6 +4,8 @@ import Layout from '@src/css/blocks/Layout';
 
 const NavigationDesktop = props => (
   <div>
+    <h1 onClick={props.visibility}>X</h1>
+
     {props.navi.map(item => (
       <Layout.Header.Navigation.Item key={item.key} to={item.link}>
         {item.label}
