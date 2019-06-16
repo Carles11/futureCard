@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Section } from '@src/css/elements';
-import Header from '@src/components/layout/Header';
 import Layout from '@src/css/blocks/Layout';
 
 
@@ -12,7 +11,6 @@ const Services = ({ dictionary }) => {
   return (
     <Section>
       <Layout.InternPage>
-        <Header />
         <h1>{DIC.SERVICES_TITLE}</h1>
       </Layout.InternPage>
     </Section>

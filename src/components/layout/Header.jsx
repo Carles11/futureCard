@@ -3,7 +3,6 @@ import Layout from '@src/css/blocks/Layout';
 
 import logo from '@src/assets/image/logo_white.png';
 import NavigationDesktop from '@src/components/layout/NavigationDesktop';
-import NavigationMobile from '@src/components/layout/NavigationMobile';
 import BurgerMenu from '@src/components/layout/BurgerMenu';
 
 const NAVIGATION = [
@@ -44,6 +43,9 @@ const Header = () => {
 
   const handleVisibility = () => {
     setVisible(!visible);
+  };
+  const handleClose = () => {
+    setVisibility();
   };
 
 

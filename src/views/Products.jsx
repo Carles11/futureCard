@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Header from '@src/components/layout/Header';
 
 
 import { Section } from '@src/css/elements';
@@ -13,7 +12,6 @@ const Products = ({ dictionary }) => {
   return (
     <Section>
       <Layout.InternPage>
-        <Header />
         <h1>{DIC.PRODUCTS_TITLE}</h1>
       </Layout.InternPage>
     </Section>
