@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
+import Background from '@src/components/Background';
+import backgroundImg from '@src/assets/image/background.jpg';
+
 import { Section } from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
@@ -14,7 +17,7 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <h1>{DIC.LANDING_TITLE}</h1>
+    <Background image={backgroundImg} />
   </Section>
 );
 

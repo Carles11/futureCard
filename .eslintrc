@@ -6,6 +6,7 @@
     "no-unexpected-multiline": 2,
     "compat/compat": 2,
     "no-underscore-dangle": [0, "allow"],
+    "no-nested-ternary": [0, "allow"],
     "react/no-children-prop": [0, "allow"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },

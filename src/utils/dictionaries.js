@@ -1,11 +1,9 @@
+import en from './dictionaries/en.json';
+import es from './dictionaries/es.json';
+
 const dictionaries = {
-  en: {
-    APP_DESCRIPTION:
-      'Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.',
-    LANDING_TITLE: '15 years manufacturing cards',
-    LANDING_SUBTITLE:
-      'Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.',
-  },
+  en,
+  es,
 };
 
 export default function getLanguage(lang) {
