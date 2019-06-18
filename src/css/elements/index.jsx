@@ -1,7 +1,7 @@
 import Section from './Section';
-import CrossMenuCss from './CrossMenuCss';
+import BurgerMenuIcon from './BurgerMenuIcon';
 
 
 // eslint-disable-next-line
 export { Section };
-export { CrossMenuCss };
+export { BurgerMenuIcon };
