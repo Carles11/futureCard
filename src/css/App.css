@@ -84,6 +84,7 @@ h2.tit-box {
 
 h3 {
     font-size: calc(20px + (25 - 17) * ((100vw - 600px) / (1600 - 900)));
+    color: orange;
 }
 
 p,

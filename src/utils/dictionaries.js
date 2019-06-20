@@ -6,6 +6,7 @@ const dictionaries = {
     PRODUCTS_TITLE: 'Products',
     SERVICES_TITLE: 'Services',
     CONTACT_TITLE: 'Contact',
+    CONTACT_SUBTITLE: 'Let´s talk!',
     NEWS_TITLE: 'News',
   },
 };

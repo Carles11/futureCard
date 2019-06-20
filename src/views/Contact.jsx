@@ -10,8 +10,22 @@ const Contact = ({ dictionary }) => {
   return (
     <Section>
       <Layout.InternPage>
+        <h1>{DIC.CONTACT_TITLE}</h1>
+        <h3>{DIC.CONTACT_SUBTITLE}</h3>
         <Layout.ContactBG>
-          <h1>{DIC.CONTACT_TITLE}</h1>
+          <Layout.ContactForm>
+            <Layout.ContactForm.Label>Subject</Layout.ContactForm.Label>
+            <Layout.ContactForm.Input type="text" />
+            <Layout.ContactForm.Label>Message</Layout.ContactForm.Label>
+            <Layout.ContactForm.TextArea type="text-area" />
+            <Layout.ContactForm.Label>Name</Layout.ContactForm.Label>
+            <Layout.ContactForm.Input type="text" />
+            <Layout.ContactForm.Label>E-mail</Layout.ContactForm.Label>
+            <Layout.ContactForm.Input type="email" />
+            <Layout.ContactForm.Label>Telephone (optional)</Layout.ContactForm.Label>
+            <Layout.ContactForm.Input type="number" />
+            <Layout.ContactForm.Button type="submit">SEND</Layout.ContactForm.Button>
+          </Layout.ContactForm>
         </Layout.ContactBG>
       </Layout.InternPage>
     </Section>
