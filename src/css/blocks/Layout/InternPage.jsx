@@ -8,8 +8,9 @@ const InternPage = styled.section`
     font-weight: 100;
     color: #ffffff;
     background: #262938;
+    padding-top: 100px;
+    padding-left: 40px;
     margin: 0;
-    padding: 0 40px 0;
     line-height: 1.25;
     height: 100vh;
 `;

@@ -10,7 +10,9 @@ const Contact = ({ dictionary }) => {
   return (
     <Section>
       <Layout.InternPage>
-        <h1>{DIC.CONTACT_TITLE}</h1>
+        <Layout.ContactBG>
+          <h1>{DIC.CONTACT_TITLE}</h1>
+        </Layout.ContactBG>
       </Layout.InternPage>
     </Section>
   );
