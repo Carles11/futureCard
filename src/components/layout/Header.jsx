@@ -61,6 +61,7 @@ const Header = ({ LANG: language, DIC }) => {
           })}
         </Layout.Header.Navigation>
         <HeaderIcons handleIconClick={handleChangeVisibility} />
+        <Layout.Header.HeaderBackground />
       </Layout.Header>
     </Fragment>
   );
