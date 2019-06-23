@@ -1,3 +1,6 @@
+import en from './dictionaries/en.json';
+import es from './dictionaries/es.json';
+
 const dictionaries = {
   en: {
     LANDING_TITLE: '17 YEARS MANUFACTURING CARDS',

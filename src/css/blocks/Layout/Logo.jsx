@@ -7,6 +7,7 @@ const Logo = styled.figure`
   margin: 0;
   width: 90px;
   flex: 5;
+  z-index: 10;
 `;
 
 const Image = styled.img`

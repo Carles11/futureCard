@@ -1,20 +1,31 @@
+import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 import withTheme from '@src/css/Theme';
 
-const Item = styled.button`
-  background: transparent;
-  color: ${props => props.theme.fontColor};
+const Link = styled(
+  ({
+    children,
+    dispatch,
+    forwardedComponent,
+    forwardedRef,
+    history,
+    location,
+    match,
+    staticContext,
+    theme,
+    ...rest
+  }) => <NavLink children={children} {...rest} />,
+)`
   font-size: 1rem;
+  color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 0.25rem;
   padding: 0 0.25rem 0.5rem;
-  border: none;
   border-bottom: 3px solid transparent;
   transition: border-color 0.3s ease-in-out;
-  cursor: pointer;
-  outline: none;
 
   &.active,
   &:hover {
@@ -30,6 +41,7 @@ const Item = styled.button`
     border-bottom: 1px solid #3f424e;
     padding: 2rem;
     transition: color 0.3s ease-in-out;
+
     &:last-child {
       border: none;
     }
@@ -47,4 +59,4 @@ const Item = styled.button`
   }
 `;
 
-export default withTheme(Item);
+export default withTheme(Link);

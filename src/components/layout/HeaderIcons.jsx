@@ -1,0 +1,91 @@
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+
+import withTheme from '@src/css/Theme';
+
+const ButtonIconMenu = styled.button`
+  position: absolute;
+  top: 2.25rem;
+  right: 2.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 10;
+
+  &:hover .bars {
+    background: ${props => props.theme.mainColor};
+  }
+`;
+
+const Bar = styled.div`
+  display: none;
+
+  background: white;
+  width: 21px;
+  height: 3px;
+  margin-bottom: 4px;
+  transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+
+  @media only screen and (max-width: 649px) {
+    display: block;
+  }
+`;
+
+const Bar1 = styled(Bar)`
+  transform-origin: top left;
+  ${props => props.active
+    && css`
+      transform: rotate(45deg);
+    `}
+`;
+
+const Bar2 = styled(Bar)`
+  opacity: 1;
+  ${props => props.active
+    && css`
+      opacity: 0;
+    `}
+`;
+
+const Bar3 = styled(Bar)`
+  transform-origin: bottom left;
+  ${props => props.active
+    && css`
+      transform: rotate(-45deg);
+    `}
+`;
+
+const IconMenu = ({ handleIconClick, theme }) => {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(active);
+  });
+
+  function handleClick() {
+    setActive(!active);
+    handleIconClick(!active);
+  }
+
+  return (
+    <ButtonIconMenu
+      theme={theme}
+      onClick={handleClick}
+      arial-label="show/hide menu"
+    >
+      <Bar1 active={active} className="bars" />
+      <Bar2 active={active} className="bars" />
+      <Bar3 active={active} className="bars" />
+    </ButtonIconMenu>
+  );
+};
+
+IconMenu.propTypes = {
+  handleIconClick: PropTypes.func.isRequired,
+  theme: PropTypes.shape({}).isRequired,
+};
+
+export default withTheme(IconMenu);
