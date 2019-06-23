@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import Header from './Header';
 import Landing from './Landing';
 import LandingBG from './LandingBG';
-import ContactBG from './ContactBG';
-import ContactForm from './ContactForm';
-import Input from './Input';
-import TextArea from './TextArea';
+import ContactBG from './contact/ContactBG';
+import ContactForm from './contact/ContactForm';
+import Input from './contact/Input';
+import TextArea from './contact/TextArea';
 import Button from './Button';
-import Label from './Label';
-
+import Label from './contact/Label';
+import LocationBar from './contact/LocationBar';
+import LocationItem from './contact/LocationItem';
 import InternPage from './InternPage';
 import Component from './Component';
 
@@ -34,7 +35,8 @@ Layout.ContactForm.Input = Input;
 Layout.ContactForm.TextArea = TextArea;
 Layout.ContactForm.Button = Button;
 Layout.ContactForm.Label = Label;
-
+Layout.ContactForm.LocationBar = LocationBar;
+Layout.ContactForm.LocationItem = LocationItem;
 
 Layout.InternPage = InternPage;
 Layout.Component = Component;

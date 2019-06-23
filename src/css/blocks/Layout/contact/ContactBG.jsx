@@ -8,7 +8,7 @@ const ContactBG = styled.section`
 position: relative;
 background-image: url(${IMG});
 background-size: cover;
-height: 100vh;
+height: 100%;
 background-repeat: no-repeat;
 background-position: center;
 `;
