@@ -10,11 +10,11 @@ const Overlay = styled.div`
   height: 100vh;
   background: ${props => props.theme.background};
   z-index: 1;
-  opacity: 0.9;
+  opacity: 0.99;
 
   @media only screen and (max-width: 649px) {
     ${props => props.visible
-      && css`
+    && css`
         display: block;
       `}
   }

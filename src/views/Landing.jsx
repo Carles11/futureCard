@@ -17,13 +17,16 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Background image={backgroundImg} />
+    <Background image={backgroundImg} title={DIC.LANDING_TITLE} subtitle={DIC.LANDING_SUBTITLE} />
+
   </Section>
 );
 
 Landing.propTypes = {
   DIC: PropTypes.shape({
     APP_DESCRIPTION: PropTypes.string.isRequired,
+    LANDING_TITLE: PropTypes.string.isRequired,
+    LANDING_SUBTITLE: PropTypes.string.isRequired,
   }).isRequired,
 };
 
