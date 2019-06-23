@@ -17,6 +17,8 @@ const AnimateVisibility = keyframes`
 
 const Section = styled.section`
   display: block;
+  width: 100%;
+  height: 100vh;
   padding: 90px 0 0;
   margin: 0;
   box-sizing: border-box;

@@ -47,10 +47,10 @@ const Header = ({ LANG: language, DIC }) => {
       <Layout.Header>
         <Layout.Header.Overlay visible={state.visibility} />
         <Layout.Header.Logo>
-          <Layout.Header.Logo.Image src={logo} alt='Futurecard logo' />
+          <Layout.Header.Logo.Image src={logo} alt="Futurecard logo" />
         </Layout.Header.Logo>
         <Layout.Header.Navigation visible={state.visibility}>
-          {state.navigation.map(item => {
+          {state.navigation.map((item) => {
             const LABEL = `NAV_LABEL_${item.label}`;
 
             return (
