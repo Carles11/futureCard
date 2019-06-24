@@ -11,13 +11,18 @@
   "LANDING_TITLE": "17 years manufacturing cards",
   "LANDING_SUBTITLE": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
   "LEARN_MORE": "Learn more",
+  "CONTACT_TITLE": "Contact",
+  "CONTACT_SUBTITLE": "Let´s talk!",
+  "CONTACT_DESCRIPTION": "Contact us form of FutureCard",
+  "NAV_LABEL_CONTACT": "Contact",
   "NAV_LABEL_HOME": "Home",
   "NAV_LABEL_LANGUAGE": "Language",
   "NAV_LABEL_MARKETS": "Markets",
   "NAV_LABEL_NEWS": "News",
   "NAV_LABEL_PRODUCTS": "Products",
   "NAV_LABEL_SERVICES": "Services",
-  "NAV_LABEL_CONTACT": "Contact",
   "NEWS_DESCRIPTION": "Access to the latest news of futureCard.",
-  "PRODUCT_DESCRIPTION": "FutureCard products"
+  "PRODUCT_DESCRIPTION": "FutureCard products",
+  "PRODUCT_TITLE": "Products",
+  "PRODUCT_SUBTITLE": "Check here our last generation products"
 }
