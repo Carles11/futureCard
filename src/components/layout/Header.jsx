@@ -6,7 +6,7 @@ import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
 
 import Layout from '@src/css/blocks/Layout';
 
-import NAVIGATION from '@src/utils/constants';
+import { NAVIGATION } from '@src/utils/constants';
 import logo from '@src/assets/image/logo_white.png';
 import HeaderIcons from './HeaderIcons';
 
@@ -75,6 +75,7 @@ Header.propTypes = {
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    NAV_LABEL_CONTACT: PropTypes.string.isRequired,
   }).isRequired,
 };
 

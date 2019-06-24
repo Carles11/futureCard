@@ -8,6 +8,9 @@ const H2 = styled.h2`
     font-family: "Volkhov", serif;
     font-weight: 100;
   `}
+  ${props => props.invertColor && css`
+    color: #fe4d10;  
+  `}
 `;
 
 export default withTheme(H2);
