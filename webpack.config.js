@@ -31,6 +31,9 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
           },
         ],
       },
+      devServer: {
+        disableHostCheck: true,
+      },
       plugins: [
         new HtmlWebpackPlugin({
           template: './public/index.html',
