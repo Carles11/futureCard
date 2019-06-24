@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Section, H1, Header } from '@src/css/elements';
+import { Section, H1, H2, Header } from '@src/css/elements';
 
 const Products = ({ DIC }) => (
   <Section>
@@ -15,7 +15,8 @@ const Products = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1>Products</H1>
+      <H1>{DIC.PRODUCT_TITLE}</H1>
+      <H2 invertColor>{DIC.PRODUCT_SUBTITLE}</H2>
     </Header>
   </Section>
 );
@@ -23,6 +24,8 @@ const Products = ({ DIC }) => (
 Products.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
+    PRODUCT_TITLE: PropTypes.string.isRequired,
+    PRODUCT_SUBTITLE: PropTypes.string.isRequired,
     PRODUCT_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };

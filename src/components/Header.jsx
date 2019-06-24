@@ -82,6 +82,7 @@ Header.propTypes = {
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    NAV_LABEL_CONTACT: PropTypes.string.isRequired,
   }).isRequired,
 };
 
