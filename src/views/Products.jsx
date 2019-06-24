@@ -15,7 +15,7 @@ const Products = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1 invertColor={true}>Products</H1>
+      <H1>Products</H1>
     </Header>
   </Section>
 );

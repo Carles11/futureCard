@@ -1,7 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { Figure, BackgroundImage, H1, H2, Header } from '@src/css/elements';
+import {
+  Figure, BackgroundImage, H1, H2, Header,
+} from '@src/css/elements';
 import { useScrollPosition } from './Hooks';
 // import Title from '../components/Title';
 
@@ -43,7 +45,7 @@ const Background = ({ image, title, subtitle }) => {
         />
         <Header background>
           <H1 invertColor sansSerif upperCase>{title}</H1>
-          <H2 >{subtitle}</H2>
+          <H2>{subtitle}</H2>
         </Header>
       </Figure>
     </Fragment>
@@ -52,8 +54,8 @@ const Background = ({ image, title, subtitle }) => {
 
 Background.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 };
 
 export default Background;
