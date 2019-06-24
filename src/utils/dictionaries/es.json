@@ -20,6 +20,9 @@
   "NAV_LABEL_NEWS": "Noticias",
   "NAV_LABEL_PRODUCTS": "Productos",
   "NAV_LABEL_SERVICES": "Servicios",
+<<<<<<< HEAD
   "NEWS_DESCRIPTION": "Accede a las últimas noticias de futureCard.",
+=======
+>>>>>>> contact routing & header working
   "PRODUCT_DESCRIPTION": "Productos de FutureCard"
 }

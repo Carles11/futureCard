@@ -21,8 +21,21 @@
   "NAV_LABEL_NEWS": "News",
   "NAV_LABEL_PRODUCTS": "Products",
   "NAV_LABEL_SERVICES": "Services",
+<<<<<<< HEAD
   "NEWS_DESCRIPTION": "Access to the latest news of futureCard.",
   "PRODUCT_DESCRIPTION": "FutureCard products",
   "PRODUCT_TITLE": "Products",
   "PRODUCT_SUBTITLE": "Check here our last generation products"
 }
+=======
+  <<
+  << << < HEAD "NAV_LABEL_CONTACT": "Contact",
+  "PRODUCT_DESCRIPTION": "FutureCard products"
+} ===
+=== =
+"PRODUCT_DESCRIPTION": "FutureCard products",
+"PRODUCT_TITLE": "Products",
+"PRODUCT_SUBTITLE": "Check here our last generation products"
+} >>>
+>>> > contact routing & header working
+>>>>>>> contact routing & header working
