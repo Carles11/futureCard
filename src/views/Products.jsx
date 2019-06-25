@@ -3,7 +3,9 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Section, H1, H2, Header } from '@src/css/elements';
+import {
+  Section, H1, H2, Header,
+} from '@src/css/elements';
 
 const Products = ({ DIC }) => (
   <Section>
@@ -15,7 +17,7 @@ const Products = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1>{DIC.PRODUCT_TITLE}</H1>
+      <H1 sansSerif upperCase>{DIC.PRODUCT_TITLE}</H1>
       <H2 invertColor>{DIC.PRODUCT_SUBTITLE}</H2>
     </Header>
   </Section>
