@@ -3,7 +3,9 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Section, H1, H2, Header } from '@src/css/elements';
+import {
+  Section, H1, H2, Header,
+} from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
   <Section>
@@ -15,8 +17,8 @@ const Contact = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1>{DIC.CONTACT_TITLE}</H1>
-      <H2 invertColor>{DIC.CONTACT_SUBTITLE}</H2>
+      <H1 sansSerif upperCase>{DIC.CONTACT_TITLE}</H1>
+      <H2 invertColor serif>{DIC.CONTACT_SUBTITLE}</H2>
     </Header>
   </Section>
 );
