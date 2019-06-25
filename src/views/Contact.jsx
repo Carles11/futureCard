@@ -3,9 +3,10 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import {
-  Section, H1, H2, Header,
-} from '@src/css/elements';
+import WorldMapBackground from '@src/components/WorldMapBackground';
+import worldMapImg from '@src/assets/image/worldMapBackground.png';
+
+import { Section } from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
   <Section>
@@ -16,10 +17,11 @@ const Contact = ({ DIC }) => (
         { property: 'og:title', content: 'Contact page of FutureCard Industries' },
       ]}
     />
-    <Header>
-      <H1 sansSerif upperCase>{DIC.CONTACT_TITLE}</H1>
-      <H2 invertColor serif>{DIC.CONTACT_SUBTITLE}</H2>
-    </Header>
+    <WorldMapBackground
+      image={worldMapImg}
+      title={DIC.CONTACT_TITLE}
+      subtitle={DIC.CONTACT_SUBTITLE}
+    />
   </Section>
 );
 

@@ -15,6 +15,9 @@ const H1 = styled.h1`
   ${props => props.upperCase && css`
     text-transform: upperCase;
   `}
+  ${props => props.toFront && css`
+  position: absolute;
+  `}
 `;
 
 export default withTheme(H1);
