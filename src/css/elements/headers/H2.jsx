@@ -4,6 +4,7 @@ import withTheme from '@src/css/Theme';
 
 const H2 = styled.h2`
   color: ${props => props.theme.fontColor};
+<<<<<<< HEAD
   font-size: calc(35px + (40 - 30) * ((100vw - 600px) / (1600 - 900)));
   font-weight: lighter;
   line-height: 1.4;
@@ -42,6 +43,15 @@ const H2 = styled.h2`
     && css`
       text-align: center;
     `};
+=======
+  ${props => props.serif && css`
+    font-family: "Volkhov", serif;
+    font-weight: 100;
+  `}
+  ${props => props.invertColor && css`
+    color: #fe4d10;  
+  `}
+>>>>>>> new backgroundMap
 `;
 
 export default withTheme(H2);
