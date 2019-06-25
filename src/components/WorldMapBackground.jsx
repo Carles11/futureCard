@@ -1,26 +1,34 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  BackgroundImage, H1, H2, Header,
+  Section, BackgroundImage, H1, H2, Header,
 } from '@src/css/elements';
 
-const WorldMapBackground = ({ image, title, subtitle }) => (
-  <Fragment>
-    <BackgroundImage
-      render
-      style={{ backgroundImage: `url(${image})` }}
-    />
-    <Header>
-      <H1 sansSerif upperCase toFront>{title}</H1>
-      <H2 invertColor serif toFront>{subtitle}</H2>
-    </Header>
-  </Fragment>
-);
+const WorldMapBackground = ({ image, title, subtitle }) => {
+  const [render, setRender] = useState(false);
+
+  useEffect(() => {
+    setRender(true);
+  }, [render]);
+
+  return (
+    <Section>
+      <BackgroundImage
+        render={render}
+        style={{ backgroundImage: `url(${image})` }}
+      />
+      <Header backgroundTop>
+        <H1 sansSerif upperCase>{title}</H1>
+        <H2 invertColor serif>{subtitle}</H2>
+      </Header>
+    </Section>
+  );
+};
 
 
 WorldMapBackground.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
 };
