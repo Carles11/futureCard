@@ -11,10 +11,6 @@ const H2 = styled.h2`
   ${props => props.invertColor && css`
     color: #fe4d10;  
   `}
-  ${props => props.toFront && css`
-  position: absolute;
-  padding-top: 6%;
-  `}
 `;
 
 export default withTheme(H2);
