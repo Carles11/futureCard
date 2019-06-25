@@ -2,6 +2,7 @@
   "APP_DESCRIPTION": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
   "CONTACT_TITLE": "Contacto",
   "CONTACT_SUBTITLE": "Hablemos!",
+  "CONTACT_DESCRIPTION": "Contact us form of FutureCard",
   "LANDING_TITLE": "17 years manufacturing cards",
   "LANDING_SUBTITLE": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
   "NAV_LABEL_CONTACT": "Contacto",
@@ -10,5 +11,7 @@
   "NAV_LABEL_NEWS": "Noticias",
   "NAV_LABEL_PRODUCTS": "Productos",
   "NAV_LABEL_SERVICES": "Servicios",
-  "PRODUCT_DESCRIPTION": "Productos de FutureCard"
+  "PRODUCT_DESCRIPTION": "Productos de FutureCard",
+  "PRODUCT_TITLE": "Products",
+  "PRODUCT_SUBTITLE": "Check here our last generation products"
 }
