@@ -22,7 +22,8 @@ const H1 = styled.h1`
       font-family: 'Raleway', sans-serif;
     `}
 
-  ${props => props.upperCase
+${
+  props => props.upperCase
     && css`
       text-transform: upperCase;
     `}
