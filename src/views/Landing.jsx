@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import Background from '@src/components/Background';
 import backgroundImg from '@src/assets/image/background.jpg';
 
-import { Section } from '@src/css/elements';
+import {
+ Section, Header, H1, H2 
+} from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
   <Section>
@@ -17,8 +19,11 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Background image={backgroundImg} title={DIC.LANDING_TITLE} subtitle={DIC.LANDING_SUBTITLE} />
-
+    <Background image={backgroundImg} />
+    <Header background>
+      <H1 invertColor sansSerif upperCase>{DIC.LANDING_TITLE}</H1>
+      <H2>{DIC.LANDING_SUBTITLE}</H2>
+    </Header>
   </Section>
 );
 
