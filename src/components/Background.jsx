@@ -37,7 +37,7 @@ const Background = ({ image, children }) => {
         />
         {children}
       </Figure>
-    </Fragment>
+    </Fragment >
   );
 };
 

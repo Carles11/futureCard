@@ -45,18 +45,6 @@ const Landing = ({ DIC }) => (
     <LandingAbout DIC={DIC} />
     <LandingNews DIC={DIC} />
     <Footer />
-    <Background image={backgroundImg} />
-    <Header background>
-      <H1 invertColor sansSerif upperCase>{DIC.LANDING_TITLE}</H1>
-      <H2>{DIC.LANDING_SUBTITLE}</H2>
-    </Header>
-
-    <Background
-      image={backgroundImg}
-      title={DIC.LANDING_TITLE}
-      subtitle={DIC.LANDING_SUBTITLE}
-    />
-
   </Section>
 );
 
