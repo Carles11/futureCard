@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import Routes from './Routes';
-import Header from './components/layout/Header';
+import Header from './components/Header';
 
 const App = ({ DIC }) => (
   <Fragment>

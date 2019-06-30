@@ -13,10 +13,11 @@ function useWindowSize() {
     });
 
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  }, []);
 
   return size;
 }
@@ -28,7 +29,7 @@ function useScrollPosition() {
     const handleScroll = () => setPosition(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   return position;
 }

@@ -58,12 +58,14 @@ const Bar3 = styled(Bar)`
     `}
 `;
 
-const IconMenu = ({ handleIconClick, theme }) => {
-  const [active, setActive] = useState(false);
+const IconMenu = ({ handleIconClick, visibility, theme }) => {
+  const [active, setActive] = useState(visibility);
 
   useEffect(() => {
-    setActive(active);
-  });
+    if (active !== visibility) {
+      setActive(visibility);
+    }
+  }, [visibility]);
 
   function handleClick() {
     setActive(!active);
@@ -85,6 +87,7 @@ const IconMenu = ({ handleIconClick, theme }) => {
 
 IconMenu.propTypes = {
   handleIconClick: PropTypes.func.isRequired,
+  visibility: PropTypes.bool.isRequired,
   theme: PropTypes.shape({}).isRequired,
 };
 

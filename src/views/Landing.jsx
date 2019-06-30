@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import Background from '@src/components/Background';
 import backgroundImg from '@src/assets/image/background.jpg';
 
-import { Section } from '@src/css/elements';
+import {
+  A, Article, H1, H2, Hr, Header, Section,
+} from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
   <Section>
@@ -17,8 +19,26 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Background image={backgroundImg} title={DIC.LANDING_TITLE} subtitle={DIC.LANDING_SUBTITLE} />
-
+    <Background image={backgroundImg}>
+      <Header background>
+        <H1 invertColor sansSerif upperCase>
+          {DIC.LANDING_TITLE}
+        </H1>
+        <Hr withSize="50%" withMargin="0 0 2rem" />
+        <H2 tiny withMargin="1rem 0 2.5rem">
+          {DIC.LANDING_SUBTITLE}
+        </H2>
+        <A role="button" to="/about-us">
+          {DIC.LEARN_MORE}
+        </A>
+      </Header>
+    </Background>
+    <Article>
+      <H2>Anohter section</H2>
+    </Article>
+    <Article>
+      <H2>Anohter section</H2>
+    </Article>
   </Section>
 );
 
@@ -27,6 +47,7 @@ Landing.propTypes = {
     APP_DESCRIPTION: PropTypes.string.isRequired,
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,
+    LEARN_MORE: PropTypes.string.isRequired,
   }).isRequired,
 };
 

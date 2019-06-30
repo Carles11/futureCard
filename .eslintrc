@@ -8,9 +8,13 @@
     "no-underscore-dangle": [0, "allow"],
     "no-nested-ternary": [0, "allow"],
     "react/no-children-prop": [0, "allow"],
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js", ".jsx"]
-    }]
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/require-default-props": "off"
   },
   "env": {
     "browser": true,

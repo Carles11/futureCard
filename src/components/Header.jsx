@@ -54,13 +54,20 @@ const Header = ({ LANG: language, DIC }) => {
             const LABEL = `NAV_LABEL_${item.label}`;
 
             return (
-              <Layout.Header.Navigation.Link key={item.key} to={item.link}>
+              <Layout.Header.Navigation.Link
+                key={item.key}
+                to={item.link}
+                onClick={() => handleChangeVisibility(false)}
+              >
                 {DIC[LABEL]}
               </Layout.Header.Navigation.Link>
             );
           })}
         </Layout.Header.Navigation>
-        <HeaderIcons handleIconClick={handleChangeVisibility} />
+        <HeaderIcons
+          visibility={state.visibility}
+          handleIconClick={handleChangeVisibility}
+        />
         <Layout.Header.HeaderBackground />
       </Layout.Header>
     </Fragment>

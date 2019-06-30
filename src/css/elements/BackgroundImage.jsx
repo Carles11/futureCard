@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const BackgroundImage = styled.div.attrs(props => ({
   style: { top: `${2 * -props.position}px` },
@@ -11,13 +11,6 @@ const BackgroundImage = styled.div.attrs(props => ({
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-
-  ${props => props.render
-    && css`
-      opacity: 1;
-    `}
 `;
 
 export default BackgroundImage;
