@@ -9,7 +9,7 @@ const Item = styled.button`
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 0.25rem;
-  padding: 0 0.25rem 0.5rem;
+  padding: 0.5rem 0.25rem 0.5rem;
   border: none;
   border-bottom: 3px solid transparent;
   transition: border-color 0.3s ease-in-out;

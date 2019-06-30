@@ -7,6 +7,7 @@ import Link from './Link';
 import Item from './Item';
 import Overlay from './Overlay';
 import HeaderBackground from './HeaderBackground';
+import Content from './Content';
 
 const Layout = styled.div``;
 
@@ -17,5 +18,6 @@ Layout.Header.Navigation = Navigation;
 Layout.Header.Navigation.Link = Link;
 Layout.Header.Navigation.Item = Item;
 Layout.Header.HeaderBackground = HeaderBackground;
+Layout.Content = Content;
 
 export default Layout;

@@ -12,8 +12,8 @@ const buttonDefault = css`
   background: transparent;
   color: ${props => props.theme.mainColor};
   margin: 0;
-  padding: 0.9rem 3rem;
-  font-size: 0.8rem;
+  padding: 0.9rem 2.25rem 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.05em;
   text-align: center;
@@ -30,18 +30,20 @@ const buttonDefault = css`
     border-color 0.3s ease-in-out;
 
   ${props => css`
-    color: ${props.theme.mainColor};
+    background: ${props.theme.mainColor};
+    color: white;
     border: 2px solid ${props.theme.mainColor};
 
     &:hover {
-      color: white;
+      background: transparent
+      color: ${props.theme.mainColor};
       border: 2px solid ${props.theme.mainColor};
-      background: ${props.theme.mainColor};
     }
   `}
 
-  ${props => props.align
-    && css`
+  ${props =>
+    props.align &&
+    css`
       text-align: ${props.align};
     `}
 `;
@@ -61,12 +63,13 @@ const A = styled(
     ...rest
   }) => <Link children={children} {...rest} />,
 )`
-  ${props => props.role === 'button'
-    && css`
+  ${props =>
+    props.role === 'button' &&
+    css`
       ${buttonDefault}
 
-      ${props.invert
-        && css`
+      ${props.invert &&
+        css`
           color: ${props.theme.mainColor};
           border: 2px solid ${props.theme.primary};
           background: ${props.theme.primary};
@@ -79,8 +82,9 @@ const A = styled(
         `}
     `}
 
-  ${props => props.role === 'link'
-    && css`
+  ${props =>
+    props.role === 'link' &&
+    css`
       color: ${props.theme.mainColor};
       text-decoration: none;
       font-size: 1rem;
@@ -92,8 +96,9 @@ const A = styled(
       }
     `}
 
-  ${props => props.state === 'disabled'
-    && css`
+  ${props =>
+    props.state === 'disabled' &&
+    css`
       opacity: 0.5;
       cursor: not-allowed;
       &:hover {

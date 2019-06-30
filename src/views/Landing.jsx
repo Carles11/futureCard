@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import Background from '@src/components/Background';
+import Footer from '@src/components/Footer';
+import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 
-import {
-  A, Article, H1, H2, Hr, Header, Section,
-} from '@src/css/elements';
+import { A, Article, H1, H2, Hr, Header, Section } from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
   <Section>
     <Helmet
-      title="Welcome to futurecard.com"
+      title='Welcome to futurecard.com'
       meta={[
         { name: 'description', content: `${DIC.APP_DESCRIPTION}` },
         { property: 'og:title', content: 'welcome to futurecard.com' },
@@ -24,21 +25,22 @@ const Landing = ({ DIC }) => (
         <H1 invertColor sansSerif upperCase>
           {DIC.LANDING_TITLE}
         </H1>
-        <Hr withSize="50%" withMargin="0 0 2rem" />
-        <H2 tiny withMargin="1rem 0 2.5rem">
+        <Hr withSize='50%' withMargin='0 0 2rem' />
+        <H2 tiny withMargin='1rem 0 2.5rem'>
           {DIC.LANDING_SUBTITLE}
         </H2>
-        <A role="button" to="/about-us">
+        <A role='button' to='/about-us'>
           {DIC.LEARN_MORE}
+          <Icon>
+            <FiArrowRightCircle />
+          </Icon>
         </A>
       </Header>
     </Background>
     <Article>
       <H2>Anohter section</H2>
     </Article>
-    <Article>
-      <H2>Anohter section</H2>
-    </Article>
+    <Footer />
   </Section>
 );
 
