@@ -22,7 +22,6 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-<<<<<<< HEAD
     <Background image={backgroundImg}>
       <Header background>
         <H1 invertColor sansSerif upperCase>
@@ -45,13 +44,18 @@ const Landing = ({ DIC }) => (
       <Hr withSize="100px" withMargin="0 0 2rem" />
     </Article>
     <Footer />
-=======
-    <Background image={backgroundImg} />
+        <Background image={backgroundImg} />
     <Header background>
       <H1 invertColor sansSerif upperCase>{DIC.LANDING_TITLE}</H1>
       <H2>{DIC.LANDING_SUBTITLE}</H2>
     </Header>
->>>>>>> contact header position
+
+    <Background
+      image={backgroundImg}
+      title={DIC.LANDING_TITLE}
+      subtitle={DIC.LANDING_SUBTITLE}
+    />
+
   </Section>
 );
 
