@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import Background from '@src/components/Background';
 import backgroundImg from '@src/assets/image/background.jpg';
 
-import { Section } from '@src/css/elements';
+import {
+  Section,
+} from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
   <Section>
