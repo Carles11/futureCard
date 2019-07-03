@@ -12,11 +12,7 @@ import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 
 import {
-<<<<<<< HEAD
   A, H1, H2, Hr, Header, Section,
-=======
- Section, Header, H1, H2 
->>>>>>> contact header position
 } from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
@@ -28,7 +24,7 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-<<<<<<< HEAD
+
     <Background image={backgroundImg}>
       <Header background>
         <H1 invertColor sansSerif upperCase>
@@ -49,13 +45,18 @@ const Landing = ({ DIC }) => (
     <LandingAbout DIC={DIC} />
     <LandingNews DIC={DIC} />
     <Footer />
-=======
     <Background image={backgroundImg} />
     <Header background>
       <H1 invertColor sansSerif upperCase>{DIC.LANDING_TITLE}</H1>
       <H2>{DIC.LANDING_SUBTITLE}</H2>
     </Header>
->>>>>>> contact header position
+
+    <Background
+      image={backgroundImg}
+      title={DIC.LANDING_TITLE}
+      subtitle={DIC.LANDING_SUBTITLE}
+    />
+
   </Section>
 );
 
