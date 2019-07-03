@@ -3,10 +3,14 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import WorldMapBackground from '@src/components/WorldMapBackground';
-import worldMapImg from '@src/assets/image/worldMapBackgroundWhite.jpg';
-
+import Form from '@src/components/ContactForm';
+import ContactMap from '@src/components/ContactMap';
 import { Section } from '@src/css/elements';
+
+// MADRID:                          40°25′    N, 03°42′      E
+// PARIS:                           48°51′    N, 02°21′      O
+// JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E
+// DUBAI:                           25°15′47″ N, 55°17′50″   E
 
 const Contact = ({ DIC }) => (
   <Section>
@@ -17,14 +21,11 @@ const Contact = ({ DIC }) => (
         { property: 'og:title', content: 'Contact page of FutureCard Industries' },
       ]}
     />
-    <WorldMapBackground
-      image={worldMapImg}
-      title={DIC.CONTACT_TITLE}
-      subtitle={DIC.CONTACT_SUBTITLE}
-    />
+
+    <Form title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
+    <ContactMap />
   </Section>
 );
-
 
 Contact.propTypes = {
   DIC: PropTypes.shape({

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import withTheme from '@src/css/Theme';
 
@@ -12,6 +12,10 @@ const Header = styled.header`
   height: 90px;
   z-index: 100;
   color: ${props => props.theme.fontColor};
+  ${props => props.positionChange && css`
+  position: fixed;
+  z-index: 1000 important!;
+  `}
 `;
 
 export default withTheme(Header);

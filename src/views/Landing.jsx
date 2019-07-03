@@ -17,7 +17,11 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Background image={backgroundImg} title={DIC.LANDING_TITLE} subtitle={DIC.LANDING_SUBTITLE} />
+    <Background
+      image={backgroundImg}
+      title={DIC.LANDING_TITLE}
+      subtitle={DIC.LANDING_SUBTITLE}
+    />
 
   </Section>
 );

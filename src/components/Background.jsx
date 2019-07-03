@@ -7,7 +7,9 @@ import {
 import { useScrollPosition } from './Hooks';
 // import Title from '../components/Title';
 
-const Background = ({ image, title, subtitle }) => {
+const Background = ({
+  image, title, subtitle,
+}) => {
   const [render, setRender] = useState(false);
   const [background, setBackground] = useState(
     Array.isArray(image) ? image[0] : image,
@@ -16,6 +18,8 @@ const Background = ({ image, title, subtitle }) => {
   const position = Math.floor(scroll / 10);
   let interval = 0;
   let index = 0;
+
+  // 2019.06.27,  12:07
 
   useEffect(() => {
     setRender(true);
@@ -42,11 +46,12 @@ const Background = ({ image, title, subtitle }) => {
           render={render}
           position={position}
           style={{ backgroundImage: `url(${background})` }}
-        />
-        <Header background>
-          <H1 invertColor sansSerif upperCase>{title}</H1>
-          <H2>{subtitle}</H2>
-        </Header>
+        >
+          <Header background>
+            <H1 invertColor sansSerif upperCase>{title}</H1>
+            <H2>{subtitle}</H2>
+          </Header>
+        </BackgroundImage>
       </Figure>
     </Fragment>
   );
