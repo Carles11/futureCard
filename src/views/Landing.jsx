@@ -24,7 +24,6 @@ const Landing = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-
     <Background image={backgroundImg}>
       <Header background>
         <H1 invertColor sansSerif upperCase>

@@ -8,6 +8,11 @@ import worldMapImg from '@src/assets/image/worldMapBackgroundWhite.jpg';
 
 import { Section, Header, H1, H2 } from '@src/css/elements';
 
+// MADRID:                          40°25′    N, 03°42′      E
+// PARIS:                           48°51′    N, 02°21′      O
+// JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E
+// DUBAI:                           25°15′47″ N, 55°17′50″   E
+
 const Contact = ({ DIC }) => (
   <Section>
     <Helmet
@@ -26,7 +31,6 @@ const Contact = ({ DIC }) => (
     </Header>
   </Section>
 );
-
 
 Contact.propTypes = {
   DIC: PropTypes.shape({
