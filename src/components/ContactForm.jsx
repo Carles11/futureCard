@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -13,32 +15,20 @@ const ContactForm = ({ title, subtitle }) => (
     </div>
     <div className="row">
       <span>
-
-        <label htmlFor="name">
-          Name
-          <input className="slide-up" id="name" type="text" placeholder="Your name" />
-        </label>
+        <input className="slide-up" id="name" type="text" placeholder="Your name" />
+        <label htmlFor="name">Name</label>
       </span>
       <span>
-
-        <label htmlFor="email">
-          Email
-          <input className="slide-up" id="email" type="text" placeholder="Email" />
-        </label>
+        <input className="slide-up" id="email" type="text" placeholder="Email" />
+        <label htmlFor="email">Email</label>
       </span>
       <span>
-
-        <label htmlFor="telephone">
-          Telephone (optional)
-          <input className="slide-up" id="telephone" type="text" placeholder="Your phone" />
-        </label>
+        <input className="slide-up" id="telephone" type="text" placeholder="Your phone" />
+        <label htmlFor="telephone">Telephone (optional)</label>
       </span>
       <span>
-
-        <label htmlFor="message">
-          Message
-          <input className="slide-up" id="message" type="text-area" placeholder="Your message" />
-        </label>
+        <input className="slide-up" id="message" type="text-area" placeholder="Your message" />
+        <label htmlFor="message">Message</label>
       </span>
       <span>
         <Button>SEND</Button>
