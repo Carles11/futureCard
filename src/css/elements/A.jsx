@@ -41,9 +41,8 @@ const buttonDefault = css`
     }
   `}
 
-  ${props =>
-    props.align &&
-    css`
+  ${props => props.align
+    && css`
       text-align: ${props.align};
     `}
 `;
@@ -63,13 +62,12 @@ const A = styled(
     ...rest
   }) => <Link children={children} {...rest} />,
 )`
-  ${props =>
-    props.role === 'button' &&
-    css`
+  ${props => props.role === 'button'
+    && css`
       ${buttonDefault}
 
-      ${props.invert &&
-        css`
+      ${props.invert
+        && css`
           color: ${props.theme.mainColor};
           border: 2px solid ${props.theme.primary};
           background: ${props.theme.primary};
@@ -82,9 +80,8 @@ const A = styled(
         `}
     `}
 
-  ${props =>
-    props.role === 'link' &&
-    css`
+  ${props => props.role === 'link'
+    && css`
       color: ${props.theme.mainColor};
       text-decoration: none;
       font-size: 1rem;
@@ -96,9 +93,8 @@ const A = styled(
       }
     `}
 
-  ${props =>
-    props.state === 'disabled' &&
-    css`
+  ${props => props.state === 'disabled'
+    && css`
       opacity: 0.5;
       cursor: not-allowed;
       &:hover {

@@ -9,7 +9,7 @@ const HeaderBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${props => props.theme.background}
+  background: ${props => props.theme.fontColor};
   opacity: 0.7;
 `;
 

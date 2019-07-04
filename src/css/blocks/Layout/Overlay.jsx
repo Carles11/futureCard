@@ -8,7 +8,7 @@ const Overlay = styled.div`
   top: 0;
   width: 100%;
   height: 100vh;
-  background: ${props => props.theme.background};
+  background: ${props => props.theme.fontColor};
   z-index: 1;
   opacity: 0.99;
 

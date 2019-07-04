@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 
 import withTheme from '@src/css/Theme';
 
-const H2 = styled.h2`
+const H3 = styled.h3`
   color: ${props => props.theme.fontColor};
-  font-size: calc(35px + (40 - 30) * ((100vw - 600px) / (1600 - 900)));
+  font-size: calc(20px + (25 - 15) * ((100vw - 600px) / (1600 - 900)));
 
   ${props => props.invertColor
     && css`
@@ -19,7 +19,12 @@ const H2 = styled.h2`
 
   ${props => props.tiny
     && css`
-      font-size: calc(25px + (30 - 20) * ((100vw - 600px) / (1600 - 900)));
+      font-size: calc(18px + (20 - 15) * ((100vw - 600px) / (1600 - 900)));
+    `}
+
+  ${props => props.withSize
+    && css`
+      font-size: ${props.withSize};
     `}
 
   ${props => props.withMargin
@@ -28,4 +33,4 @@ const H2 = styled.h2`
     `}
 `;
 
-export default withTheme(H2);
+export default withTheme(H3);

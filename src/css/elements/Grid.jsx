@@ -15,6 +15,11 @@ const Grid = styled.div`
     margin-right: 0;
   }
 
+  ${props => props.wrapping
+    && css`
+      flex-wrap: wrap;
+    `}
+
   ${props => props.loader
     && css`
       display: flex;
@@ -31,8 +36,15 @@ const Grid = styled.div`
   ${props => props.column
     && css`
       flex-direction: column;
-      width: 100%;
     `};
+
+    ${props => props.queryColumn
+      && css`
+        @media only screen and (max-width: 649px) {
+          flex-direction: column;
+          width: 100%;
+        }fontColorDarker
+      `};
 
   ${props => props.maxWidth
     && css`
@@ -44,9 +56,9 @@ const Grid = styled.div`
       padding: ${props.padding};
     `}
 
-  ${props => props.margin
+  ${props => props.withMargin
     && css`
-      margin: ${props.margin} !important;
+      margin: ${props.withMargin} !important;
     `}
 
   ${props => props.middle
@@ -67,6 +79,11 @@ const Grid = styled.div`
   ${props => props.heightProp
     && css`
       height: ${props.heightProp};
+    `}
+  
+  ${props => props.darker
+    && css`
+      background: ${props.theme.fontColorDarker};
     `}
 `;
 

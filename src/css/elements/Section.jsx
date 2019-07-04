@@ -23,9 +23,8 @@ const Section = styled.section`
   padding: 90px 0 0;
   margin: 0;
   box-sizing: border-box;
-  ${props =>
-    props &&
-    css`
+  ${props => props
+    && css`
       animation: ${AnimateVisibility} 0.3s ease-in-out 0s;
     `}
 `;

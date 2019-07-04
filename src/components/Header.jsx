@@ -6,7 +6,7 @@ import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
 
 import Layout from '@src/css/blocks/Layout';
 
-import NAVIGATION from '@src/utils/constants';
+import { NAVIGATION } from '@src/utils/constants';
 import logo from '@src/assets/image/logo_white.png';
 import HeaderIcons from './HeaderIcons';
 

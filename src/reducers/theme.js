@@ -1,8 +1,7 @@
 const INITIAL_STATE = {
-  fontColor: '#ffffff',
+  fontColor: '#262938',
+  fontColorDarker: '#1d1e26',
   mainColor: '#fe4d10',
-  background: '#262938',
-  textColor: '#333333',
 };
 
 export default function themeReducer(state = INITIAL_STATE, action) {

@@ -5,7 +5,7 @@ import withTheme from '@src/css/Theme';
 const Footer = styled.footer`
   width: 100%;
   height: auto;
-  background: ${props => props.theme.background};
+  background: ${props => props.theme.fontColor};
   padding: 2rem 5%;
   box-sizing: border-box;
 
