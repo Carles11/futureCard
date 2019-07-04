@@ -10,6 +10,7 @@ import HeaderBackground from './HeaderBackground';
 import Content from './Content';
 import Footer from './Footer';
 import LinkFooter from './LinkFooter';
+import ItemFooter from './ItemFooter';
 
 const Layout = styled.div``;
 
@@ -23,5 +24,6 @@ Layout.Header.HeaderBackground = HeaderBackground;
 Layout.Content = Content;
 Layout.Footer = Footer;
 Layout.Footer.Link = LinkFooter;
+Layout.Footer.Item = ItemFooter;
 
 export default Layout;

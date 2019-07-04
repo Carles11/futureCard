@@ -31,6 +31,19 @@ const NAVIGATION = [
   },
 ];
 
+const LANGUAGE = [
+  {
+    id: 0,
+    label: 'ENGLISH',
+    value: 'en',
+  },
+  {
+    id: 1,
+    label: 'ESPAÑOL',
+    value: 'es',
+  },
+];
+
 const ADDRESSES = [
   {
     id: 0,
@@ -79,4 +92,4 @@ const ADDRESSES = [
   },
 ];
 
-export { ADDRESSES, NAVIGATION };
+export { ADDRESSES, LANGUAGE, NAVIGATION };

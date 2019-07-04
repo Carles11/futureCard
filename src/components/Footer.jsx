@@ -2,7 +2,8 @@ import React, { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { ADDRESSES, NAVIGATION } from '@src/utils/constants';
+import { ADDRESSES, LANGUAGE, NAVIGATION } from '@src/utils/constants';
+import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
 
 import Layout from '@src/css/blocks/Layout';
 import { Address, Footer, Grid, H3, H4, Hr, P } from '@src/css/elements';
@@ -22,13 +23,17 @@ function footerReducer(state, action) {
   }
 }
 
-const FooterComponent = ({ LANG: language, DIC }) => {
+const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
   const initialState = { language, navigation: NAVIGATION };
   const [state, dispatch] = useReducer(footerReducer, initialState);
 
   useEffect(() => {
     dispatch({ type: 'ALL', language, navigation: NAVIGATION });
   }, [language]);
+
+  function handleLanguage(value) {
+    handleSetDictionary(value);
+  }
 
   return (
     <Footer>
@@ -37,7 +42,7 @@ const FooterComponent = ({ LANG: language, DIC }) => {
           <Grid column flex={1}>
             <Grid column>
               <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
-                Company Offices
+                {DIC.COMPANY_OFFICES}
               </H3>
               <Hr withSize='100px' />
             </Grid>
@@ -68,10 +73,10 @@ const FooterComponent = ({ LANG: language, DIC }) => {
               ))}
             </Grid>
           </Grid>
-          <Grid column withMargin='0'>
+          <Grid column withMargin='0 3rem 0 0'>
             <Grid column>
               <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
-                Company Info
+                {DIC.COMPANY_INFO}
               </H3>
               <Hr withSize='100px' />
             </Grid>
@@ -89,6 +94,30 @@ const FooterComponent = ({ LANG: language, DIC }) => {
               </Layout.Footer>
             </Grid>
           </Grid>
+          <Grid column withMargin='0'>
+            <Grid column>
+              <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
+                {DIC.NAV_LABEL_LANGUAGE}
+              </H3>
+              <Hr withSize='100px' />
+            </Grid>
+            <Grid withMargin='1rem 0' wrapping>
+              <Layout.Footer>
+                {LANGUAGE.map(item => {
+                  const active = item.value === state.language;
+
+                  return (
+                    <Layout.Footer.Item
+                      active={active}
+                      key={item.id}
+                      onClick={() => handleLanguage(item.value)}>
+                      {item.label}
+                    </Layout.Footer.Item>
+                  );
+                })}
+              </Layout.Footer>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid darker withMargin='0' withPadding='2rem 5%'>
           footer
@@ -101,12 +130,15 @@ const FooterComponent = ({ LANG: language, DIC }) => {
 FooterComponent.propTypes = {
   LANG: PropTypes.string.isRequired,
   DIC: PropTypes.shape({
+    COMPANY_INFO: PropTypes.string.isRequired,
+    COMPANY_OFFICES: PropTypes.string.isRequired,
     NAV_LABEL_HOME: PropTypes.string.isRequired,
     NAV_LABEL_LANGUAGE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
   }).isRequired,
+  handleSetDictionary: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
@@ -114,11 +146,11 @@ const mapStateToProps = ({ dictionary }) => ({
   DIC: dictionary.data,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   handleSetDictionary: lang => dispatch(setDictionary(lang)),
-// });
+const mapDispatchToProps = dispatch => ({
+  handleSetDictionary: lang => dispatch(setDictionary(lang)),
+});
 
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(FooterComponent);
