@@ -2,6 +2,8 @@
 
 import styled, { css } from 'styled-components';
 
+import withTheme from '@src/css/Theme';
+
 const Grid = styled.div`
   display: flex;
   margin: 0 0.5rem;
@@ -51,9 +53,9 @@ const Grid = styled.div`
       width: 100%;
     `};
 
-  ${props => props.padding
+  ${props => props.withPadding
     && css`
-      padding: ${props.padding};
+      padding: ${props.withPadding};
     `}
 
   ${props => props.withMargin
@@ -87,4 +89,4 @@ const Grid = styled.div`
     `}
 `;
 
-export default Grid;
+export default withTheme(Grid);

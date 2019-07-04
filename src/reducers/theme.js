@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   fontColor: '#262938',
-  fontColorDarker: '#1d1e26',
+  fontColorDarker: '#222430',
   mainColor: '#fe4d10',
 };
 

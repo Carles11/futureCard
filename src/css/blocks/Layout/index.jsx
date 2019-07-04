@@ -8,6 +8,8 @@ import Item from './Item';
 import Overlay from './Overlay';
 import HeaderBackground from './HeaderBackground';
 import Content from './Content';
+import Footer from './Footer';
+import LinkFooter from './LinkFooter';
 
 const Layout = styled.div``;
 
@@ -19,5 +21,7 @@ Layout.Header.Navigation.Link = Link;
 Layout.Header.Navigation.Item = Item;
 Layout.Header.HeaderBackground = HeaderBackground;
 Layout.Content = Content;
+Layout.Footer = Footer;
+Layout.Footer.Link = LinkFooter;
 
 export default Layout;
