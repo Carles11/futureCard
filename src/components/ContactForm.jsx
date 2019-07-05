@@ -19,7 +19,11 @@ const ContactForm = () => (
       </span>
       <span>
         <input className="slide-up" id="telephone" type="text" placeholder="Your phone" />
-        <label htmlFor="telephone">Telephone (optional)</label>
+        <label htmlFor="telephone">
+          Telephone
+          {' '}
+          <i>(optional)</i>
+        </label>
       </span>
       <span>
         <input className="slide-up" id="message" type="text-area" placeholder="Your message" />

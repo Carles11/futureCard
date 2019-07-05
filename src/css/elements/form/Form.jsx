@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Form = styled.form`
-z-index: 500;
-position: absolute;
+position: fixed;
 opacity: 0.9;
+z-index: 500;
+
 @import "compass/css3";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
@@ -124,7 +125,6 @@ span:nth-child(3) .slide-up:active {
         @media only screen and (max-width: 849px) {
           .row {
             min-width: 450px;
-            margin: 0 auto;
             padding: 40px 17px;
             background: ${props => props.theme.background};
             text-align: center;
@@ -178,7 +178,6 @@ span:nth-child(3) .slide-up:active {
 @media only screen and (max-width: 649px) {
   .row {
     min-width: 250px;
-    margin: 0 auto;
     padding: 40px 17px;
     background: ${props => props.theme.background};
     text-align: center;

@@ -1,11 +1,11 @@
 {
   "ABOUT_US": "Sobre nosotros",
-  "APP_DESCRIPTION": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
+  "APP_DESCRIPTION": "Desde su creación en 2003, FutureCard ha diseñado, fabricado y personalizado tarjetas para bancos, gobiernos, operadores y minoristas de todo el mundo.",
   "COMPANY_INFO": "Información de la Compañía",
   "COMPANY_OFFICES": "Oficinas de la Compañía",
-  "LANDING_TITLE": "17 years manufacturing cards",
-  "LANDING_SUBTITLE": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
-  "LEARN_MORE": "más información",
+  "LANDING_TITLE": "17 años fabricando tarjetas",
+  "LANDING_SUBTITLE": "Desde su creación en 2003, FutureCard ha diseñado, fabricado y personalizado tarjetas para bancos, gobiernos, operadores y minoristas de todo el mundo.",
+  "LEARN_MORE": "Más información",
   "NAV_LABEL_HOME": "Inicio",
   "NAV_LABEL_LANGUAGE": "Idioma",
   "NAV_LABEL_NEWS": "Noticias",
@@ -13,6 +13,7 @@
   "NAV_LABEL_SERVICES": "Servicios",
   "NAV_LABEL_CONTACT": "Contacto",
   "PRODUCT_DESCRIPTION": "Productos de FutureCard",
-  "PRODUCT_TITLE": "Products",
-  "PRODUCT_SUBTITLE": "Check here our last generation products"
+  "PRODUCT_TITLE": "ProductOs",
+  "PRODUCT_SUBTITLE": "Consulte aquí nuestros productos de última generación",
+  "WELLCOME_TITLE": "Bienvenido a FutureCard"
 }
