@@ -42,7 +42,6 @@ export default class ContactMap extends React.Component {
 
     L.marker([25.2630556, 55.2972222], { icon: futureCardIcon }, { title: 'Dubai' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subAddress}<br>${ADDRESSES[1].location}<br>${ADDRESSES[1].phone}`);
-
   }
 
   render() {
