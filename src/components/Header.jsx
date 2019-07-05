@@ -41,7 +41,6 @@ const Header = ({ LANG: language, DIC }) => {
   function handleChangeVisibility(visibility) {
     dispatch({ type: 'CHANGE', visibility });
   }
-
   return (
     <Fragment>
       <Layout.Header>

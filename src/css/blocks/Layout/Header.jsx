@@ -13,8 +13,8 @@ const Header = styled.header`
   z-index: 100;
   color: ${props => props.theme.fontColor};
   ${props => props.positionChange && css`
-  position: fixed;
-  z-index: 1000 important!;
+  position: absolute;
+  z-index: 1000 ;
   `}
 `;
 

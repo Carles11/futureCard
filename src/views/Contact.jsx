@@ -3,10 +3,13 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Background from '@src/components/Background';
-import worldMapImg from '@src/assets/image/worldMapBackgroundWhite.jpg';
+import ContactMap from '@src/components/ContactMap';
+import ContactForm from '@src/components/ContactForm';
 
-import { Section, Header, H1, H2 } from '@src/css/elements';
+
+import {
+  Section, Header, H1, H2,
+} from '@src/css/elements';
 
 // MADRID:                          40°25′    N, 03°42′      E
 // PARIS:                           48°51′    N, 02°21′      O
@@ -22,13 +25,12 @@ const Contact = ({ DIC }) => (
         { property: 'og:title', content: 'Contact page of FutureCard Industries' },
       ]}
     />
-    <Background
-      image={worldMapImg}
-    />
-    <Header headerHigh>
+    <Header positionChange>
       <H1 sansSerif upperCase>{DIC.CONTACT_TITLE}</H1>
       <H2 invertColor>{DIC.CONTACT_SUBTITLE}</H2>
     </Header>
+    <ContactForm />
+    <ContactMap />
   </Section>
 );
 
