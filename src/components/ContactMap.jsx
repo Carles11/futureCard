@@ -33,36 +33,16 @@ export default class ContactMap extends React.Component {
     }).addTo(this.map);
     L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br>${ADDRESSES[3].location}<br>${ADDRESSES[3].phone}`);
-    L.circle([40.4166667, -3.7000000], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(this.map);
+
     L.marker([48.7500000, 2.4500000], { icon: futureCardIcon }, { title: 'Paris' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br>${ADDRESSES[2].location}<br>${ADDRESSES[2].phone}`);
-    L.circle([48.7500000, 2.4500000], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(this.map);
+
     L.marker([-25.2044444, 30.0455556], { icon: futureCardIcon }, { title: 'Johannesburg' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br>${ADDRESSES[4].location}<br>${ADDRESSES[4].phone}`);
-    L.circle([-25.2044444, 30.0455556], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(this.map);
+
     L.marker([25.2630556, 55.2972222], { icon: futureCardIcon }, { title: 'Dubai' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subAddress}<br>${ADDRESSES[1].location}<br>${ADDRESSES[1].phone}`);
-    L.circle([25.2630556, 55.2972222], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(this.map);
+
   }
 
   render() {

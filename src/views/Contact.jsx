@@ -11,6 +11,7 @@ import {
   Section, Header, H1, H2,
 } from '@src/css/elements';
 
+// GPS COORDINATES
 // MADRID:                          40°25′    N, 03°42′      E
 // PARIS:                           48°51′    N, 02°21′      O
 // JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E

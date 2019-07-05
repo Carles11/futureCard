@@ -18,7 +18,7 @@ import {
 const Landing = ({ DIC }) => (
   <Section>
     <Helmet
-      title="Welcome to futurecard.com"
+      title={DIC.WELLCOME_TITLE}
       meta={[
         { name: 'description', content: `${DIC.APP_DESCRIPTION}` },
         { property: 'og:title', content: 'welcome to futurecard.com' },

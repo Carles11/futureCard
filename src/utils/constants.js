@@ -42,6 +42,11 @@ const LANGUAGE = [
     label: 'ESPAÑOL',
     value: 'es',
   },
+  {
+    id: 2,
+    label: 'FRANÇAIS',
+    value: 'fr',
+  },
 ];
 
 const ADDRESSES = [
