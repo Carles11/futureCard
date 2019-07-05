@@ -21,9 +21,8 @@ const ItemFooter = styled.button`
     color: ${props => props.theme.mainColor};
   }
 
-  ${props =>
-    props.active &&
-    css`
+  ${props => props.active
+    && css`
       color: ${props.theme.mainColor};
     `}
 `;

@@ -2,7 +2,9 @@ import A from './A';
 import Address from './Address';
 import Article from './Article';
 import BackgroundImage from './BackgroundImage';
+import Button from './form/Button';
 import Figure from './Figure';
+import Form from './form/Form';
 import Footer from './Footer';
 import Grid from './Grid';
 import {
@@ -18,8 +20,10 @@ export {
   Address,
   Article,
   BackgroundImage,
+  Button,
   Figure,
   Footer,
+  Form,
   Grid,
   H1,
   H2,

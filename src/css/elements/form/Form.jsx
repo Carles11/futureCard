@@ -16,10 +16,12 @@ opacity: 0.9;
   padding: 60px 30px;
   background: ${props => props.theme.background};
   text-align: center;
+  margin-top: 400px;
+  margin-left: 100px;
+  padding: 40px 30px;
+  background: whitesmoke;
   
   &:first-child {
-    padding: 40px 30px;
-    background: whitesmoke;
   }
   
   span {
@@ -56,6 +58,7 @@ opacity: 0.9;
     top: 0;
     left: 0;
     padding: 10px 15px;
+    color: white;
     text-shadow: 0 1px 0 rgba(19,74,70,.4);
     transition: all .3s ease-in-out;
     border-top-left-radius: 3px;
@@ -77,12 +80,12 @@ opacity: 0.9;
       left: 5px;
       right: 5px;
       bottom: 6px;
-      background: #134A46; // change this to #134A46
+      background: ${props => props.theme.fontColor}
     }
     &:after {
       top: 0;
       bottom: 0;
-      background: #377D6A;
+      background: ${props => props.theme.fontColorDarker};
     }
   }
 }
@@ -100,12 +103,12 @@ span:nth-child(3) .slide-up:active {
 }
 .slide-up:focus,
 .slide-up:active {
-  color: #377D6A;
+  color: ${props => props.theme.fontColorDarker};
   text-indent: 0;
   background: #fff;
   
   &::-webkit-input-placeholder {
-    color: #aaa;
+    color: ${props => props.theme.fontColor};
   }
   + label {
     transform: translateY(-100%);
@@ -161,12 +164,12 @@ span:nth-child(3) .slide-up:active {
           }
           .slide-up:focus,
           .slide-up:active {
-            color: #377D6A;
+            color: ${props => props.theme.fontColorDarker};
             text-indent: 0;
             background: #fff;
             
             &::-webkit-input-placeholder {
-              color: #aaa;
+              color: ${props => props.theme.fontColor};
             }
           
             }
@@ -200,30 +203,8 @@ span:nth-child(3) .slide-up:active {
       padding: 8px 11px;
       font-size: 14px;
     }
-  }
-  span:nth-child(1) .slide-up {
-    text-indent: 105px;
-  }
-  span:nth-child(3) .slide-up {
-    text-indent: 125px;
-  }
-  span:nth-child(1) .slide-up:focus,
-  span:nth-child(1) .slide-up:active,
-  span:nth-child(3) .slide-up:focus,
-  span:nth-child(3) .slide-up:active {
-    text-indent: 0;
-  }
-  .slide-up:focus,
-  .slide-up:active {
-    color: #377D6A;
-    text-indent: 0;
-    background: #fff;
-    
-    &::-webkit-input-placeholder {
-      color: #aaa;
-    }
-    
-  }
+  }  
+  
 }
 }`;
 
