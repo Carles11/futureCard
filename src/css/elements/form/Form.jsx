@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Form = styled.form`
-position: fixed;
+position: absolute;
 opacity: 0.9;
 z-index: 500;
 

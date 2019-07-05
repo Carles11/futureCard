@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import ContactMap from '@src/components/ContactMap';
 import ContactForm from '@src/components/ContactForm';
-
+import Footer from '@src/components/Footer';
 
 import {
   Section, Header, H1, H2,
@@ -32,6 +32,7 @@ const Contact = ({ DIC }) => (
     </Header>
     <ContactForm />
     <ContactMap />
+    <Footer />
   </Section>
 );
 
