@@ -16,7 +16,11 @@ const futureCardIcon = L.icon({
   iconSize: [75, 75],
   popupAnchor: [0, -15],
 });
-
+// GPS REFERENCE COORDINATES:
+// MADRID:                          40°25′    N, 03°42′      E
+// PARIS:                           48°51′    N, 02°21′      O
+// JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E
+// DUBAI:                           25°15′47″ N, 55°17′50″   E
 export default class ContactMap extends React.Component {
   componentDidMount() {
     this.map = L.map('map', {
@@ -32,7 +36,6 @@ export default class ContactMap extends React.Component {
       maxZoom: 20,
       maxNativeZoom: 17,
     }).addTo(this.map.once('focus', () => { this.map.scrollWheelZoom.enable(); }));
-
 
     L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br>${ADDRESSES[3].location}<br>${ADDRESSES[3].phone}`);
