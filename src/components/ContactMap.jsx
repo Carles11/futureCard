@@ -26,11 +26,14 @@ export default class ContactMap extends React.Component {
       zoomControl: false,
       minZoom: 4,
       maxZoom: 4,
+      scrollWheelZoom: false,
     });
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       maxZoom: 20,
       maxNativeZoom: 17,
-    }).addTo(this.map);
+    }).addTo(this.map.once('focus', () => { this.map.scrollWheelZoom.enable(); }));
+
+
     L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }).addTo(this.map)
       .bindPopup(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br>${ADDRESSES[3].location}<br>${ADDRESSES[3].phone}`);
 

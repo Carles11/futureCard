@@ -26,7 +26,7 @@ const Contact = ({ DIC }) => (
         { property: 'og:title', content: 'Contact page of FutureCard Industries' },
       ]}
     />
-    <Header positionChange>
+    <Header>
       <H1 sansSerif upperCase>{DIC.CONTACT_TITLE}</H1>
       <H2 invertColor>{DIC.CONTACT_SUBTITLE}</H2>
     </Header>

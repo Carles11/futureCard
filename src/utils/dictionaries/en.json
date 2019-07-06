@@ -1,8 +1,13 @@
 {
   "ABOUT_US": "About us",
   "APP_DESCRIPTION": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
+  "BUTTON_SEND": "SEND",
   "COMPANY_INFO": "Company Info",
   "COMPANY_OFFICES": "Company Offices",
+  "CONTACT_LABEL_NAME": "Name",
+  "CONTACT_LABEL_EMAIL": "Email",
+  "CONTACT_LABEL_TELEPHONE": "Telephone (optional)",
+  "CONTACT_LABEL_MESSAGE": "Message",
   "LANDING_TITLE": "17 years manufacturing cards",
   "LANDING_SUBTITLE": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
   "LEARN_MORE": "Learn more",
