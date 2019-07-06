@@ -18,6 +18,12 @@ const Header = styled.header`
       padding: 2.5rem;
     }
   `}
+  ${props => props.onContactMap
+    && css`
+    position: relative;
+    opacity: 0.9;
+
+  `}
 `;
 
 export default Header;

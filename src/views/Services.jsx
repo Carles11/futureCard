@@ -17,7 +17,7 @@ const Services = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1>{DIC.SERVICES_TITLE}</H1>
+      <H1 sansSerif upperCase>{DIC.SERVICES_TITLE}</H1>
       <H2>{DIC.SERVICES_SUBTITLE}</H2>
     </Header>
   </Section>

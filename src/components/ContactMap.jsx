@@ -9,7 +9,7 @@ import Logo from '@src/assets/image/logo.png';
 const Wrapper = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
-  position: sticky important!;
+  position: sticky !important;
 `;
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
