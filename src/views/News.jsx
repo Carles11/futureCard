@@ -17,7 +17,7 @@ const News = ({ DIC }) => (
       ]}
     />
     <Header>
-      <H1>{DIC.NEWS_TITLE}</H1>
+      <H1 sansSerif upperCase>{DIC.NEWS_TITLE}</H1>
       <H2>{DIC.NEWS_SUBTITLE}</H2>
     </Header>
   </Section>

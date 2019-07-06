@@ -7,8 +7,6 @@ position: absolute;
 opacity: 0.9;
 z-index: 500;
 
-@import "compass/css3";
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
 
 .row {
