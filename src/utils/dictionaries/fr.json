@@ -1,8 +1,13 @@
 {
   "ABOUT_US": "À propos de nous",
   "APP_DESCRIPTION": "Depuis sa création en 2003, futurecard conçoit, fabrique et personnalise des cartes destinées aux banques, gouvernements, opérateurs et détaillants du monde entier.",
+  "BUTTON_SEND": "ENVOYER",
   "COMPANY_INFO": "Informations sur l'entreprise",
   "COMPANY_OFFICES": "Bureaux de la société",
+  "CONTACT_LABEL_NAME": "Nom",
+  "CONTACT_LABEL_EMAIL": "E-mail",
+  "CONTACT_LABEL_TELEPHONE": "Téléphone (facultative)",
+  "CONTACT_LABEL_MESSAGE": "Message",
   "LANDING_TITLE": "17 ans dans la fabrication de cartes",
   "LANDING_SUBTITLE": "Depuis sa création en 2003, futurecard conçoit, fabrique et personnalise des cartes destinées aux banques, gouvernements, opérateurs et détaillants du monde entier.",
   "LEARN_MORE": "En savoir plus",
