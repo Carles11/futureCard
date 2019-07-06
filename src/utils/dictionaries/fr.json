@@ -17,8 +17,14 @@
   "NAV_LABEL_PRODUCTS": "Produits",
   "NAV_LABEL_SERVICES": "Prestations de services",
   "NAV_LABEL_CONTACT": "Contact",
+  "NEWS_DESCRIPTION": "Actualités FutureCard",
+  "NEWS_SUBTITLE": "Dernières nouvelles de FutureCard",
+  "NEWS_TITLE": "Actualités",
   "PRODUCT_DESCRIPTION": "Produits FutureCard",
   "PRODUCT_TITLE": "Produits",
   "PRODUCT_SUBTITLE": "Découvrez ici nos produits de dernière génération",
+  "SERVICES_DESCRIPTION": "Services de FutureCard",
+  "SERVICES_SUBTITLE": "Consultez ici les services offerts par FutureCard",
+  "SERVICES_TITLE": "Services",
   "WELLCOME_TITLE": "Bienvenue à FutureCard"
 }
