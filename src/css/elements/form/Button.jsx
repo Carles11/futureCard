@@ -9,7 +9,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   position: relative;
-  color: ${props => props.theme.fontColor};
+  color: ${props => props.theme.fontWhite};
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   text-shadow: 1px 1px 1px rgba(0,0,0,.4);

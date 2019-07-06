@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import {
   Section, H1, H2, Header,
 } from '@src/css/elements';
+import Footer from '@src/components/Footer';
 
 const Products = ({ DIC }) => (
   <Section>
@@ -20,6 +21,7 @@ const Products = ({ DIC }) => (
       <H1 sansSerif upperCase>{DIC.PRODUCT_TITLE}</H1>
       <H2>{DIC.PRODUCT_SUBTITLE}</H2>
     </Header>
+    <Footer />
   </Section>
 );
 

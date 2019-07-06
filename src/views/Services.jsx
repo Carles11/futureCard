@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {
   Section, Header, H1, H2,
 } from '@src/css/elements';
+import Footer from '@src/components/Footer';
 
 const Services = ({ DIC }) => (
   <Section>
@@ -20,6 +21,7 @@ const Services = ({ DIC }) => (
       <H1 sansSerif upperCase>{DIC.SERVICES_TITLE}</H1>
       <H2>{DIC.SERVICES_SUBTITLE}</H2>
     </Header>
+    <Footer />
   </Section>
 );
 
