@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-
 import {
   Section, H1, H2, Header,
 } from '@src/css/elements';
