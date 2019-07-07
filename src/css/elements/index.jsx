@@ -3,6 +3,7 @@ import AExternal from './AExternal';
 import Address from './Address';
 import Article from './Article';
 import BackgroundImage from './BackgroundImage';
+import Button from './Button';
 import Figure from './Figure';
 import Footer from './Footer';
 import Grid from './Grid';
@@ -20,6 +21,7 @@ export {
   Address,
   Article,
   BackgroundImage,
+  Button,
   Figure,
   Footer,
   Grid,

@@ -51,7 +51,7 @@ const LandingAbout = ({ DIC }) => (
         const TITLE = `NAV_LABEL_${section.title}`;
         const CONTENT = `ABOUT_US_${section.title}`;
         return (
-          <Box.Item key={section.id} withScale>
+          <Box.Item key={section.id} withBackground>
             <Grid
               withIcon
               withPadding="2rem 2rem 1rem"

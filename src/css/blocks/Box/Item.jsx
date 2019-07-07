@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 
 const Item = styled.div`
   flex: 1;
-  border: 1px solid #f1f1f1;
   margin: 0 1rem;
 
   &:first-of-type {
@@ -15,6 +14,12 @@ const Item = styled.div`
     margin-right: 0;
   }
 
+  ${props => props.withBackground
+    && css`
+      background: #fafafa;
+      border: 1px solid #fafafa;
+    `}
+
   ${props => props.withScale
     && css`
       transform: scale(1);
@@ -24,6 +29,7 @@ const Item = styled.div`
       &:hover {
         box-shadow: 0px 0px 25px 0px rgba(224, 224, 224, 1);
         transform: scale(1.1);
+        z-index: 1;
       }
     `}
 

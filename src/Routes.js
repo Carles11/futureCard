@@ -7,7 +7,7 @@ const Landing = lazy(() => import('./views/Landing'));
 const Products = lazy(() => import('./views/Products'));
 
 const Routes = () => (
-  <Suspense fallback={<Loader />}>
+  <Suspense fallback={<Loader loader />}>
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route path="/products" component={Products} />

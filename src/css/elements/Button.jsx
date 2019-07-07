@@ -1,8 +1,6 @@
 // @flow
 
-import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import withTheme from '@src/css/Theme';
 
@@ -47,64 +45,9 @@ const buttonDefault = css`
     `}
 `;
 
-const A = styled(
-  ({
-    children,
-    dispatch,
-    forwardedComponent,
-    forwardedRef,
-    history,
-    location,
-    match,
-    invert,
-    staticContext,
-    theme,
-    ...rest
-  }) => <Link children={children} {...rest} />,
-)`
-  ${props => props.role === 'button'
-    && css`
-      ${buttonDefault}
-
-      ${props.invert
-        && css`
-          color: ${props.theme.mainColor};
-          border: 2px solid ${props.theme.primary};
-          background: ${props.theme.primary};
-
-          &:hover {
-            color: ${props.theme.primary};
-            background: transparent;
-            border: 2px solid ${props.theme.primary} !important;
-          }
-        `}
-    `}
-
-  ${props => props.role === 'link'
-    && css`
-      color: ${props.theme.mainColor};
-      text-decoration: none;
-      font-size: 1rem;
-      padding-bottom: 0.5rem;
-
-      &:hover {
-        color: ${props.theme.mainColor};
-        text-decoration: none;
-      }
-    `}
-
-  ${props => props.role === 'icon'
-    && `
-      color: white;
-      font-size: 1rem;
-      text-decoration: none;
-      cursor: pointer;
-
-      &:hover {
-        color: ${props.theme.mainColor};
-        text-decoration: none;
-      }
-  `}
+const Button = styled.button`
+  ${buttonDefault}
+  
 
   ${props => props.state === 'disabled'
     && css`
@@ -128,6 +71,6 @@ const Icon = styled.i`
   margin-right: 0.5rem;
 `;
 
-A.Icon = Icon;
+Button.Icon = Icon;
 
-export default withTheme(A);
+export default withTheme(Button);
