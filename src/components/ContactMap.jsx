@@ -9,7 +9,7 @@ import Logo from '@src/assets/image/logo.png';
 const Wrapper = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
-  position: sticky !important;
+  
 `;
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
@@ -51,6 +51,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <Wrapper width="100%" height="100%" id="map" />;
+    return <Wrapper width="100%" height="500px" id="map" />;
   }
 }

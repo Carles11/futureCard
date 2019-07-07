@@ -3,22 +3,14 @@ import styled from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Form = styled.form`
-position: absolute;
 opacity: 0.9;
 z-index: 500;
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
-
 .row {
-  min-width: 600px;
   margin: 0 auto;
-  padding: 60px 30px;
   background: ${props => props.theme.background};
   text-align: center;
-  margin-top: 400px;
   margin-left: 100px;
-  padding: 40px 30px;
-  background: whitesmoke;
   
   &:first-child {
   }

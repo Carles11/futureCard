@@ -6,6 +6,7 @@ import { FiArrowRightCircle } from 'react-icons/fi';
 
 import LandingAbout from '@src/components/LandingAbout';
 import LandingNews from '@src/components/LandingNews';
+import LandingMarkets from '@src/components/LandingMarkets';
 import Background from '@src/components/Background';
 import Footer from '@src/components/Footer';
 import Icon from '@src/components/Icon';
@@ -42,6 +43,7 @@ const Landing = ({ DIC }) => (
       </Header>
     </Background>
     <LandingAbout DIC={DIC} />
+    <LandingMarkets DIC={DIC} />
     <LandingNews DIC={DIC} />
     <Footer />
   </Section>

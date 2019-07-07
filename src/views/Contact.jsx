@@ -3,12 +3,13 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import HeaderSection from '@src/components/HeaderSection';
 import ContactMap from '@src/components/ContactMap';
 import ContactForm from '@src/components/ContactForm';
 import Footer from '@src/components/Footer';
 
 import {
-  Section, Header, H1, H2,
+  Section, Article,
 } from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
@@ -20,12 +21,11 @@ const Contact = ({ DIC }) => (
         { property: 'og:title', content: 'Contact page of FutureCard Industries' },
       ]}
     />
-    <Header onContactMap>
-      <H1 sansSerif upperCase>{DIC.CONTACT_TITLE}</H1>
-      <H2>{DIC.CONTACT_SUBTITLE}</H2>
-    </Header>
-    <ContactForm />
+    <HeaderSection title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
     <ContactMap />
+    <Article centered>
+      {/* <ContactForm /> */}
+    </Article>
     <Footer />
   </Section>
 );

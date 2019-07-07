@@ -3,8 +3,9 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import HeaderSection from '@src/components/HeaderSection';
 import {
-  Section, Header, H1, H2,
+  Section,
 } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 
@@ -17,10 +18,7 @@ const Services = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Header>
-      <H1 sansSerif upperCase>{DIC.SERVICES_TITLE}</H1>
-      <H2>{DIC.SERVICES_SUBTITLE}</H2>
-    </Header>
+    <HeaderSection title={DIC.SERVICES_TITLE} subtitle={DIC.SERVICES_SUBTITLE} />
     <Footer />
   </Section>
 );

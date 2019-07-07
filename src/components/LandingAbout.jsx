@@ -1,7 +1,7 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import HeaderSection from '@src/components/HeaderSection';
 
 import Icon from '@src/components/Icon';
 import {
@@ -16,12 +16,6 @@ import {
 } from '@src/css/elements';
 
 const SECTIONS = [
-  // {
-  //   id: 0,
-  //   title: 'MARKETS',
-  //   icon: <FiGlobe />,
-  //   link: null,
-  // },
   {
     id: 1,
     title: 'PRODUCTS',
@@ -38,13 +32,8 @@ const SECTIONS = [
 
 const LandingAbout = ({ DIC }) => (
   <Article centered>
-    <H3 secundaryColor withMargin="1rem 0 0.75rem">
-      {DIC.ABOUT_US}
-    </H3>
-    <H2 withMargin="0" centered small>
-      {DIC.ABOUT_US_DESCRIPTION}
-    </H2>
-    <Hr withSize="180px" withMargin="1.5rem 0 2rem" withAlign="center" />
+    <HeaderSection title={DIC.ABOUT_US} subtitle={DIC.ABOUT_US_DESCRIPTION} />
+
     <P withAlign="center">{DIC.ABOUT_US_CONTENT}</P>
     <Box>
       {SECTIONS.map((section) => {
