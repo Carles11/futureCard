@@ -11,7 +11,12 @@ import Grid from './Grid';
 import {
   H1, H2, H3, H4,
 } from './headers';
+import Hr from './Hr';
+
 import Header from './Header';
+import P from './P';
+import Section from './Section';
+
 export {
   A,
   AExternal,
@@ -32,8 +37,3 @@ export {
   P,
   Section,
 };
-=======
-
-// eslint-disable-next-line
-export { H1, H2, Header, Figure, BackgroundImage, Section, Form, Button };
->>>>>>> map and form working
