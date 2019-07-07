@@ -11,7 +11,9 @@ import news3 from '@src/assets/image/news_3.jpeg';
 import news4 from '@src/assets/image/news_4.jpeg';
 
 import Box from '@src/css/blocks/Box';
-import { A, Article, Button, Grid, H2, H3, H4, Hr, P } from '@src/css/elements';
+import {
+  A, Article, Button, Grid, H2, H3, H4, Hr, P,
+} from '@src/css/elements';
 
 const NEWS = [
   {
@@ -64,24 +66,24 @@ const LandingNews = ({ DIC }) => {
 
   return (
     <Article centered>
-      <H3 secundaryColor withMargin='1rem 0 0.75rem'>
+      <H3 secundaryColor withMargin="1rem 0 0.75rem">
         {DIC.NAV_LABEL_NEWS}
       </H3>
-      <H2 withMargin='0' centered small>
+      <H2 withMargin="0" centered small>
         {DIC.NEWS_DESCRIPTION}
       </H2>
-      <Hr withSize='180px' withMargin='1.5rem 0 2rem' withAlign='center' />
-      <Grid middle withMargin='1rem 0 2rem'>
-        <Button role='button' withIcon onClick={fakeApiRequest}>
+      <Hr withSize="180px" withMargin="1.5rem 0 2rem" withAlign="center" />
+      <Grid middle withMargin="1rem 0 2rem">
+        <Button role="button" withIcon onClick={fakeApiRequest}>
           <FiArrowLeftCircle />
         </Button>
-        <P withMargin='0 1rem'>{`${count} of 36`}</P>
-        <Button role='button' withIcon onClick={fakeApiRequest}>
+        <P withMargin="0 1rem">{`${count} of 36`}</P>
+        <Button role="button" withIcon onClick={fakeApiRequest}>
           <FiArrowRightCircle />
         </Button>
       </Grid>
       {loading ? (
-        <Grid withMargin='17rem' middle vertical='center'>
+        <Grid withMargin="17rem" middle vertical="center">
           <Loader />
         </Grid>
       ) : (
@@ -95,20 +97,23 @@ const LandingNews = ({ DIC }) => {
                 highlight
                 tiny
                 bold
-                withMargin='1.5rem 0 0.2rem'
-                withAlign='center'>
-                Published at {item.date}
+                withMargin="1.5rem 0 0.2rem"
+                withAlign="center"
+              >
+                Published at
+                {' '}
+                {item.date}
               </P>
-              <H4 withMargin='0 0.5rem 0.5rem' centered>
+              <H4 withMargin="0 0.5rem 0.5rem" centered>
                 {item.title}
               </H4>
-              <Hr withSize='80px' withMargin='0 auto 1rem' withAlign='center' />
-              <P small withPadding='0 1rem 0.5rem' withAlign='center'>
+              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
+              <P small withPadding="0 1rem 0.5rem" withAlign="center">
                 {item.content}
               </P>
               {item.link && (
-                <Grid withMargin='0 0 1.5rem' vertical='center'>
-                  <A role='button' to={item.link}>
+                <Grid withMargin="0 0 1.5rem" vertical="center">
+                  <A role="button" to={item.link}>
                     {DIC.LEARN_MORE}
                     <Icon>
                       <FiArrowRightCircle />
