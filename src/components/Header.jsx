@@ -24,7 +24,7 @@ function headerReducer(state, action) {
         ...state,
         visibility: action.visibility,
       };
-    default:
+    defaul
       return {
         ...state,
       };
