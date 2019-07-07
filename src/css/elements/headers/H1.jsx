@@ -10,6 +10,12 @@ const H1 = styled.h1`
     && css`
       color: #ffffff;
     `}
+  
+  ${props => props.serif
+    && css`
+      font-family: 'Volkhov', serif;
+      font-weight: 100;
+    `}
     
   ${props => props.sansSerif
     && css`

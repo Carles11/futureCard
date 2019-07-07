@@ -7,6 +7,7 @@ import withTheme from '@src/css/Theme';
 const P = styled.p`
   color: ${props => props.theme.fontColor};
   font-size: calc(16px + (17 - 15) * ((100vw - 600px) / (1600 - 900)));
+  line-height: 1.75;
 
   ${props => !!props.bold
     && css`
@@ -23,9 +24,9 @@ const P = styled.p`
       color: ${props.theme.mainColor};
     `}
 
-  ${props => !!props.align
+  ${props => !!props.withAlign
     && css`
-      text-align: ${props.align};
+      text-align: ${props.withAlign};
     `}
   
   ${props => !!props.noMargin
@@ -37,6 +38,12 @@ const P = styled.p`
     && css`
       margin: ${props.withMargin};
     `}
+
+  ${props => !!props.withPadding
+    && css`
+      padding: ${props.withPadding};
+    `}
+
   ${props => props.small
     && css`
       font-size: 0.9rem;

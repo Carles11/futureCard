@@ -40,18 +40,26 @@ const Grid = styled.div`
       flex-direction: column;
     `};
 
-    ${props => props.queryColumn
-      && css`
-        @media only screen and (max-width: 649px) {
-          flex-direction: column;
-          width: 100%;
-        }fontColorDarker
-      `};
+  ${props => props.queryColumn
+    && css`
+      @media only screen and (max-width: 649px) {
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 2.5rem;
+      }
+    `};
 
   ${props => props.maxWidth
     && css`
       width: 100%;
     `};
+
+
+  ${props => props.withIcon
+    && css`
+      font-size: 4rem;
+      color: ${props.theme.mainColor};
+    `}
 
   ${props => props.withPadding
     && css`

@@ -93,6 +93,19 @@ const A = styled(
       }
     `}
 
+  ${props => props.role === 'icon'
+    && `
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: ${props.theme.mainColor};
+        text-decoration: none;
+      }
+  `}
+
   ${props => props.state === 'disabled'
     && css`
       opacity: 0.5;

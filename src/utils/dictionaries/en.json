@@ -1,5 +1,10 @@
 {
   "ABOUT_US": "About us",
+  "ABOUT_US_DESCRIPTION": "We aspire to exceed the expectations of our customers by demonstrating the highest standards of integrity, professionalism, and dedication to performance excellence.​​",
+  "ABOUT_US_MARKETS": "Since its inception in 2002, futurecard serves a large customer base in all six continents. Our clients' industries are finance, government, transport, telecom, insurance, healthcare, education, retail, and many more.",
+  "ABOUT_US_PRODUCTS": "As an end-to-end card manufacturer, mixing technology with security printing craftsmanship, futurecard covers the complete value chain of design and manufacturing of secure cards on all kind of substrates: PC, PET-F, PET-G, PVC, ABS, PS, Paper board, etc, allowing to cater for all markets' needs for secure aesthetic cards and smartcards.",
+  "ABOUT_US_SERVICES": "futurecard completes its offering with complementary cards services and solutions, positionning itself as a one-stop-shop for all cards needs. Businesses and services providers trust futurecard with the delicate mission of outsourcing their cards' operations from concept to delivery.",
+  "ABOUT_US_CONTENT": "FutureCard is a global supplier of innovative cards, smartcards, as well as card-fulfillment services and solutions, serving a demanding market in constant surge. Government agencies, financial institutions, telecom operators, corporates and other businesses throughout the world entrust us with the delicate mission of producing secure cards, which carry their brands, identify their clients, and authenticate their transactions.",
   "APP_DESCRIPTION": "Since its inception in 2003, futurecard is designing, manufacturing and personalizing cards to banks, goverments, operators and retailers around the world.",
   "COMPANY_INFO": "Company Info",
   "COMPANY_OFFICES": "Company Offices",
@@ -8,9 +13,11 @@
   "LEARN_MORE": "Learn more",
   "NAV_LABEL_HOME": "Home",
   "NAV_LABEL_LANGUAGE": "Language",
+  "NAV_LABEL_MARKETS": "Markets",
   "NAV_LABEL_NEWS": "News",
   "NAV_LABEL_PRODUCTS": "Products",
   "NAV_LABEL_SERVICES": "Services",
   "NAV_LABEL_CONTACT": "Contact",
+  "NEWS_DESCRIPTION": "Access to the latest news of futureCard.",
   "PRODUCT_DESCRIPTION": "FutureCard products"
 }

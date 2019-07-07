@@ -1,4 +1,5 @@
 import A from './A';
+import AExternal from './AExternal';
 import Address from './Address';
 import Article from './Article';
 import BackgroundImage from './BackgroundImage';
@@ -15,6 +16,7 @@ import Section from './Section';
 
 export {
   A,
+  AExternal,
   Address,
   Article,
   BackgroundImage,

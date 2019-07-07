@@ -23,7 +23,7 @@ const Link = styled(
   text-transform: uppercase;
   text-decoration: none;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   transition: color 0.3s ease-in-out;
 
   &:hover {

@@ -1,12 +1,27 @@
 import React, { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {
+  FiInstagram, FiMail, FiFacebook, FiLinkedin,
+} from 'react-icons/fi';
 
 import { ADDRESSES, LANGUAGE, NAVIGATION } from '@src/utils/constants';
 import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
+import Icon from '@src/components/Icon';
 
 import Layout from '@src/css/blocks/Layout';
-import { Address, Footer, Grid, H3, H4, Hr, P } from '@src/css/elements';
+import {
+  AExternal,
+  Address,
+  Footer,
+  Grid,
+  H3,
+  H4,
+  Hr,
+  P,
+} from '@src/css/elements';
+
+const YEAR = new Date().getFullYear();
 
 function footerReducer(state, action) {
   switch (action.type) {
@@ -38,34 +53,39 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
   return (
     <Footer>
       <Grid column>
-        <Grid withPadding='2rem 5%' queryColumn>
+        <Grid withPadding="2rem 5%" queryColumn>
           <Grid column flex={1}>
             <Grid column>
-              <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
+              <H3
+                sansSerif
+                invertColor
+                withSize="22px"
+                withMargin="1rem 0 0.2rem"
+              >
                 {DIC.COMPANY_OFFICES}
               </H3>
-              <Hr withSize='100px' />
+              <Hr withSize="100px" />
             </Grid>
-            <Grid withMargin='1rem 0' wrapping>
+            <Grid withMargin="1rem 0" wrapping>
               {ADDRESSES.map(item => (
                 <Address key={item.id} wrapping>
-                  <H4 invertColor withSize='18px' withMargin='1rem 0 0'>
+                  <H4 invertColor withSize="18px" withMargin="1rem 0 0">
                     {item.title}
                   </H4>
-                  <P bold small highlight withMargin='0.15rem 0 0.75rem'>
+                  <P bold small highlight withMargin="0.15rem 0 0.75rem">
                     {item.subtitle}
                   </P>
-                  <P invertColor tiny withMargin='0.25rem 0 0.1rem'>
+                  <P invertColor tiny withMargin="0.25rem 0 0.1rem">
                     {item.address}
                   </P>
-                  <P invertColor tiny bold withMargin='0 0 0.1rem'>
+                  <P invertColor tiny bold withMargin="0 0 0.1rem">
                     {item.location}
                   </P>
-                  <P invertColor tiny withMargin='0 0 0.1rem'>
+                  <P invertColor tiny withMargin="0 0 0.1rem">
                     {item.phone}
                   </P>
                   {!!item.fax && (
-                    <P invertColor tiny withMargin='0 0 0.2rem'>
+                    <P invertColor tiny withMargin="0 0 0.2rem">
                       {item.fax}
                     </P>
                   )}
@@ -73,16 +93,21 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
               ))}
             </Grid>
           </Grid>
-          <Grid column withMargin='0 3rem 0 0'>
+          <Grid column withMargin="0 3rem 0 0">
             <Grid column>
-              <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
+              <H3
+                sansSerif
+                invertColor
+                withSize="22px"
+                withMargin="1rem 0 0.2rem"
+              >
                 {DIC.COMPANY_INFO}
               </H3>
-              <Hr withSize='100px' />
+              <Hr withSize="100px" />
             </Grid>
-            <Grid withMargin='1rem 0' wrapping>
+            <Grid withMargin="1rem 0" wrapping>
               <Layout.Footer>
-                {state.navigation.map(item => {
+                {state.navigation.map((item) => {
                   const LABEL = `NAV_LABEL_${item.label}`;
 
                   return (
@@ -94,23 +119,29 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
               </Layout.Footer>
             </Grid>
           </Grid>
-          <Grid column withMargin='0'>
+          <Grid column withMargin="0">
             <Grid column>
-              <H3 invertColor withSize='24px' withMargin='1rem 0 0'>
+              <H3
+                sansSerif
+                invertColor
+                withSize="22px"
+                withMargin="1rem 0 0.2rem"
+              >
                 {DIC.NAV_LABEL_LANGUAGE}
               </H3>
-              <Hr withSize='100px' />
+              <Hr withSize="100px" />
             </Grid>
-            <Grid withMargin='1rem 0' wrapping>
+            <Grid withMargin="1rem 0" wrapping>
               <Layout.Footer>
-                {LANGUAGE.map(item => {
+                {LANGUAGE.map((item) => {
                   const active = item.value === state.language;
 
                   return (
                     <Layout.Footer.Item
                       active={active}
                       key={item.id}
-                      onClick={() => handleLanguage(item.value)}>
+                      onClick={() => handleLanguage(item.value)}
+                    >
                       {item.label}
                     </Layout.Footer.Item>
                   );
@@ -119,8 +150,42 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid darker withMargin='0' withPadding='2rem 5%'>
-          footer
+        <Grid darker withMargin="0" withPadding="1rem 5%">
+          <Grid flex={1}>
+            <P invertColor small>
+              {YEAR}
+              {' '}
+&copy; Futurecard industries LLC
+            </P>
+          </Grid>
+          <Grid middle>
+            <AExternal
+              href="https://www.linkedin.com/company/future-card/"
+              target="_blank"
+            >
+              <Icon>
+                <FiLinkedin />
+              </Icon>
+            </AExternal>
+            <AExternal href="https://www.facebook.com/FutureCardindustries/">
+              <Icon>
+                <FiFacebook />
+              </Icon>
+            </AExternal>
+            <AExternal
+              href="https://www.instagram.com/futurecardindustries/"
+              target="_blank"
+            >
+              <Icon>
+                <FiInstagram />
+              </Icon>
+            </AExternal>
+            <AExternal href="mailto:info@futurecard.com">
+              <Icon>
+                <FiMail />
+              </Icon>
+            </AExternal>
+          </Grid>
         </Grid>
       </Grid>
     </Footer>

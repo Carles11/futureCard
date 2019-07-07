@@ -4,13 +4,15 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { FiArrowRightCircle } from 'react-icons/fi';
 
+import LandingAbout from '@src/components/LandingAbout';
+import LandingNews from '@src/components/LandingNews';
 import Background from '@src/components/Background';
 import Footer from '@src/components/Footer';
 import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 
 import {
-  A, Article, H1, H2, Hr, Header, Section,
+  A, H1, H2, Hr, Header, Section,
 } from '@src/css/elements';
 
 const Landing = ({ DIC }) => (
@@ -28,7 +30,7 @@ const Landing = ({ DIC }) => (
           {DIC.LANDING_TITLE}
         </H1>
         <Hr withSize="50%" withMargin="0 0 2rem" />
-        <H2 invertColor tiny withMargin="1rem 0 2.5rem">
+        <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
           {DIC.LANDING_SUBTITLE}
         </H2>
         <A role="button" to="/about-us">
@@ -39,17 +41,14 @@ const Landing = ({ DIC }) => (
         </A>
       </Header>
     </Background>
-    <Article>
-      <H2 withMargin="0">{DIC.ABOUT_US}</H2>
-      <Hr withSize="100px" withMargin="0 0 2rem" />
-    </Article>
+    <LandingAbout DIC={DIC} />
+    <LandingNews DIC={DIC} />
     <Footer />
   </Section>
 );
 
 Landing.propTypes = {
   DIC: PropTypes.shape({
-    ABOUT_US: PropTypes.string.isRequired,
     APP_DESCRIPTION: PropTypes.string.isRequired,
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,

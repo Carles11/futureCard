@@ -11,6 +11,16 @@ const H3 = styled.h3`
       color: #ffffff;
     `}
 
+  ${props => props.secundaryColor
+    && css`
+      color: ${props.theme.mainColor};
+    `}
+
+  ${props => props.sansSerif
+    && css`
+      font-family: 'Raleway', sans-serif;
+    `}
+
   ${props => props.serif
     && css`
       font-family: 'Volkhov', serif;

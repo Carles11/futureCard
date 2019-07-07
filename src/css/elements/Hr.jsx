@@ -5,7 +5,7 @@ import withTheme from '@src/css/Theme';
 const Hr = styled.hr`
   background: ${props => props.theme.mainColor};
   width: 100%;
-  height: 6px;
+  height: 3px;
   border: none;
   margin-left: 0;
   text-align: left;
@@ -18,6 +18,11 @@ const Hr = styled.hr`
   ${props => props.withMargin
     && css`
       margin: ${props.withMargin};
+    `}
+
+  ${props => props.withAlign
+    && css`
+      text-align: ${props.withAlign};
     `}
 `;
 
