@@ -54,7 +54,7 @@ const LandingNews = ({ DIC }) => {
     if (loading) {
       setTimeout(() => {
         setLoading(!loading);
-      }, 1000);
+      }, 650);
     }
   }, [loading]);
 
@@ -94,7 +94,7 @@ const LandingNews = ({ DIC }) => {
                 withMargin="1.5rem 0 0.2rem"
                 withAlign="center"
               >
-                <h4>{DIC.NEWS_PUBLISHED_THE}</h4>
+                {DIC.NEWS_PUBLISHED_THE}
                 {' '}
                 {item.date}
               </P>
