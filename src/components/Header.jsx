@@ -48,7 +48,7 @@ const Header = ({ LANG: language, DIC }) => {
         <Layout.Header.Overlay visible={state.visibility} />
         <Layout.Header.Logo>
           {/* <Link to="/"> */}
-            <Layout.Header.Logo.Image src={logo} alt="Futurecard logo" />
+          <Layout.Header.Logo.Image src={logo} alt="Futurecard logo" />
           {/* </Link> */}
         </Layout.Header.Logo>
         <Layout.Header.Navigation visible={state.visibility}>
