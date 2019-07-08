@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -83,44 +81,44 @@ const LandingNews = ({ DIC }) => {
           <Loader />
         </Grid>
       ) : (
-          <Box>
-            {NEWS.map(item => (
-              <Box.Item key={item.id} withScale withBackground>
-                <Box.Figure>
-                  <Box.Figure.Image src={item.img} alt={item.title} />
-                </Box.Figure>
-                <P
-                  highlight
-                  tiny
-                  bold
-                  withMargin="1.5rem 0 0.2rem"
-                  withAlign="center"
-                >
-                  <h4>{DIC.NEWS_PUBLISHED_THE}</h4>
-                  {' '}
-                  {item.date}
-                </P>
-                <H4 withMargin="0 0.5rem 0.5rem" centered>
-                  {item.title}
-                </H4>
-                <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-                <P small withPadding="0 1rem 0.5rem" withAlign="center">
-                  {item.content}
-                </P>
-                {item.link && (
-                  <Grid withMargin="0 0 1.5rem" vertical="center">
-                    <A role="button" to={item.link}>
-                      {DIC.LEARN_MORE}
-                      <Icon>
-                        <FiArrowRightCircle />
-                      </Icon>
-                    </A>
-                  </Grid>
-                )}
-              </Box.Item>
-            ))}
-          </Box>
-        )}
+        <Box>
+          {NEWS.map(item => (
+            <Box.Item key={item.id} withScale withBackground>
+              <Box.Figure>
+                <Box.Figure.Image src={item.img} alt={item.title} />
+              </Box.Figure>
+              <P
+                highlight
+                tiny
+                bold
+                withMargin="1.5rem 0 0.2rem"
+                withAlign="center"
+              >
+                <h4>{DIC.NEWS_PUBLISHED_THE}</h4>
+                {' '}
+                {item.date}
+              </P>
+              <H4 withMargin="0 0.5rem 0.5rem" centered>
+                {item.title}
+              </H4>
+              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
+              <P small withPadding="0 1rem 0.5rem" withAlign="center">
+                {item.content}
+              </P>
+              {item.link && (
+              <Grid withMargin="0 0 1.5rem" vertical="center">
+                <A role="button" to={item.link}>
+                  {DIC.LEARN_MORE}
+                  <Icon>
+                    <FiArrowRightCircle />
+                  </Icon>
+                </A>
+              </Grid>
+              )}
+            </Box.Item>
+          ))}
+        </Box>
+      )}
     </Article>
   );
 };
