@@ -12,7 +12,7 @@ import {
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H2, H3, H4, Hr, P,
+  A, Article, Grid, H4, Hr, P,
 } from '@src/css/elements';
 
 const SECTIONS = [

@@ -19,7 +19,7 @@ const Navigation = styled.nav`
     height: 100vh;
 
     ${props => props.visible
-      && css`
+    && css`
         display: flex;
       `}
   }

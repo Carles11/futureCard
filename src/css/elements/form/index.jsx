@@ -1,5 +1,5 @@
 import Form from './Form';
-import Button from './Button';
+import Button from '../Button';
 
 
 export {
