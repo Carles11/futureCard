@@ -7,7 +7,7 @@
   "author": "Xavier Vila <xavi.vila.albiol@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn dev:build",
+    "start": "yarn prod:start",
     "dev:build": "yarn webpack-dev-server --env.mode development --hot",
     "prod:build": "rimraf dist && yarn webpack --env.mode production",
     "prod:start": "cross-env NODE_ENV=production pm2 start server.js && pm2 logs",
