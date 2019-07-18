@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
@@ -6,7 +10,9 @@ import PropTypes from 'prop-types';
 import { Form, Button } from '@src/css/elements';
 import { connect } from 'react-redux';
 
-const ContactForm = ({ DIC }) => (
+// add handleSubmit && handleChange
+
+const ContactForm = ({ DIC, handleSendMail }) => (
   <Form action="">
     <div className="row">
       <span>
@@ -40,13 +46,17 @@ ContactForm.propTypes = {
     CONTACT_LABEL_MESSAGE: PropTypes.string.isRequired,
     BUTTON_SEND: PropTypes.string.isRequired,
   }).isRequired,
+  handleSetMail: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
   DIC: dictionary.data,
 });
+const mapDispatchToProps = dispatch => ({
+  handleSendMail: body => dispatch(sendMail(body)),
+});
 
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(ContactForm);

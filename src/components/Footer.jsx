@@ -213,6 +213,7 @@ const mapStateToProps = ({ dictionary }) => ({
 
 const mapDispatchToProps = dispatch => ({
   handleSetDictionary: lang => dispatch(setDictionary(lang)),
+
 });
 
 export default connect(

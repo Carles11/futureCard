@@ -1,15 +1,14 @@
+/* eslint-disable import/no-duplicates */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
 import MarketsMap from '@src/assets/image/MarketsMap.jpeg';
 
-import {
-  FaUniversity,
-  FaMoneyBillAlt,
-  FaMobileAlt,
-  FaUsers,
-} from 'react-icons/fa';
+import { FaUniversity } from 'react-icons/fa';
+import { FaMoneyBillAlt } from 'react-icons/fa';
+import { FaMobileAlt } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
 import {
   Article, Grid, H4, Hr, Image, P,
 } from '@src/css/elements';
