@@ -1,7 +1,7 @@
-// @flow
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
+import HeaderSection from '@src/components/HeaderSection';
 
 import Loader from '@src/components/Loader';
 import Icon from '@src/components/Icon';
@@ -12,7 +12,7 @@ import news4 from '@src/assets/image/news_4.jpeg';
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Button, Grid, H2, H3, H4, Hr, P,
+  A, Article, Button, Grid, H4, Hr, P,
 } from '@src/css/elements';
 
 const NEWS = [
@@ -54,7 +54,7 @@ const LandingNews = ({ DIC }) => {
     if (loading) {
       setTimeout(() => {
         setLoading(!loading);
-      }, 1000);
+      }, 650);
     }
   }, [loading]);
 
@@ -66,19 +66,13 @@ const LandingNews = ({ DIC }) => {
 
   return (
     <Article centered>
-      <H3 secundaryColor withMargin="1rem 0 0.75rem">
-        {DIC.NAV_LABEL_NEWS}
-      </H3>
-      <H2 withMargin="0" centered small>
-        {DIC.NEWS_DESCRIPTION}
-      </H2>
-      <Hr withSize="180px" withMargin="1.5rem 0 2rem" withAlign="center" />
+      <HeaderSection title={DIC.NAV_LABEL_NEWS} subtitle={DIC.NEWS_DESCRIPTION} />
       <Grid middle withMargin="1rem 0 2rem">
-        <Button role="button" withIcon onClick={fakeApiRequest}>
+        <Button withIcon onClick={fakeApiRequest}>
           <FiArrowLeftCircle />
         </Button>
         <P withMargin="0 1rem">{`${count} of 36`}</P>
-        <Button role="button" withIcon onClick={fakeApiRequest}>
+        <Button withIcon onClick={fakeApiRequest}>
           <FiArrowRightCircle />
         </Button>
       </Grid>
@@ -100,7 +94,7 @@ const LandingNews = ({ DIC }) => {
                 withMargin="1.5rem 0 0.2rem"
                 withAlign="center"
               >
-                Published at
+                {DIC.NEWS_PUBLISHED_THE}
                 {' '}
                 {item.date}
               </P>
@@ -112,14 +106,14 @@ const LandingNews = ({ DIC }) => {
                 {item.content}
               </P>
               {item.link && (
-                <Grid withMargin="0 0 1.5rem" vertical="center">
-                  <A role="button" to={item.link}>
-                    {DIC.LEARN_MORE}
-                    <Icon>
-                      <FiArrowRightCircle />
-                    </Icon>
-                  </A>
-                </Grid>
+              <Grid withMargin="0 0 1.5rem" vertical="center">
+                <A role="button" to={item.link}>
+                  {DIC.LEARN_MORE}
+                  <Icon>
+                    <FiArrowRightCircle />
+                  </Icon>
+                </A>
+              </Grid>
               )}
             </Box.Item>
           ))}
@@ -133,6 +127,8 @@ LandingNews.propTypes = {
   DIC: PropTypes.shape({
     LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
+    NEWS_DESCRIPTION: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
   }).isRequired,
 };
 

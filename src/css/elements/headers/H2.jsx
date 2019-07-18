@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const H2 = styled.h2`
-  color: ${props => props.theme.mainColor};
+  color: ${props => props.theme.fontColor};
   font-size: calc(35px + (40 - 30) * ((100vw - 600px) / (1600 - 900)));
   font-weight: lighter;
   line-height: 1.4;

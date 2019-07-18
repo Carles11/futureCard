@@ -18,12 +18,28 @@ const Header = styled.header`
       padding: 2.5rem;
     }
   `}
-  ${props => props.onContactMap
+  ${props => props.centered
     && css`
-    position: relative;
-    opacity: 0.9;
-
-  `}
+      @media only screen and (min-width: 649px) {
+        display: flex;
+        flex-direction: column;
+        max-width: 1440px;
+        margin: 0 auto;
+        align-items: center;
+        padding: 3rem 4rem 1.5rem;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+      @media only screen and (max-width: 649px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2.5rem;
+        box-sizing: border-box;
+        align-items: center;
+        z-index: 1;
+      }
+    `}
 `;
 
 export default Header;

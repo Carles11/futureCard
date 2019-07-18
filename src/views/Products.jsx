@@ -2,9 +2,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import HeaderSection from '@src/components/HeaderSection';
 
 import {
-  Section, H1, H2, Header,
+  Section,
 } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 
@@ -17,10 +18,7 @@ const Products = ({ DIC }) => (
         { property: 'og:title', content: 'welcome to futurecard.com' },
       ]}
     />
-    <Header>
-      <H1 sansSerif upperCase>{DIC.PRODUCT_TITLE}</H1>
-      <H2>{DIC.PRODUCT_SUBTITLE}</H2>
-    </Header>
+    <HeaderSection title={DIC.PRODUCT_TITLE} subtitle={DIC.PRODUCT_SUBTITLE} />
     <Footer />
   </Section>
 );

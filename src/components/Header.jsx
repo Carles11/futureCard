@@ -1,7 +1,7 @@
 import React, { Fragment, useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
 
@@ -47,9 +47,9 @@ const Header = ({ LANG: language, DIC }) => {
       <Layout.Header>
         <Layout.Header.Overlay visible={state.visibility} />
         <Layout.Header.Logo>
-          <Link to="/">
-            <Layout.Header.Logo.Image src={logo} alt="Futurecard logo" />
-          </Link>
+          {/* <Link to="/"> */}
+          <Layout.Header.Logo.Image src={logo} alt="Futurecard logo" />
+          {/* </Link> */}
         </Layout.Header.Logo>
         <Layout.Header.Navigation visible={state.visibility}>
           {state.navigation.map((item) => {
