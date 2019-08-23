@@ -155,7 +155,7 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
             <P invertColor small>
               {YEAR}
               {' '}
-&copy; Futurecard industries LLC
+              &copy; Futurecard Industries LLC
             </P>
           </Grid>
           <Grid middle>

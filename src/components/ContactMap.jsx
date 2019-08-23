@@ -2,23 +2,11 @@
 import React from 'react';
 import L from 'leaflet';
 // import 'leaflet/dist/leaflet.css';
-import styled from 'styled-components';
+
 import { ADDRESSES } from '@src/utils/constants';
 import Logo from '@src/assets/image/logo.png';
+import MapWrapper from '@src/css/blocks/Layout/MapWrapper';
 
-const Wrapper = styled.div`
-  width: ${props => props.width};
-  height: ${props => props.height};
-   
-  @media only screen and(max-width: 649px){
-    min-width: 649px;
-  }
-  @media only screen and(max-width: 813px{
-    min-width: 813px;
-    
-  })
-  
-`;
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
   iconSize: [75, 75],
@@ -29,7 +17,6 @@ const futureCardIcon = L.icon({
 // PARIS:                           48°51′    N, 02°21′      O
 // JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E
 // DUBAI:                           25°15′47″ N, 55°17′50″   E
-
 
 export default class ContactMap extends React.Component {
   componentDidMount() {
@@ -61,6 +48,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <Wrapper width="100%" height="70vh" id="map" />;
+    return <MapWrapper width="100%" height="70vh" id="map" />;
   }
 }

@@ -45,8 +45,10 @@ const buttonDefault = css`
 
 const Button = styled.button`
   ${buttonDefault}
-  
-
+  ${props => props.contact && css`
+    width: 30%;
+    align-self: center;
+  `}
   ${props => props.state === 'disabled'
     && css`
       opacity: 0.5;

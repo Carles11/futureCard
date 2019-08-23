@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
 import ContactMap from '@src/components/ContactMap';
-// import ContactForm from '@src/components/ContactForm';
+import ContactForm from '@src/components/ContactForm';
 import Footer from '@src/components/Footer';
 
 import {
-  Section,
+  Section, Article,
 } from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
@@ -23,9 +23,9 @@ const Contact = ({ DIC }) => (
     />
     <HeaderSection title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
     <ContactMap />
-    {/* <Article centered>
+    <Article centered>
       <ContactForm />
-    </Article> */}
+    </Article>
     <Footer />
   </Section>
 );
