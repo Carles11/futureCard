@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -30,7 +31,6 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
   };
 
   const handleEmail = (body) => {
-    console.log('body.Name=', body.name);
     handleSendEmail(body);
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
   };
@@ -41,7 +41,7 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     if (!emailBody.email) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
       alert('Please type a valid e-mail');
-      console.log('buttonText', emailBody.buttonText);
+      // console.log('buttonText', emailBody.buttonText);
 
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
@@ -49,7 +49,7 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
       return;
     }
     handleEmail(emailBody);
-    console.log('emailBody=', emailBody);
+    // console.log('emailBody=', emailBody);
   };
 
 
