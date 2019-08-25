@@ -26,25 +26,22 @@ const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
   useEffect(() => {
     if (!mailSuccess) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      alert('Please type a valid e-mail');
-      // console.log('buttonText', emailBody.buttonText);
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
       }, 2000);
     } else if (mailSuccess) {
-      console.log('emailBody in FormSubmit', emailBody);
       // eslint-disable-next-line no-use-before-define
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
+      setTimeout(() => {
+        setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
+      }, 2000);
     }
   }, [mailSuccess]);
 
-  console.log('mailSuccess', mailSuccess);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    // console.log("id", e.target.id, "value", e.target.value)
     setEmailBody({ ...emailBody, [id]: value });
-    // console.log("body message", emailBody.message);
   };
   const resetForm = () => {
     setEmailBody(initialFormState);
@@ -53,7 +50,6 @@ const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
   const handleEmail = (body) => {
     handleSendEmail(body);
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-    console.log('body in handleMail', body);
     resetForm();
   };
 

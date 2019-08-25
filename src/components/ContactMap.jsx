@@ -9,12 +9,6 @@ import MapWrapper from '@src/css/blocks/Layout/MapWrapper';
 // eslint-disable-next-line no-unused-vars
 import { P } from '@src/css/elements';
 
-const Wrapper = styled.div`
-  width: ${props => props.width};
-  height: ${props => props.height};
-  
-`;
-
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
   iconSize: [45, 45],
@@ -31,9 +25,9 @@ export default class ContactMap extends React.Component {
     this.map = L.map('map', {
       center: [40, 25], // [39, 45],
       detectRetina: true,
-      zoom: 2,
+      zoom: 3,
       zoomControl: false,
-      minZoom: 2,
+      minZoom: 3,
       scrollWheelZoom: false,
       riseOnHover: true,
       riseOffset: 100,
