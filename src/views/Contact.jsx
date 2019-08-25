@@ -8,7 +8,7 @@ import ContactMap from '@src/components/ContactMap';
 import Footer from '@src/components/Footer';
 
 import {
-  Section, Article,
+  Section,
 } from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
@@ -22,9 +22,9 @@ const Contact = ({ DIC }) => (
     />
     <HeaderSection title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
     <ContactMap />
-    <Article centered>
-      {/* <ContactForm /> */}
-    </Article>
+    {/* <Article centered>
+      <ContactForm />
+    </Article> */}
     <Footer />
   </Section>
 );

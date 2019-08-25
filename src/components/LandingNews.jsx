@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -56,7 +54,7 @@ const LandingNews = ({ DIC }) => {
     if (loading) {
       setTimeout(() => {
         setLoading(!loading);
-      }, 1000);
+      }, 650);
     }
   }, [loading]);
 
