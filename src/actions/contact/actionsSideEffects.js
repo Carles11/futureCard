@@ -7,14 +7,14 @@ import * as ACTION from './actions';
 export const sendEmail = emailBody => (dispatch) => {
   console.log('emailBody in sendEmailSideEffect', emailBody);
   try {
-    const fakeSENDEMAILrequest = axios.post('http://localhost:4444/crix-mail-api/index.js', emailBody)
+    axios.post('http://localhost:4444/crix-mail-api/index.js', emailBody)
       .then((res) => {
-        console.log('Message SENT', res);
+        console.log(res);
+        return dispatch(ACTION.sendEmail(res));
       })
-      .catch(() => {
-        console.log('Message not sent');
+      .catch((err) => {
+        console.log(err);
       });
-    dispatch(ACTION.sendEmail(fakeSENDEMAILrequest));
   } catch (error) {
     throw new Error('Failed to send e-mail');
   }

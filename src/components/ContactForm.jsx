@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form, Input, Label } from '@src/css/elements/form';
@@ -11,7 +11,7 @@ import { sendEmail } from '@src/actions/contact/actionsSideEffects';
 
 // add handleSubmit && handleChange
 
-const ContactForm = ({ DIC, handleSendEmail }) => {
+const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
   const initialFormState = {
     name: '',
     email: '',
@@ -21,8 +21,24 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     buttonText: `${DIC.BUTTON_SEND}`,
     subject: 'New message received from www.FutureCard.com',
   };
-
   const [emailBody, setEmailBody] = useState(initialFormState);
+
+  useEffect(() => {
+    if (!mailSuccess) {
+      setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
+      alert('Please type a valid e-mail');
+      // console.log('buttonText', emailBody.buttonText);
+      setTimeout(() => {
+        setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
+      }, 2000);
+    } else if (mailSuccess) {
+      console.log('emailBody in FormSubmit', emailBody);
+      // eslint-disable-next-line no-use-before-define
+      setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
+    }
+  }, [mailSuccess]);
+
+  console.log('mailSuccess', mailSuccess);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -30,25 +46,6 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     setEmailBody({ ...emailBody, [id]: value });
     // console.log("body message", emailBody.message);
   };
-
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
-    if (!emailBody.email) {
-      setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      alert('Please type a valid e-mail');
-      // console.log('buttonText', emailBody.buttonText);
-      setTimeout(() => {
-        setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
-      }, 2000);
-      return;
-    }
-    console.log('emailBody in FormSubmit', emailBody);
-    // eslint-disable-next-line no-use-before-define
-    handleEmail(emailBody);
-  };
-
   const resetForm = () => {
     setEmailBody(initialFormState);
   };
@@ -60,20 +57,21 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     resetForm();
   };
 
-
-  const handleClick = (e) => {
-    handleFormSubmit(e);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
+    handleEmail(emailBody);
   };
 
   return (
     <Form
       action=""
-      onSubmit={e => handleFormSubmit(e)}
+      onSubmit={handleFormSubmit}
     >
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
-      <Input id="email" type="email" required pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" onChange={handleInputChange} />
+      <Input id="email" type="email" required onChange={handleInputChange} />
       <Label htmlFor="telephone">{DIC.CONTACT_LABEL_TELEPHONE}</Label>
       <Input id="telephone" type="tel" onChange={handleInputChange} />
       <Label htmlFor="message">{DIC.CONTACT_LABEL_MESSAGE}</Label>
@@ -82,7 +80,6 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
         contact
         id="buttonText"
         type="submit"
-        onClick={handleClick}
       >
         {emailBody.buttonText}
       </Button>
@@ -103,8 +100,9 @@ ContactForm.propTypes = {
   handleSendEmail: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ dictionary }) => ({
+const mapStateToProps = ({ dictionary, contact }) => ({
   DIC: dictionary.data,
+  mailSuccess: Object.keys(contact.emailBody).length ? contact.emailBody.success : {},
 });
 const mapDispatchToProps = dispatch => ({
   handleSendEmail: emailBody => dispatch(sendEmail(emailBody)),

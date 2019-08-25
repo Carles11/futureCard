@@ -1,18 +1,15 @@
 import * as ACTION from '../actions/contact/actionsType';
-import handleSendEmail from '../utils/emails';
-
-// eslint-disable-next-line no-use-before-define
-const emailBody = handleSendEmail(emailBody);
 
 const INITIAL_STATE = {
-  emailBody,
+  emailBody: {},
 };
 
 export default function mailReducer(state = INITIAL_STATE, action) {
+  // console.log("action", action);
   switch (action.type) {
     case ACTION.SEND_EMAIL:
-      return action.contact;
+      return { ...state, emailBody: action.emailBody };
     default:
-      return state;
+      return { ...state };
   }
 }
