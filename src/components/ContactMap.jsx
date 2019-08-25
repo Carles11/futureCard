@@ -9,6 +9,17 @@ import Logo from '@src/assets/image/logo.png';
 const Wrapper = styled.div`
   width: ${props => props.width};
   height: ${props => props.height};
+<<<<<<< HEAD
+=======
+   
+  @media only screen and(max-width: 649px){
+    min-width: 649px;
+  }
+  @media only screen and(max-width: 813px{
+    min-width: 813px;
+    
+  })
+>>>>>>> * copy mster to contact working tree
   
 `;
 const futureCardIcon = L.icon({
@@ -21,6 +32,8 @@ const futureCardIcon = L.icon({
 // PARIS:                           48°51′    N, 02°21′      O
 // JOHANNESBURG:                    26°12′16″ S, 28°02′44″   E
 // DUBAI:                           25°15′47″ N, 55°17′50″   E
+
+
 export default class ContactMap extends React.Component {
   componentDidMount() {
     this.map = L.map('map', {
@@ -32,6 +45,7 @@ export default class ContactMap extends React.Component {
       maxZoom: 6,
       scrollWheelZoom: false,
     });
+
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       maxZoom: 20,
       maxNativeZoom: 17,
@@ -51,6 +65,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <Wrapper width="100vh" height="500px" id="map" />;
+    return <Wrapper width="100%" height="70vh" id="map" />;
   }
 }
