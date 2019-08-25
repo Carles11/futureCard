@@ -7,11 +7,12 @@ const MapWrapper = styled.div`
   @media only screen and(max-width: 649px){
     min-width: 649px;
   }
-  @media only screen and(max-width: 813px{
+  @media only screen and(max-width: 813px){
     min-width: 813px;
-    
-  })
-  
+  }
+  @media only screen and(max-width: 1200px){
+    min-width: 1200px;
+  }
 `;
 
 export default MapWrapper;

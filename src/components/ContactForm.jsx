@@ -36,7 +36,6 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     if (!emailBody.email) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      debugger
       // alert('Please type a valid e-mail');
       // console.log('buttonText', emailBody.buttonText);
       setTimeout(() => {
@@ -44,15 +43,14 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
       }, 2000);
       return;
     }
-    console.log("emailBody in FormSubmit", emailBody)
-    debugger
+    console.log('emailBody in FormSubmit', emailBody);
+    // eslint-disable-next-line no-use-before-define
     handleEmail(emailBody);
   };
   const handleEmail = (body) => {
     handleSendEmail(body);
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-    debugger
-    console.log("body in handleMail", body);
+    console.log('body in handleMail', body);
   };
 
 

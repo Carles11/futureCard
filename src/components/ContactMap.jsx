@@ -6,6 +6,7 @@ import L from 'leaflet';
 import { ADDRESSES } from '@src/utils/constants';
 import Logo from '@src/assets/image/logo.png';
 import MapWrapper from '@src/css/blocks/Layout/MapWrapper';
+import { P } from '@src/css/elements';
 
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
@@ -38,16 +39,16 @@ export default class ContactMap extends React.Component {
     }).addTo(this.map.once('focus', () => { this.map.scrollWheelZoom.enable(); }));
     // MARKER MADRID
     L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}`).closeTooltip();
+      .bindTooltip(`<P>${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}</P>`).closeTooltip();
     // MARKER PARIS
     L.marker([48.7500000, 2.4500000], { icon: futureCardIcon }, { title: 'Paris' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}`).closeTooltip();
+      .bindTooltip(`<P>${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}</P>`).closeTooltip();
     // MARKER JOHANNESBURG
     L.marker([-25.2044444, 30.0455556], { icon: futureCardIcon }, { title: 'Johannesburg' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}`).closeTooltip();
+      .bindTooltip(`<P>${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}</P>`).closeTooltip();
     // MARKER DUBAI
     L.marker([25.2630556, 55.2972222], { icon: futureCardIcon }, { title: 'Dubai' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subAddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}`).closeTooltip();
+      .bindTooltip(`<P>${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subaddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}</P>`).closeTooltip();
   }
 
   render() {
