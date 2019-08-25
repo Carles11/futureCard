@@ -98,6 +98,7 @@ ContactForm.propTypes = {
     BUTTON_SENDING: PropTypes.string.isRequired,
   }).isRequired,
   handleSendEmail: PropTypes.func.isRequired,
+  mailSuccess: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, contact }) => ({
