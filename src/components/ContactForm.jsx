@@ -19,6 +19,7 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     message: '',
     sent: false,
     buttonText: `${DIC.BUTTON_SEND}`,
+    subject: 'New message received from www.FutureCard.com',
   };
 
   const [emailBody, setEmailBody] = useState(initialFormState);
@@ -36,7 +37,7 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     if (!emailBody.email) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      // alert('Please type a valid e-mail');
+      alert('Please type a valid e-mail');
       // console.log('buttonText', emailBody.buttonText);
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
@@ -47,19 +48,21 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     // eslint-disable-next-line no-use-before-define
     handleEmail(emailBody);
   };
-  const handleEmail = (body) => {
-    handleSendEmail(body);
-    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-    console.log('body in handleMail', body);
-  };
-
 
   const resetForm = () => {
     setEmailBody(initialFormState);
   };
+
+  const handleEmail = (body) => {
+    handleSendEmail(body);
+    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
+    console.log('body in handleMail', body);
+    resetForm();
+  };
+
+
   const handleClick = (e) => {
     handleFormSubmit(e);
-    resetForm();
   };
 
   return (
@@ -74,7 +77,7 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
       <Label htmlFor="telephone">{DIC.CONTACT_LABEL_TELEPHONE}</Label>
       <Input id="telephone" type="tel" onChange={handleInputChange} />
       <Label htmlFor="message">{DIC.CONTACT_LABEL_MESSAGE}</Label>
-      <Input id="message" type="text-area" required onChange={handleInputChange} />
+      <Input id="message" type="text-area" minlength="20" required onChange={handleInputChange} />
       <Button
         contact
         id="buttonText"

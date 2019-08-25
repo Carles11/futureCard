@@ -12,7 +12,7 @@ const Form = styled.form`
   z-index: 500;
   
   @media only screen and (min-width: 649px){
-    width: 70%;
+    width: 50%;
   }
 `;
 

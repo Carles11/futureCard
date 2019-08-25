@@ -7,6 +7,9 @@ border-bottom: 1px solid ${props => props.theme.mainColor};
 width: auto;
 margin: 10px 17px 17px 17px;
 color: ${props => props.theme.fontColor}
+input:invalid {
+  border: 2px dashed red;
+}
 
 @media only screen and (min-width: 649px){
   margin: 10px;
