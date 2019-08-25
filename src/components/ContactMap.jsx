@@ -6,6 +6,7 @@ import L from 'leaflet';
 import { ADDRESSES } from '@src/utils/constants';
 import Logo from '@src/assets/image/logo.png';
 import MapWrapper from '@src/css/blocks/Layout/MapWrapper';
+// eslint-disable-next-line no-unused-vars
 import { P } from '@src/css/elements';
 
 const futureCardIcon = L.icon({
