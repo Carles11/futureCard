@@ -21,7 +21,7 @@ const futureCardIcon = L.icon({
 export default class ContactMap extends React.Component {
   componentDidMount() {
     this.map = L.map('map', {
-      center: [40, 25], //[39, 45],
+      center: [40, 25], // [39, 45],
       detectRetina: true,
       zoom: 2,
       zoomControl: false,
@@ -31,23 +31,23 @@ export default class ContactMap extends React.Component {
       riseOffset: 100,
       bubblingMouseEvents: true,
     });
-    //THE MAP:
+    // THE MAP:
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       maxZoom: 20,
       maxNativeZoom: 17,
     }).addTo(this.map.once('focus', () => { this.map.scrollWheelZoom.enable(); }));
-    //MARKER MADRID
+    // MARKER MADRID
     L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindPopup(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}`);
-    //MARKER PARIS
+      .bindTooltip(`${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}`).closeTooltip();
+    // MARKER PARIS
     L.marker([48.7500000, 2.4500000], { icon: futureCardIcon }, { title: 'Paris' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindPopup(`${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}`);
-    //MARKER JOHANNESBURG
+      .bindTooltip(`${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}`).closeTooltip();
+    // MARKER JOHANNESBURG
     L.marker([-25.2044444, 30.0455556], { icon: futureCardIcon }, { title: 'Johannesburg' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindPopup(`${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}`);
-    //MARKER DUBAI
+      .bindTooltip(`${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}`).closeTooltip();
+    // MARKER DUBAI
     L.marker([25.2630556, 55.2972222], { icon: futureCardIcon }, { title: 'Dubai' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindPopup(`${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subAddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}`);
+      .bindTooltip(`${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subAddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}`).closeTooltip();
   }
 
   render() {

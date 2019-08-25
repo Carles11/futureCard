@@ -30,26 +30,29 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     // console.log("body message", emailBody.message);
   };
 
-  const handleEmail = (body) => {
-    handleSendEmail(body);
-    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     if (!emailBody.email) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      alert('Please type a valid e-mail');
+      debugger
+      // alert('Please type a valid e-mail');
       // console.log('buttonText', emailBody.buttonText);
-
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
       }, 2000);
       return;
     }
+    console.log("emailBody in FormSubmit", emailBody)
+    debugger
     handleEmail(emailBody);
-    // console.log('emailBody=', emailBody);
+  };
+  const handleEmail = (body) => {
+    handleSendEmail(body);
+    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
+    debugger
+    console.log("body in handleMail", body);
   };
 
 
@@ -57,8 +60,8 @@ const ContactForm = ({ DIC, handleSendEmail }) => {
     setEmailBody(initialFormState);
   };
   const handleClick = (e) => {
-    resetForm();
     handleFormSubmit(e);
+    resetForm();
   };
 
   return (
