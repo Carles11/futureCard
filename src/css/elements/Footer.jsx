@@ -6,7 +6,8 @@ import withTheme from '@src/css/Theme';
 const Footer = styled.footer`
   width: 100%;
   height: auto;
-  ${(props) => {
+ 
+     ${(props) => {
     const { r: rPrimary, g: gPrimary, b: bPrimary } = hexToRgb(
       props.theme.fontColor,
     );

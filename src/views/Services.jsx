@@ -1,16 +1,16 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import HeaderSection from '@src/components/HeaderSection';
+import { connect } from 'react-redux';
 
+import HeaderSection from '@src/components/HeaderSection';
 import { Section } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const Products = ({
+const Services = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
@@ -18,27 +18,27 @@ const Products = ({
   return (
     <Section>
       <Helmet
-        title={DIC.NAV_LABEL_PRODUCTS}
+        title={DIC.NAV_LABEL_SERVICES}
         meta={[
-          { name: 'description', content: `${DIC.PRODUCT_DESCRIPTION}` },
+          { name: 'description', content: `${DIC.SERVICES_DESCRIPTION}` },
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
       <HeaderSection
-        title={DIC.PRODUCT_TITLE}
-        subtitle={DIC.PRODUCT_SUBTITLE}
+        title={DIC.SERVICES_TITLE}
+        subtitle={DIC.SERVICES_SUBTITLE}
       />
       <Footer />
     </Section>
   );
 };
 
-Products.propTypes = {
+Services.propTypes = {
   DIC: PropTypes.shape({
-    NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
-    PRODUCT_TITLE: PropTypes.string.isRequired,
-    PRODUCT_SUBTITLE: PropTypes.string.isRequired,
-    PRODUCT_DESCRIPTION: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    SERVICES_TITLE: PropTypes.string.isRequired,
+    SERVICES_SUBTITLE: PropTypes.string.isRequired,
+    SERVICES_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
@@ -55,8 +55,7 @@ const mapStateToProps = ({ dictionary, location }) => ({
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
 });
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Products);
+)(Services);

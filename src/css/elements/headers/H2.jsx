@@ -41,7 +41,7 @@ const H2 = styled.h2`
   ${props => props.centered
     && css`
       text-align: center;
-    `}
+    `};
 `;
 
 export default withTheme(H2);

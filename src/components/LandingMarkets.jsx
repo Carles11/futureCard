@@ -1,57 +1,53 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '@src/components/Icon';
-import {
-  FiShoppingCart,
-  FiCreditCard,
-  FiArrowRightCircle,
-} from 'react-icons/fi';
+import HeaderSection from '@src/components/HeaderSection';
+import MarketsMap from '@src/assets/image/MarketsMap.jpeg';
 
-import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H2, H3, H4, Hr, P,
+  FaUniversity,
+  FaMoneyBillAlt,
+  FaMobileAlt,
+  FaUsers,
+} from 'react-icons/fa';
+import {
+  Article, Grid, H4, Hr, Image, P,
 } from '@src/css/elements';
+import Box from '@src/css/blocks/Box';
 
 const SECTIONS = [
-  // {
-  //   id: 0,
-  //   title: 'MARKETS',
-  //   icon: <FiGlobe />,
-  //   link: null,
-  // },
   {
     id: 1,
-    title: 'PRODUCTS',
-    icon: <FiShoppingCart />,
-    link: '/products',
+    title: 'GOVERNMENT',
+    icon: <FaUniversity />,
   },
   {
     id: 2,
-    title: 'SERVICES',
-    icon: <FiCreditCard />,
-    link: '/services',
+    title: 'FINANCIAL',
+    icon: <FaMoneyBillAlt />,
+  },
+  {
+    id: 3,
+    title: 'MOBILE',
+    icon: <FaMobileAlt />,
+  },
+  {
+    id: 4,
+    title: 'COMMERCIAL',
+    icon: <FaUsers />,
   },
 ];
 
-const LandingAbout = ({ DIC }) => (
+const LandingMarkets = ({ DIC }) => (
   <Article centered>
-    <H3 secundaryColor withMargin="1rem 0 0.75rem">
-      {DIC.ABOUT_US}
-    </H3>
-    <H2 withMargin="0" centered small>
-      {DIC.ABOUT_US_DESCRIPTION}
-    </H2>
-    <Hr withSize="180px" withMargin="1.5rem 0 2rem" withAlign="center" />
-    <P withAlign="center">{DIC.ABOUT_US_CONTENT}</P>
+    <HeaderSection title={DIC.NAV_LABEL_MARKETS} subtitle={DIC.ABOUT_US_MARKETS} />
+    <Image section withMargin="0 0 0" src={MarketsMap} alt={DIC.NAV_LABEL_MARKETS} />
     <Box>
       {SECTIONS.map((section) => {
-        const TITLE = `NAV_LABEL_${section.title}`;
-        const CONTENT = `ABOUT_US_${section.title}`;
+        const TITLE = `MARKETS_${section.title}`;
+        const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
         return (
-          <Box.Item key={section.id} withBackground>
+          <Box.Item key={section.id} withScale withBackground>
             <Grid
               withIcon
               withPadding="2rem 2rem 1rem"
@@ -67,16 +63,6 @@ const LandingAbout = ({ DIC }) => (
             <P small withPadding="0 1rem 0.5rem" withAlign="center">
               {DIC[CONTENT]}
             </P>
-            {section.link && (
-              <Grid withMargin="0 0 1.5rem" vertical="center">
-                <A role="button" to={section.link}>
-                  {DIC.LEARN_MORE}
-                  <Icon>
-                    <FiArrowRightCircle />
-                  </Icon>
-                </A>
-              </Grid>
-            )}
           </Box.Item>
         );
       })}
@@ -84,19 +70,20 @@ const LandingAbout = ({ DIC }) => (
   </Article>
 );
 
-LandingAbout.propTypes = {
+LandingMarkets.propTypes = {
   DIC: PropTypes.shape({
-    ABOUT_US: PropTypes.string.isRequired,
-    ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
-    ABOUT_US_CONTENT: PropTypes.string.isRequired,
-    ABOUT_US_MARKETS: PropTypes.string.isRequired,
-    ABOUT_US_PRODUCTS: PropTypes.string.isRequired,
-    ABOUT_US_SERVICES: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
-    NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
-    NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired,
+    ABOUT_US_MARKETS: PropTypes.string.isRequired,
+    MARKETS_GOVERNMENT: PropTypes.string.isRequired,
+    MARKETS_FINANCIAL: PropTypes.string.isRequired,
+    MARKETS_MOBILE: PropTypes.string.isRequired,
+    MARKETS_COMMERCIAL: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_GOVERNMENT: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_FINANCIAL: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_MOBILE: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_COMMERCIAL: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default LandingAbout;
+export default LandingMarkets;
