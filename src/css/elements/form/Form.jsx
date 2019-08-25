@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Form = styled.form`
+<<<<<<< HEAD
 opacity: 0.9;
 z-index: 500;
 
@@ -97,104 +98,19 @@ span:nth-child(3) .slide-up:active {
   color: ${props => props.theme.fontColorDarker};
   text-indent: 0;
   background: #fff;
+=======
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  z-index: 500;
+>>>>>>> contact
   
-  &::-webkit-input-placeholder {
-    color: ${props => props.theme.fontColor};
+  @media only screen and (min-width: 649px){
+    width: 50%;
   }
-  + label {
-    transform: translateY(-100%);
-
-    &:before {
-      border-radius: 5px;
-    }
-    &:after {
-      transform: translateY(100%);
-    }
-  }
-}
-        @media only screen and (max-width: 849px) {
-          .row {
-            min-width: 450px;
-            padding: 40px 17px;
-            background: ${props => props.theme.background};
-            text-align: center;
-            
-            &:first-child {
-              padding: 30px 20px;
-              background: whitesmoke;
-            }
-            
-            span {
-              position: relative;
-              display: block;
-              margin: 25px 8px;
-            }
-          }
-          
-          .slide-up {
-            width: 85%;
-            padding: 20px 0 8px 11px;
-          
-            + label {
-              padding: 8px 11px;
-              font-size: 15px;
-            }
-          }
-          span:nth-child(1) .slide-up {
-            text-indent: 105px;
-          }
-          span:nth-child(3) .slide-up {
-            text-indent: 125px;
-          }
-          span:nth-child(1) .slide-up:focus,
-          span:nth-child(1) .slide-up:active,
-          span:nth-child(3) .slide-up:focus,
-          span:nth-child(3) .slide-up:active {
-            text-indent: 0;
-          }
-          .slide-up:focus,
-          .slide-up:active {
-            color: ${props => props.theme.fontColorDarker};
-            text-indent: 0;
-            background: #fff;
-            
-            &::-webkit-input-placeholder {
-              color: ${props => props.theme.fontColor};
-            }
-          
-            }
-          }
-
-@media only screen and (max-width: 649px) {
-  .row {
-    min-width: 250px;
-    padding: 40px 17px;
-    background: ${props => props.theme.background};
-    text-align: center;
-    
-    &:first-child {
-      padding: 30px 20px;
-      background: whitesmoke;
-    }
-    
-    span {
-      position: relative;
-      display: block;
-      margin: 25px 8px;
-    }
-  }
-  
-  .slide-up {
-    width: 75%;
-    padding: 20px 0 8px 11px;
-    
-    + label {
-      padding: 8px 11px;
-      font-size: 14px;
-    }
-  }  
-  
-}
-}`;
+`;
 
 export default withTheme(Form);

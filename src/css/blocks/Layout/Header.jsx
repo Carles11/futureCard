@@ -10,7 +10,7 @@ const Header = styled.header`
   left: 0;
   width: 100%;
   height: 90px;
-  z-index: 100;
+  z-index: 1000;
   color: ${props => props.theme.fontColor};
 `;
 

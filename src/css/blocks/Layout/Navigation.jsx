@@ -6,7 +6,7 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   width: auto;
-  z-index: 10;
+  z-index: 1100;
 
   @media only screen and (max-width: 649px) {
     display: none;
