@@ -87,17 +87,16 @@ const LandingNews = ({ DIC }) => {
               <Box.Figure>
                 <Box.Figure.Image src={item.img} alt={item.title} />
               </Box.Figure>
-              <P
+              <Grid
                 highlight
                 tiny
                 bold
                 withMargin="1.5rem 0 0.2rem"
                 withAlign="center"
               >
-                {DIC.NEWS_PUBLISHED_THE}
-                {' '}
+                <h4>{DIC.NEWS_PUBLISHED_THE}</h4>
                 {item.date}
-              </P>
+              </Grid>
               <H4 withMargin="0 0.5rem 0.5rem" centered>
                 {item.title}
               </H4>

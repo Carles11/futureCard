@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import withTheme from '@src/css/Theme';
@@ -18,8 +18,8 @@ const Link = styled(
     ...rest
   }) => <NavLink children={children} {...rest} />,
 )`
-  font-size: 1rem;
-  color: white;
+  font-size: 0.8rem;
+  color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;
   margin: 0 0.25rem;
@@ -27,10 +27,19 @@ const Link = styled(
   border-bottom: 3px solid transparent;
   transition: border-color 0.3s ease-in-out;
 
-  &.active,
+  ${props => props.active
+    && css`
+      border-bottom: 3px solid ${props.theme.mainColor};
+    `}
+
   &:hover {
     border-bottom: 3px solid ${props => props.theme.mainColor};
   }
+
+  ${props => props.with_dark
+    && css`
+      color: white;
+    `}
 
   @media only screen and (max-width: 649px) {
     width: 80%;

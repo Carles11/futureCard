@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import withTheme from '@src/css/Theme';
-
 
 const HeaderBackground = styled.div`
   width: 100%;
@@ -9,8 +8,15 @@ const HeaderBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background: ${props => props.theme.fontColor};
-  opacity: 0.7;
+  background: white;
+  opacity: 0;
+  border-bottom: 1px solid #dddddd;
+  transition: opacity 0.8s;
+
+  ${props => props.visible
+    && css`
+      opacity: 0.8;
+    `}
 `;
 
 export default withTheme(HeaderBackground);
