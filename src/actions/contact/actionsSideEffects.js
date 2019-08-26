@@ -9,7 +9,7 @@ export const sendEmail = emailBody => (dispatch) => {
     axios.post('http://localhost:4444/crix-mail-api/index.js', emailBody)
       .then(res => dispatch(ACTION.sendEmail(res)))
       .catch((err) => {
-        throw Error(err)
+        throw Error(err);
       });
   } catch (error) {
     throw new Error('Failed to send e-mail');
