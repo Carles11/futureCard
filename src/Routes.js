@@ -15,13 +15,13 @@ const NotFound = lazy(() => import('./views/NotFound'));
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>
     <Switch>
-      <Route exact path='/' component={Landing} />
-      <Route path='/about-futurecard' component={About} />
-      <Route path='/our-solutions' component={Products} />
-      <Route path='/our-services' component={Services} />
-      <Route path='/card-features' component={Features} />
-      <Route path='/news' component={News} />
-      <Route path='/contact-us' component={Contact} />
+      <Route exact path="/" component={Landing} />
+      <Route path="/about-futurecard" component={About} />
+      <Route path="/our-solutions" component={Products} />
+      <Route path="/our-services" component={Services} />
+      <Route path="/card-features" component={Features} />
+      <Route path="/news" component={News} />
+      <Route path="/contact-us" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   </Suspense>

@@ -3,15 +3,18 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Section } from '@src/css/elements';
+import {
+  Section, Grid, H1, H2, P, A,
+} from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
-import { Grid, H1, H2, P, A } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const NotFound = ({ DIC, path, location, handleLocation }) => {
+const NotFound = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (
@@ -23,15 +26,15 @@ const NotFound = ({ DIC, path, location, handleLocation }) => {
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <Grid column middle vertical='center' withPadding={'8rem 2rem 10rem'}>
-        <H1 withSize={'10rem'} withMargin={'0'}>
+      <Grid column middle vertical="center" withPadding="8rem 2rem 10rem">
+        <H1 withSize="10rem" withMargin="0">
           404
         </H1>
-        <H2 withMargin={'0 1rem 1rem'} centered>
+        <H2 withMargin="0 1rem 1rem" centered>
           {DIC.NOT_FOUND}
         </H2>
-        <P withAlign={'center'} withMargin={'0 0 2.5rem'}>{DIC.NOT_FOUND_DESCRIPTION}</P>
-        <A role='button' to='/'>
+        <P withAlign="center" withMargin="0 0 2.5rem">{DIC.NOT_FOUND_DESCRIPTION}</P>
+        <A role="button" to="/">
           {DIC.NOT_FOUND_LINK}
         </A>
       </Grid>
