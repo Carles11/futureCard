@@ -155,7 +155,7 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
             <P invertColor small>
               {YEAR}
               {' '}
-&copy; Futurecard industries LLC
+              &copy; Futurecard Industries LLC
             </P>
           </Grid>
           <Grid middle>
@@ -213,6 +213,7 @@ const mapStateToProps = ({ dictionary }) => ({
 
 const mapDispatchToProps = dispatch => ({
   handleSetDictionary: lang => dispatch(setDictionary(lang)),
+
 });
 
 export default connect(

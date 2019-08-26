@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
+import ContactForm from '@src/components/ContactForm';
 import ContactMap from '@src/components/ContactMap';
 import Footer from '@src/components/Footer';
-
 import {
-  Section,
+  Section, Article,
 } from '@src/css/elements';
 
 const Contact = ({ DIC }) => (
@@ -22,9 +22,9 @@ const Contact = ({ DIC }) => (
     />
     <HeaderSection title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
     <ContactMap />
-    {/* <Article centered>
+    <Article centered>
       <ContactForm />
-    </Article> */}
+    </Article>
     <Footer />
   </Section>
 );
