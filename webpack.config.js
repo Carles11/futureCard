@@ -33,6 +33,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
       },
       devServer: {
         disableHostCheck: true,
+        historyApiFallback: true,
       },
       plugins: [
         new HtmlWebpackPlugin({
