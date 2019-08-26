@@ -18,7 +18,7 @@ const Products = ({
   return (
     <Section>
       <Helmet
-        title={DIC.NAV_LABEL_PRODUCTS}
+        title={DIC.PRODUCT_TITLE}
         meta={[
           { name: 'description', content: `${DIC.PRODUCT_DESCRIPTION}` },
           { property: 'og:title', content: 'welcome to futurecard.com' },
