@@ -27,11 +27,13 @@ export default class ContactMap extends React.Component {
       detectRetina: true,
       zoom: 3,
       zoomControl: false,
+      zoomAnimation: false,
       minZoom: 3,
+      maxZoom: 3,
       scrollWheelZoom: false,
       riseOnHover: true,
       riseOffset: 100,
-      bubblingMouseEvents: true,
+      // bubblingMouseEvents: true,
     });
     // THE MAP:
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
