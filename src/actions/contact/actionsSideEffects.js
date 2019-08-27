@@ -5,15 +5,11 @@ import axios from 'axios';
 import * as ACTION from './actions';
 
 export const sendEmail = emailBody => (dispatch) => {
-  console.log('emailBody in sendEmailSideEffect', emailBody);
   try {
     axios.post('http://localhost:4444/crix-mail-api/index.js', emailBody)
-      .then((res) => {
-        console.log(res);
-        return dispatch(ACTION.sendEmail(res));
-      })
+      .then(res => dispatch(ACTION.sendEmail(res)))
       .catch((err) => {
-        console.log(err);
+        throw Error(err);
       });
   } catch (error) {
     throw new Error('Failed to send e-mail');

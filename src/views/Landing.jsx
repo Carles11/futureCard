@@ -42,7 +42,7 @@ const Landing = ({
           <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
             {DIC.LANDING_SUBTITLE}
           </H2>
-          <A role="button" to="/about-us">
+          <A role="button" to="/about-futurecard">
             {DIC.LEARN_MORE}
             <Icon>
               <FiArrowRightCircle />

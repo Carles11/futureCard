@@ -20,13 +20,13 @@ const SECTIONS = [
     id: 1,
     title: 'PRODUCTS',
     icon: <FiShoppingCart />,
-    link: '/products',
+    link: '/our-solutions',
   },
   {
     id: 2,
     title: 'SERVICES',
     icon: <FiCreditCard />,
-    link: '/services',
+    link: '/our-services',
   },
 ];
 
