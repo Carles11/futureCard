@@ -11,7 +11,7 @@ import { P } from '@src/css/elements';
 
 const futureCardIcon = L.icon({
   iconUrl: `${Logo}`,
-  iconSize: [45, 45],
+  iconSize: [55, 55],
   popupAnchor: [0, -15],
 });
 // GPS REFERENCE COORDINATES:
