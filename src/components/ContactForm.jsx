@@ -11,7 +11,7 @@ import { sendEmail } from '@src/actions/contact/actionsSideEffects';
 
 // add handleSubmit && handleChange
 
-const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
+const ContactForm = ({ DIC, handleSendEmail, data }) => {
   const initialFormState = {
     name: '',
     email: '',
@@ -24,19 +24,19 @@ const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
   const [emailBody, setEmailBody] = useState(initialFormState);
 
   useEffect(() => {
-    if (!mailSuccess) {
+    if (!data) {
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
       }, 2000);
-    } else if (mailSuccess) {
+    } else if (data) {
       // eslint-disable-next-line no-use-before-define
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
       setTimeout(() => {
         setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
       }, 2000);
     }
-  }, [mailSuccess]);
+  }, [data]);
 
 
   const handleInputChange = (e) => {
@@ -44,19 +44,18 @@ const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
     setEmailBody({ ...emailBody, [id]: value });
   };
   const resetForm = () => {
+    debugger
     setEmailBody(initialFormState);
-  };
-
-  const handleEmail = (body) => {
-    handleSendEmail(body);
-    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-    resetForm();
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
-    handleEmail(emailBody);
+    handleSendEmail(emailBody);
+    setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
+  };
+  const handleClick = () => {
+    resetForm();
   };
 
   return (
@@ -76,6 +75,7 @@ const ContactForm = ({ DIC, handleSendEmail, mailSuccess }) => {
         contact
         id="buttonText"
         type="submit"
+        onClick={handleClick}
       >
         {emailBody.buttonText}
       </Button>
@@ -94,12 +94,12 @@ ContactForm.propTypes = {
     BUTTON_SENDING: PropTypes.string.isRequired,
   }).isRequired,
   handleSendEmail: PropTypes.func.isRequired,
-  mailSuccess: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, contact }) => ({
   DIC: dictionary.data,
-  mailSuccess: Object.keys(contact.emailBody).length ? contact.emailBody.success : {},
+  data: Object.keys(contact.emailBody).length ? contact.emailBody.data : {},
 });
 const mapDispatchToProps = dispatch => ({
   handleSendEmail: emailBody => dispatch(sendEmail(emailBody)),

@@ -56,7 +56,7 @@ const Header = ({ LANG: language, DIC, path }) => {
           <Link to="/">
             <Layout.Header.Logo.Image
               src={state.dark ? logoWhite : logo}
-              alt="Futurecard"
+              alt="Futurecard logo"
             />
           </Link>
         </Layout.Header.Logo>

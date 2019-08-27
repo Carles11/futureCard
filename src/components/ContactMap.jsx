@@ -23,17 +23,18 @@ const futureCardIcon = L.icon({
 export default class ContactMap extends React.Component {
   componentDidMount() {
     this.map = L.map('map', {
-      center: [40, 25], // [39, 45],
+      center: [14, 25], // [39, 45],
       detectRetina: true,
       zoom: 3,
       zoomControl: false,
-      zoomAnimation: false,
+      zoomAnimation: true,
       minZoom: 3,
       maxZoom: 3,
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
       riseOnHover: true,
       riseOffset: 100,
-      // bubblingMouseEvents: true,
+      touchZoom: true,
+      dragging: false,
     });
     // THE MAP:
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
@@ -55,6 +56,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <MapWrapper width="100%" height="70vh" id="map" />;
+    return <MapWrapper width="100%" height="650px" id="map" />;
   }
 }
