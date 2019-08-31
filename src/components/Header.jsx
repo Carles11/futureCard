@@ -1,6 +1,4 @@
-import React, {
-  Fragment, useReducer, useEffect,
-} from 'react';
+import React, { Fragment, useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';

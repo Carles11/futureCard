@@ -1,8 +1,9 @@
 import * as ACTION from '../actions/products/actionsType';
 
 const INITIAL_STATE = {
-  id: null,
-  name: 'Initial product',
+  success: false,
+  error: '',
+  data: [],
 };
 
 export default function productReducer(state = INITIAL_STATE, action) {
