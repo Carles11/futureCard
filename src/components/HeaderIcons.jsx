@@ -22,7 +22,7 @@ const ButtonIconMenu = styled.button`
 const Bar = styled.div`
   display: none;
 
-  background: white;
+  background: #fe4d10;
   width: 21px;
   height: 3px;
   margin-bottom: 4px;
