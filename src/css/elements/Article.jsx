@@ -7,14 +7,14 @@ const Article = styled.article`
   padding: 0 5%;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     width: 100%;
     padding: 0 2.5rem;
   }
 
   ${props => props.centered
     && css`
-      @media only screen and (min-width: 649px) {
+      @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;
         max-width: 1440px;
@@ -23,7 +23,7 @@ const Article = styled.article`
         padding: 4rem;
         box-sizing: border-box;
       }
-      @media only screen and (max-width: 649px) {
+      @media only screen and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
         width: 100%;

@@ -2,11 +2,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import Footer from '@src/components/Footer';
+import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
 
 import { Section } from '@src/css/elements';
-import Footer from '@src/components/Footer';
-import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
 

@@ -42,7 +42,7 @@ const Grid = styled.div`
 
   ${props => props.queryColumn
     && css`
-      @media only screen and (max-width: 649px) {
+      @media only screen and (max-width: 1024px) {
         flex-direction: column;
         width: 100%;
         padding: 2rem 2.5rem;

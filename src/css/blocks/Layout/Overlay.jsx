@@ -12,9 +12,9 @@ const Overlay = styled.div`
   z-index: 1;
   opacity: 0.99;
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     ${props => props.visible
-    && css`
+      && css`
         display: block;
       `}
   }

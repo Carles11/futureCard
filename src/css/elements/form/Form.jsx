@@ -11,7 +11,7 @@ const Form = styled.form`
   display: flex;
   z-index: 500;
   
-  @media only screen and (min-width: 649px){
+  @media only screen and (min-width: 1024px){
     width: 50%;
   }
 `;

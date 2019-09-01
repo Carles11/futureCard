@@ -10,7 +10,7 @@ const Address = styled.address`
       padding-right: 2rem;
       margin-bottom: 1rem;
 
-      @media only screen and (max-width: 649px) {
+      @media only screen and (max-width: 1024px) {
         width: 100%;
       }
 

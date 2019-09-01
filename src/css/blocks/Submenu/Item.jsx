@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import withTheme from '@src/css/Theme';
 
-const Link = styled(
+const Item = styled(
   ({
     children,
     dispatch,
@@ -18,22 +18,27 @@ const Link = styled(
     ...rest
   }) => <NavLink children={children} {...rest} />,
 )`
-  font-size: 0.9rem;
-  color: white;
+  font-size: 0.8rem;
+  color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;
-  margin: 0;
-  padding: 0.75rem 0;
-  transition: color 0.3s ease-in-out;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ededed;
+
+  &:last-of-type {
+    border: none;
+  }
 
   ${props => props.active
     && css`
-      color: ${props.theme.mainColor};
+      background: ${props.theme.mainColor};
+      color: white;
     `}
 
   &:hover {
-    color: ${props => props.theme.mainColor};
+    background: ${props => props.theme.mainColor};
+    color: white;
   }
 `;
 
-export default withTheme(Link);
+export default withTheme(Item);

@@ -38,7 +38,12 @@ function footerReducer(state, action) {
   }
 }
 
-const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
+const FooterComponent = ({
+  LANG: language,
+  DIC,
+  handleSetDictionary,
+  path,
+}) => {
   const initialState = { language, navigation: NAVIGATION };
   const [state, dispatch] = useReducer(footerReducer, initialState);
 
@@ -111,7 +116,13 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
                   const LABEL = `NAV_LABEL_${item.label}`;
 
                   return (
-                    <Layout.Footer.Link key={item.key} to={item.link}>
+                    <Layout.Footer.Link
+                      key={item.key}
+                      to={item.link}
+                      active={
+                        path === item.link ? item.link.toString() : undefined
+                      }
+                    >
                       {DIC[LABEL]}
                     </Layout.Footer.Link>
                   );
@@ -155,7 +166,7 @@ const FooterComponent = ({ LANG: language, DIC, handleSetDictionary }) => {
             <P invertColor small>
               {YEAR}
               {' '}
-              &copy; Futurecard Industries LLC
+&copy; Futurecard Industries LLC
             </P>
           </Grid>
           <Grid middle>
@@ -204,16 +215,17 @@ FooterComponent.propTypes = {
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
   }).isRequired,
   handleSetDictionary: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({ dictionary }) => ({
+const mapStateToProps = ({ dictionary, location }) => ({
   LANG: dictionary.language,
   DIC: dictionary.data,
+  path: location.path,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleSetDictionary: lang => dispatch(setDictionary(lang)),
-
 });
 
 export default connect(

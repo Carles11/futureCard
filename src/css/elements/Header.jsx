@@ -13,14 +13,14 @@ const Header = styled.header`
     top: 50%;
     transform: translateY(-50%);
 
-    @media only screen and (max-width: 649px) {
+    @media only screen and (max-width: 1024px) {
       width: 100%;
       padding: 2.5rem;
     }
   `}
   ${props => props.centered
     && css`
-      @media only screen and (min-width: 649px) {
+      @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;
         max-width: 1440px;
@@ -30,7 +30,7 @@ const Header = styled.header`
         box-sizing: border-box;
         z-index: 1;
       }
-      @media only screen and (max-width: 649px) {
+      @media only screen and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
         width: 100%;
