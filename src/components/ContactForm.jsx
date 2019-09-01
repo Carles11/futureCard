@@ -44,7 +44,6 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody({ ...emailBody, [id]: value });
   };
   const resetForm = () => {
-    debugger
     setEmailBody(initialFormState);
   };
 
