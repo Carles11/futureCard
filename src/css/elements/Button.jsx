@@ -45,9 +45,33 @@ const buttonDefault = css`
 
 const Button = styled.button`
   ${buttonDefault}
-  ${props => props.contact && css`
-    align-self: center;
-  `}
+
+  ${props => props.invert
+    && css`
+      background: transparent;
+      color: ${props.theme.mainColor};
+
+      ${props.active
+        && css`
+          background: ${props.theme.mainColor};
+          color: white;
+        `}
+      &:hover {
+        background: ${props.theme.mainColor};
+        color: white;
+      }
+    `}
+
+  ${props => props.withMargin
+    && css`
+      margin: ${props.withMargin};
+    `}
+
+  ${props => props.contact
+    && css`
+      align-self: center;
+    `}
+
   ${props => props.state === 'disabled'
     && css`
       opacity: 0.5;

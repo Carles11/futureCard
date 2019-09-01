@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,11 +9,24 @@ import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
+import { getProducts } from '@src/actions/products/actionsSideEffects';
 
 const Products = ({
-  DIC, path, location, handleLocation,
+  DIC,
+  path,
+  location,
+  products,
+  handleLocation,
+  handleGetProducts,
 }) => {
   useLocation(path, location, handleLocation);
+
+  useEffect(() => {
+    if (!products.success && !products.error) {
+      handleGetProducts();
+    }
+    // @todo - xvila - Handling errors
+  }, [products]);
 
   return (
     <Section>
@@ -41,19 +54,26 @@ Products.propTypes = {
     PRODUCT_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
-  handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
+  products: PropTypes.shape({
+    success: PropTypes.bool.isRequired,
+    data: PropTypes.array.isRequired,
+  }),
+  handleLocation: PropTypes.func.isRequired,
+  handleGetProducts: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ dictionary, location }) => ({
+const mapStateToProps = ({ dictionary, location, products }) => ({
   DIC: dictionary.data,
   path: location.path,
+  products,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
+  handleGetProducts: () => dispatch(getProducts()),
 });
 
 export default connect(

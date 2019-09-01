@@ -18,7 +18,7 @@ import {
 const SECTIONS = [
   {
     id: 1,
-    title: 'PRODUCTS',
+    title: 'SOLUTIONS',
     icon: <FiShoppingCart />,
     link: '/our-solutions',
   },
@@ -79,7 +79,7 @@ LandingAbout.propTypes = {
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
     ABOUT_US_CONTENT: PropTypes.string.isRequired,
     ABOUT_US_MARKETS: PropTypes.string.isRequired,
-    ABOUT_US_PRODUCTS: PropTypes.string.isRequired,
+    ABOUT_US_SOLUTIONS: PropTypes.string.isRequired,
     ABOUT_US_SERVICES: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,

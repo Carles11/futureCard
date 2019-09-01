@@ -3,45 +3,87 @@ const NAVIGATION = [
     key: 0,
     label: 'HOME',
     link: '/',
-    fn: null,
-    child: [],
   },
   {
     key: 6,
     label: 'ABOUT',
     link: '/about-futurecard',
-    fn: null,
-    child: [],
+    child: [
+      {
+        key: 7,
+        label: 'WHO_WE_ARE',
+        link: '/about-futurecard/who-we-are',
+      },
+      {
+        key: 8,
+        label: 'OUR_FACILITY',
+        link: '/about-futurecard/our-facility-and-capabilities',
+      },
+      {
+        key: 9,
+        label: 'CAREERS',
+        link: '/about-futurecard/careers',
+      },
+    ],
   },
   {
     key: 1,
     label: 'SOLUTIONS',
     link: '/our-solutions',
-    fn: null,
   },
   {
     key: 2,
     label: 'SERVICES',
     link: '/our-services',
-    fn: null,
+    child: [
+      {
+        key: 10,
+        label: 'CARD_DESIGN',
+        link: '/our-services/card-design',
+      },
+      {
+        key: 11,
+        label: 'CARD_PERSONALIZATION',
+        link: '/our-services/card-personalization',
+      },
+      {
+        key: 12,
+        label: 'FULFILLMENT',
+        link: '/our-services/fulfillment-packaging',
+      },
+    ],
   },
   {
     key: 3,
     label: 'CARDS',
     link: '/card-features',
-    fn: null,
+    child: [
+      {
+        key: 13,
+        label: 'TECHNOLOGY',
+        link: '/card-features/technology-materials',
+      },
+      {
+        key: 14,
+        label: 'CARD_MATERIALS',
+        link: '/card-features/card-materials',
+      },
+      {
+        key: 15,
+        label: 'DESIGN',
+        link: '/card-features/design-and-security-features',
+      },
+    ],
   },
   {
     key: 4,
     label: 'NEWS',
     link: '/news',
-    fn: null,
   },
   {
     key: 5,
     label: 'CONTACT',
     link: '/contact-us',
-    fn: null,
   },
 ];
 

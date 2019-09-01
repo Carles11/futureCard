@@ -11,7 +11,7 @@ input:invalid {
   border: 2px solid red;
 }
 
-@media only screen and (min-width: 649px){
+@media only screen and (min-width: 1024px){
   margin: 10px;
 }
 `;

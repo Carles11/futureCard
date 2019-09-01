@@ -41,13 +41,13 @@ const Link = styled(
       color: white;
     `}
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     width: 80%;
     text-align: center;
     color: white;
     border: none;
     box-sizing: border-box;
-    border-bottom: 1px solid #3f424e;
+    border-bottom: 1px solid #1c1f28;
     padding: 2rem;
     transition: color 0.3s ease-in-out;
 
@@ -59,7 +59,7 @@ const Link = styled(
     &:hover {
       border: none;
       box-sizing: border-box;
-      border-bottom: 1px solid #3f424e;
+      border-bottom: 1px solid #1c1f28;
       color: ${props => props.theme.mainColor};
       &:last-child {
         border: none;

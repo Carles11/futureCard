@@ -33,11 +33,11 @@ const Item = styled.div`
       }
     `}
 
-  @media only screen and (min-width: 649px) and (max-width: 1080px) {
+  @media only screen and (min-width: 1024px) and (max-width: 1080px) {
     margin: 0 0.5rem;
   }
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     width: 100%;
     margin: 0 0 1rem;
 

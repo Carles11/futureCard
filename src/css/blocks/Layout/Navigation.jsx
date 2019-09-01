@@ -8,7 +8,7 @@ const Navigation = styled.nav`
   width: auto;
   z-index: 1100;
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@ const Navigation = styled.nav`
     height: 100vh;
 
     ${props => props.visible
-    && css`
+      && css`
         display: flex;
       `}
   }

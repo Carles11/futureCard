@@ -1,10 +1,10 @@
+import api from '@src/utils/API';
 import * as ACTION from './actions';
 
-export const getProducts = () => (dispatch) => {
+export const getProducts = () => async (dispatch) => {
   try {
-    const fakeDDBBrequest = { id: 1, name: 'Fake product' };
-
-    dispatch(ACTION.getProducts(fakeDDBBrequest));
+    const products = await api.get('products');
+    dispatch(ACTION.getProducts(products));
   } catch (error) {
     throw new Error('SOmething went wrong');
   }

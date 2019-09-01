@@ -12,7 +12,7 @@ const ButtonIconMenu = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  z-index: 10;
+  z-index: 1101;
 
   &:hover .bars {
     background: ${props => props.theme.mainColor};
@@ -29,7 +29,7 @@ const Bar = styled.div`
   transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out;
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     display: block;
   }
 `;

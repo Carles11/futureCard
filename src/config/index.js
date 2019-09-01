@@ -1,12 +1,27 @@
+const headers = {
+  headers: new Headers({
+    'Content-Type': 'application/json',
+  }),
+  mode: 'cors',
+};
 const config = {
   env: process.env.NODE_ENV || 'development',
-  fetch_options: {
-    get: {
+  OPTION: {
+    GET: {
       method: 'GET',
-      headers: new Headers({
-        'Content-Type': 'application/json',
-      }),
-      mode: 'cors',
+      ...headers,
+    },
+    POST: {
+      method: 'POST',
+      ...headers,
+    },
+    PUT: {
+      method: 'PUT',
+      ...headers,
+    },
+    DELETE: {
+      method: 'DELETE',
+      ...headers,
     },
   },
 };

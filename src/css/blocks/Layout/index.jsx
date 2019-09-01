@@ -12,6 +12,7 @@ import Logo from './Logo';
 import MapWrapper from './MapWrapper';
 import Navigation from './Navigation';
 import Overlay from './Overlay';
+import Container from './Container';
 
 const Layout = styled.div``;
 
@@ -21,6 +22,7 @@ Layout.Header.Logo = Logo;
 Layout.Header.Navigation = Navigation;
 Layout.Header.Navigation.Link = Link;
 Layout.Header.Navigation.Item = Item;
+Layout.Header.Navigation.Container = Container;
 Layout.Header.HeaderBackground = HeaderBackground;
 Layout.Content = Content;
 Layout.MapWrapper = MapWrapper;

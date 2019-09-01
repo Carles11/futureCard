@@ -11,7 +11,7 @@ const Box = styled.div`
   width: 100%;
   margin: 2rem 0;
 
-  @media only screen and (max-width: 649px) {
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;

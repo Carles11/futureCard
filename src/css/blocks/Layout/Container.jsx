@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 
 import withTheme from '@src/css/Theme';
 
-const Item = styled.button`
+const Container = styled.div`
+  position: relative;
   background: transparent;
   color: ${props => props.theme.fontColor};
   font-size: 0.8rem;
@@ -56,4 +57,4 @@ const Item = styled.button`
   }
 `;
 
-export default withTheme(Item);
+export default withTheme(Container);

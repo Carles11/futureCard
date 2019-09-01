@@ -11,11 +11,11 @@ const HeaderBackground = styled.div`
   background: white;
   opacity: 0;
   border-bottom: 1px solid #dddddd;
-  transition: opacity 0.8s;
+  transition: opacity 0.6s;
 
   ${props => props.visible
     && css`
-      opacity: 0.8;
+      opacity: 0.9;
     `}
 `;
 
