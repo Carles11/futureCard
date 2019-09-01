@@ -7,7 +7,7 @@ import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
 
-import { Section } from '@src/css/elements';
+import { Article, P, Section } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -19,13 +19,18 @@ const AboutFCI = ({
   return (
     <Section>
       <Helmet
-        title={DIC.NAV_LABEL_ABOUT}
+        title={DIC.NAV_LABEL_CAREERS}
         meta={[
           { name: 'description', content: `${DIC.ABOUT_US_DESCRIPTION}` },
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <HeaderSection title={DIC.ABOUT_TITLE} subtitle={DIC.ABOUT_SUBTITLE} />
+      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={DIC.ABOUT_SUBTITLE} />
+      <Article centered>
+        <P>
+          ADD CAREERS TO THE DDBB
+        </P>
+      </Article>
       <Footer />
     </Section>
   );
@@ -33,7 +38,7 @@ const AboutFCI = ({
 
 AboutFCI.propTypes = {
   DIC: PropTypes.shape({
-    NAV_LABEL_ABOUT: PropTypes.string.isRequired,
+    NAV_LABEL_CAREERS: PropTypes.string.isRequired,
     ABOUT_TITLE: PropTypes.string.isRequired,
     ABOUT_SUBTITLE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,

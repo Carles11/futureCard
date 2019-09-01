@@ -18,6 +18,7 @@ const Header = styled.header`
       padding: 2.5rem;
     }
   `}
+
   ${props => props.centered
     && css`
       @media only screen and (min-width: 1024px) {
@@ -26,7 +27,7 @@ const Header = styled.header`
         max-width: 1440px;
         margin: 0 auto;
         align-items: center;
-        padding: 3rem 4rem 1.5rem;
+        padding: 3rem 4rem 0;
         box-sizing: border-box;
         z-index: 1;
       }
@@ -34,7 +35,7 @@ const Header = styled.header`
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 2.5rem;
+        padding: 2.5rem 2.5rem 0;
         box-sizing: border-box;
         align-items: center;
         z-index: 1;

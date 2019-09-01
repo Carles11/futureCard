@@ -20,14 +20,14 @@ const Article = styled.article`
         max-width: 1440px;
         margin: 0 auto;
         align-items: center;
-        padding: 4rem;
+        padding: 1rem 4rem 4rem;
         box-sizing: border-box;
       }
       @media only screen and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 2.5rem;
+        padding: 1rem 2.5rem 2.5rem;
         box-sizing: border-box;
         align-items: center;
       }

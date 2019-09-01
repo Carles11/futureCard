@@ -7,13 +7,11 @@ import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
 
-import { Section } from '@src/css/elements';
+import { Article, Section, P } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const AboutFCI = ({
-  DIC, path, location, handleLocation,
-}) => {
+const AboutFCI = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
 
   return (
@@ -25,7 +23,14 @@ const AboutFCI = ({
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <HeaderSection title={DIC.ABOUT_TITLE} subtitle={DIC.ABOUT_SUBTITLE} />
+      <HeaderSection
+        title={DIC.NAV_LABEL_WHO_WE_ARE}
+        subtitle={DIC.ABOUT_SUBTITLE}
+      />
+      <Article centered>
+        <P>{DIC.ABOUT_US_CONTENT_0}</P>
+        <P>{DIC.ABOUT_US_CONTENT_1}</P>
+      </Article>
       <Footer />
     </Section>
   );
@@ -34,9 +39,9 @@ const AboutFCI = ({
 AboutFCI.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
-    ABOUT_TITLE: PropTypes.string.isRequired,
-    ABOUT_SUBTITLE: PropTypes.string.isRequired,
-    ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    NAV_LABEL_WHO_WE_ARE: PropTypes.string.isRequired,
+    ABOUT_US_CONTENT_0: PropTypes.string.isRequired,
+    ABOUT_US_CONTENT_1: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
