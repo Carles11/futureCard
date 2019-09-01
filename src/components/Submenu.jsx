@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Submenu from '@src/css/blocks/Submenu';
 
 const SubmenuComponent = ({ items, DIC }) => (
-  <Submenu vertical='center'>
-    {items.map(item => {
+  <Submenu vertical="center">
+    {items.map((item) => {
       const LABEL = `NAV_LABEL_${item.label}`;
       return (
         <Submenu.Item key={item.key} to={item.link}>
