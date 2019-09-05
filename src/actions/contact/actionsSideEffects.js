@@ -4,7 +4,7 @@ import API from '@src/utils/API';
 
 import * as ACTION from './actions';
 
-export const sendEmail = emailBody => async dispatch => {
+export const sendEmail = emailBody => async (dispatch) => {
   try {
     const response = await API.post('mail', emailBody);
     dispatch(ACTION.sendEmail(response));

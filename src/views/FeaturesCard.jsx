@@ -10,7 +10,9 @@ import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const Features = ({ DIC, path, location, handleLocation }) => {
+const Features = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (

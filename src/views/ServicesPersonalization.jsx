@@ -30,7 +30,10 @@ const Services = ({
       />
       <Article centered>
         <P>{DIC.SERVICES_PERSONALIZATION_CONTENT_0}</P>
-        <P>HERE ALL OPTIONS IN TABS WITH CONTENT, comming on the next batch when complete content arrives</P>
+        <P>
+          HERE ALL OPTIONS IN TABS WITH CONTENT, comming on the next batch when
+          complete content arrives
+        </P>
       </Article>
       <Footer />
     </Section>

@@ -11,7 +11,9 @@ import { Article, P, Section } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const AboutFCI = ({ DIC, path, location, handleLocation }) => {
+const AboutFCI = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (
