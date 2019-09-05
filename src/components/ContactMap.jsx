@@ -95,6 +95,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <MapWrapper width='100%' height='70vh' id='map' />;
+    return <MapWrapper width="100%" height="70vh" id="map" />;
   }
 }
