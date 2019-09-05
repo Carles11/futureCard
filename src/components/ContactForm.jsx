@@ -72,7 +72,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
         required
         onChange={handleInputChange}
       />
-      <Button contact id="buttonText" type="submit" onClick={handleClick}>
+      <Button contact id="buttonText" type="submit">
         {emailBody.buttonText}
       </Button>
     </Form>

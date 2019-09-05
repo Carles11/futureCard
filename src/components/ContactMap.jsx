@@ -26,10 +26,8 @@ export default class ContactMap extends React.Component {
       detectRetina: true,
       zoom: 3,
       zoomControl: false,
-      zoomAnimation: true,
       minZoom: 3,
-      maxZoom: 3,
-      scrollWheelZoom: true,
+      scrollWheelZoom: false,
       riseOnHover: true,
       riseOffset: 100,
       touchZoom: true,
@@ -98,6 +96,6 @@ export default class ContactMap extends React.Component {
   }
 
   render() {
-    return <MapWrapper width="100%" height="650px" id="map" />;
+    return <MapWrapper width="100%" height="70vh" id="map" />;
   }
 }
