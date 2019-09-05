@@ -51,8 +51,6 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     handleSendEmail(emailBody);
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-  };
-  const handleClick = () => {
     resetForm();
   };
 
