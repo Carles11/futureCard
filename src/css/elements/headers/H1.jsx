@@ -26,6 +26,16 @@ const H1 = styled.h1`
     && css`
       text-transform: upperCase;
     `}
+
+  ${props => props.withSize
+    && css`
+      font-size: ${props.withSize};
+    `}
+
+  ${props => props.withMargin
+    && css`
+      margin: ${props.withMargin} !important;
+    `}
 `;
 
 export default withTheme(H1);

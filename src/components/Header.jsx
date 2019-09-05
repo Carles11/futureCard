@@ -28,14 +28,14 @@ const Header = ({ LANG: language, DIC, path }) => {
   }, [language]);
 
   useEffect(() => {
-    if (!state.position && position > 250) {
+    if (!state.position && position > 225) {
       dispatch({ type: 'SCROLL', position: true });
       dispatch({ type: 'DARK', dark: false });
     }
 
-    if (!!state.position && position <= 250) {
+    if (!!state.position && position <= 225) {
       dispatch({ type: 'SCROLL', position: false });
-      dispatch({ type: 'DARK', dark: true });
+      dispatch({ type: 'DARK', dark: path === '/' });
     }
   }, [position]);
 

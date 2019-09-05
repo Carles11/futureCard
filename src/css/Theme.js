@@ -6,7 +6,6 @@ import { withRouter } from 'react-router';
  */
 function withTheme(Component) {
   const mapStateToProps = ({ theme }) => ({ theme });
-
   return withRouter(connect(mapStateToProps)(Component));
 }
 
