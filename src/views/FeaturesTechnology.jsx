@@ -4,27 +4,36 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section } from '@src/css/elements';
+import { Section, Article, P } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const Features = ({
-  DIC, path, location, handleLocation,
-}) => {
+const Features = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
 
   return (
     <Section>
       <Helmet
-        title={DIC.NAV_LABEL_CARDS}
+        title={DIC.NAV_LABEL_TECHNOLOGY}
         meta={[
-          { name: 'description', content: `${DIC.CARDS_DESCRIPTIONS}` },
+          {
+            name: 'description',
+            content: `${DIC.CARDS_TECHNOLOGY_DESCRIPTION}`,
+          },
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <HeaderSection title={DIC.CARDS_TITLE} subtitle={DIC.CARDS_SUBTITLE} />
+      <HeaderSection
+        title={DIC.CARDS_TECHNOLOGY_TITLE}
+        subtitle={DIC.CARDS_TECHNOLOGY_SUBTITLE}
+      />
+      <Article centered>
+        <P>{DIC.CARDS_TECHNOLOGY_CONTENT_0}</P>
+        <P>{DIC.CARDS_TECHNOLOGY_CONTENT_1}</P>
+        <P>HERE ALL OPTIONS OF TECHNOLOGIE IN TABS WHEN CONTENT AVAILABLE</P>
+      </Article>
       <Footer />
     </Section>
   );
@@ -32,10 +41,12 @@ const Features = ({
 
 Features.propTypes = {
   DIC: PropTypes.shape({
-    NAV_LABEL_CARDS: PropTypes.string.isRequired,
-    CARDS_TITLE: PropTypes.string.isRequired,
-    CARDS_SUBTITLE: PropTypes.string.isRequired,
-    CARDS_DESCRIPTION: PropTypes.string.isRequired,
+    NAV_LABEL_TECHNOLOGY: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_TITLE: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_SUBTITLE: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_DESCRIPTION: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_CONTENT_0: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_CONTENT_1: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import L from 'leaflet';
 // import 'leaflet/dist/leaflet.css';
@@ -37,25 +36,68 @@ export default class ContactMap extends React.Component {
       dragging: false,
     });
     // THE MAP:
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-      maxNativeZoom: 17,
-    }).addTo(this.map.once('focus', () => { this.map.scrollWheelZoom.enable(); }));
+    L.tileLayer(
+      'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+      {
+        maxZoom: 20,
+        maxNativeZoom: 17,
+      },
+    ).addTo(
+      this.map.once('focus', () => {
+        this.map.scrollWheelZoom.enable();
+      }),
+    );
     // MARKER MADRID
-    L.marker([40.4166667, -3.7000000], { icon: futureCardIcon }, { title: 'Madrid' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`<P>${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}</P>`).closeTooltip();
+    L.marker(
+      [40.4166667, -3.7],
+      { icon: futureCardIcon },
+      { title: 'Madrid' },
+      { alt: 'Future Card' },
+    )
+      .addTo(this.map)
+      .bindTooltip(
+        `<P>${ADDRESSES[3].subtitle}<br>${ADDRESSES[3].title}<br>${ADDRESSES[3].address}<br><b>${ADDRESSES[3].location}</b><br>${ADDRESSES[3].phone}</P>`,
+      )
+      .closeTooltip();
     // MARKER PARIS
-    L.marker([48.7500000, 2.4500000], { icon: futureCardIcon }, { title: 'Paris' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`<P>${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}</P>`).closeTooltip();
+    L.marker(
+      [48.75, 2.45],
+      { icon: futureCardIcon },
+      { title: 'Paris' },
+      { alt: 'Future Card' },
+    )
+      .addTo(this.map)
+      .bindTooltip(
+        `<P>${ADDRESSES[2].subtitle}<br>${ADDRESSES[2].title}<br>${ADDRESSES[2].address}<br><b>${ADDRESSES[2].location}</b><br>${ADDRESSES[2].phone}</P>`,
+      )
+      .closeTooltip();
     // MARKER JOHANNESBURG
-    L.marker([-25.2044444, 30.0455556], { icon: futureCardIcon }, { title: 'Johannesburg' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`<P>${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}</P>`).closeTooltip();
+    L.marker(
+      [-25.2044444, 30.0455556],
+      { icon: futureCardIcon },
+      { title: 'Johannesburg' },
+      { alt: 'Future Card' },
+    )
+      .addTo(this.map)
+      .bindTooltip(
+        `<P>${ADDRESSES[4].subtitle}<br>${ADDRESSES[4].title}<br>${ADDRESSES[4].address}<br><b>${ADDRESSES[4].location}</b><br>${ADDRESSES[4].phone}</P>`,
+      )
+      .closeTooltip();
     // MARKER DUBAI
-    L.marker([25.2630556, 55.2972222], { icon: futureCardIcon }, { title: 'Dubai' }, { alt: 'Future Card' }).addTo(this.map)
-      .bindTooltip(`<P>${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subaddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}</P>`).closeTooltip();
+    L.marker(
+      [25.2630556, 55.2972222],
+      { icon: futureCardIcon },
+      { title: 'Dubai' },
+      { alt: 'Future Card' },
+    )
+      .addTo(this.map)
+      .bindTooltip(
+        `<P>${ADDRESSES[1].subtitle}<br>${ADDRESSES[1].title}<br>${ADDRESSES[1].address}<br>${ADDRESSES[1].subaddress}<br><b>${ADDRESSES[1].location}</b><br>${ADDRESSES[1].phone}</P>`,
+      )
+      .closeTooltip();
   }
 
   render() {
-    return <MapWrapper width="100%" height="650px" id="map" />;
+    return <MapWrapper width='100%' height='650px' id='map' />;
   }
 }
