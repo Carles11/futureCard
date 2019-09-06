@@ -1,0 +1,4 @@
+export const GET_CAREERS = 'GET_CAREERS';
+export const SET_CAREERS = 'SET_CAREERS';
+export const REMOVE_CAREERS = 'REMOVE_CAREERS';
+export const ERROR_CAREERS = 'ERROR_CAREERS';

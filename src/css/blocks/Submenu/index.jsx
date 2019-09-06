@@ -25,7 +25,7 @@ const Submenu = styled.div`
   position: absolute;
   top: 31px;
   left: 0;
-  width: 150px;
+  width: 175px;
   display: flex;
   flex-direction: column;
   background: white;

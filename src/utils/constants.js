@@ -30,6 +30,23 @@ const NAVIGATION = [
     key: 1,
     label: 'SOLUTIONS',
     link: '/our-solutions',
+    child: [
+      {
+        key: 16,
+        label: 'END_TO_END',
+        link: '/our-soultions/end-to-end-card-solutions',
+      },
+      {
+        key: 17,
+        label: 'CARD_MANAGEMENT',
+        link: '/our-soultions/card-management-systems',
+      },
+      {
+        key: 18,
+        label: 'CUSTOMIZE',
+        link: '/our-soultions/customize-your-card',
+      },
+    ],
   },
   {
     key: 2,

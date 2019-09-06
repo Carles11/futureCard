@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,11 +9,18 @@ import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
 import { getLocation } from '@src/actions/location/actions';
+import { getNews } from '@src/actions/news/actionsSideEffects';
 
-const News = ({
-  DIC, path, location, handleLocation,
-}) => {
+const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
+  const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
+
+  useEffect(() => {
+    if (!news.success && !loading) {
+      setLoading(true);
+      handleGetNews();
+    }
+  }, [news]);
 
   return (
     <Section>
@@ -42,15 +49,19 @@ News.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
+  news: PropTypes.string,
+  handleGetNews: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ dictionary, location }) => ({
+const mapStateToProps = ({ dictionary, location, news }) => ({
   DIC: dictionary.data,
   path: location.path,
+  news,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
+  handleGetNews: () => dispatch(getNews()),
 });
 
 export default connect(
