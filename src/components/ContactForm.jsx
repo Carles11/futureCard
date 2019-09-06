@@ -38,7 +38,6 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     }
   }, [data]);
 
-
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setEmailBody({ ...emailBody, [id]: value });
@@ -52,16 +51,11 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     handleSendEmail(emailBody);
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
-  };
-  const handleClick = () => {
     resetForm();
   };
 
   return (
-    <Form
-      action=""
-      onSubmit={handleFormSubmit}
-    >
+    <Form action="" onSubmit={handleFormSubmit}>
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
@@ -69,13 +63,14 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
       <Label htmlFor="telephone">{DIC.CONTACT_LABEL_TELEPHONE}</Label>
       <Input id="telephone" type="tel" onChange={handleInputChange} />
       <Label htmlFor="message">{DIC.CONTACT_LABEL_MESSAGE}</Label>
-      <Input id="message" type="text-area" minlength="20" required onChange={handleInputChange} />
-      <Button
-        contact
-        id="buttonText"
-        type="submit"
-        onClick={handleClick}
-      >
+      <Input
+        id="message"
+        type="text-area"
+        minlength="20"
+        required
+        onChange={handleInputChange}
+      />
+      <Button contact id="buttonText" type="submit">
         {emailBody.buttonText}
       </Button>
     </Form>
@@ -98,7 +93,7 @@ ContactForm.propTypes = {
 
 const mapStateToProps = ({ dictionary, contact }) => ({
   DIC: dictionary.data,
-  data: Object.keys(contact.emailBody).length ? contact.emailBody.data : {},
+  data: contact.emailBody.data,
 });
 const mapDispatchToProps = dispatch => ({
   handleSendEmail: emailBody => dispatch(sendEmail(emailBody)),

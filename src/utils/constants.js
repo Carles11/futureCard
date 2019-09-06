@@ -65,7 +65,7 @@ const NAVIGATION = [
       },
       {
         key: 12,
-        label: 'FULFILLMENT',
+        label: 'SERVICES_FULFILLMENT',
         link: '/our-services/fulfillment-packaging',
       },
     ],

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section } from '@src/css/elements';
+import { Section, Article, P } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
@@ -25,9 +25,13 @@ const Services = ({
         ]}
       />
       <HeaderSection
-        title={DIC.SERVICES_TITLE}
-        subtitle={DIC.SERVICES_SUBTITLE}
+        title={DIC.SERVICES_DESIGN_TITLE}
+        subtitle={DIC.SERVICES_DESIGN_SUBTITLE}
       />
+      <Article centered>
+        <P>{DIC.SERVICES_DESIGN_CONTENT_0}</P>
+        <P>{DIC.SERVICES_DESIGN_CONTENT_1}</P>
+      </Article>
       <Footer />
     </Section>
   );
@@ -39,6 +43,10 @@ Services.propTypes = {
     SERVICES_TITLE: PropTypes.string.isRequired,
     SERVICES_SUBTITLE: PropTypes.string.isRequired,
     SERVICES_DESCRIPTION: PropTypes.string.isRequired,
+    SERVICES_DESIGN_CONTENT_0: PropTypes.string.isRequired,
+    SERVICES_DESIGN_CONTENT_1: PropTypes.string.isRequired,
+    SERVICES_DESIGN_SUBTITLE: PropTypes.string.isRequired,
+    SERVICES_DESIGN_TITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

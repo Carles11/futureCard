@@ -27,14 +27,12 @@ const AboutFCI = ({
       />
       <HeaderSection
         title={DIC.NAV_LABEL_OUR_FACILITY}
-        subtitle={DIC.ABOUT_SUBTITLE}
+        subtitle={DIC.ABOUT_US_FACILITY_SUBTITLE}
       />
       <Article centered>
-        <P>
-          Facility size: 7,100 sqm. Factory, personalization bureau, Fulfillment
-          House, In-House Design monthly up to 10 million plastic cards which
-          can include 5 million EMV cards.
-        </P>
+        <P>{DIC.ABOUT_US_FACILITY_CONTENT}</P>
+        <P>{DIC.ABOUT_US_FACILITY_CONTENT_1}</P>
+        <P>{DIC.ABOUT_US_FACILITY_CONTENT_2}</P>
       </Article>
       <Footer />
     </Section>
@@ -47,6 +45,10 @@ AboutFCI.propTypes = {
     NAV_LABEL_OUR_FACILITY: PropTypes.string.isRequired,
     ABOUT_SUBTITLE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_FACILITY_CONTENT: PropTypes.string.isRequired,
+    ABOUT_US_FACILITY_CONTENT_1: PropTypes.string.isRequired,
+    ABOUT_US_FACILITY_CONTENT_2: PropTypes.string.isRequired,
+    ABOUT_US_FACILITY_SUBTITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

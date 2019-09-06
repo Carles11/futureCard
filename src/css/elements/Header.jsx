@@ -41,6 +41,28 @@ const Header = styled.header`
         z-index: 1;
       }
     `}
+    ${props => props.left
+      && css`
+        @media only screen and (min-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+          max-width: 1440px;
+          margin: 0 auto;
+          align-items: left;
+          padding: 3rem 4rem 0;
+          box-sizing: border-box;
+          z-index: 1;
+        }
+        @media only screen and (max-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding: 2.5rem 2.5rem 0;
+          box-sizing: border-box;
+          align-items: left;
+          z-index: 1;
+        }
+      `}
 `;
 
 export default Header;

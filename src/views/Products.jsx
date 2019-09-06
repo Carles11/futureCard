@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import HeaderSection from '@src/components/HeaderSection';
 
-import { Section } from '@src/css/elements';
+import { Article, Section, P } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
@@ -41,6 +41,10 @@ const Products = ({
         title={DIC.PRODUCT_TITLE}
         subtitle={DIC.PRODUCT_SUBTITLE}
       />
+      <Article centered>
+        <P>{DIC.PRODUCTS_CONTENT_0}</P>
+        <P>{DIC.PRODUCTS_CONTENT_1}</P>
+      </Article>
       <Footer />
     </Section>
   );
@@ -49,6 +53,8 @@ const Products = ({
 Products.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
+    PRODUCTS_CONTENT_0: PropTypes.string.isRequired,
+    PRODUCTS_CONTENT_1: PropTypes.string.isRequired,
     PRODUCT_TITLE: PropTypes.string.isRequired,
     PRODUCT_SUBTITLE: PropTypes.string.isRequired,
     PRODUCT_DESCRIPTION: PropTypes.string.isRequired,

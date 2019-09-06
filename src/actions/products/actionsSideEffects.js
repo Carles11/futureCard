@@ -6,7 +6,7 @@ export const getProducts = () => async (dispatch) => {
     const products = await api.get('products');
     dispatch(ACTION.getProducts(products));
   } catch (error) {
-    throw new Error('SOmething went wrong');
+    throw new Error('Something went wrong');
   }
 };
 

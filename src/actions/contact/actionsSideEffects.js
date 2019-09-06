@@ -1,25 +1,14 @@
+/* eslint-disable no-console */
 /* eslint-disable import/prefer-default-export */
-import PropTypes from 'prop-types';
-import axios from 'axios';
+import API from '@src/utils/API';
 
 import * as ACTION from './actions';
 
-export const sendEmail = emailBody => (dispatch) => {
+export const sendEmail = emailBody => async (dispatch) => {
   try {
-    axios.post('http://localhost:4444/crix-mail-api/index.js', emailBody)
-      .then(res => dispatch(ACTION.sendEmail(res)))
-      .catch((err) => {
-        throw Error(err);
-      });
+    const response = await API.post('mail', emailBody);
+    dispatch(ACTION.sendEmail(response));
   } catch (error) {
     throw new Error('Failed to send e-mail');
   }
-};
-
-sendEmail.propTypes = {
-  DIC: PropTypes.shape({
-    BUTTON_SEND: PropTypes.string.isRequired,
-    BUTTON_NOT_SENT: PropTypes.string.isRequired,
-    BUTTON_SENDING: PropTypes.string.isRequired,
-  }).isRequired,
 };

@@ -21,15 +21,20 @@ const AboutFCI = ({
       <Helmet
         title={DIC.NAV_LABEL_CAREERS}
         meta={[
-          { name: 'description', content: `${DIC.ABOUT_US_DESCRIPTION}` },
+          {
+            name: 'description',
+            content: `${DIC.ABOUT_US_CAREERS_DESCRIPTION}`,
+          },
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={DIC.ABOUT_SUBTITLE} />
+      <HeaderSection
+        title={DIC.NAV_LABEL_CAREERS}
+        subtitle={DIC.ABOUT_US_CAREERS_SUBTITLE}
+      />
       <Article centered>
-        <P>
-          ADD CAREERS TO THE DDBB
-        </P>
+        <P>NO CONTENT AVAILABLE</P>
+        <P>HERE WILL APPEAR ALL CAREERS FROM THE DATABASE WHEN FEEDED</P>
       </Article>
       <Footer />
     </Section>
@@ -42,6 +47,8 @@ AboutFCI.propTypes = {
     ABOUT_TITLE: PropTypes.string.isRequired,
     ABOUT_SUBTITLE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_CAREERS_SUBTITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

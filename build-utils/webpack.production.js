@@ -29,12 +29,12 @@ module.exports = dirname => ({
       chunkFilename: '[id].css',
     }),
     new WebpackPwaManifest({
-      name: 'ABlueLemon',
-      short_name: 'ABlueLemon',
-      description: 'A Blue Lemon Production Web App',
-      background_color: '#262938',
+      name: 'FutureCard',
+      short_name: 'FutureCard',
+      description: 'FutureCard Industries LLC',
+      background_color: '#ffffff',
       crossorigin: 'use-credentials',
-      theme_color: '#262938',
+      theme_color: '#ffffff',
       inject: true,
       icons: [
         // {
