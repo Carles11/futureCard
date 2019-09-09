@@ -34,17 +34,17 @@ const NAVIGATION = [
       {
         key: 16,
         label: 'END_TO_END',
-        link: '/our-soultions/end-to-end-card-solutions',
+        link: '/our-solutions/end-to-end-card-solutions',
       },
       {
         key: 17,
         label: 'CARD_MANAGEMENT',
-        link: '/our-soultions/card-management-systems',
+        link: '/our-solutions/card-management-systems',
       },
       {
         key: 18,
         label: 'CUSTOMIZE',
-        link: '/our-soultions/customize-your-card',
+        link: '/our-solutions/customize-your-card',
       },
     ],
   },

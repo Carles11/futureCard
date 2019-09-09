@@ -17,7 +17,7 @@ const AnimateVisibility = keyframes`
   100% {
     display: flex;
     opacity: 1;
-    top: 3.7rem
+    top: 3.72rem
   }
 `;
 
@@ -36,7 +36,7 @@ const Breadcrumb = styled.ul`
     ${props => props.visible
       && css`
         animation: ${AnimateVisibility} 0.25s ease-in-out 0s;
-        top: 3.7rem;
+        top: 3.72rem;
         opacity: 0.99;
         width: 100%;
       `}

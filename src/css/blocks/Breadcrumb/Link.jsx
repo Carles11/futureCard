@@ -26,6 +26,7 @@ const LinkComponent = styled(
   background: #f1f1f1;
   border-bottom: 1px solid #dddddd;
   padding: 1rem 2.5rem;
+  
   &:hover {
     color: ${props => props.theme.mainColor};
     text-decoration: none;

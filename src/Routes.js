@@ -8,7 +8,10 @@ const About = lazy(() => import('./views/About'));
 const AboutFacility = lazy(() => import('./views/AboutFacility'));
 const AboutWhoWeAre = lazy(() => import('./views/AboutWhoWeAre'));
 const Careers = lazy(() => import('./views/Careers'));
-const Products = lazy(() => import('./views/Products'));
+const SolutionsCustomize = lazy(() => import('./views/SolutionsCustomize'));
+const SolutionsCardManagement = lazy(() => import('./views/SolutionsCardManagement'));
+const SolutionsEndToEnd = lazy(() => import('./views/SolutionsEndToEnd'));
+const Solutions = lazy(() => import('./views/Solutions'));
 const Services = lazy(() => import('./views/Services'));
 const ServicesDesign = lazy(() => import('./views/ServicesDesign'));
 const ServicesFulfillment = lazy(() => import('./views/ServicesFulfillment'));
@@ -32,7 +35,19 @@ const Routes = () => (
       />
       <Route path="/about-futurecard/careers" component={Careers} />
       <Route path="/about-futurecard" component={About} />
-      <Route path="/our-solutions" component={Products} />
+      <Route
+        path="/our-solutions/customize-your-card"
+        component={SolutionsCustomize}
+      />
+      <Route
+        path="/our-solutions/card-management-systems"
+        component={SolutionsCardManagement}
+      />
+      <Route
+        path="/our-solutions/end-to-end-card-solutions"
+        component={SolutionsEndToEnd}
+      />
+      <Route path="/our-solutions" component={Solutions} />
       <Route path="/our-services/card-design" component={ServicesDesign} />
       <Route
         path="/our-services/card-personalization"
