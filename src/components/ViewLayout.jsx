@@ -31,7 +31,7 @@ const ViewLayout = ({
       return setBreadcrumb([{ label: navigation.label }, ...navigation.child]);
     }
 
-    return false;
+    return () => {};
   }, [path]);
 
   return (
@@ -61,7 +61,7 @@ ViewLayout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  DIC: PropTypes.arrayOf({
+  DIC: PropTypes.shape({
     NAV_LABEL_SERVICES_FULFILLMENT: PropTypes.string.isRequired,
   }),
 };
