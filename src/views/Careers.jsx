@@ -1,33 +1,25 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Footer from '@src/components/Footer';
+import ViewLayout from '@src/components/ViewLayout';
 import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
 
-import { Article, P, Section } from '@src/css/elements';
+import { Article, P } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const AboutFCI = ({
+const Careers = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
 
   return (
-    <Section>
-      <Helmet
-        title={DIC.NAV_LABEL_CAREERS}
-        meta={[
-          {
-            name: 'description',
-            content: `${DIC.ABOUT_US_CAREERS_DESCRIPTION}`,
-          },
-          { property: 'og:title', content: 'welcome to futurecard.com' },
-        ]}
-      />
+    <ViewLayout
+      title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
+      description={DIC.ABOUT_US_CAREERS_DESCRIPTION}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_CAREERS}
         subtitle={DIC.ABOUT_US_CAREERS_SUBTITLE}
@@ -36,12 +28,11 @@ const AboutFCI = ({
         <P>NO CONTENT AVAILABLE</P>
         <P>HERE WILL APPEAR ALL CAREERS FROM THE DATABASE WHEN FEEDED</P>
       </Article>
-      <Footer />
-    </Section>
+    </ViewLayout>
   );
 };
 
-AboutFCI.propTypes = {
+Careers.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
     ABOUT_TITLE: PropTypes.string.isRequired,
@@ -69,4 +60,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AboutFCI);
+)(Careers);

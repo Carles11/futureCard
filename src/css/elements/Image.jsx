@@ -11,8 +11,8 @@ const Image = styled.img`
       height: auto;
 
       @media only screen and (max-width: 1024px) {
-        height: 50%;
-        width: auto;
+        height: auto;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
       }

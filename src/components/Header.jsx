@@ -26,10 +26,12 @@ const Header = ({ LANG: language, DIC, path }) => {
   const position = useScroll();
   const size = useSize();
 
+  /** Handles change on app language */
   useEffect(() => {
     dispatch({ type: 'ALL', language, navigation: NAVIGATION });
   }, [language]);
 
+  /** Handles scroll position for Header background */
   useEffect(() => {
     if (!state.position && position > 100) {
       dispatch({ type: 'SCROLL', position: true });
@@ -42,11 +44,13 @@ const Header = ({ LANG: language, DIC, path }) => {
     }
   }, [position]);
 
+  /** Handles page location to change menu color */
   useEffect(() => {
     const dark = path === '/';
     dispatch({ type: 'DARK', dark });
   }, [path]);
 
+  /** Handles screen resolution and effects in the menu */
   useEffect(() => {
     if (size.w <= 1024 && !state.mobile) {
       dispatch({ type: 'MOBILE', mobile: true });

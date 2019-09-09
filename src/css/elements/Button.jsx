@@ -88,6 +88,23 @@ const Button = styled.button`
       display: block;
       line-height: 0;
     `}
+  
+  ${props => props.transparent
+    && css`
+    font-size: 1.25rem;
+    background: transparent;
+    border: none;
+    color: ${props.theme.fontColor}
+    padding: 1rem 0 1rem 1rem;
+
+    &:hover {
+      background: transparent;
+      border: none;
+      color: ${props.theme.mainColor};
+      padding: 1rem 0 1rem 1rem;
+    }
+  `}
+
 `;
 
 const Icon = styled.i`

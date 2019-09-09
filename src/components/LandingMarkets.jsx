@@ -45,6 +45,7 @@ const LandingMarkets = ({ DIC }) => (
       {SECTIONS.map((section) => {
         const TITLE = `MARKETS_${section.title}`;
         const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
+
         return (
           <Box.Item key={section.id} withScale withBackground>
             <Grid

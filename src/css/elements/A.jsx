@@ -62,6 +62,7 @@ const A = styled(
     ...rest
   }) => <Link children={children} {...rest} />,
 )`
+
   ${props => props.role === 'button'
     && css`
       ${buttonDefault}
@@ -122,6 +123,23 @@ const A = styled(
       display: block;
       line-height: 0;
     `}
+
+    ${props => props.withmargin
+      && css`
+        margin: ${props.withmargin} !important;
+      `}
+
+    ${props => props.withpadding
+      && css`
+        box-sizing: border-box;
+        margin: ${props.withpadding} !important;
+      `}
+
+    ${props => props.tiny
+      && css`
+        font-size: 0.8rem;
+        display: block;
+      `}
 `;
 
 const Icon = styled.i`

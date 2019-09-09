@@ -8,6 +8,11 @@ const H2 = styled.h2`
   font-weight: lighter;
   line-height: 1.4;
 
+  ${props => props.flex
+    && css`
+      flex: ${props.flex};
+    `}
+
   ${props => props.invertColor
     && css`
       color: #ffffff;
