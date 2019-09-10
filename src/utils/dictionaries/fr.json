@@ -78,6 +78,7 @@
   "NAV_LABEL_PRODUCTS": "Produits",
   "NAV_LABEL_SERVICES": "Nos services",
   "NAV_LABEL_SERVICES_FULFILLMENT": "Pachage de l'exécution des commandes",
+  "NAV_LABEL_SERVICES_PERSONALIZATION": "Personalization Services",
   "NAV_LABEL_SOLUTIONS": "Nos solutions",
   "NAV_LABEL_TECHNOLOGY": "Technologie Matériaux",
   "NAV_LABEL_WHO_WE_ARE": "Qui nous sommes",
@@ -124,5 +125,6 @@
   "SERVICES_PERSONALIZATION_SUBTITLE": "Services personalization subtitle",
   "SERVICES_PERSONALIZATION_TITLE": "Personnalisation de cartes",
   "SERVICES_SUBTITLE": "Consultez ici les services offerts par FutureCard",
-  "SERVICES_TITLE": "Services"
+  "SERVICES_TITLE": "Services",
+  "SOLUTIONS_END_TO_END_DESCRIPTION": "Today’s Payment market is marked by the latest technology and the most convenient End-to-End solutions to make the customers life easier."
 }

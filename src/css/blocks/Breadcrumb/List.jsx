@@ -8,7 +8,7 @@ const AnimateVisibility = keyframes`
   0% {
     display: none;
     opacity: 0;
-    top: 1rem;
+    top: 2rem;
   }
   1% {
     display: flex;
@@ -23,6 +23,7 @@ const AnimateVisibility = keyframes`
 
 const Breadcrumb = styled.ul`
   @media only screen and (max-width: 1024px) {
+    display: none;
     position: absolute;
     list-style: none;
     flex-direction: column;
@@ -30,11 +31,12 @@ const Breadcrumb = styled.ul`
     opacity: 0;
     padding: 0;
     margin: 0;
-    transition: top 0.3s ease-in-out;
-    top: 0;
+    transition: top 0.2s ease-in-out;
+    top: 2rem;
 
     ${props => props.visible
       && css`
+        display: flex;
         animation: ${AnimateVisibility} 0.25s ease-in-out 0s;
         top: 3.72rem;
         opacity: 0.99;

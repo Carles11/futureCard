@@ -32,7 +32,7 @@ const ViewLayout = ({
     }
 
     return () => {};
-  }, [path]);
+  }, [path, DIC]);
 
   return (
     <Section>
