@@ -66,9 +66,11 @@ const Header = ({ LANG: language, DIC, path }) => {
   }
 
   function handleSubmenu(e) {
-    const active = e.target.id;
+    const { id } = e.target;
 
-    dispatch({ type: 'SUBMENU', active: state.active ? '' : Number(active) });
+    if (id !== state.active) {
+      dispatch({ type: 'SUBMENU', active: Number(id) });
+    }
   }
 
   return (
@@ -76,15 +78,15 @@ const Header = ({ LANG: language, DIC, path }) => {
       <Layout.Header>
         <Layout.Header.Overlay visible={state.visibility} />
         <Layout.Header.Logo>
-          <Link to="/">
+          <Link to='/'>
             <Layout.Header.Logo.Image
               src={state.dark ? logoWhite : logo}
-              alt="Futurecard logo"
+              alt='Futurecard logo'
             />
           </Link>
         </Layout.Header.Logo>
         <Layout.Header.Navigation visible={state.visibility}>
-          {state.navigation.map((item) => {
+          {state.navigation.map(item => {
             const LABEL = `NAV_LABEL_${item.label}`;
             const children = item.child ? 'arrow' : null;
 
@@ -98,8 +100,7 @@ const Header = ({ LANG: language, DIC, path }) => {
                       path === item.link ? item.link.toString() : undefined
                     }
                     onMouseEnter={handleSubmenu}
-                    onMouseLeave={handleSubmenu}
-                  >
+                    onMouseLeave={handleSubmenu}>
                     {DIC[LABEL]}
                     {item.key === state.active ? (
                       <Submenu items={item.child} DIC={DIC} />
@@ -112,8 +113,7 @@ const Header = ({ LANG: language, DIC, path }) => {
                       path === item.link ? item.link.toString() : undefined
                     }
                     to={item.link}
-                    onClick={() => handleChangeVisibility(false)}
-                  >
+                    onClick={() => handleChangeVisibility(false)}>
                     {DIC[LABEL]}
                   </Layout.Header.Navigation.Link>
                 )}
