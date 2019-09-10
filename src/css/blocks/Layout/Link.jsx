@@ -27,9 +27,8 @@ const Link = styled(
   border-bottom: 3px solid transparent;
   transition: border-color 0.3s ease-in-out;
 
-  ${props =>
-    props.active &&
-    css`
+  ${props => props.active
+    && css`
       border-bottom: 3px solid ${props.theme.mainColor};
     `}
 
@@ -37,9 +36,8 @@ const Link = styled(
     border-bottom: 3px solid ${props => props.theme.mainColor};
   }
 
-  ${props =>
-    props.with_dark &&
-    css`
+  ${props => props.with_dark
+    && css`
       color: white;
     `}
 
@@ -67,9 +65,8 @@ const Link = styled(
       }
     }
 
-    ${props =>
-      props.active &&
-      css`
+    ${props => props.active
+      && css`
         border: none;
         box-sizing: border-box;
         border-bottom: 1px solid #1c1f28;
