@@ -166,7 +166,7 @@ const FooterComponent = ({
             <P invertColor small>
               {YEAR}
               {' '}
-&copy; Futurecard Industries LLC
+&copy; Futurecard Industries L.L.C
             </P>
           </Grid>
           <Grid middle>

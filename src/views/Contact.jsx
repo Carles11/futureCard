@@ -13,7 +13,9 @@ import { Section, Article } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const Contact = ({ DIC, path, location, handleLocation }) => {
+const Contact = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (

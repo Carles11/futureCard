@@ -41,6 +41,11 @@ const H3 = styled.h3`
     && css`
       margin: ${props.withMargin};
     `}
+
+  ${props => props.centered
+    && css`
+    text-align: center;  
+  `}
 `;
 
 export default withTheme(H3);

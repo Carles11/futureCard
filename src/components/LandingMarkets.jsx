@@ -17,23 +17,28 @@ import Box from '@src/css/blocks/Box';
 const SECTIONS = [
   {
     id: 1,
-    title: 'GOVERNMENT',
+    title: 'PAYMENT',
     icon: <FaUniversity />,
   },
   {
     id: 2,
-    title: 'FINANCIAL',
+    title: 'IDENTIFICATION',
     icon: <FaMoneyBillAlt />,
   },
   {
     id: 3,
-    title: 'MOBILE',
+    title: 'TRANSPORT_ACCESS',
     icon: <FaMobileAlt />,
   },
   {
     id: 4,
-    title: 'COMMERCIAL',
+    title: 'TELECOM',
     icon: <FaUsers />,
+  },
+  {
+    id: 5,
+    title: 'LOYALTY_RETAIL',
+    icon: <FaMoneyBillAlt />,
   },
 ];
 
@@ -75,14 +80,16 @@ LandingMarkets.propTypes = {
     LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired,
     ABOUT_US_MARKETS: PropTypes.string.isRequired,
-    MARKETS_GOVERNMENT: PropTypes.string.isRequired,
-    MARKETS_FINANCIAL: PropTypes.string.isRequired,
-    MARKETS_MOBILE: PropTypes.string.isRequired,
-    MARKETS_COMMERCIAL: PropTypes.string.isRequired,
-    MARKETS_DESCRIPTION_GOVERNMENT: PropTypes.string.isRequired,
-    MARKETS_DESCRIPTION_FINANCIAL: PropTypes.string.isRequired,
-    MARKETS_DESCRIPTION_MOBILE: PropTypes.string.isRequired,
-    MARKETS_DESCRIPTION_COMMERCIAL: PropTypes.string.isRequired,
+    MARKETS_PAYMENT: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_PAYMENT: PropTypes.string.isRequired,
+    MARKETS_IDENTIFICATION: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_IDENTIFICATION: PropTypes.string.isRequired,
+    MARKETS_TRANSPORT_ACCESS: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_TRANSPORT_ACCESS: PropTypes.string.isRequired,
+    MARKETS_TELECOM: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_TELECOM: PropTypes.string.isRequired,
+    MARKETS_LOYALTY_RETAIL: PropTypes.string.isRequired,
+    MARKETS_DESCRIPTION_LOYALTY_RETAIL: PropTypes.string.isRequired,
   }).isRequired,
 };
 
