@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import ContactForm from '@src/components/ContactForm';
-import ContactMap from '@src/components/ContactMap';
+import Background from '@src/components/Background';
+import backgroundImg from '@src/assets/image/contact-map-fci.png';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
-import {
-  Section, Article,
-} from '@src/css/elements';
+import { Section, Article } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -25,11 +24,18 @@ const Contact = ({
         title={DIC.NAV_LABEL_CONTACT}
         meta={[
           { name: 'description', content: `${DIC.CONTACT_DECRIPTION}` },
-          { property: 'og:title', content: 'Contact page of FutureCard Industries' },
+          {
+            property: 'og:title',
+            content: 'Contact page of FutureCard Industries',
+          },
         ]}
       />
-      <HeaderSection title={DIC.CONTACT_TITLE} subtitle={DIC.CONTACT_SUBTITLE} />
-      <ContactMap />
+      <HeaderSection
+        title={DIC.CONTACT_TITLE}
+        subtitle={DIC.CONTACT_SUBTITLE}
+      />
+      <Background image={backgroundImg} />
+
       <Article centered>
         <ContactForm />
       </Article>

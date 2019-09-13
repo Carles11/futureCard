@@ -5,27 +5,23 @@ import HeaderSection from '@src/components/HeaderSection';
 
 import Icon from '@src/components/Icon';
 import {
-  FiShoppingCart,
-  FiCreditCard,
   FiArrowRightCircle,
 } from 'react-icons/fi';
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H4, Hr, P,
+  A, Article, Grid, H3, Hr, P,
 } from '@src/css/elements';
 
 const SECTIONS = [
   {
     id: 1,
     title: 'SOLUTIONS',
-    icon: <FiShoppingCart />,
     link: '/our-solutions',
   },
   {
     id: 2,
     title: 'SERVICES',
-    icon: <FiCreditCard />,
     link: '/our-services',
   },
 ];
@@ -41,17 +37,9 @@ const LandingAbout = ({ DIC }) => (
         const CONTENT = `ABOUT_US_${section.title}`;
         return (
           <Box.Item key={section.id} withBackground>
-            <Grid
-              withIcon
-              withPadding="2rem 2rem 1rem"
-              flex={1}
-              vertical="center"
-            >
-              {section.icon}
-            </Grid>
-            <H4 withMargin="0.5rem" centered>
+            <H3 withMargin="0.5rem" centered>
               {DIC[TITLE]}
-            </H4>
+            </H3>
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
             <P small withPadding="0 1rem 0.5rem" withAlign="center">
               {DIC[CONTENT]}

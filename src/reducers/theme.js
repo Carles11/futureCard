@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  fontColor: '#262938',
+  fontColor: '#0d1326',
   fontColorDarker: '#222430',
   fontWhite: '#ffffff',
   mainColor: '#fe4d10',
