@@ -17,6 +17,14 @@ const Grid = styled.div`
     margin-right: 0;
   }
 
+  ${props => props.responsive
+    && css`
+      @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    `}
+
   ${props => props.wrapping
     && css`
       flex-wrap: wrap;

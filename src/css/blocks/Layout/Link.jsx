@@ -19,7 +19,7 @@ const Link = styled(
   }) => <NavLink children={children} {...rest} />,
 )`
   position: relative;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;

@@ -93,6 +93,7 @@ const NAVIGATION = [
         key: 18,
         label: 'CUSTOMIZE',
         link: '/our-solutions/customize-your-card',
+        image: true,
       },
     ],
   },

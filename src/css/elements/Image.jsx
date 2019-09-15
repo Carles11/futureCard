@@ -21,6 +21,15 @@ const Image = styled.img`
     && css`
       margin: ${props.withMargin};
     `}
+
+  ${props => props.responsive
+    && css`
+      @media only screen and (max-width: 1024px) {
+        height: auto;
+        width: 100%;
+        left: 50%;
+      }
+    `}
 `;
 
 export default Image;

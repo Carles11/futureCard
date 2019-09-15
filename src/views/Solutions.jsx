@@ -1,6 +1,4 @@
-// @ts-check
-
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FiArrowRightCircle } from 'react-icons/fi';
@@ -9,12 +7,13 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import Icon from '@src/components/Icon';
 import { NAVIGATION } from '@src/utils/constants';
+import healthCard from '@src/assets/image/health_card.png';
 
-import Box from '@src/css/blocks/Box/index';
-import List from '@src/css/blocks/List/index';
+import Box from '@src/css/blocks/Box';
+import List from '@src/css/blocks/List';
 import {
-  A, Article, H3, Hr, P, Grid,
-} from '@src/css/elements/index';
+  A, Article, H3, Hr, P, Grid, Figure, Image,
+} from '@src/css/elements';
 
 /**
  * Solutions View Component
@@ -67,14 +66,21 @@ const Solutions = ({ DIC }) => {
                     })}
                   </List>
                 ) : (
-                  <Grid withMargin="2rem 0 1.5rem" vertical="center">
-                    <A role="button" to={section.link}>
-                      {DIC[TITLE]}
-                      <Icon>
-                        <FiArrowRightCircle />
-                      </Icon>
-                    </A>
-                  </Grid>
+                  <Fragment>
+                    {!!section.image && (
+                      <Figure card>
+                        <Image responsive src={healthCard} alt={DIC[TITLE]} />
+                      </Figure>
+                    )}
+                    <Grid withMargin="2rem 0 1.5rem" vertical="center">
+                      <A role="button" to={section.link}>
+                        {DIC[TITLE]}
+                        <Icon>
+                          <FiArrowRightCircle />
+                        </Icon>
+                      </A>
+                    </Grid>
+                  </Fragment>
                 )}
               </Box.Item>
             );
@@ -88,7 +94,6 @@ const Solutions = ({ DIC }) => {
 Solutions.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
-    NAV_LABEL_SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };
 

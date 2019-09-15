@@ -17,13 +17,13 @@ const AnimateVisibility = keyframes`
   100% {
     display: block;
     opacity: 1;
-    top: 34px
+    top: 32px
   }
 `;
 
 const Submenu = styled.div`
   position: absolute;
-  top: 34px;
+  top: 32px;
   left: 0;
   min-width: 100%;
   width: auto;

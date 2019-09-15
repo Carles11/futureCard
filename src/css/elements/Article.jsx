@@ -32,6 +32,11 @@ const Article = styled.article`
         align-items: center;
       }
     `}
+
+  ${props => props.with_margin
+    && css`
+      margin: ${props.with_margin} !important;
+    `}
 `;
 
 export default Article;
