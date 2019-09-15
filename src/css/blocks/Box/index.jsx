@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import Item from './Item';
 import Figure from './Figure';
+import Link from './Link';
+
 
 const Box = styled.div`
   position: relative;
@@ -18,5 +20,6 @@ const Box = styled.div`
 
 Box.Item = Item;
 Box.Figure = Figure;
+Box.Link = Link;
 
 export default Box;

@@ -211,7 +211,7 @@ FooterComponent.propTypes = {
     NAV_LABEL_HOME: PropTypes.string.isRequired,
     NAV_LABEL_LANGUAGE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
-    NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
+    NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
   }).isRequired,
   handleSetDictionary: PropTypes.func.isRequired,
@@ -226,7 +226,6 @@ const mapStateToProps = ({ dictionary, location }) => ({
 
 const mapDispatchToProps = dispatch => ({
   handleSetDictionary: lang => dispatch(setDictionary(lang)),
-
 });
 
 export default connect(

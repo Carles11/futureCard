@@ -18,7 +18,7 @@ const Careers = ({
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
-      description={DIC.ABOUT_US_CAREERS_DESCRIPTION}
+      description={DIC.ABOUT_CAREERS}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_CAREERS}
@@ -36,9 +36,8 @@ Careers.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
     ABOUT_TITLE: PropTypes.string.isRequired,
-    ABOUT_SUBTITLE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
-    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_CAREERS: PropTypes.string.isRequired,
     ABOUT_US_CAREERS_SUBTITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,

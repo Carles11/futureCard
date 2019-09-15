@@ -27,7 +27,7 @@ const Article = styled.article`
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 1rem 2.5rem 2.5rem;
+        padding: 1rem 1.5rem 2.5rem;
         box-sizing: border-box;
         align-items: center;
       }

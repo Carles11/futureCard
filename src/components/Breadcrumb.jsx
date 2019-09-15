@@ -15,12 +15,12 @@ const BreadcrumbComponent = ({ items, DIC }) => {
   }
 
   return (
-    <Breadcrumb>
+    <Breadcrumb onClick={handleVisibility}>
       <Breadcrumb.Header>
         <H2 tiny flex="1">
           {DIC[TITLE]}
         </H2>
-        <Button transparent onClick={handleVisibility}>
+        <Button transparent>
           <FiChevronDown />
         </Button>
       </Breadcrumb.Header>

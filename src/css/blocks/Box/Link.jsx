@@ -1,10 +1,27 @@
-// @flow
-
+import React from 'react';
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Item = styled.div`
+import withTheme from '@src/css/Theme';
+
+const LinkComponent = styled(
+  ({
+    children,
+    dispatch,
+    forwardedComponent,
+    forwardedRef,
+    history,
+    location,
+    match,
+    invert,
+    staticContext,
+    theme,
+    ...rest
+  }) => <Link children={children} {...rest} />,
+)`
   flex: 1;
   margin: 0 1rem;
+  text-decoration: none;
 
   &:first-of-type {
     margin-left: 0;
@@ -20,7 +37,7 @@ const Item = styled.div`
       border: 1px solid #fafafa;
     `}
 
-  ${props => props.withScale
+  ${props => props.with_scale
     && css`
       transform: scale(1);
       box-shadow: 0;
@@ -48,4 +65,4 @@ const Item = styled.div`
   }
 `;
 
-export default Item;
+export default withTheme(LinkComponent);

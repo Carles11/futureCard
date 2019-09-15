@@ -1,7 +1,10 @@
+// @ts-check
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
+// @ts-ignore
 import { FiArrowRightCircle } from 'react-icons/fi';
 
 import LandingAbout from '@src/components/LandingAbout';
@@ -15,10 +18,19 @@ import useLocation from '@src/hooks/useLocation';
 
 import {
   A, H1, H2, Hr, Header, Section,
-} from '@src/css/elements';
+} from '@src/css/elements/index';
 
 import { getLocation } from '@src/actions/location/actions';
 
+/**
+ * Landing Component
+ *
+ * @param {Object} props
+ * @param {Object} props.DIC
+ * @param {string} props.path
+ * @param {string} props.location
+ * @param {function} props.handleLocation
+ */
 const Landing = ({
   DIC, path, location, handleLocation,
 }) => {

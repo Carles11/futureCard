@@ -6,7 +6,6 @@ import Loader from '@src/components/Loader';
 const Landing = lazy(() => import('./views/Landing'));
 const About = lazy(() => import('./views/About'));
 const AboutFacility = lazy(() => import('./views/AboutFacility'));
-const AboutWhoWeAre = lazy(() => import('./views/AboutWhoWeAre'));
 const Careers = lazy(() => import('./views/Careers'));
 const SolutionsCustomize = lazy(() => import('./views/SolutionsCustomize'));
 const SolutionsCardManagement = lazy(() => import('./views/SolutionsCardManagement'));
@@ -28,7 +27,6 @@ const Routes = () => (
   <Suspense fallback={<Loader loader />}>
     <Switch>
       <Route exact path="/" component={Landing} />
-      <Route path="/about-futurecard/who-we-are" component={AboutWhoWeAre} />
       <Route
         path="/about-futurecard/our-facility-and-capabilities"
         component={AboutFacility}

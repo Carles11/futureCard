@@ -24,6 +24,7 @@ const ViewLayout = ({
   useEffect(() => {
     // eslint-disable-next-line no-restricted-globals
     useLocation(path, location, handleLocation);
+    window.scrollTo(0, 0);
 
     const navigation = NAVIGATION.find(item => item.link === path);
 
@@ -44,7 +45,7 @@ const ViewLayout = ({
         ]}
       />
       {!!breadcrumb && !!breadcrumb.length && (
-        <Breadcrumb DIC={DIC} items={breadcrumb} />
+        <Breadcrumb DIC={DIC} items={breadcrumb} path={path} />
       )}
       {children}
       <Footer />

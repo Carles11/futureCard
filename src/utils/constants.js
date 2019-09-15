@@ -10,11 +10,6 @@ const NAVIGATION = [
     link: '/about-futurecard',
     child: [
       {
-        key: 7,
-        label: 'WHO_WE_ARE',
-        link: '/about-futurecard/who-we-are',
-      },
-      {
         key: 8,
         label: 'OUR_FACILITY',
         link: '/about-futurecard/our-facility-and-capabilities',
@@ -35,11 +30,64 @@ const NAVIGATION = [
         key: 16,
         label: 'END_TO_END',
         link: '/our-solutions/end-to-end-card-solutions',
+        child: [
+          {
+            key: 19,
+            label: 'PAYMENT',
+            link: '/our-solutions/end-to-end-card-solutions/payment',
+          },
+          {
+            key: 20,
+            label: 'IDENTIFICATION',
+            link: '/our-solutions/end-to-end-card-solutions/identification',
+          },
+          {
+            key: 21,
+            label: 'TRANSPORT_ACCESS',
+            link:
+              '/our-solutions/end-to-end-card-solutions/transport-and-access',
+          },
+          {
+            key: 22,
+            label: 'TELECOM',
+            link: '/our-solutions/end-to-end-card-solutions/telecom',
+          },
+          {
+            key: 23,
+            label: 'RETAIL_LOYALTY',
+            link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
+          },
+        ],
       },
       {
         key: 17,
         label: 'CARD_MANAGEMENT',
         link: '/our-solutions/card-management-systems',
+        child: [
+          {
+            key: 24,
+            label: 'CENTRAL_PERSONALIZATION',
+            link:
+              '/our-solutions/card-management-systems/central-personalization',
+          },
+          {
+            key: 25,
+            label: 'INSTANT_ISSUANCE',
+            link: '/our-solutions/card-management-systems/instant-issuance',
+          },
+          {
+            key: 26,
+            label: 'CARD_HOLDERS',
+            link:
+              '/our-solutions/card-management-systems/card-holders-enrollment',
+          },
+          {
+            key: 27,
+            label: 'CARD_LIFECYCLE',
+            link:
+              '/our-solutions/card-management-systems/card-lifecycle-management',
+          },
+        ],
       },
       {
         key: 18,

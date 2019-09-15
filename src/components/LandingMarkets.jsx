@@ -44,15 +44,23 @@ const SECTIONS = [
 
 const LandingMarkets = ({ DIC }) => (
   <Article centered>
-    <HeaderSection title={DIC.NAV_LABEL_MARKETS} subtitle={DIC.ABOUT_US_MARKETS} />
-    <Image section withMargin="0 0 0" src={MarketsMap} alt={DIC.NAV_LABEL_MARKETS} />
+    <HeaderSection
+      title={DIC.NAV_LABEL_MARKETS}
+      subtitle={DIC.ABOUT_US_MARKETS}
+    />
+    <Image
+      section
+      withMargin="0 0 0"
+      src={MarketsMap}
+      alt={DIC.NAV_LABEL_MARKETS}
+    />
     <Box>
       {SECTIONS.map((section) => {
         const TITLE = `MARKETS_${section.title}`;
         const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
 
         return (
-          <Box.Item key={section.id} withScale withBackground>
+          <Box.Item key={section.id} withScale with_background>
             <Grid
               withIcon
               withPadding="2rem 2rem 1rem"

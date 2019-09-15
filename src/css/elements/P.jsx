@@ -8,6 +8,7 @@ const P = styled.p`
   color: ${props => props.theme.fontColor};
   font-size: calc(16px + (17 - 15) * ((100vw - 600px) / (1600 - 900)));
   line-height: 1.75;
+  text-align: justify;
 
   ${props => !!props.bold
     && css`

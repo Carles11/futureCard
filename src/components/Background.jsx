@@ -1,8 +1,18 @@
+// @ts-check
+
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { Figure, BackgroundImage } from '@src/css/elements';
+import { Figure, BackgroundImage } from '@src/css/elements/index';
 
+/**
+ * Renders a background Image
+ *
+ * @param {Object} props
+ * @param {string} props.image
+ * @param {any} props.children
+ *
+ */
 const Background = ({ image, children }) => {
   const [background, setBackground] = useState(
     Array.isArray(image) ? image[0] : image,

@@ -18,7 +18,8 @@ const Link = styled(
     ...rest
   }) => <NavLink children={children} {...rest} />,
 )`
-  font-size: 0.8rem;
+  position: relative;
+  font-size: 0.9rem;
   color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;
@@ -42,13 +43,14 @@ const Link = styled(
     `}
 
   @media only screen and (max-width: 1024px) {
-    width: 80%;
+    width: 60%;
+    display: block;
     text-align: center;
     color: white;
     border: none;
+    border-bottom: 1px solid #080b16;
     box-sizing: border-box;
-    border-bottom: 1px solid #1c1f28;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: color 0.3s ease-in-out;
 
     &:last-child {
@@ -58,7 +60,7 @@ const Link = styled(
     &:hover {
       border: none;
       box-sizing: border-box;
-      border-bottom: 1px solid #1c1f28;
+      border-bottom: 1px solid #080b16;
       color: ${props => props.theme.mainColor};
       &:last-child {
         border: none;
@@ -69,7 +71,7 @@ const Link = styled(
       && css`
         border: none;
         box-sizing: border-box;
-        border-bottom: 1px solid #1c1f28;
+        border-bottom: 1px solid #080b16;
         color: ${props.theme.mainColor};
         &:last-child {
           border: none;
@@ -77,5 +79,15 @@ const Link = styled(
       `}
   }
 `;
+
+const Wrapper = styled.div`
+  position: relative;
+  @media only screen and (max-width: 1024px) {
+    width: 60%;
+    border: none;
+  }
+`;
+
+Link.Wrapper = Wrapper;
 
 export default withTheme(Link);

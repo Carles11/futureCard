@@ -66,7 +66,10 @@ const LandingNews = ({ DIC }) => {
 
   return (
     <Article centered>
-      <HeaderSection title={DIC.NAV_LABEL_NEWS} subtitle={DIC.NEWS_DESCRIPTION} />
+      <HeaderSection
+        title={DIC.NAV_LABEL_NEWS}
+        subtitle={DIC.NEWS_DESCRIPTION}
+      />
       <Grid middle withMargin="1rem 0 2rem">
         <Button withIcon onClick={fakeApiRequest}>
           <FiArrowLeftCircle />
@@ -83,7 +86,7 @@ const LandingNews = ({ DIC }) => {
       ) : (
         <Box>
           {NEWS.map(item => (
-            <Box.Item key={item.id} withScale withBackground>
+            <Box.Item key={item.id} withScale with_background>
               <Box.Figure>
                 <Box.Figure.Image src={item.img} alt={item.title} />
               </Box.Figure>
@@ -105,14 +108,14 @@ const LandingNews = ({ DIC }) => {
                 {item.content}
               </P>
               {item.link && (
-              <Grid withMargin="0 0 1.5rem" vertical="center">
-                <A role="button" to={item.link}>
-                  {DIC.LEARN_MORE}
-                  <Icon>
-                    <FiArrowRightCircle />
-                  </Icon>
-                </A>
-              </Grid>
+                <Grid withMargin="0 0 1.5rem" vertical="center">
+                  <A role="button" to={item.link}>
+                    {DIC.LEARN_MORE}
+                    <Icon>
+                      <FiArrowRightCircle />
+                    </Icon>
+                  </A>
+                </Grid>
               )}
             </Box.Item>
           ))}

@@ -23,6 +23,10 @@ const Navigation = styled.nav`
         display: flex;
       `}
   }
+  @media only screen and (max-width: 1024px) and (orientation: landscape) {
+    padding: 6rem 0;
+    overflow-y: scroll;
+  }
 `;
 
 export default Navigation;

@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -84,7 +82,6 @@ const A = styled(
   ${props => props.role === 'link'
     && css`
       color: ${props.theme.mainColor};
-      text-decoration: none;
       font-size: 1rem;
       padding-bottom: 0.5rem;
 

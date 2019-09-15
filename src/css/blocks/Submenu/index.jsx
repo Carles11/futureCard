@@ -8,7 +8,7 @@ const AnimateVisibility = keyframes`
   0% {
     display: none;
     opacity: 0;
-    top: 1rem;
+    top: 20px;
   }
   1% {
     display: block;
@@ -17,15 +17,16 @@ const AnimateVisibility = keyframes`
   100% {
     display: block;
     opacity: 1;
-    top: 2rem
+    top: 34px
   }
 `;
 
 const Submenu = styled.div`
   position: absolute;
-  top: 31px;
+  top: 34px;
   left: 0;
-  width: 175px;
+  min-width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   background: white;

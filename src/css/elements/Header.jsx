@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 const Header = styled.header`
   padding: 1rem;
 
+
   ${props => props.background
     && css`
     padding: 5%;
@@ -15,7 +16,7 @@ const Header = styled.header`
 
     @media only screen and (max-width: 1024px) {
       width: 100%;
-      padding: 2.5rem;
+      padding: 1.5rem;
     }
   `}
 
@@ -35,7 +36,7 @@ const Header = styled.header`
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 2.5rem 2.5rem 0;
+        padding: 2.5rem 1.5rem 0;
         box-sizing: border-box;
         align-items: center;
         z-index: 1;
@@ -50,14 +51,14 @@ const Header = styled.header`
           margin: 0 auto;
           align-items: left;
           padding: 3rem 4rem 0;
-          box-sizing: border-box;
+          ox-sizing: border-box;
           z-index: 1;
         }
         @media only screen and (max-width: 1024px) {
           display: flex;
           flex-direction: column;
           width: 100%;
-          padding: 2.5rem 2.5rem 0;
+          padding: 2.5rem 1.5rem 0;
           box-sizing: border-box;
           align-items: left;
           z-index: 1;

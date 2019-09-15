@@ -1,8 +1,8 @@
 {
   "ABOUT_TITLE": "Sobre FutureCard",
-  "ABOUT_SUBTITLE": "De un proveedor de tarjetas de recarga a un proveedor global de soluciones de tarjetas de extremo a extremo",
+  "ABOUT_WHO_WE_ARE": "De un proveedor de tarjetas de recarga a un proveedor global de soluciones de tarjetas de extremo a extremo",
   "ABOUT_US": "Sobre nosotros",
-  "ABOUT_US_CAREERS_DESCRIPTION": "Oportunidades profesionales en FutureCard",
+  "ABOUT_CAREERS": "Oportunidades profesionales en FutureCard",
   "ABOUT_US_CAREERS_SUBTITLE": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
   "ABOUT_US_CONTENT_0": "La trayectoria de FutureCard de más de 17 años comenzó como miembro del Grupo ENPI en 2002, con la entrega de tarjetas de recarga a las operaciones de telecomunicaciones. Pronto la empresa obtuvo la certificación ISO9001 en reconocimiento de las normas de gestión de calidad. En 2002, FutureCard Industries LLC fue fundada y se convirtió en un fabricante certificado de tarjetas de pago por Visa y Mastercard. Los años siguientes estuvieron marcados por la continua adquisición de clientes y la significativa expansión de la cartera de productos de tarjetas Visa EMV a tarjetas de doble interfaz, metro sin contacto, identificación policarbonatada - con características de alta seguridad y tarjetas inteligentes para la salud - al tiempo que se introducían servicios y soluciones gestionadas de HCE, identificación y tarjetas de pago. Otro hito alcanzado por FutureCard fue la obtención de los Certificados ISO14001, para la Gestión Medioambiental e ISO18001, para la Seguridad y Salud Ocupacional. En 2018 FutureCard abrió las puertas de su fábrica de pleno derecho con la disponibilidad de producir hasta 10 millones de tarjetas de plástico al mes.",
   "ABOUT_US_CONTENT_1": "Hoy en día somos conocidos como un proveedor pionero global de soluciones de tarjetas End-to-End para pagos, ID, transporte, telecomunicaciones, fidelización y venta al por menor, entre otros. Estamos sirviendo a un mercado exigente en constante crecimiento con tarjetas innovadoras, tarjetas inteligentes, así como servicios y soluciones de cumplimiento de tarjetas. Agencias gubernamentales, instituciones financieras, operadores de telecomunicaciones, corporaciones y otros negocios en todo el mundo nos confían la delicada misión de producir tarjetas seguras, que llevan sus marcas, identifican a sus clientes y autentican sus transacciones.",
@@ -10,7 +10,7 @@
   "ABOUT_US_FACILITY_CONTENT": "Superficie: 7.100 m2. Fábrica, oficina de personalización, Fulfillment House, In-House Design hasta 10 millones de tarjetas de plástico al mes que pueden incluir 5 millones de tarjetas EMV.",
   "ABOUT_US_FACILITY_CONTENT_1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   "ABOUT_US_FACILITY_CONTENT_2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  "ABOUT_US_FACILITY_SUBTITLE": "Infórmese en esta página sobre nuestras instalaciones y capacidades de producción",
+  "ABOUT_OUR_FACILITY": "Infórmese en esta página sobre nuestras instalaciones y capacidades de producción",
   "ABOUT_US_MARKETS": "Desde su creación en 2002, FutureCard atiende a una amplia base de clientes en los seis continentes. Las industrias de nuestros clientes son finanzas, gobierno, transporte, telecomunicaciones, seguros, salud, educación, comercio minorista y muchas más.",
   "ABOUT_US_PRODUCTS": "Como fabricante de tarjetas de extremo a extremo, que mezcla la tecnología con la artesanía de la impresión de seguridad, FutureCard cubre toda la cadena de valor del diseño y la fabricación de tarjetas seguras en todo tipo de sustratos: PC, PET-F, PET-G, PVC, ABS, PS, cartón, etc., permitiendo satisfacer las necesidades de todos los mercados de tarjetas estéticas y tarjetas inteligentes seguras.",
   "ABOUT_US_SERVICES": "FutureCard completa su oferta con servicios y soluciones complementarias de tarjetas, posicionándose como una ventanilla única para todas las necesidades de tarjetas. Las empresas y los proveedores de servicios confían a FutureCard la delicada misión de externalizar las operaciones de sus tarjetas desde el concepto hasta la entrega.",
@@ -77,7 +77,6 @@
   "NAV_LABEL_MARKETS": "Mercados",
   "NAV_LABEL_NEWS": "Noticias",
   "NAV_LABEL_OUR_FACILITY": "Nuestras instalaciones y capacidades",
-  "NAV_LABEL_PRODUCTS": "Productos",
   "NAV_LABEL_SERVICES": "Nuestros servicios",
   "NAV_LABEL_SERVICES_FULFILLMENT": "Paquete de cumplimiento",
   "NAV_LABEL_SERVICES_PERSONALIZATION": "Personalization Services",
@@ -105,7 +104,7 @@
   "NOT_FOUND_LINK": "Volver a la página de inicio",
   "PRODUCTS_CONTENT_0": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
   "PRODUCTS_CONTENT_1": "HERE WILL APPEAR ALL PRODUCTS/SOLUTIONS FROM THE DATABASE WHEN FEEDED",
-  "PRODUCT_DESCRIPTION": "Productos de FutureCard",
+
   "PRODUCT_TITLE": "Productos",
   "PRODUCT_SUBTITLE": "Consulte aquí nuestros productos de última generación",
   "SERVICES_DESCRIPTION": "Servicios de FutureCard",
@@ -129,5 +128,8 @@
   "SERVICES_PERSONALIZATION_TITLE": "Services personalization title",
   "SERVICES_SUBTITLE": "Consulte aquí los servicios que ofrece FutureCard",
   "SERVICES_TITLE": "Servicios",
-  "SOLUTIONS_END_TO_END_DESCRIPTION": "Today’s Payment market is marked by the latest technology and the most convenient End-to-End solutions to make the customers life easier."
+  "SOLUTIONS_DESCRIPTION": "Productos de FutureCard",
+  "SOLUTIONS_END_TO_END_DESCRIPTION": "Today’s Payment market is marked by the latest technology and the most convenient End-to-End solutions to make the customers life easier.",
+  "SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION": "",
+  "SOLUTIONS_CUSTOMIZE_DESCRIPTION": ""
 }

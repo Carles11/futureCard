@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Logo = styled.figure`
   position: absolute;
   top: 0;
-  padding: 0 2rem;
+  padding: 0 1rem;
   margin: 0;
   width: 90px;
   flex: 5;

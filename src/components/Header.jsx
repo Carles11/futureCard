@@ -8,7 +8,7 @@ import logo from '@src/assets/image/logo.png';
 import logoWhite from '@src/assets/image/logo_white.png';
 import useScroll from '@src/hooks/useScroll';
 import useSize from '@src/hooks/useSize';
-import Submenu from '@src/components/Submenu';
+import NavigationItem from '@src/components/NavigationItem';
 
 import Layout from '@src/css/blocks/Layout';
 import HeaderIcons from './HeaderIcons';
@@ -21,15 +21,11 @@ const Header = ({ LANG: language, DIC, path }) => {
     position: false,
     dark: false,
     mobile: false,
+    active: false,
   };
   const [state, dispatch] = useReducer(headerReducer, initialState);
   const position = useScroll();
   const size = useSize();
-
-  /** Handles change on app language */
-  useEffect(() => {
-    dispatch({ type: 'ALL', language, navigation: NAVIGATION });
-  }, [language]);
 
   /** Handles scroll position for Header background */
   useEffect(() => {
@@ -65,14 +61,6 @@ const Header = ({ LANG: language, DIC, path }) => {
     dispatch({ type: 'CHANGE', visibility });
   }
 
-  function handleSubmenu(e) {
-    const { id } = e.target;
-
-    if (id !== state.active) {
-      dispatch({ type: 'SUBMENU', active: Number(id) });
-    }
-  }
-
   return (
     <Fragment>
       <Layout.Header>
@@ -88,27 +76,20 @@ const Header = ({ LANG: language, DIC, path }) => {
         <Layout.Header.Navigation visible={state.visibility}>
           {state.navigation.map((item) => {
             const LABEL = `NAV_LABEL_${item.label}`;
-            const children = item.child ? 'arrow' : null;
-
             return (
               <Fragment key={item.key}>
-                {!!children && !state.mobile ? (
-                  <Layout.Header.Navigation.Container
-                    id={item.key}
-                    with_dark={!!state.dark}
-                    active={
-                      path === item.link ? item.link.toString() : undefined
-                    }
-                    onMouseEnter={handleSubmenu}
-                    onMouseLeave={handleSubmenu}
-                  >
-                    {DIC[LABEL]}
-                    {item.key === state.active ? (
-                      <Submenu items={item.child} DIC={DIC} />
-                    ) : null}
-                  </Layout.Header.Navigation.Container>
+                {!!item.child && !state.mobile ? (
+                  <NavigationItem
+                    item={item}
+                    label={DIC[LABEL]}
+                    dark={state.dark}
+                    path={path}
+                    DIC={DIC}
+                    fn={handleChangeVisibility}
+                  />
                 ) : (
                   <Layout.Header.Navigation.Link
+                    key={item.key}
                     with_dark={state.dark ? state.dark.toString() : undefined}
                     active={
                       path === item.link ? item.link.toString() : undefined
@@ -137,12 +118,6 @@ const Header = ({ LANG: language, DIC, path }) => {
 
 function headerReducer(state, action) {
   switch (action.type) {
-    case 'ALL':
-      return {
-        ...state,
-        language: action.language,
-        navigation: [...action.navigation],
-      };
     case 'CHANGE':
       return {
         ...state,
@@ -182,7 +157,6 @@ Header.propTypes = {
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_LANGUAGE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
-    NAV_LABEL_PRODUCTS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_CONTACT: PropTypes.string.isRequired,
   }).isRequired,

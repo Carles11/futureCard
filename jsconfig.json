@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
       "@src/*": ["src/*"]
-    }
+    },
+    "jsx": "react"
   },
   "exclude": ["node_modules", "dist"]
 }
