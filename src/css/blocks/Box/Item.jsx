@@ -17,7 +17,6 @@ const Item = styled.div`
 
   ${props => props.with_size
     && css`
-      margin: 0 1rem 2rem;
       flex: auto;
       width: ${props.with_size};
     `}
@@ -46,7 +45,6 @@ const Item = styled.div`
   }
 
   @media only screen and (max-width: 1024px) {
-    width: 100%;
     margin: 0 0 1rem;
 
     &:first-of-type,

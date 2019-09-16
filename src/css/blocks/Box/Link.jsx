@@ -31,14 +31,16 @@ const LinkComponent = styled(
     margin-right: 0;
   }
 
-  ${props => props.with_background
-    && css`
+  ${props =>
+    props.with_background &&
+    css`
       background: #fafafa;
       border: 1px solid #fafafa;
     `}
 
-  ${props => props.with_scale
-    && css`
+  ${props =>
+    props.with_scale &&
+    css`
       transform: scale(1);
       box-shadow: 0;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -55,7 +57,6 @@ const LinkComponent = styled(
   }
 
   @media only screen and (max-width: 1024px) {
-    width: 100%;
     margin: 0 0 1rem;
 
     &:first-of-type,
