@@ -20,7 +20,7 @@ const LinkComponent = styled(
   }) => <Link children={children} {...rest} />,
 )`
   flex: 1;
-  margin: 0 1rem;
+  margin: 0 0.75rem;
   text-decoration: none;
 
   &:first-of-type {

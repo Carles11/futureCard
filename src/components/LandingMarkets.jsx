@@ -18,26 +18,31 @@ const SECTIONS = [
   {
     id: 1,
     title: 'PAYMENT',
+    link: '/our-solutions/end-to-end-card-solutions/payment',
     icon: <FaUniversity />,
   },
   {
     id: 2,
     title: 'IDENTIFICATION',
+    link: '/our-solutions/end-to-end-card-solutions/identification',
     icon: <FaMoneyBillAlt />,
   },
   {
     id: 3,
     title: 'TRANSPORT_ACCESS',
+    link: '/our-solutions/end-to-end-card-solutions/transport-and-access',
     icon: <FaMobileAlt />,
   },
   {
     id: 4,
     title: 'TELECOM',
+    link: '/our-solutions/end-to-end-card-solutions/telecom',
     icon: <FaUsers />,
   },
   {
     id: 5,
     title: 'LOYALTY_RETAIL',
+    link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
     icon: <FaMoneyBillAlt />,
   },
 ];
@@ -60,7 +65,12 @@ const LandingMarkets = ({ DIC }) => (
         const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
 
         return (
-          <Box.Item key={section.id} withScale with_background>
+          <Box.Link
+            to={section.link}
+            key={section.id}
+            with_scale
+            with_background
+          >
             <Grid
               withIcon
               withPadding="2rem 2rem 1rem"
@@ -73,10 +83,10 @@ const LandingMarkets = ({ DIC }) => (
               {DIC[TITLE]}
             </H4>
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem" withAlign="center">
+            <P small withPadding="0 1rem 0.5rem" withAlign="justify">
               {DIC[CONTENT]}
             </P>
-          </Box.Item>
+          </Box.Link>
         );
       })}
     </Box>

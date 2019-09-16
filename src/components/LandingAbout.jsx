@@ -30,7 +30,7 @@ const LandingAbout = ({ DIC }) => (
       subtitle={DIC.ABOUT_US_DESCRIPTION}
     />
 
-    <P withAlign="center">{DIC.ABOUT_US_CONTENT}</P>
+    <P withAlign="justify">{DIC.ABOUT_US_CONTENT}</P>
     <Box>
       {SECTIONS.map((section) => {
         const TITLE = `NAV_LABEL_${section.title}`;
@@ -42,7 +42,7 @@ const LandingAbout = ({ DIC }) => (
               {DIC[TITLE]}
             </H3>
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem" withAlign="center">
+            <P small withPadding="0 1rem 0.5rem" withAlign="justify">
               {DIC[CONTENT]}
             </P>
             {section.link && (

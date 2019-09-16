@@ -20,15 +20,14 @@ const NEWS = [
     id: 0,
     title: 'Futurecard collaborates with Fingerprints',
     content:
-      'Futurecard collaborates with Fingerprints to address Middle East Banks with BIOMETRIC PAYMENT Card #banks #biometric #paymentcard #middleeast #fingerprints #seamlessdxb #security',
+      'Futurecard collaborates with Fingerprints to address Middle East Banks with BIOMETRIC PAYMENT Card',
     img: news4,
     date: '03/05/2019',
     link: '/news',
   },
   {
     id: 1,
-    title:
-      'Futurecard @ #seamlessdxb 2019 #payments #fintech #smartcards #biometrics',
+    title: 'Futurecard at seamlessdxb 2019',
     content:
       'Futurecard collaborates with Fingerprints to address Middle East Banks with BIOMETRIC PAYMENT Card',
     img: news2,
@@ -37,7 +36,7 @@ const NEWS = [
   },
   {
     id: 2,
-    title: 'Ramadan Kareem from FutureCard #ramadankareem #ramadan2019',
+    title: 'Ramadan Kareem from FutureCard',
     content:
       'FutureCard is a uniquely positioned card supplier in the vibrant EMEA region. ',
     img: news3,
@@ -90,21 +89,17 @@ const LandingNews = ({ DIC }) => {
               <Box.Figure>
                 <Box.Figure.Image src={item.img} alt={item.title} />
               </Box.Figure>
-              <Grid
-                highlight
-                tiny
-                bold
-                withMargin="1.5rem 0 0.2rem"
-                withAlign="center"
-              >
-                <h4>{DIC.NEWS_PUBLISHED_THE}</h4>
-                {item.date}
+              <Grid vertical="center">
+                <P tiny withMargin="1.5rem 0 0.25rem" highlight>
+                  {`${DIC.NEWS_PUBLISHED_THE} ${item.date}`}
+                </P>
               </Grid>
+
               <H4 withMargin="0 0.5rem 0.5rem" centered>
                 {item.title}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small withPadding="0 1rem 0.5rem" withAlign="center">
+              <P small withPadding="0 0.25rem 0.75rem" withAlign="justify">
                 {item.content}
               </P>
               {item.link && (
