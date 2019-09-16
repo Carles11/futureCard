@@ -68,8 +68,8 @@ const LandingMarkets = ({ DIC }) => (
           <Box.Link
             to={section.link}
             key={section.id}
-            with_scale='true'
-            with_background='true'
+            with_scale="true"
+            with_background="true"
           >
             <Grid
               withIcon
