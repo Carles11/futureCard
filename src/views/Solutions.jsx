@@ -49,11 +49,11 @@ const Solutions = ({ DIC }) => {
                   withMargin="0 auto 1rem"
                   withAlign="center"
                 />
-                <P small withPadding="0 1rem 0.5rem" withAlign="center">
+                <P small withPadding="0 1rem 0.5rem" withAlign="justify">
                   {DIC[CONTENT]}
                 </P>
                 {section.child ? (
-                  <List centered>
+                  <List>
                     {section.child.map((link) => {
                       const LINK_TITLE = `NAV_LABEL_${link.label}`;
                       return (

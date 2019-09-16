@@ -1,6 +1,6 @@
 // @flow
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Item from './Item';
 import Figure from './Figure';
@@ -12,6 +12,10 @@ const Box = styled.div`
   display: flex;
   width: 100%;
   margin: 2rem 0;
+
+  ${props => props.wrap && css`
+    flex-wrap: wrap;
+  `}
 
   @media only screen and (max-width: 1024px) {
     flex-direction: column;

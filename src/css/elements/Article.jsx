@@ -20,7 +20,7 @@ const Article = styled.article`
         max-width: 1440px;
         margin: 0 auto;
         align-items: center;
-        padding: 1rem 4rem 4rem;
+        padding: 1rem 2rem 4rem;
         box-sizing: border-box;
       }
       @media only screen and (max-width: 1024px) {

@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components';
 
 const Item = styled.div`
   flex: 1;
-  margin: 0 1rem;
+  margin: 0 0.75rem;
+  padding: 0.75rem;
 
   &:first-of-type {
     margin-left: 0;
@@ -13,6 +14,13 @@ const Item = styled.div`
   &:last-of-type {
     margin-right: 0;
   }
+
+  ${props => props.with_size
+    && css`
+      margin: 0 1rem 2rem;
+      flex: auto;
+      width: ${props.with_size};
+    `}
 
   ${props => props.with_background
     && css`

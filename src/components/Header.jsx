@@ -156,6 +156,7 @@ Header.propTypes = {
     NAV_LABEL_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_LANGUAGE: PropTypes.string.isRequired,
+
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_CONTACT: PropTypes.string.isRequired,

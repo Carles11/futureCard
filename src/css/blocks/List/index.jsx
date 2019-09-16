@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import Item from './Item';
 
 const List = styled.ul`
+  padding: 0 1rem 0 2rem;
 
   ${props => props.centered
     && css`
