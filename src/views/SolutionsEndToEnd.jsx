@@ -81,7 +81,7 @@ const SolutionsEndToEnd = ({ DIC }) => (
                 {DIC[TITLE]}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small withPadding="0 1rem 0.5rem" withAlign="justify">
+              <P small withPadding="0 1rem 0.5rem">
                 {DIC[CONTENT]}
               </P>
             </Box.Link>

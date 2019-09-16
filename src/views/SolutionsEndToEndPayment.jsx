@@ -351,7 +351,7 @@ const SolutionsEndToEndPayment = ({ DIC }) => (
               {option.label}
             </H3>
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withAlign="justify">
+            <P small>
               {option.description}
             </P>
             {option.child ? (

@@ -99,7 +99,7 @@ const LandingNews = ({ DIC }) => {
                 {item.title}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small withPadding="0 0.25rem 0.75rem" withAlign="justify">
+              <P small withPadding="0 0.25rem 0.75rem">
                 {item.content}
               </P>
               {item.link && (

@@ -68,8 +68,8 @@ const LandingMarkets = ({ DIC }) => (
           <Box.Link
             to={section.link}
             key={section.id}
-            with_scale
-            with_background
+            with_scale='true'
+            with_background='true'
           >
             <Grid
               withIcon
@@ -83,7 +83,7 @@ const LandingMarkets = ({ DIC }) => (
               {DIC[TITLE]}
             </H4>
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem" withAlign="justify">
+            <P small withPadding="0 1rem 0.5rem" withAlign="left">
               {DIC[CONTENT]}
             </P>
           </Box.Link>
