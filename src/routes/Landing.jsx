@@ -1,6 +1,6 @@
 // @ts-check
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
@@ -15,6 +15,7 @@ import Footer from '@src/components/Footer';
 import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
+import useScroll from '@src/hooks/useScroll';
 import logoWhite from '@src/assets/image/logo_white.png';
 
 import {
@@ -33,10 +34,24 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {string} props.location
  * @param {function} props.handleLocation
  */
+
 const Landing = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
+  const position = useScroll();
+  const [logoDisplay, setLogoDisplay] = useState(true);
+  useEffect(() => {
+    if (position && position > 270) {
+      setLogoDisplay(false);
+    }
+    if (position && position <= 270) {
+      setLogoDisplay(true);
+    }
+  }, [position]);
+
+
+  /** Handles scroll position to manage big logo visibility */
 
   return (
     <Section>
@@ -49,11 +64,13 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
-          <Layout.Header.Logo.Image
-            src={logoWhite}
-            style={{ height: '250px', width: 'auto', top: '3rem' }}
-            alt="Futurecard logo"
-          />
+          {logoDisplay ? (
+            <Layout.Header.Logo.Image
+              src={logoWhite}
+              style={{ height: '300px', width: 'auto', top: '5rem' }}
+              alt="Futurecard logo"
+            />
+          ) : null}
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>

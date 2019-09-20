@@ -19,16 +19,23 @@ const SolutionsEndToEndIdentification = ({ DIC }) => (
     description={DIC.SOLUTIONS_DESCRIPTION}
   >
     <HeaderSection
-      title={DIC.NAV_LABEL_SOLUTIONS}
-      subtitle={DIC.SOLUTIONS_DESCRIPTION}
+      title={DIC.NAV_LABEL_IDENTIFICATION}
+      subtitle={DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_DESCRIPTION}
     />
-    <Article centered />
+    <Article centered>
+      {DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT}
+    </Article>
   </ViewLayout>
 );
 
 SolutionsEndToEndIdentification.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    NAV_LABEL_IDENTIFICATION: PropTypes.string.isRequired,
+    SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_IDENTIFICATION_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT: PropTypes.string.isRequired,
+
   }).isRequired,
 };
 

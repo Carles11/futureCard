@@ -19,7 +19,19 @@ const AboutFacility = ({ DIC }) => (
     <Article centered>
       <P>{DIC.ABOUT_US_FACILITY_CONTENT}</P>
       <P>{DIC.ABOUT_US_FACILITY_CONTENT_1}</P>
-      <P>{DIC.ABOUT_US_FACILITY_CONTENT_2}</P>
+      <ul>
+        <li>A cutting-edge factory, where all our Smart Cards, Plastic Cards as well as Paper and 
+          Cardboard Cards are being produced </li>
+        <li>An in-house design department that designs aesthetically appealing cards</li>
+        <li>Job engineering departments to produce cards using the latest techniques </li>
+        <li>
+Quality Assurance Laboratory that carries out routine and qualification checks on all products
+        </li>
+        <li>Customized fulfillment packaging tailored to customers’ needs </li>
+        <li>
+An efficient logistics team that delivers all cards swiftly and securely
+        </li>
+      </ul>
     </Article>
   </ViewLayout>
 );

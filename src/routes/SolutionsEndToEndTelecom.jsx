@@ -19,16 +19,21 @@ const SolutionsEndToEndTelecom = ({ DIC }) => (
     description={DIC.SOLUTIONS_DESCRIPTION}
   >
     <HeaderSection
-      title={DIC.NAV_LABEL_SOLUTIONS}
-      subtitle={DIC.SOLUTIONS_DESCRIPTION}
+      title={DIC.NAV_LABEL_TELECOM}
+      subtitle={DIC.SOLUTIONS_END_TO_END_TELECOM_DESCRIPTION}
     />
-    <Article centered />
+    <Article centered>
+      {DIC.SOLUTIONS_END_TO_END_TELECOM_CONTENT}
+    </Article>
   </ViewLayout>
 );
 
 SolutionsEndToEndTelecom.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    NAV_LABEL_TELECOM: PropTypes.string.isRequired,
+    SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_TELECOM_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -19,16 +19,20 @@ const SolutionsEndToEndTransport = ({ DIC }) => (
     description={DIC.SOLUTIONS_DESCRIPTION}
   >
     <HeaderSection
-      title={DIC.NAV_LABEL_SOLUTIONS}
-      subtitle={DIC.SOLUTIONS_DESCRIPTION}
+      title={DIC.NAV_LABEL_TRANSPORT_ACCESS}
+      subtitle={DIC.SOLUTIONS_END_TO_END_TRANSPORT_DESCRIPTION}
     />
-    <Article centered />
+    <Article centered>
+      {DIC.SOLUTIONS_END_TO_END_TRANSPORT_CONTENT}
+    </Article>
   </ViewLayout>
 );
 
 SolutionsEndToEndTransport.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_TRANSPORT_CONTENT: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_TRANSPORT_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };
 

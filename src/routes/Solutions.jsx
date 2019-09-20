@@ -34,6 +34,9 @@ const Solutions = ({ DIC }) => {
         subtitle={DIC.SOLUTIONS_DESCRIPTION}
       />
       <Article centered>
+        {DIC.SOLUTIONS_CONTENT}
+      </Article>
+      <Article centered>
         <Box>
           {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
@@ -94,6 +97,8 @@ const Solutions = ({ DIC }) => {
 Solutions.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    SOLUTIONS_CONTENT: PropTypes.string.isRequired,
+    SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -34,6 +34,7 @@ const About = ({ DIC }) => {
       <Article centered>
         <P>{DIC.ABOUT_US_CONTENT_0}</P>
         <P>{DIC.ABOUT_US_CONTENT_1}</P>
+        <P>{DIC.ABOUT_US_CONTENT_2}</P>
       </Article>
       <Article centered>
         <Box>
@@ -72,6 +73,9 @@ About.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_CONTENT_0: PropTypes.string.isRequired,
+    ABOUT_US_CONTENT_1: PropTypes.string.isRequired,
+    ABOUT_US_CONTENT_2: PropTypes.string.isRequired,
   }).isRequired,
 };
 

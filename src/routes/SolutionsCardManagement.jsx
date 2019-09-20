@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { Article, P } from '@src/css/elements';
+import { Article } from '@src/css/elements';
 
 const SolutionsCardManagement = ({ DIC }) => (
   <ViewLayout
@@ -13,10 +13,10 @@ const SolutionsCardManagement = ({ DIC }) => (
   >
     <HeaderSection
       title={DIC.NAV_LABEL_CARD_MANAGEMENT}
-      subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
+      subtitle={DIC.SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION}
     />
     <Article centered>
-      <P>HERE ALL OPTIONS IN TABS WITH CONTENT</P>
+      {DIC.SOLUTIONS_CARD_MANAGEMENT_CONTENT}
     </Article>
   </ViewLayout>
 );
@@ -26,6 +26,9 @@ SolutionsCardManagement.propTypes = {
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_CUSTOMIZE: PropTypes.string.isRequired,
     NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
+    SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_CARD_MANAGEMENT_CONTENT: PropTypes.string.isRequired,
+
   }).isRequired,
 };
 

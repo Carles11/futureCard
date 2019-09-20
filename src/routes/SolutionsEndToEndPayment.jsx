@@ -218,6 +218,9 @@ const SolutionsEndToEndPayment = ({
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
       />
+      <Article centered>
+        {DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}
+      </Article>
       <Fragment>
         {cards.length ? (
           cards.map(card => (
@@ -281,8 +284,11 @@ const SolutionsEndToEndPayment = ({
 
 SolutionsEndToEndPayment.propTypes = {
   DIC: PropTypes.shape({
-    NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     LOOKING_FOR: PropTypes.string.isRequired,
+    NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    NAV_LABEL_PAYMENT: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_PAYMENT_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
   language: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf({}),

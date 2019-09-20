@@ -19,16 +19,21 @@ const SolutionsEndToEndRetail = ({ DIC }) => (
     description={DIC.SOLUTIONS_DESCRIPTION}
   >
     <HeaderSection
-      title={DIC.NAV_LABEL_SOLUTIONS}
-      subtitle={DIC.SOLUTIONS_DESCRIPTION}
+      title={DIC.NAV_LABEL_RETAIL_LOYALTY}
+      subtitle={DIC.SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION}
     />
-    <Article centered />
+    <Article centered>
+      {DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT}
+    </Article>
   </ViewLayout>
 );
 
 SolutionsEndToEndRetail.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
+    NAV_LABEL_RETAIL_LOYALTY: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_RETAIL_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
 };
 
