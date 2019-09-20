@@ -15,10 +15,12 @@ import Footer from '@src/components/Footer';
 import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
+import logoWhite from '@src/assets/image/logo_white.png';
 
 import {
   A, H1, H2, Hr, Header, Section,
 } from '@src/css/elements/index';
+import Layout from '@src/css/blocks/Layout';
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -47,6 +49,11 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
+        <Layout.Header.Logo.Image
+              src={logoWhite}
+              style={{height:"250px", width: "auto", top: "3rem"}}
+              alt="Futurecard logo"
+            />
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>
