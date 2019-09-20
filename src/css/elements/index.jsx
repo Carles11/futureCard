@@ -3,6 +3,7 @@ import AExternal from './AExternal';
 import Address from './Address';
 import Article from './Article';
 import BackgroundImage from './BackgroundImage';
+import BackgroundMap from './BackgroundMap';
 import Button from './Button';
 import Figure from './Figure';
 import Form from './form/Form';
@@ -24,6 +25,7 @@ export {
   Address,
   Article,
   BackgroundImage,
+  BackgroundMap,
   Button,
   Figure,
   Footer,

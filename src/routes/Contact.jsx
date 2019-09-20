@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import ContactForm from '@src/components/ContactForm';
-import Background from '@src/components/Background';
+import {
+  Image, Section, Article,
+} from '@src/css/elements/index';
+
 import backgroundImg from '@src/assets/image/contact-map-fci.png';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
-import { Section, Article } from '@src/css/elements';
+
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -34,8 +37,7 @@ const Contact = ({
         title={DIC.CONTACT_TITLE}
         subtitle={DIC.CONTACT_SUBTITLE}
       />
-      <Background image={backgroundImg} />
-
+      <Image responsive src={backgroundImg} />
       <Article centered>
         <ContactForm />
       </Article>
