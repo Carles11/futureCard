@@ -20,8 +20,11 @@ const AboutFacility = ({ DIC }) => (
       <P>{DIC.ABOUT_US_FACILITY_CONTENT}</P>
       <P>{DIC.ABOUT_US_FACILITY_CONTENT_1}</P>
       <ul>
-        <li>A cutting-edge factory, where all our Smart Cards, Plastic Cards as well as Paper and 
-          Cardboard Cards are being produced </li>
+        <li>
+A cutting-edge factory, where all our Smart Cards, Plastic Cards as well as Paper and
+          Cardboard Cards are being produced
+          {' '}
+        </li>
         <li>An in-house design department that designs aesthetically appealing cards</li>
         <li>Job engineering departments to produce cards using the latest techniques </li>
         <li>

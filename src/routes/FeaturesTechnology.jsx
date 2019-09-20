@@ -18,7 +18,7 @@ const FeaturesTechnology = ({ DIC }) => (
     <Article centered>
       <P>{DIC.CARDS_TECHNOLOGY_CONTENT_0}</P>
       <P>{DIC.CARDS_TECHNOLOGY_CONTENT_1}</P>
-      <P>HERE ALL OPTIONS OF TECHNOLOGIE IN TABS WHEN CONTENT AVAILABLE</P>
+      <P>{DIC.CARDS_TECHNOLOGY_CONTENT_2}</P>
     </Article>
   </ViewLayout>
 );
@@ -31,6 +31,7 @@ FeaturesTechnology.propTypes = {
     CARDS_TECHNOLOGY_DESCRIPTION: PropTypes.string.isRequired,
     CARDS_TECHNOLOGY_CONTENT_0: PropTypes.string.isRequired,
     CARDS_TECHNOLOGY_CONTENT_1: PropTypes.string.isRequired,
+    CARDS_TECHNOLOGY_CONTENT_2: PropTypes.string.isRequired,
   }).isRequired,
 };
 

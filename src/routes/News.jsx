@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section } from '@src/css/elements';
+import { Section, Article } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
@@ -33,7 +33,10 @@ const News = ({
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_SUBTITLE} />
+      <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
+      <Article centered>
+        {DIC.NEWS_CONTENT}
+      </Article>
       <Footer />
     </Section>
   );
@@ -45,6 +48,8 @@ News.propTypes = {
     NEWS_TITLE: PropTypes.string.isRequired,
     NEWS_SUBTITLE: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
+    NEWS_CONTENT: PropTypes.string.isRequired,
+
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
