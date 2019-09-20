@@ -34,7 +34,7 @@ const Link = styled(
     `}
 
   &:hover {
-    border-bottom: 3px solid ${props => props.theme.mainColor};
+    border-bottom: 3px solid ${props => props.theme.background};
   }
 
   ${props => props.with_dark

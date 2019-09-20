@@ -10,6 +10,7 @@ import { Article, P } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
+
 const Careers = ({
   DIC, path, location, handleLocation,
 }) => {
@@ -18,15 +19,14 @@ const Careers = ({
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
-      description={DIC.ABOUT_CAREERS}
+      description={DIC.CAREERS_DESCRIPTION}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_CAREERS}
-        subtitle={DIC.ABOUT_US_CAREERS_SUBTITLE}
+        subtitle={DIC.CAREERS_DESCRIPTION}
       />
       <Article centered>
-        <P>NO CONTENT AVAILABLE</P>
-        <P>HERE WILL APPEAR ALL CAREERS FROM THE DATABASE WHEN FEEDED</P>
+        <P>{DIC.CAREERS_CONTENT}</P>
       </Article>
     </ViewLayout>
   );
@@ -37,8 +37,8 @@ Careers.propTypes = {
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
     ABOUT_TITLE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
-    ABOUT_CAREERS: PropTypes.string.isRequired,
-    ABOUT_US_CAREERS_SUBTITLE: PropTypes.string.isRequired,
+    CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    CAREERS_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

@@ -3,40 +3,39 @@ import { Switch, Route } from 'react-router-dom';
 
 import Loader from '@src/components/Loader';
 
-const Landing = lazy(() => import('./views/Landing'));
-const About = lazy(() => import('./views/About'));
-const AboutFacility = lazy(() => import('./views/AboutFacility'));
-const Careers = lazy(() => import('./views/Careers'));
+const Landing = lazy(() => import('./Landing'));
+const About = lazy(() => import('./About'));
+const AboutFacility = lazy(() => import('./AboutFacility'));
+const Careers = lazy(() => import('./Careers'));
 
 /** SOLUTIONS ROUTES */
-const Solutions = lazy(() => import('./views/Solutions'));
+const Solutions = lazy(() => import('./Solutions'));
 
-
-const SolutionsCustomize = lazy(() => import('./views/SolutionsCustomize'));
+const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */
-const SolutionsCardManagement = lazy(() => import('./views/SolutionsCardManagement'));
+const SolutionsCardManagement = lazy(() => import('./SolutionsCardManagement'));
 
 /** SOLUTIONS END TO END ROUTES */
-const SolutionsEndToEnd = lazy(() => import('./views/SolutionsEndToEnd'));
-const SolutionsEndToEndPayment = lazy(() => import('./views/SolutionsEndToEndPayment'));
-const SolutionsEndToEndIdentification = lazy(() => import('./views/SolutionsEndToEndIdentification'));
-const SolutionsEndToEndTransport = lazy(() => import('./views/SolutionsEndToEndTransport'));
-const SolutionsEndToEndTelecom = lazy(() => import('./views/SolutionsEndToEndTelecom'));
-const SolutionsEndToEndRetail = lazy(() => import('./views/SolutionsEndToEndRetail'));
+const SolutionsEndToEnd = lazy(() => import('./SolutionsEndToEnd'));
+const SolutionsEndToEndPayment = lazy(() => import('./SolutionsEndToEndPayment'));
+const SolutionsEndToEndIdentification = lazy(() => import('./SolutionsEndToEndIdentification'));
+const SolutionsEndToEndTransport = lazy(() => import('./SolutionsEndToEndTransport'));
+const SolutionsEndToEndTelecom = lazy(() => import('./SolutionsEndToEndTelecom'));
+const SolutionsEndToEndRetail = lazy(() => import('./SolutionsEndToEndRetail'));
 
 /** SERVICES ROUTES */
-const Services = lazy(() => import('./views/Services'));
-const ServicesDesign = lazy(() => import('./views/ServicesDesign'));
-const ServicesFulfillment = lazy(() => import('./views/ServicesFulfillment'));
-const ServicesPersonalization = lazy(() => import('./views/ServicesPersonalization'));
-const Features = lazy(() => import('./views/Features'));
-const FeaturesCard = lazy(() => import('./views/FeaturesCard'));
-const FeaturesDesign = lazy(() => import('./views/FeaturesDesign'));
-const FeaturesTechnology = lazy(() => import('./views/FeaturesTechnology'));
-const News = lazy(() => import('./views/News'));
-const Contact = lazy(() => import('./views/Contact'));
-const NotFound = lazy(() => import('./views/NotFound'));
+const Services = lazy(() => import('./Services'));
+const ServicesDesign = lazy(() => import('./ServicesDesign'));
+const ServicesFulfillment = lazy(() => import('./ServicesFulfillment'));
+const ServicesPersonalization = lazy(() => import('./ServicesPersonalization'));
+const Features = lazy(() => import('./Features'));
+const FeaturesCard = lazy(() => import('./FeaturesCard'));
+const FeaturesDesign = lazy(() => import('./FeaturesDesign'));
+const FeaturesTechnology = lazy(() => import('./FeaturesTechnology'));
+const News = lazy(() => import('./News'));
+const Contact = lazy(() => import('./Contact'));
+const NotFound = lazy(() => import('./NotFound'));
 
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>
