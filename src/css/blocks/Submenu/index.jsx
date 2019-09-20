@@ -31,7 +31,7 @@ const Submenu = styled.div`
   flex-direction: column;
   background: white;
   box-shadow: 0px 0px 5px 0px rgba(224, 224, 224, 0.75);
-  border-top: 3px solid ${props => props.theme.mainColor};
+  border-top: 3px solid ${props => props.theme.background};
 
   ${props => props
     && css`

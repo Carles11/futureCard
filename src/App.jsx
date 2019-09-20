@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
-import Routes from './Routes';
+import Routes from './routes';
 import Header from './components/Header';
 
 const App = ({ DIC }) => (

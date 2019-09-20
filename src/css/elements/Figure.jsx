@@ -5,8 +5,9 @@ const Figure = styled.figure`
     && css`
       position: relative;
       max-width: 100%;
+      width: 100%;
       height: auto;
-      margin: 0 1rem 0 0;
+      margin: 0 3rem 0 1rem;
 
       @media only screen and (max-width: 1024px) {
         display: flex;
@@ -22,8 +23,6 @@ const Figure = styled.figure`
       min-height: calc(100% + 90px);
       overflow: hidden;
     `}
-
-
 `;
 
 export default Figure;

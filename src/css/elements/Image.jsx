@@ -24,6 +24,8 @@ const Image = styled.img`
 
   ${props => props.responsive
     && css`
+    width: 100%;
+      @media only screen and (max-width: 1024px) {
         height: auto;
         width: 100%;
       @media only screen and (max-width: 1024px) {

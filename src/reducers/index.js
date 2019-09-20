@@ -7,6 +7,7 @@ import theme from './theme';
 import location from './location';
 import career from './career';
 import news from './news';
+import cards from './cards';
 
 export default combineReducers({
   products,
@@ -16,4 +17,5 @@ export default combineReducers({
   contact,
   career,
   news,
+  cards,
 });
