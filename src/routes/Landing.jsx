@@ -67,7 +67,9 @@ const Landing = ({
           {logoDisplay ? (
             <Layout.Header.Logo.Image
               src={logoWhite}
-              style={{ height: '170px', width: 'auto', top: '1rem', bottom: '5rem' }}
+              style={{
+                height: '170px', width: 'auto', top: '1rem', bottom: '5rem',
+              }}
               alt="Futurecard logo"
             />
           ) : null}
