@@ -20,13 +20,13 @@ const H2 = styled.h2`
 
   ${props => props.serif
     && css`
-      font-family: 'Volkhov', serif;
+      font-family: 'Hero regular', 'Volkhov', serif;
       font-weight: 100;
     `}
   
   ${props => props.sansSerif
     && css`
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Hero regular', 'Raleway', sans-serif;
     `}
 
   ${props => props.small

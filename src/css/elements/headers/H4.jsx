@@ -19,7 +19,7 @@ const H4 = styled.h4`
 
   ${props => props.serif
     && css`
-      font-family: 'Volkhov', serif;
+      font-family: 'Hero regular', 'Volkhov', serif;
       font-weight: 100;
     `}
 

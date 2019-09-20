@@ -42,10 +42,10 @@ const Landing = ({
   const position = useScroll();
   const [logoDisplay, setLogoDisplay] = useState(true);
   useEffect(() => {
-    if (position && position > 270) {
+    if (position && position > 200) {
       setLogoDisplay(false);
     }
-    if (position && position <= 270) {
+    if (position && position <= 200) {
       setLogoDisplay(true);
     }
   }, [position]);
@@ -67,7 +67,7 @@ const Landing = ({
           {logoDisplay ? (
             <Layout.Header.Logo.Image
               src={logoWhite}
-              style={{ height: '300px', width: 'auto', top: '5rem' }}
+              style={{ height: '170px', width: 'auto', top: '1rem', bottom: '5rem' }}
               alt="Futurecard logo"
             />
           ) : null}

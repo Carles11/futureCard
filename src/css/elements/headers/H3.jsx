@@ -18,12 +18,12 @@ const H3 = styled.h3`
 
   ${props => props.sansSerif
     && css`
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Hero regular', 'Raleway', sans-serif;
     `}
 
   ${props => props.serif
     && css`
-      font-family: 'Volkhov', serif;
+      font-family: 'Hero regular', 'Volkhov', serif;
       font-weight: 100;
     `}
 
