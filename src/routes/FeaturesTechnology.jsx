@@ -27,7 +27,6 @@ const FeaturesTechnology = ({
   const [title, ...content] = DIC.CARD_FEATURES_TECHNOLOGY_DESCRIPTION.split(
     '.',
   );
-  const data = content.map((item, index) => ({ id: index, text: item }));
 
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
@@ -42,9 +41,7 @@ const FeaturesTechnology = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>
-        {data.map(item => (
-          <P key={item.id}>{`${item.text}.`}</P>
-        ))}
+        <P>{content}</P>
       </Article>
       <CardsList cards={features} />
     </ViewLayout>

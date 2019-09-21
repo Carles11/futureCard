@@ -11,8 +11,9 @@ const NAVIGATION = [
     child: [
       {
         key: 8,
-        label: 'OUR_FACILITY',
+        label: 'FACILITY',
         link: '/about-futurecard/our-facility-and-capabilities',
+        img: '',
       },
       {
         key: 9,
@@ -793,6 +794,19 @@ const ADDRESSES = [
   },
 ];
 
+const BACKGROUND_IMG = {
+  ABOUT_FACILITY:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569098161/futurecard.com/facility_capabilities.jpg',
+  CAREERS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569101218/futurecard.com/careers.jpg',
+  IDENTIFICATION:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
+  CONTACT_MAP:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
+  WHO_WE_ARE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
+};
+
 export {
   ADDRESSES,
   OPTIONS_PAYMENT,
@@ -803,4 +817,5 @@ export {
   OPTIONS_GENERAL,
   LANGUAGE,
   NAVIGATION,
+  BACKGROUND_IMG,
 };

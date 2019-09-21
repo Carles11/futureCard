@@ -59,7 +59,7 @@ const Solutions = ({ DIC }) => {
                     {section.child.map((link) => {
                       const LINK_TITLE = `NAV_LABEL_${link.label}`;
                       return (
-                        <List.Item key={link.key}>
+                        <List.Item link key={link.key}>
                           <A role="link" to={link.link}>
                             {DIC[LINK_TITLE]}
                           </A>

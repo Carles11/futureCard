@@ -23,6 +23,14 @@ const Figure = styled.figure`
       min-height: calc(100% + 90px);
       overflow: hidden;
     `}
+
+    ${props => props.section
+      && css`
+        position: relative;
+        width: 100%;
+        min-height: 50vh;
+        overflow: hidden;
+      `}
 `;
 
 export default Figure;

@@ -69,7 +69,7 @@ const LandingNews = ({ DIC }) => {
         title={DIC.NAV_LABEL_NEWS}
         subtitle={DIC.NEWS_DESCRIPTION}
       />
-      <Grid middle withMargin="1rem 0 2rem">
+      <Grid middle vertical="center" withMargin="1rem 0 2rem">
         <Button withIcon onClick={fakeApiRequest}>
           <FiArrowLeftCircle />
         </Button>

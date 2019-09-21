@@ -26,7 +26,7 @@ SubmenuComponent.propTypes = {
   ).isRequired,
   DIC: PropTypes.shape({
     NAV_LABEL_WHO_WE_ARE: PropTypes.string.isRequired,
-    NAV_LABEL_OUR_FACILITY: PropTypes.string.isRequired,
+    NAV_LABEL_FACILITY: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
   }).isRequired,
 };

@@ -22,7 +22,7 @@ const CardsListOptions = memo(
             {option.child ? (
               <List>
                 {option.child.map(link => (
-                  <List.Item key={link.id}>
+                  <List.Item link key={link.id}>
                     <A role="link" to={link.link}>
                       {link.label}
                     </A>

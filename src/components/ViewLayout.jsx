@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
-import { Section } from '@src/css/elements';
 import useLocation from '@src/hooks/useLocation';
 import { NAVIGATION } from '@src/utils/constants';
 
+import { Section } from '@src/css/elements';
+
 import { getLocation } from '@src/actions/location/actions';
-import Breadcrumb from './Breadcrumb';
 import Footer from './Footer';
+import Breadcrumb from './Breadcrumb';
+import Background from './Background';
 
 const ViewLayout = ({
   title,
   description,
+  image,
   DIC,
   path,
   children,
@@ -44,6 +47,7 @@ const ViewLayout = ({
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
+      {!!image && <Background section={!!image} image={image} />}
       {!!breadcrumb && !!breadcrumb.length && (
         <Breadcrumb DIC={DIC} items={breadcrumb} path={path} />
       )}
@@ -56,6 +60,7 @@ const ViewLayout = ({
 ViewLayout.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  image: PropTypes.string,
   children: PropTypes.node.isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

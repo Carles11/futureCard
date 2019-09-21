@@ -1,5 +1,3 @@
-// @ts-check
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,9 +9,8 @@ import { Figure, BackgroundImage } from '@src/css/elements/index';
  * @param {Object} props
  * @param {string} props.image
  * @param {any} props.children
- *
  */
-const Background = ({ image, children }) => {
+const Background = ({ image, section, children }) => {
   const [background, setBackground] = useState(
     Array.isArray(image) ? image[0] : image,
   );
@@ -37,8 +34,11 @@ const Background = ({ image, children }) => {
   }, []);
 
   return (
-    <Figure background>
-      <BackgroundImage style={{ backgroundImage: `url(${background})` }} />
+    <Figure background section={section}>
+      <BackgroundImage
+        section={section}
+        style={{ backgroundImage: `url(${background})` }}
+      />
       {children}
     </Figure>
   );
@@ -46,6 +46,7 @@ const Background = ({ image, children }) => {
 
 Background.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  section: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   children: PropTypes.node,
 };
 

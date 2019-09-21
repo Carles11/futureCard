@@ -25,7 +25,6 @@ const FeaturesDesign = ({
   handleGetFeatures,
 }) => {
   const [title, ...content] = DIC.CARD_FEATURES_DESIGN_DESCRIPTION.split('.');
-  const data = content.map((item, index) => ({ id: index, text: item }));
 
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
@@ -40,9 +39,7 @@ const FeaturesDesign = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}.`} />
       <Article centered>
-        {data.map(item => (
-          <P key={item.id}>{`${item.text}.`}</P>
-        ))}
+        <P>{content}</P>
       </Article>
       <CardsList cards={features} />
     </ViewLayout>

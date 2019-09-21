@@ -8,7 +8,11 @@ import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
 import { Article, P } from '@src/css/elements';
-import { OPTIONS_GENERAL, OPTIONS_IDENTIFICATION } from '@src/utils/constants';
+import {
+  OPTIONS_GENERAL,
+  OPTIONS_IDENTIFICATION,
+  BACKGROUND_IMG,
+} from '@src/utils/constants';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -37,6 +41,7 @@ const SolutionsEndToEndIdentification = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
+      image={BACKGROUND_IMG.IDENTIFICATION}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_IDENTIFICATION}

@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 const Image = styled.img`
   ${props => props.section
     && css`
-      position: absolute;
-      opacity: 0.3;
+      position: relative;
+      opacity: 0.9;
       top: 0;
       left: 0;
       width: 100%;

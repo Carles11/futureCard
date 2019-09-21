@@ -2,16 +2,43 @@
   "ABOUT_TITLE": "About FutureCard",
   "ABOUT_WHO_WE_ARE": "From a recharge cards provider to a global End-to-End card solution provider",
   "ABOUT_US": "About us",
-  "CAREERS_DESCRIPTION": "Work with us",
-  "CAREERS_CONTENT": "FutureCard provides employment opportunities for talented people. If you want to make a future for yourself in the card management solution industry, FutureCard is the ideal company for you. We are continuously looking for new and ambitious people to recruit in different departments of our company. Below you will find our recent job openings. If you cannot find the right position for you, kindly provide us your contact details through the below form and upload your resume.",
+  "ABOUT_US_CAREERS_DESCRIPTION": "FutureCard provides employment opportunities for talented people. If you want to make a future for yourself in the card management solution industry, FutureCard is the ideal company for you. We are continuously looking for new and ambitious people to recruit in different departments of our company. Below you will find our recent job openings. If you cannot find the right position for you, kindly provide us your contact details through the below form and upload your resume.",
   "ABOUT_US_CONTENT": "Over the years our clientele has expanded rapidly to include major companies and institutions from different industries including government agencies, banking networks and retail chains. Our customers trust FutureCard to provide them with sophisticated end-to-end card solutions. They can rest assured that FutureCard will fulfill all responsibilities given to them with full commitment so that their brand’s image, customer base and privacy remains safe with us.",
   "ABOUT_US_CONTENT_0": "Our 17- year journey from being a simple recharge cards provider to an end-to-end card solution provider is proof of our unwavering consistent further development in terms of technology and innovation. Originally, FutureCard was founded in 2002 as a part of the ENPI Group to provide recharge cards to telecom companies. Very soon, FutureCard became certified according to the ISO9001 quality management standards. In 2003 FutureCard Industries LLC was founded and became a certified payment cards manufacturer for both MasterCard and Visa, which was our first major milestone.",
   "ABOUT_US_CONTENT_1": "The following years were very important for FutureCard as they were marked by continuous customer acquisition and significant expansion of the product portfolio from Visa EMV cards to dual-interface, contactless metro, polycarbonated ID - with high security features and health smart cards while introducing HCE, ID and payment cards managed services and solutions. A further milestone achieved by FutureCard was the attainment of the Certificates ISO14001, for Environmental Management and ISO18001, for Occupational Health & Safety. In 2018 FutureCard opened the door to its full-fledged factory with the availability of producing up to 10 million plastic cards monthly.",
   "ABOUT_US_CONTENT_2": "Today we are known as a pioneering global End-to-End card solutions provider for payments, ID, transport, telecom, loyalty and retail among others. We are serving a demanding market which is in constant surge by providing innovative cards, smartcards, as well as other card fulfillment services and solutions. Government agencies, financial institutions, telecom operators, corporates and other businesses throughout the world trust us with the delicate mission of producing secure cards, which carry their brands, identify their clients, and authenticate their transactions.",
   "ABOUT_US_DESCRIPTION": "We aspire to exceed the expectations of our customers by demonstrating the highest standards of integrity, professionalism, and dedication to performance excellence.​​",
-  "ABOUT_US_FACILITY_CONTENT": "FutureCard offers a wide range of facilities to cater to the needs of various industrial sectors. Our diverse choice of services and card solutions have met with the approval of clients, and we are continuously working and adapting according to the changing market conditions so that we can always deliver the best services in the market to you.",
-  "ABOUT_US_FACILITY_CONTENT_1": "FutureCard has a 7,100 sqm state-of-the-art facility in the UAE where the planning, designing, creation and manufacturing of its unique cards are being done. The facility consists of:",
-  "ABOUT_OUR_FACILITY": "Inform yourself on this page about our facilities and production capacities",
+  "ABOUT_US_FACILITY_DESCRIPTION": "FutureCard offers a wide range of facilities to cater to the needs of various industrial sectors. Our diverse choice of services and card solutions have met with the approval of clients, and we are continuously working and adapting according to the changing market conditions so that we can always deliver the best services in the market to you. FutureCard has a 7,100 sqm state-of-the-art facility in the UAE where the planning, designing, creation and manufacturing of its unique cards are being done. The facility consists of:",
+  "ABOUT_US_FACILITY_LIST": [
+    {
+      "id": 0,
+      "text": "A cutting-edge factory, where all our Smart Cards, Plastic Cards as well as Paper and Cardboard Cards are being produced"
+    },
+    {
+      "id": 1,
+      "text": "An in-house design department that designs aesthetically appealing cards"
+    },
+    {
+      "id": 2,
+      "text": "Job engineering departments to produce cards using the latest techniques "
+    },
+    {
+      "id": 3,
+      "text": "4 quality control sections to ensure that every product that reaches our customers is in line with the required standards, such as ISO, MasterCard, Visa Card, etc. and even exceeds the customers’ expectations"
+    },
+    {
+      "id": 4,
+      "text": "Quality Assurance Laboratory that carries out routine and qualification checks on all products"
+    },
+    {
+      "id": 5,
+      "text": "Customized fulfillment packaging tailored to customers’ needs"
+    },
+    {
+      "id": 6,
+      "text": "An efficient logistics team that delivers all cards swiftly and securely"
+    }
+  ],
   "ABOUT_US_MARKETS": "Since its inception in 2002, FutureCard serves a large customer base in all six continents. Our clients' industries are finance, government, transport, telecom, insurance, healthcare, education, retail, and many more.",
   "ABOUT_US_SOLUTIONS": "As an end-to-end card manufacturer, mixing technology with security printing craftsmanship, FutureCard covers the complete value chain of design and manufacturing of secure cards on all kind of substrates: PC, PET-F, PET-G, PVC, ABS, PS, Paper board, etc, allowing to cater for all markets' needs for secure aesthetic cards and smartcards.",
   "ABOUT_US_SERVICES": "FutureCard completes its offering with complementary cards services and solutions, positionning itself as a one-stop-shop for all cards needs. Businesses and services providers trust FutureCard with the delicate mission of outsourcing their cards' operations from concept to delivery.",
@@ -45,6 +72,7 @@
   "CONTACT_LABEL_MESSAGE": "Message",
   "CONTACT_SUBTITLE": "Thank you for your interest in FutureCard.",
   "CONTACT_TITLE": "Contact us",
+  "INDUSTRY_FOCUS": "Industry focus",
   "LANDING_SUBTITLE": "Since its inception in 2002, FutureCard is designing, manufacturing and personalizing cards to banks, governments, operators and retailers around the world.",
   "LANDING_TITLE": "17 years manufacturing cards",
   "LOOKING_FOR": "Looking for something else?",
@@ -59,7 +87,7 @@
   "MARKETS_DESCRIPTION_TELECOM": "Commercial Institutions, retailers and Corporations employ FutureCard in order to reflect their brand image and secure their customers' loyalty in customized cards with a myriad of security and aesthetic features.",
   "MARKETS_LOYALTY_RETAIL": "Loyalty & Retail",
   "MARKETS_DESCRIPTION_LOYALTY_RETAIL": "Commercial Institutions, retailers and Corporations employ FutureCard in order to reflect their brand image and secure their customers' loyalty in customized cards with a myriad of security and aesthetic features.",
-  "NAV_LABEL_ABOUT": "About FCI",
+  "NAV_LABEL_ABOUT": "About us",
   "NAV_LABEL_CARD_DESIGN": "Card design",
   "NAV_LABEL_CARD_HOLDERS": "Card Holders Enrollment",
   "NAV_LABEL_CARD_LIFECYCLE": "Card Lifecycle Management",
@@ -80,7 +108,7 @@
   "NAV_LABEL_LANGUAGE": "Language",
   "NAV_LABEL_MARKETS": "Markets",
   "NAV_LABEL_NEWS": "News",
-  "NAV_LABEL_OUR_FACILITY": "Our Facility & Capabilities",
+  "NAV_LABEL_FACILITY": "Our Facility & Capabilities",
   "NAV_LABEL_PAYMENT": "Payment",
   "NAV_LABEL_RETAIL_LOYALTY": "Retail & Loyalty",
   "NAV_LABEL_SERVICES": "Our Services",
