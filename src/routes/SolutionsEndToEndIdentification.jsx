@@ -36,8 +36,7 @@ const SolutionsEndToEndIdentification = ({
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
-      description={DIC.SOLUTIONS_DESCRIPTION}
-    >
+      description={DIC.SOLUTIONS_DESCRIPTION}>
       <HeaderSection
         title={DIC.NAV_LABEL_IDENTIFICATION}
         subtitle={DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_DESCRIPTION}
@@ -48,7 +47,7 @@ const SolutionsEndToEndIdentification = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer"
+        subtitle='Discover all the options and solutions we offer'
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
