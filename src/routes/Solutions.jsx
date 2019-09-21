@@ -33,10 +33,9 @@ const Solutions = ({ DIC }) => {
         title={DIC.NAV_LABEL_SOLUTIONS}
         subtitle={DIC.SOLUTIONS_DESCRIPTION}
       />
+
       <Article centered>
-        {DIC.SOLUTIONS_CONTENT}
-      </Article>
-      <Article centered>
+        <P>{DIC.SOLUTIONS_CONTENT}</P>
         <Box>
           {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;

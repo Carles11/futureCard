@@ -89,12 +89,12 @@ const NAVIGATION = [
           },
         ],
       },
-      {
-        key: 18,
-        label: 'CUSTOMIZE',
-        link: '/our-solutions/customize-your-card',
-        image: true,
-      },
+      // {
+      //   key: 18,
+      //   label: 'CUSTOMIZE',
+      //   link: '/our-solutions/customize-your-card',
+      //   image: true,
+      // },
     ],
   },
   {
@@ -150,6 +150,579 @@ const NAVIGATION = [
     key: 5,
     label: 'CONTACT',
     link: '/contact-us',
+  },
+];
+
+const OPTIONS_PAYMENT = [
+  {
+    id: 0,
+    label: 'Card Materials',
+    description:
+      'Choosing the right card material is very important when it comes to the functioning of the card and the purpose that it is meant to serve.',
+    child: [
+      {
+        id: 1,
+        label: 'PVC (Plastic)',
+        link: '/card-features/card-materials#pvc',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/card-features/card-materials#eco-pvc',
+      },
+      {
+        id: 3,
+        label: 'PET-G (Plastic)',
+        link: '/card-features/card-materials#pet-g',
+      },
+      {
+        id: 4,
+        label: 'PET-F (Plastic)',
+        link: '/card-features/card-materials#pet-f',
+      },
+      {
+        id: 5,
+        label: 'Metal',
+        link: '/card-features/card-materials#metal',
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Technology',
+    description:
+      'Advancements in technology paved the way for secure and reliable smart cards that dominate the different sectors of government, transportation, healthcare, retail, telecommunications and financial industries.',
+    child: [
+      {
+        id: 7,
+        label: 'Contact',
+        link: '/card-features/technology-materials#contact',
+      },
+      {
+        id: 8,
+        label: 'Contactless',
+        link: '/card-features/technology-materials#contactless',
+      },
+      {
+        id: 9,
+        label: 'Dual-Interface',
+        link: '/card-features/technology-materials#dual-interface',
+      },
+      {
+        id: 10,
+        label: 'Hybrid',
+        link: '/card-features/technology-materials#hybrid',
+      },
+      {
+        id: 11,
+        label: 'Magstripe',
+        link: '/card-features/technology-materials#magstripe',
+      },
+    ],
+  },
+  {
+    id: 12,
+    label: 'Design Features',
+    description:
+      'FCI has the manufacturing capabilities of below special material and effects:',
+    child: [
+      {
+        id: 13,
+        label: 'Colored Core PVC',
+        link: '/card-features/design-and-security-features#colored-core-pvc',
+      },
+      {
+        id: 14,
+        label: 'Holographic PVC',
+        link: '/card-features/design-and-security-features#holographic-pvc',
+      },
+      {
+        id: 15,
+        label: 'Transparent PVC with special IR blocker',
+        link: '/card-features/design-and-security-features#transparent-pvc',
+      },
+      {
+        id: 16,
+        label: 'Hot Stamping',
+        link: '/card-features/design-and-security-features#hot-stamping',
+      },
+      {
+        id: 17,
+        label: 'Tactile/Spot UV',
+        link: '/card-features/design-and-security-features#tactile-spot-uv',
+      },
+      {
+        id: 18,
+        label: 'Special Color Magstripes',
+        link:
+          '/card-features/design-and-security-features#special-color-magstripes',
+      },
+      {
+        id: 19,
+        label: 'Special Shapes',
+        link: '/card-features/design-and-security-features#special-shapes',
+      },
+      {
+        id: 20,
+        label: 'Aromatic & Touch Effect',
+        link:
+          '/card-features/design-and-security-features#aromatic-touch-effect',
+      },
+      {
+        id: 21,
+        label: 'Bejeweled',
+        link: '/card-features/design-and-security-features#bejeweled',
+      },
+    ],
+  },
+];
+
+const OPTIONS_IDENTIFICATION = [
+  {
+    id: 0,
+    label: 'Card Materials',
+    description:
+      'Cards materials are supplied as foils for laminating or as granulates for injection molding of the cards.',
+    child: [
+      {
+        id: 1,
+        label: 'PVC',
+        link: '/card-features/card-materials#pvc',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC',
+        link: '/card-features/card-materials#eco-pvc',
+      },
+      {
+        id: 3,
+        label: 'PET-G',
+        link: '/card-features/card-materials#pet-g',
+      },
+      {
+        id: 4,
+        label: 'PET-F',
+        link: '/card-features/card-materials#pet-f',
+      },
+      {
+        id: 5,
+        label: 'PC',
+        link: '/card-features/card-materials#pc',
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Technology',
+    description:
+      'Advancements in technology paved the way for secure and reliable smart cards that dominate the different sectors of government, transportation, healthcare, retail, telecommunications and financial industries.',
+    child: [
+      {
+        id: 7,
+        label: 'Contact',
+        link: '/card-features/technology-materials#contact',
+      },
+      {
+        id: 8,
+        label: 'Contactless',
+        link: '/card-features/technology-materials#contactless',
+      },
+      {
+        id: 9,
+        label: 'Dual-Interface',
+        link: '/card-features/technology-materials#dual-interface',
+      },
+      {
+        id: 11,
+        label: 'Magstripe',
+        link: '/card-features/technology-materials#magstripe',
+      },
+    ],
+  },
+  {
+    id: 12,
+    label: 'Security Features',
+    description:
+      'FutureCard provides its customers with cards that offer a unique amalgamation of the most sophisticated design and security features.',
+    child: [
+      {
+        id: 13,
+        label: 'Rainbow printig',
+        link: '/card-features/design-and-security-features#rainbow',
+      },
+      {
+        id: 14,
+        label: 'Micro text',
+        link: '/card-features/design-and-security-features#micro=text',
+      },
+      {
+        id: 15,
+        label: 'Guilloche pattern printing',
+        link: '/card-features/design-and-security-features#guilloche',
+      },
+      {
+        id: 16,
+        label: 'OVI (Optical Variable Inks)',
+        link: '/card-features/design-and-security-features#ovi',
+      },
+      {
+        id: 17,
+        label: 'UV (Ultra Violet) invisible printing',
+        link: '/card-features/design-and-security-features#uv',
+      },
+      {
+        id: 18,
+        label: 'In-build text',
+        link: '/card-features/design-and-security-features#in-build',
+      },
+      {
+        id: 19,
+        label: '2D and 3D holograms',
+        link: '/card-features/design-and-security-features#2d-3d',
+      },
+    ],
+  },
+];
+
+const OPTIONS_TRANSPORT = [
+  {
+    id: 0,
+    label: 'Card Materials',
+    description:
+      'Choosing the right card material is very important when it comes to the functioning of the card and the purpose that it is meant to serve.',
+    child: [
+      {
+        id: 1,
+        label: 'PVC (Plastic)',
+        link: '/card-features/card-materials#pvc',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/card-features/card-materials#eco-pvc',
+      },
+      {
+        id: 3,
+        label: 'PET-G (Plastic)',
+        link: '/card-features/card-materials#pet-g',
+      },
+      {
+        id: 4,
+        label: 'PET-F (Plastic)',
+        link: '/card-features/card-materials#pet-f',
+      },
+      {
+        id: 5,
+        label: 'Paper',
+        link: '/card-features/card-materials#paper',
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Technology',
+    description:
+      'Advancements in technology paved the way for secure and reliable smart cards that dominate the different sectors of government, transportation, healthcare, retail, telecommunications and financial industries.',
+    child: [
+      {
+        id: 7,
+        label: 'Contact',
+        link: '/card-features/technology-materials#contact',
+      },
+      {
+        id: 9,
+        label: 'Dual-Interface',
+        link: '/card-features/technology-materials#dual-interface',
+      },
+      {
+        id: 10,
+        label: 'Contactless (Mifare)',
+        link: '/card-features/technology-materials#mifare',
+      },
+      {
+        id: 11,
+        label: 'Contacless (Desfire)',
+        link: '/card-features/technology-materials#desfire',
+      },
+    ],
+  },
+  {
+    id: 12,
+    label: 'Design Features',
+    description:
+      'FCI has the manufacturing capabilities of below special material and effects:',
+    child: [
+      {
+        id: 13,
+        label: 'Colored Core PVC',
+        link: '/card-features/design-and-security-features#colored-core-pvc',
+      },
+      {
+        id: 14,
+        label: 'Holographic PVC',
+        link: '/card-features/design-and-security-features#holographic-pvc',
+      },
+      {
+        id: 15,
+        label: 'Transparent PVC with special IR blocker',
+        link: '/card-features/design-and-security-features#transparent-pvc',
+      },
+      {
+        id: 16,
+        label: 'Hot Stamping',
+        link: '/card-features/design-and-security-features#hot-stamping',
+      },
+      {
+        id: 17,
+        label: 'Tactile/Spot UV',
+        link: '/card-features/design-and-security-features#tactile-spot-uv',
+      },
+      {
+        id: 18,
+        label: 'Special Color Magstripes',
+        link:
+          '/card-features/design-and-security-features#special-color-magstripes',
+      },
+      {
+        id: 19,
+        label: 'Special Die Shapes',
+        link: '/card-features/design-and-security-features#special-shapes',
+      },
+    ],
+  },
+];
+
+const OPTIONS_TELECOM = [
+  {
+    id: 0,
+    label: 'Card Materials',
+    description:
+      'Choosing the right card material is very important when it comes to the functioning of the card and the purpose that it is meant to serve.',
+    child: [
+      {
+        id: 1,
+        label: 'PVC (Plastic)',
+        link: '/card-features/card-materials#pvc',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/card-features/card-materials#eco-pvc',
+      },
+      {
+        id: 3,
+        label: 'ABS (Plastic)',
+        link: '/card-features/card-materials#abs',
+      },
+      {
+        id: 5,
+        label: 'Paper & Cardboard',
+        link: '/card-features/card-materials#paper-cardboard',
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Technology',
+    description:
+      'Advancements in technology paved the way for secure and reliable smart cards that dominate the different sectors of government, transportation, healthcare, retail, telecommunications and financial industries.',
+    child: [
+      {
+        id: 7,
+        label: 'Contact',
+        link: '/card-features/technology-materials#contact',
+      },
+      {
+        id: 9,
+        label: 'Scratch Panel',
+        link: '/card-features/technology-materials#scratch-panel',
+      },
+    ],
+  },
+  {
+    id: 12,
+    label: 'Design Features',
+    description:
+      'FCI has the manufacturing capabilities of below special material and effects:',
+    child: [
+      {
+        id: 13,
+        label: 'Colored Core PVC',
+        link: '/card-features/design-and-security-features#colored-core-pvc',
+      },
+      {
+        id: 19,
+        label: 'Special Die Shapes',
+        link: '/card-features/design-and-security-features#special-shapes',
+      },
+    ],
+  },
+];
+
+const OPTIONS_RETAIL = [
+  {
+    id: 0,
+    label: 'Card Materials',
+    description:
+      'Choosing the right card material is very important when it comes to the functioning of the card and the purpose that it is meant to serve.',
+    child: [
+      {
+        id: 1,
+        label: 'PVC (Plastic)',
+        link: '/card-features/card-materials#pvc',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/card-features/card-materials#eco-pvc',
+      },
+      {
+        id: 3,
+        label: 'PET-G',
+        link: '/card-features/card-materials#pet-g',
+      },
+      {
+        id: 5,
+        label: 'PET-F',
+        link: '/card-features/card-materials#pet-f',
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Technology',
+    description:
+      'Advancements in technology paved the way for secure and reliable smart cards that dominate the different sectors of government, transportation, healthcare, retail, telecommunications and financial industries.',
+    child: [
+      {
+        id: 7,
+        label: 'Contact',
+        link: '/card-features/technology-materials#contact',
+      },
+      {
+        id: 8,
+        label: 'Contactless',
+        link: '/card-features/technology-materials#contactless',
+      },
+      {
+        id: 9,
+        label: 'Dual-Interface',
+        link: '/card-features/technology-materials#dual-interface',
+      },
+      {
+        id: 11,
+        label: 'Magstripe',
+        link: '/card-features/technology-materials#magstripe',
+      },
+    ],
+  },
+  {
+    id: 12,
+    label: 'Design Features',
+    description:
+      'FCI has the manufacturing capabilities of below special material and effects:',
+    child: [
+      {
+        id: 13,
+        label: 'Colored Core PVC',
+        link: '/card-features/design-and-security-features#colored-core-pvc',
+      },
+      {
+        id: 14,
+        label: 'Holographic PVC',
+        link: '/card-features/design-and-security-features#holographic-pvc',
+      },
+      {
+        id: 15,
+        label: 'Transparent PVC with special IR blocker',
+        link: '/card-features/design-and-security-features#transparent-pvc',
+      },
+      {
+        id: 16,
+        label: 'Hot Stamping',
+        link: '/card-features/design-and-security-features#hot-stamping',
+      },
+      {
+        id: 17,
+        label: 'Tactile/Spot UV',
+        link: '/card-features/design-and-security-features#tactile-spot-uv',
+      },
+      {
+        id: 18,
+        label: 'Special Color Magstripes',
+        link:
+          '/card-features/design-and-security-features#special-color-magstripes',
+      },
+      {
+        id: 19,
+        label: 'Special Die Shapes',
+        link: '/card-features/design-and-security-features#special-shapes',
+      },
+      {
+        id: 20,
+        label: 'Aromatic & touch effect cards',
+        link: '/card-features/design-and-security-features#aromatic',
+      },
+      {
+        id: 21,
+        label: 'Bejeweleds',
+        link: '/card-features/design-and-security-features#bejeweleds',
+      },
+    ],
+  },
+];
+
+const OPTIONS_GENERAL = [
+  {
+    id: 22,
+    label: 'Solutions',
+    description:
+      'As an end-to-end card manufacturer, mixing technology with security printing craftsmanship, FutureCard covers the complete value chain of design and manufacturing of secure cards on all kind of substrates:',
+    child: [
+      {
+        id: 23,
+        label: 'Instant Issuance',
+        link: '/solutions#instant-issuance',
+      },
+      {
+        id: 24,
+        label: 'Central Issuance',
+        link: '/solutions#instant-issuance',
+      },
+      {
+        id: 25,
+        label: 'Card Holders Enrollment',
+        link: '/solutions#card-holders-enrollment',
+      },
+      {
+        id: 26,
+        label: 'Card Lifecycle Management',
+        link: '/solutions#card-lyfecycle-management',
+      },
+    ],
+  },
+  {
+    id: 27,
+    label: 'Our Services',
+    description:
+      'FutureCard completes its offering with complementary cards services and solutions, positionning itself as a one-stop-shop for all cards needs.',
+    child: [
+      {
+        id: 28,
+        label: 'Card Design',
+        link: '/our-services/card-design',
+      },
+      {
+        id: 29,
+        label: 'Card Personalization',
+        link: '/our-services/card-personalization',
+      },
+      {
+        id: 30,
+        label: 'Fulfillment Packaging',
+        link: '/our-solutions/fulfillment-packaging',
+      },
+    ],
   },
 ];
 
@@ -220,4 +793,14 @@ const ADDRESSES = [
   },
 ];
 
-export { ADDRESSES, LANGUAGE, NAVIGATION };
+export {
+  ADDRESSES,
+  OPTIONS_PAYMENT,
+  OPTIONS_IDENTIFICATION,
+  OPTIONS_TRANSPORT,
+  OPTIONS_TELECOM,
+  OPTIONS_RETAIL,
+  OPTIONS_GENERAL,
+  LANGUAGE,
+  NAVIGATION,
+};
