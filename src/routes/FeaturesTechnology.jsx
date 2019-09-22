@@ -37,7 +37,8 @@ const FeaturesTechnology = ({
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
-      description={title}>
+      description={title}
+    >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>
         <P>{content}</P>
