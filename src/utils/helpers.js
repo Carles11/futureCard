@@ -41,3 +41,12 @@ export function hexToRgb(hex) {
     }
     : null;
 }
+
+export function scrollToFn(scrollTo) {
+  setTimeout(() => {
+    document.querySelector(`${scrollTo}`).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  });
+}

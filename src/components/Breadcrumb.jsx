@@ -46,9 +46,7 @@ const areEqual = (prevProps, nextProps) => prevProps.items === nextProps.items;
 
 BreadcrumbComponent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape()),
-  DIC: PropTypes.shape({
-    NAV_LABEL_SERVICES_FULFILLMENT: PropTypes.string.isRequired,
-  }),
+  DIC: PropTypes.shape({}),
 };
 
 export default memo(BreadcrumbComponent, areEqual);

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
+import { scrollToFn } from '@src/utils/helpers';
 
 import { Article, P } from '@src/css/elements';
 
@@ -33,6 +34,14 @@ const FeaturesTechnology = ({
       handleGetFeatures('technology', language);
     }
   }, [language]);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-restricted-globals
+    if (location.hash && features.length) {
+      // eslint-disable-next-line no-restricted-globals
+      scrollToFn(location.hash);
+    }
+  }, [features]);
 
   return (
     <ViewLayout

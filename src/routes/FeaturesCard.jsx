@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
+import { scrollToFn } from '@src/utils/helpers';
 
 import { Article, P } from '@src/css/elements';
 
@@ -35,12 +36,23 @@ const FeaturesCard = ({
     }
   }, [language]);
 
+  useEffect(() => {
+    // eslint-disable-next-line no-restricted-globals
+    if (location.hash && features.length) {
+      // eslint-disable-next-line no-restricted-globals
+      scrollToFn(location.hash);
+    }
+  }, [features]);
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_CARD_MATERIALS}`}
       description={title}
     >
-      <HeaderSection title={DIC.NAV_LABEL_CARD_MATERIALS} subtitle={`${title}.`} />
+      <HeaderSection
+        title={DIC.NAV_LABEL_CARD_MATERIALS}
+        subtitle={`${title}.`}
+      />
       <Article>
         <P>{content}</P>
       </Article>

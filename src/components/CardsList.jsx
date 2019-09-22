@@ -13,7 +13,12 @@ const CardsList = memo(
     <Fragment>
       {cards.length ? (
         cards.map(card => (
-          <Article key={card._id} centered with_margin="3.5rem auto 0">
+          <Article
+            id={card.hash ? card.hash : card._id}
+            key={card._id}
+            centered
+            with_margin="3.5rem auto 0"
+          >
             <Grid responsive>
               <Grid flex="1">
                 <Figure card>
