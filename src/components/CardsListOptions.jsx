@@ -41,7 +41,7 @@ const CardsListOptions = memo(
 CardsListOptions.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       label: PropTypes.string,
       description: PropTypes.string,
       img: PropTypes.string,
