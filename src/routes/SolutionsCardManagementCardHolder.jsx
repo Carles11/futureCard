@@ -20,7 +20,8 @@ const SolutionsCardManagementCardHolder = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_CARD_HOLDER}`}
       description={title}
-      image={BACKGROUND_IMG.IDENTIFICATION}>
+      image={BACKGROUND_IMG.IDENTIFICATION}
+    >
       <HeaderSection
         title={DIC.MANAGEMENT_CARD_HOLDER}
         subtitle={`${title}.`}
