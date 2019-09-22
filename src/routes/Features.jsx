@@ -8,7 +8,7 @@ import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
 import {
- Article, P, H4, Hr 
+  Article, P, H4, Hr,
 } from '@src/css/elements';
 
 const Features = ({ DIC }) => {
@@ -19,7 +19,6 @@ const Features = ({ DIC }) => {
       description={DIC.CARD_FEATURES_DESCRIPTION}
       image={BACKGROUND_IMG.ABOUT_FACILITY}
     >
-      >
       <HeaderSection
         title={DIC.NAV_LABEL_CARDS}
         subtitle={DIC.CARD_FEATURES_DESCRIPTION}
