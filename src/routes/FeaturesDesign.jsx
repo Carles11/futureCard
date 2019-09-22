@@ -39,7 +39,8 @@ const FeaturesDesign = ({
       // eslint-disable-next-line no-restricted-globals
       scrollToFn(location.hash);
     }
-  }, [features]);
+    // eslint-disable-next-line no-restricted-globals
+  }, [features, location]);
 
   return (
     <ViewLayout
