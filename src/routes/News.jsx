@@ -11,9 +11,7 @@ import useLocation from '@src/hooks/useLocation';
 import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
 
-const News = ({
-  DIC, path, location, news, handleLocation, handleGetNews,
-}) => {
+const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
   const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
 
@@ -49,14 +47,22 @@ News.propTypes = {
     NEWS_SUBTITLE: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
     NEWS_CONTENT: PropTypes.string.isRequired,
-
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  news: PropTypes.string,
+  news: PropTypes.shape({
+    success: PropTypes.bool,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string,
+      }),
+    ),
+    count: PropTypes.number,
+  }),
+
   handleGetNews: PropTypes.func.isRequired,
 };
 
