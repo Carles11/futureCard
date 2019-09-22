@@ -22,7 +22,8 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_INSTANT_ISSUANCE}`}
       description={title}
-      image={BACKGROUND_IMG.IDENTIFICATION}>
+      image={BACKGROUND_IMG.IDENTIFICATION}
+    >
       <HeaderSection
         title={DIC.MANAGEMENT_INSTANT_ISSUANCE}
         subtitle={`${title}.`}
