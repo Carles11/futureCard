@@ -16,9 +16,7 @@ import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
 import logoWhite from '@src/assets/image/logo_white.png';
 
-import {
-  A, H1, H2, Hr, Header, Section,
-} from '@src/css/elements/index';
+import { A, H1, H2, Hr, Header, Section } from '@src/css/elements/index';
 import Layout from '@src/css/blocks/Layout';
 
 import { getLocation } from '@src/actions/location/actions';
@@ -33,22 +31,29 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {function} props.handleLocation
  */
 
-const Landing = ({
-  DIC, path, location, handleLocation,
-}) => {
+const Landing = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
   const position = useScroll();
-  const [logoDisplay, setLogoDisplay] = useState(true);
+  const [visible, setVisible] = useState(true);
+
   useEffect(() => {
     if (position && position > 200) {
-      setLogoDisplay(false);
+      setVisible(false);
     }
     if (position && position <= 200) {
-      setLogoDisplay(true);
+      setVisible(true);
     }
   }, [position]);
 
   /** Handles scroll position to manage big logo visibility */
+  let style = {
+    height: '170px',
+    width: 'auto',
+    top: '1rem',
+    bottom: '5rem',
+    visibility: 'visible',
+  };
+  if (!visible) style.visibility = 'hidden';
 
   return (
     <Section>
@@ -61,26 +66,19 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
-          {logoDisplay ? (
-            <Layout.Header.Logo.Image
-              src={logoWhite}
-              style={{
-                height: '170px',
-                width: 'auto',
-                top: '1rem',
-                bottom: '5rem',
-              }}
-              alt="Futurecard logo"
-            />
-          ) : null}
+          <Layout.Header.Logo.Image
+            src={logoWhite}
+            style={style}
+            alt='Futurecard logo'
+          />
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>
-          <Hr withSize="50%" withMargin="0 0 2rem" />
-          <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
+          <Hr withSize='50%' withMargin='0 0 2rem' />
+          <H2 sansSerif invertColor tiny withMargin='1rem 0 3.5rem'>
             {DIC.LANDING_SUBTITLE}
           </H2>
-          <A role="button" to="/about-futurecard/">
+          <A role='button' to='/about-futurecard/'>
             {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
             <Icon>
               <FiArrowRightCircle />

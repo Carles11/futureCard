@@ -15,21 +15,38 @@ const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */
 const SolutionsCardManagement = lazy(() => import('./SolutionsCardManagement'));
-const SolutionsCardManagementCentralIssuance = lazy(() => import('./SolutionsCardManagementCentralIssuance'));
-const SolutionsCardManagementInstantIssuance = lazy(() => import('./SolutionsCardManagementInstantIssuance'));
-const SolutionsCardManagementCardHolder = lazy(() => import('./SolutionsCardManagementCardHolder'));
-const SolutionsCardManagementCardLife = lazy(() => import('./SolutionsCardManagementCardLife'));
+const SolutionsCardManagementCentralIssuance = lazy(() =>
+  import('./SolutionsCardManagementCentralIssuance'),
+);
+const SolutionsCardManagementInstantIssuance = lazy(() =>
+  import('./SolutionsCardManagementInstantIssuance'),
+);
+const SolutionsCardManagementCardHolder = lazy(() =>
+  import('./SolutionsCardManagementCardHolder'),
+);
+const SolutionsCardManagementCardLife = lazy(() =>
+  import('./SolutionsCardManagementCardLife'),
+);
 
 /** SOLUTIONS END TO END ROUTES */
 const SolutionsEndToEnd = lazy(() => import('./SolutionsEndToEnd'));
-const SolutionsEndToEndPayment = lazy(() => import('./SolutionsEndToEndPayment'));
-const SolutionsEndToEndIdentification = lazy(() => import('./SolutionsEndToEndIdentification'));
-const SolutionsEndToEndTransport = lazy(() => import('./SolutionsEndToEndTransport'));
-const SolutionsEndToEndTelecom = lazy(() => import('./SolutionsEndToEndTelecom'));
+const SolutionsEndToEndPayment = lazy(() =>
+  import('./SolutionsEndToEndPayment'),
+);
+const SolutionsEndToEndIdentification = lazy(() =>
+  import('./SolutionsEndToEndIdentification'),
+);
+const SolutionsEndToEndTransport = lazy(() =>
+  import('./SolutionsEndToEndTransport'),
+);
+const SolutionsEndToEndTelecom = lazy(() =>
+  import('./SolutionsEndToEndTelecom'),
+);
 const SolutionsEndToEndRetail = lazy(() => import('./SolutionsEndToEndRetail'));
 
 /** SERVICES ROUTES */
 const Services = lazy(() => import('./Services'));
+const ServicesConsulting = lazy(() => import('./ServicesConsulting'));
 const ServicesDesign = lazy(() => import('./ServicesDesign'));
 const ServicesFulfillment = lazy(() => import('./ServicesFulfillment'));
 const ServicesPersonalization = lazy(() => import('./ServicesPersonalization'));
@@ -44,93 +61,97 @@ const NotFound = lazy(() => import('./NotFound'));
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>
     <Switch>
-      <Route exact path="/" component={Landing} />
+      <Route exact path='/' component={Landing} />
 
       {/* ABOUT */}
       <Route
-        path="/about-futurecard/our-facility-and-capabilities"
+        path='/about-futurecard/our-facility-and-capabilities'
         component={AboutFacility}
       />
-      <Route path="/about-futurecard/careers" component={Careers} />
-      <Route path="/about-futurecard" component={About} />
+      <Route path='/about-futurecard/careers' component={Careers} />
+      <Route path='/about-futurecard' component={About} />
 
       {/* OUR SOLUTIONS */}
       <Route
-        path="/our-solutions/customize-your-card"
+        path='/our-solutions/customize-your-card'
         component={SolutionsCustomize}
       />
       <Route
-        path="/our-solutions/card-management-systems/central-issuance"
+        path='/our-solutions/card-management-systems/central-issuance'
         component={SolutionsCardManagementCentralIssuance}
       />
       <Route
-        path="/our-solutions/card-management-systems/instant-issuance"
+        path='/our-solutions/card-management-systems/instant-issuance'
         component={SolutionsCardManagementInstantIssuance}
       />
       <Route
-        path="/our-solutions/card-management-systems/cardholder-enrollment-system"
+        path='/our-solutions/card-management-systems/cardholder-enrollment-system'
         component={SolutionsCardManagementCardHolder}
       />
       <Route
-        path="/our-solutions/card-management-systems/card-life-cycle-management"
+        path='/our-solutions/card-management-systems/card-life-cycle-management'
         component={SolutionsCardManagementCardLife}
       />
       <Route
-        path="/our-solutions/card-management-systems"
+        path='/our-solutions/card-management-systems'
         component={SolutionsCardManagement}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions/payment"
+        path='/our-solutions/end-to-end-card-solutions/payment'
         component={SolutionsEndToEndPayment}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions/identification"
+        path='/our-solutions/end-to-end-card-solutions/identification'
         component={SolutionsEndToEndIdentification}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions/transport-and-access"
+        path='/our-solutions/end-to-end-card-solutions/transport-and-access'
         component={SolutionsEndToEndTransport}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions/telecom"
+        path='/our-solutions/end-to-end-card-solutions/telecom'
         component={SolutionsEndToEndTelecom}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions/retail_loyalty"
+        path='/our-solutions/end-to-end-card-solutions/retail_loyalty'
         component={SolutionsEndToEndRetail}
       />
       <Route
-        path="/our-solutions/end-to-end-card-solutions"
+        path='/our-solutions/end-to-end-card-solutions'
         component={SolutionsEndToEnd}
       />
-      <Route path="/our-solutions" component={Solutions} />
+      <Route path='/our-solutions' component={Solutions} />
 
       {/* OUR SERVICES */}
-      <Route path="/our-services/card-design" component={ServicesDesign} />
+      <Route path='/our-services/card-design' component={ServicesDesign} />
       <Route
-        path="/our-services/card-personalization"
+        path='/our-services/card-consulting'
+        component={ServicesConsulting}
+      />
+      <Route
+        path='/our-services/card-personalization'
         component={ServicesPersonalization}
       />
       <Route
-        path="/our-services/fulfillment-packaging"
+        path='/our-services/fulfillment-packaging'
         component={ServicesFulfillment}
       />
-      <Route path="/our-services" component={Services} />
+      <Route path='/our-services' component={Services} />
 
       {/* CARD FEATURES */}
       <Route
-        path="/card-features/technology-materials"
+        path='/card-features/technology-materials'
         component={FeaturesTechnology}
       />
-      <Route path="/card-features/card-materials" component={FeaturesCard} />
+      <Route path='/card-features/card-materials' component={FeaturesCard} />
       <Route
-        path="/card-features/design-and-security-features"
+        path='/card-features/design-and-security-features'
         component={FeaturesDesign}
       />
-      <Route path="/card-features" component={Features} />
+      <Route path='/card-features' component={Features} />
 
-      <Route path="/news" component={News} />
-      <Route path="/contact-us" component={Contact} />
+      <Route path='/news' component={News} />
+      <Route path='/contact-us' component={Contact} />
       <Route component={NotFound} />
     </Switch>
   </Suspense>

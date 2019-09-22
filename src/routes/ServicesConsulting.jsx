@@ -4,25 +4,25 @@ import { connect } from 'react-redux';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Box from '@src/css/blocks/Box';
 import { Article, P, H4, Hr } from '@src/css/elements';
 
-const ServicesPersonalization = ({ DIC }) => {
-  const [title, ...content] = DIC.SERVICES_PERSONALIZATION_CONTENT.split('.');
+const ServicesConsulting = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
   return (
     <ViewLayout
-      title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_PERSONALIZATION}`}
-      description={`${title}.`}
-      image={BACKGROUND_IMG.IDENTIFICATION}>
+      title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_CONSULTING_TITLE}`}
+      description={DIC.SERVICES_DESCRIPTION}
+      image={BACKGROUND_IMG.WHO_WE_ARE}>
       <HeaderSection
-        title={DIC.SERVICES_PERSONALIZATION_TITLE}
-        subtitle={DIC.SERVICES_PERSONALIZATION_SUBTITLE}
+        title={DIC.SERVICES_CONSULTING_TITLE}
+        subtitle={DIC.SERVICES_CONSULTING_SUBTITLE}
       />
       <Article centered>
-        <P>{content.join('.')}</P>
+        <P>{DIC.SERVICES_CONSULTING_CONTENT_0}</P>
+        <P>{DIC.SERVICES_CONSULTING_CONTENT_1}</P>
         <Box>
           {SECTIONS.child.map(section => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
@@ -54,13 +54,16 @@ const ServicesPersonalization = ({ DIC }) => {
   );
 };
 
-ServicesPersonalization.propTypes = {
+ServicesConsulting.propTypes = {
   DIC: PropTypes.shape({
-    NAV_LABEL_PERSONALIZATION: PropTypes.string.isRequired,
-    SERVICES_PERSONALIZATION_CONTENT: PropTypes.string.isRequired,
-    SERVICES_PERSONALIZATION_DESCRIPTION: PropTypes.string.isRequired,
-    SERVICES_PERSONALIZATION_SUBTITLE: PropTypes.string.isRequired,
-    SERVICES_PERSONALIZATION_TITLE: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    SERVICES_TITLE: PropTypes.string.isRequired,
+    SERVICES_SUBTITLE: PropTypes.string.isRequired,
+    SERVICES_DESCRIPTION: PropTypes.string.isRequired,
+    SERVICES_CONSULTING_CONTENT_0: PropTypes.string.isRequired,
+    SERVICES_CONSULTING_CONTENT_1: PropTypes.string.isRequired,
+    SERVICES_CONSULTING_SUBTITLE: PropTypes.string.isRequired,
+    SERVICES_CONSULTING_TITLE: PropTypes.string.isRequired,
   }).isRequired,
 };
 
@@ -71,4 +74,4 @@ const mapStateToProps = ({ dictionary }) => ({
 export default connect(
   mapStateToProps,
   null,
-)(ServicesPersonalization);
+)(ServicesConsulting);

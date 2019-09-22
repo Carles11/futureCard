@@ -110,13 +110,18 @@ const NAVIGATION = [
       },
       {
         key: 11,
-        label: 'CARD_PERSONALIZATION',
+        label: 'PERSONALIZATION',
         link: '/our-services/card-personalization',
       },
       {
         key: 12,
-        label: 'SERVICES_FULFILLMENT',
+        label: 'FULFILLMENT',
         link: '/our-services/fulfillment-packaging',
+      },
+      {
+        key: 13,
+        label: 'CONSULTING',
+        link: '/our-services/card-consulting',
       },
     ],
   },
@@ -722,6 +727,11 @@ const OPTIONS_GENERAL = [
         id: 30,
         label: 'Fulfillment Packaging',
         link: '/our-solutions/fulfillment-packaging',
+      },
+      {
+        id: 31,
+        label: 'Card Consulting',
+        link: '/our-solutions/card-consulting',
       },
     ],
   },

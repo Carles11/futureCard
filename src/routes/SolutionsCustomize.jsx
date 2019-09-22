@@ -9,14 +9,13 @@ import { Article, P } from '@src/css/elements';
 const SolutionsCustomize = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_CUSTOMIZE}`}
-    description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
-  >
+    description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}>
     <HeaderSection
       title={DIC.NAV_LABEL_CUSTOMIZE}
       subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
     />
     <Article centered>
-      <P>HERE ALL OPTIONS IN TABS WITH CONTENT</P>
+      <P></P>
     </Article>
   </ViewLayout>
 );
