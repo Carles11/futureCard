@@ -8,6 +8,7 @@ import store from './store';
 
 import App from './App';
 import './css/App.css';
+import './assets/favicon/favicon.ico';
 
 const elem = document.querySelector('.root');
 
