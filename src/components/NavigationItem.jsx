@@ -5,9 +5,7 @@ import Submenu from '@src/components/Submenu';
 
 import Layout from '@src/css/blocks/Layout';
 
-const NavigationItem = memo(({
-  item, label, dark, path, DIC, fn,
-}) => {
+const NavigationItem = memo(({ item, label, path, DIC, fn }) => {
   const [visible, setVisible] = useState(false);
 
   function handleSubmenu() {
@@ -22,13 +20,11 @@ const NavigationItem = memo(({
   return (
     <Layout.Header.Navigation.Link
       key={item.key}
-      with_dark={dark ? dark.toString() : undefined}
       active={path === item.link ? item.link.toString() : undefined}
       onMouseEnter={handleSubmenu}
       onMouseLeave={handleSubmenu}
       to={item.link}
-      onClick={handleClick}
-    >
+      onClick={handleClick}>
       {label}
       {visible ? <Submenu items={item.child} DIC={DIC} /> : null}
     </Layout.Header.Navigation.Link>
@@ -37,9 +33,9 @@ const NavigationItem = memo(({
 
 function areEqual(prevProps, nextProps) {
   return (
-    prevProps.dark === nextProps.dark
-    && prevProps.DIC === nextProps.DIC
-    && prevProps.path === nextProps.path
+    prevProps.dark === nextProps.dark &&
+    prevProps.DIC === nextProps.DIC &&
+    prevProps.path === nextProps.path
   );
 }
 
@@ -49,7 +45,6 @@ NavigationItem.propTypes = {
     link: PropTypes.string.isRequired,
   }),
   label: PropTypes.string.isRequired,
-  dark: PropTypes.oneOfType([PropTypes.boolean, PropTypes.undefined]),
   path: PropTypes.string.isRequired,
   fn: PropTypes.func.isRequired,
   DIC: PropTypes.shape({}),
