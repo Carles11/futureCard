@@ -11,7 +11,9 @@ import useLocation from '@src/hooks/useLocation';
 import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
 
-const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
+const News = ({
+  DIC, path, location, news, handleLocation, handleGetNews,
+}) => {
   const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
 
