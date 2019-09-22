@@ -10,6 +10,24 @@ const P = styled.p`
   line-height: 1.75;
   text-align: left;
 
+  ${props => props.message
+    && css`
+    display: block;
+    margin: 2.5rem auto 2rem;
+    text-align: center;
+    border: 1px solid ${props.theme.background}
+    color: ${props.theme.background}
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 6px;
+    width: 50%;
+    background: #fafafa;
+
+    @media only screen and (max-width: 1024px) {
+        width: 100%;
+      }
+  `}
+
   ${props => !!props.bold
     && css`
       font-weight: 600;

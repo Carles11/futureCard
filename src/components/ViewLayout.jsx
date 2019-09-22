@@ -47,7 +47,7 @@ const ViewLayout = ({
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      {!!image && <Background section={!!image} image={image} />}
+      {!!image && <Background effect section={!!image} image={image} />}
       {!!breadcrumb && !!breadcrumb.length && (
         <Breadcrumb DIC={DIC} items={breadcrumb} path={path} />
       )}

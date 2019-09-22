@@ -5,6 +5,7 @@
     "semi": [1, "always"],
     "no-unexpected-multiline": 2,
     "no-use-before-define": ["error", { "functions": false }],
+    "consistent-return": [0, "allow"],
     "compat/compat": 2,
     "no-underscore-dangle": [0, "allow"],
     "no-nested-ternary": [0, "allow"],

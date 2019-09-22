@@ -1,5 +1,3 @@
-// @ts-check
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -50,7 +48,6 @@ const Landing = ({
     }
   }, [position]);
 
-
   /** Handles scroll position to manage big logo visibility */
 
   return (
@@ -68,7 +65,10 @@ const Landing = ({
             <Layout.Header.Logo.Image
               src={logoWhite}
               style={{
-                height: '170px', width: 'auto', top: '1rem', bottom: '5rem',
+                height: '170px',
+                width: 'auto',
+                top: '1rem',
+                bottom: '5rem',
               }}
               alt="Futurecard logo"
             />

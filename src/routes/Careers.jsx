@@ -10,6 +10,8 @@ import { Article, P } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
+// @todo xvila - add redux logic for careers
+
 const Careers = ({ DIC }) => {
   const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
@@ -22,6 +24,10 @@ const Careers = ({ DIC }) => {
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}.`} />
       <Article centered>
         <P>{content}</P>
+        <P message>
+          Unfortunately FutureCard does not have any open position at the
+          moment.
+        </P>
       </Article>
     </ViewLayout>
   );
@@ -29,15 +35,10 @@ const Careers = ({ DIC }) => {
 
 Careers.propTypes = {
   DIC: PropTypes.shape({
+    NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
-    ABOUT_TITLE: PropTypes.string.isRequired,
-    ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
-    CAREERS_DESCRIPTION: PropTypes.string.isRequired,
     ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
