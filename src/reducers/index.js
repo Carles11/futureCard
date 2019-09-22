@@ -8,6 +8,7 @@ import location from './location';
 import career from './career';
 import news from './news';
 import cards from './cards';
+import features from './features';
 
 export default combineReducers({
   products,
@@ -18,4 +19,5 @@ export default combineReducers({
   career,
   news,
   cards,
+  features,
 });

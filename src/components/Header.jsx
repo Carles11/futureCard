@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { NAVIGATION } from '@src/utils/constants';
 import logo from '@src/assets/image/logo.png';
 import logoWhite from '@src/assets/image/logo_white.png';
-import useScroll from '@src/hooks/useScroll';
 import useSize from '@src/hooks/useSize';
 import NavigationItem from '@src/components/NavigationItem';
 
@@ -24,27 +23,7 @@ const Header = ({ LANG: language, DIC, path }) => {
     active: false,
   };
   const [state, dispatch] = useReducer(headerReducer, initialState);
-  const position = useScroll();
   const size = useSize();
-
-  /** Handles scroll position for Header background */
-  useEffect(() => {
-    if (!state.position && position > 100) {
-      dispatch({ type: 'SCROLL', position: true });
-      dispatch({ type: 'DARK', dark: false });
-    }
-
-    if (!!state.position && position <= 100) {
-      dispatch({ type: 'SCROLL', position: false });
-      dispatch({ type: 'DARK', dark: path === '/' });
-    }
-  }, [position]);
-
-  /** Handles page location to change menu color */
-  useEffect(() => {
-    const dark = path === '/';
-    dispatch({ type: 'DARK', dark });
-  }, [path]);
 
   /** Handles screen resolution and effects in the menu */
   useEffect(() => {
@@ -109,7 +88,7 @@ const Header = ({ LANG: language, DIC, path }) => {
           handleIconClick={handleChangeVisibility}
         />
         <Layout.Header.HeaderBackground
-          visible={state.position ? state.position.toString() : undefined}
+          visible
         />
       </Layout.Header>
     </Fragment>

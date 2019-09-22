@@ -15,6 +15,10 @@ const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */
 const SolutionsCardManagement = lazy(() => import('./SolutionsCardManagement'));
+const SolutionsCardManagementCentralIssuance = lazy(() => import('./SolutionsCardManagementCentralIssuance'));
+const SolutionsCardManagementInstantIssuance = lazy(() => import('./SolutionsCardManagementInstantIssuance'));
+const SolutionsCardManagementCardHolder = lazy(() => import('./SolutionsCardManagementCardHolder'));
+const SolutionsCardManagementCardLife = lazy(() => import('./SolutionsCardManagementCardLife'));
 
 /** SOLUTIONS END TO END ROUTES */
 const SolutionsEndToEnd = lazy(() => import('./SolutionsEndToEnd'));
@@ -54,6 +58,22 @@ const Routes = () => (
       <Route
         path="/our-solutions/customize-your-card"
         component={SolutionsCustomize}
+      />
+      <Route
+        path="/our-solutions/card-management-systems/central-issuance"
+        component={SolutionsCardManagementCentralIssuance}
+      />
+      <Route
+        path="/our-solutions/card-management-systems/instant-issuance"
+        component={SolutionsCardManagementInstantIssuance}
+      />
+      <Route
+        path="/our-solutions/card-management-systems/cardholder-enrollment-system"
+        component={SolutionsCardManagementCardHolder}
+      />
+      <Route
+        path="/our-solutions/card-management-systems/card-life-cycle-management"
+        component={SolutionsCardManagementCardLife}
       />
       <Route
         path="/our-solutions/card-management-systems"

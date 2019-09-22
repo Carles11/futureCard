@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const BackgroundImage = styled.div`
   position: absolute;
@@ -9,6 +9,23 @@ const BackgroundImage = styled.div`
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+
+  ${props => props.section
+    && css`
+      height: 50vh;
+    `}
+
+  /* eslint-ignore */
+  ${(props) => {
+    if (props.blur) {
+      const value = `${props.blur}px`;
+
+      return css`
+        -webkit-filter: blur(${value}); /* Safari 6.0 - 9.0 */
+        filter: blur(${value});
+      `;
+    }
+  }}
 `;
 
 export default BackgroundImage;

@@ -1,12 +1,11 @@
-// @ts-check
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { NAVIGATION } from '@src/utils/constants';
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+
 
 import Box from '@src/css/blocks/Box/index';
 import {
@@ -26,6 +25,7 @@ const About = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.ABOUT_TITLE}`}
       description={DIC.ABOUT_US_DESCRIPTION}
+      image={BACKGROUND_IMG.WHO_WE_ARE}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_WHO_WE_ARE}
@@ -40,7 +40,7 @@ const About = ({ DIC }) => {
         <Box>
           {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
-            const CONTENT = `ABOUT_${section.label}`;
+            const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
 
             return (
               <Box.Link
@@ -58,7 +58,7 @@ const About = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem" withAlign="center">
-                  {DIC[CONTENT]}
+                  {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
             );

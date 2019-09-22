@@ -1,4 +1,4 @@
 export default {
-  API_URL: 'http://localhost:5001/api/',
-  PUBLIC_URL: 'http://localhost:8080/',
+  API_URL: 'http://167.71.33.229/api/',
+  // API_URL: 'http://localhost:5001/api/',
 };

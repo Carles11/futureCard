@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import {
-  FaUniversity, FaMoneyBillAlt, FaMobileAlt, FaUsers,
+  FaUniversity,
+  FaMoneyBillAlt,
+  FaMobileAlt,
+  FaUsers,
 } from 'react-icons/fa';
-
 
 import Box from '@src/css/blocks/Box';
 import {
@@ -57,6 +59,7 @@ const SolutionsEndToEnd = ({ DIC }) => (
       subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
     />
     <Article centered>
+      <P>{DIC.SOLUTIONS_END_TO_END_CONTENT}</P>
       <Box>
         {SECTIONS.map((section) => {
           const TITLE = `MARKETS_${section.title}`;
@@ -97,6 +100,7 @@ SolutionsEndToEnd.propTypes = {
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
 };
 

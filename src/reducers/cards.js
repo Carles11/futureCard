@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   identification: [],
   transport: [],
   telecom: [],
+  retail: [],
 };
 
 export default function cardsReducer(state = INITIAL_STATE, action) {

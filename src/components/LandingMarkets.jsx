@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import MarketsMap from '@src/assets/image/MarketsMap.jpeg';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { FaUniversity } from 'react-icons/fa';
 import { FaMoneyBillAlt } from 'react-icons/fa';
@@ -49,16 +49,15 @@ const SECTIONS = [
 
 const LandingMarkets = ({ DIC }) => (
   <Article centered>
-    <HeaderSection
-      title={DIC.NAV_LABEL_MARKETS}
-      subtitle={DIC.ABOUT_US_MARKETS}
-    />
     <Image
+      loading="lazy"
       section
       withMargin="0 0 0"
-      src={MarketsMap}
-      alt={DIC.NAV_LABEL_MARKETS}
+      src={BACKGROUND_IMG.CONTACT_MAP}
+      alt={DIC.INDUSTRY_FOCUS}
     />
+    <HeaderSection title={DIC.INDUSTRY_FOCUS} subtitle={DIC.ABOUT_US_MARKETS} />
+
     <Box>
       {SECTIONS.map((section) => {
         const TITLE = `MARKETS_${section.title}`;

@@ -3,30 +3,31 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import ViewLayout from '@src/components/ViewLayout';
-import useLocation from '@src/hooks/useLocation';
 import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 
+// @todo xvila - add redux logic for careers
 
-const Careers = ({
-  DIC, path, location, handleLocation,
-}) => {
-  useLocation(path, location, handleLocation);
+const Careers = ({ DIC }) => {
+  const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
-      description={DIC.CAREERS_DESCRIPTION}
+      description={`${title}.`}
+      image={BACKGROUND_IMG.CAREERS}
     >
-      <HeaderSection
-        title={DIC.NAV_LABEL_CAREERS}
-        subtitle={DIC.CAREERS_DESCRIPTION}
-      />
+      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}.`} />
       <Article centered>
-        <P>{DIC.CAREERS_CONTENT}</P>
+        <P>{content.join('.')}</P>
+        <P message>
+          Unfortunately FutureCard does not have any open position at the
+          moment.
+        </P>
       </Article>
     </ViewLayout>
   );
@@ -34,17 +35,10 @@ const Careers = ({
 
 Careers.propTypes = {
   DIC: PropTypes.shape({
+    NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
-    ABOUT_TITLE: PropTypes.string.isRequired,
-    ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
-    CAREERS_DESCRIPTION: PropTypes.string.isRequired,
-    CAREERS_CONTENT: PropTypes.string.isRequired,
+    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
-  path: PropTypes.string.isRequired,
-  handleLocation: PropTypes.func.isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({

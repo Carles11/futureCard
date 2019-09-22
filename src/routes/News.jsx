@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section, Article } from '@src/css/elements';
+import { Section, Article, P } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
@@ -35,7 +35,7 @@ const News = ({
       />
       <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
       <Article centered>
-        {DIC.NEWS_CONTENT}
+        <P>{DIC.NEWS_CONTENT}</P>
       </Article>
       <Footer />
     </Section>
@@ -49,14 +49,22 @@ News.propTypes = {
     NEWS_SUBTITLE: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
     NEWS_CONTENT: PropTypes.string.isRequired,
-
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  news: PropTypes.string,
+  news: PropTypes.shape({
+    success: PropTypes.bool,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string,
+      }),
+    ),
+    count: PropTypes.number,
+  }),
+
   handleGetNews: PropTypes.func.isRequired,
 };
 

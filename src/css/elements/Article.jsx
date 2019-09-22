@@ -19,7 +19,6 @@ const Article = styled.article`
         flex-direction: column;
         max-width: 1440px;
         margin: 0 auto;
-        align-items: center;
         padding: 1rem 2rem 4rem;
         box-sizing: border-box;
       }
