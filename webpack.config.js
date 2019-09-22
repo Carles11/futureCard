@@ -38,7 +38,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
       plugins: [
         new HtmlWebpackPlugin({
           template: './public/index.html',
-          favicon: './src/assets/favicon.ico',
+          favicon: './src/assets/favicon/favicon.ico',
         }),
         new webpack.ProgressPlugin(),
       ],
