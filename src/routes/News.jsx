@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section, Article } from '@src/css/elements';
+import { Section, Article, P } from '@src/css/elements';
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
@@ -35,7 +35,7 @@ const News = ({
       />
       <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
       <Article centered>
-        {DIC.NEWS_CONTENT}
+        <P>{DIC.NEWS_CONTENT}</P>
       </Article>
       <Footer />
     </Section>
