@@ -23,7 +23,7 @@ const Careers = ({ DIC }) => {
     >
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}.`} />
       <Article centered>
-        <P>{content}</P>
+        <P>{content.join('.')}</P>
         <P message>
           Unfortunately FutureCard does not have any open position at the
           moment.

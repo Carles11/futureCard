@@ -15,19 +15,20 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
  * @param {Object} props.DIC
  */
 const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
-  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_INSTANT_ISSUANCE.split('.');
+  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_INSTANT_ISSUANCE.split(
+    '.',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_INSTANT_ISSUANCE}`}
       description={title}
-      image={BACKGROUND_IMG.IDENTIFICATION}
-    >
+      image={BACKGROUND_IMG.IDENTIFICATION}>
       <HeaderSection
         title={DIC.MANAGEMENT_INSTANT_ISSUANCE}
         subtitle={`${title}.`}
       />
       <Article centered>
-        <P>{`${content}.`}</P>
+        <P>{content.join('.')}</P>
       </Article>
     </ViewLayout>
   );

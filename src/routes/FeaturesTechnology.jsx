@@ -41,7 +41,7 @@ const FeaturesTechnology = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>
-        <P>{content}</P>
+        <P>{content.join('.')}</P>
       </Article>
       <CardsList cards={features} />
     </ViewLayout>

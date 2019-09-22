@@ -21,7 +21,7 @@ const AboutFacility = ({ DIC }) => {
     >
       <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}.`} />
       <Article centered>
-        <P>{content}</P>
+        <P>{content.join('.')}</P>
         <List>
           {list.map(item => (
             <List.Item key={item.id}>{item.text}</List.Item>

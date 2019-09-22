@@ -39,7 +39,7 @@ const FeaturesDesign = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}.`} />
       <Article centered>
-        <P>{content}</P>
+        <P>{content.join('.')}</P>
       </Article>
       <CardsList cards={features} />
     </ViewLayout>

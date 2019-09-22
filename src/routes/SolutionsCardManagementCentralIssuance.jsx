@@ -27,7 +27,7 @@ const SolutionsCardManagementCentralIssuance = ({ DIC }) => {
         subtitle={`${title}.`}
       />
       <Article centered>
-        <P>{`${content}.`}</P>
+        <P>{content.join('.')}</P>
       </Article>
     </ViewLayout>
   );
