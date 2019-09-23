@@ -11,8 +11,8 @@ const Form = styled.form`
   display: flex;
   z-index: 500;
 
-  ${props => props.center 
-    && css `
+  ${props => props.center
+    && css`
       align-self: center;
       width: 70%;
     `}

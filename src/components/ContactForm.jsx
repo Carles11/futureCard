@@ -54,10 +54,11 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     resetForm();
   };
   return (
-    <Form 
-      action="" 
+    <Form
+      action=""
       onSubmit={handleFormSubmit}
-      center>
+      center
+    >
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
