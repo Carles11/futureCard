@@ -49,7 +49,8 @@ const FeaturesTechnology = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
       description={title}
-      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}>
+      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}
+    >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>
         <P>{content.join('.')}</P>

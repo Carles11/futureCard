@@ -11,7 +11,9 @@ import healthCard from '@src/assets/image/health_card.png';
 
 import Box from '@src/css/blocks/Box';
 import List from '@src/css/blocks/List';
-import { A, Article, H3, Hr, P, Grid, Figure, Image } from '@src/css/elements';
+import {
+  A, Article, H3, Hr, P, Grid, Figure, Image,
+} from '@src/css/elements';
 
 /**
  * Solutions View Component
@@ -26,7 +28,8 @@ const Solutions = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
-      image={BACKGROUND_IMG.OUR_SOLUTIONS}>
+      image={BACKGROUND_IMG.OUR_SOLUTIONS}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_SOLUTIONS}
         subtitle={DIC.SOLUTIONS_DESCRIPTION}
@@ -35,30 +38,30 @@ const Solutions = ({ DIC }) => {
       <Article centered>
         <P>{DIC.SOLUTIONS_CONTENT}</P>
         <Box>
-          {sections.child.map(section => {
+          {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `SOLUTIONS_${section.label}_DESCRIPTION`;
 
             return (
-              <Box.Item key={section.key} with_background='true'>
-                <H3 withMargin='1.5rem 0.5rem 1rem' centered>
+              <Box.Item key={section.key} with_background="true">
+                <H3 withMargin="1.5rem 0.5rem 1rem" centered>
                   {DIC[TITLE]}
                 </H3>
                 <Hr
-                  withSize='80px'
-                  withMargin='0 auto 1rem'
-                  withAlign='center'
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
                 />
-                <P small withPadding='0 1rem 0.5rem'>
+                <P small withPadding="0 1rem 0.5rem">
                   {DIC[CONTENT]}
                 </P>
                 {section.child ? (
                   <List>
-                    {section.child.map(link => {
+                    {section.child.map((link) => {
                       const LINK_TITLE = `NAV_LABEL_${link.label}`;
                       return (
                         <List.Item link key={link.key}>
-                          <A role='link' to={link.link}>
+                          <A role="link" to={link.link}>
                             {DIC[LINK_TITLE]}
                           </A>
                         </List.Item>
@@ -72,8 +75,8 @@ const Solutions = ({ DIC }) => {
                         <Image responsive src={healthCard} alt={DIC[TITLE]} />
                       </Figure>
                     )}
-                    <Grid withMargin='2rem 0 1.5rem' vertical='center'>
-                      <A role='button' to={section.link}>
+                    <Grid withMargin="2rem 0 1.5rem" vertical="center">
+                      <A role="button" to={section.link}>
                         {DIC[TITLE]}
                         <Icon>
                           <FiArrowRightCircle />

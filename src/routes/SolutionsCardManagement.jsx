@@ -7,7 +7,9 @@ import HeaderSection from '@src/components/HeaderSection';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
-import { Article, P, H4, Hr, Grid } from '@src/css/elements';
+import {
+  Article, P, H4, Hr, Grid,
+} from '@src/css/elements';
 
 const SECTIONS = [
   {
@@ -40,7 +42,8 @@ const SolutionsCardManagement = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}
     description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
-    image={BACKGROUND_IMG.CARD_MANAGEMENT}>
+    image={BACKGROUND_IMG.CARD_MANAGEMENT}
+  >
     <HeaderSection
       title={DIC.NAV_LABEL_CARD_MANAGEMENT}
       subtitle={DIC.SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION}
@@ -48,7 +51,7 @@ const SolutionsCardManagement = ({ DIC }) => (
     <Article centered>
       <P>{DIC.SOLUTIONS_CARD_MANAGEMENT_CONTENT}</P>
       <Box>
-        {SECTIONS.map(section => {
+        {SECTIONS.map((section) => {
           const TITLE = `MANAGEMENT_${section.title}`;
           const CONTENT = `MANAGEMENT_DESCRIPTION_${section.title}`;
 
@@ -56,20 +59,22 @@ const SolutionsCardManagement = ({ DIC }) => (
             <Box.Link
               to={section.link}
               key={section.id}
-              with_scale='true'
-              with_background='true'>
+              with_scale="true"
+              with_background="true"
+            >
               <Grid
                 withIcon
-                withPadding='2rem 2rem 1rem'
+                withPadding="2rem 2rem 1rem"
                 flex={1}
-                vertical='center'>
+                vertical="center"
+              >
                 {section.icon}
               </Grid>
-              <H4 withMargin='0.5rem' centered>
+              <H4 withMargin="0.5rem" centered>
                 {DIC[TITLE]}
               </H4>
-              <Hr withSize='80px' withMargin='0 auto 1rem' withAlign='center' />
-              <P small withPadding='0 1rem 0.5rem'>
+              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
+              <P small withPadding="0 1rem 0.5rem">
                 {`${DIC[CONTENT].split('.')[0]}`}
               </P>
             </Box.Link>
