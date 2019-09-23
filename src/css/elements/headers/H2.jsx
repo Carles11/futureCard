@@ -8,43 +8,57 @@ const H2 = styled.h2`
   font-weight: lighter;
   line-height: 1.4;
 
-  ${props => props.flex
-    && css`
+  ${props =>
+    props.flex &&
+    css`
       flex: ${props.flex};
     `}
 
-  ${props => props.invertColor
-    && css`
+  ${props =>
+    props.secundaryColor &&
+    css`
+      color: ${props.theme.mainColor};
+    `}
+    
+  ${props =>
+    props.invertColor &&
+    css`
       color: #ffffff;
     `}
 
-  ${props => props.serif
-    && css`
+  ${props =>
+    props.serif &&
+    css`
       font-family: 'hero_lightregular', 'Volkhov', serif;
       font-weight: 100;
     `}
   
-  ${props => props.sansSerif
-    && css`
+  ${props =>
+    props.sansSerif &&
+    css`
       font-family: 'hero_lightregular', 'Raleway', sans-serif;
     `}
 
-  ${props => props.small
-    && css`
+  ${props =>
+    props.small &&
+    css`
       font-size: calc(30px + (35 - 25) * ((100vw - 600px) / (1600 - 900)));
     `}
 
-  ${props => props.tiny
-    && css`
+  ${props =>
+    props.tiny &&
+    css`
       font-size: calc(20px + (25 - 18) * ((100vw - 600px) / (1600 - 900)));
     `}
-  ${props => props.withMargin
-    && css`
+  ${props =>
+    props.withMargin &&
+    css`
       margin: ${props.withMargin};
     `};
 
-  ${props => props.centered
-    && css`
+  ${props =>
+    props.centered &&
+    css`
       text-align: center;
     `};
 `;

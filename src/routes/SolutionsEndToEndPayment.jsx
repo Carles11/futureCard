@@ -49,7 +49,7 @@ const SolutionsEndToEndPayment = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer"
+        subtitle="Discover all the options and solutions we offer for our payment cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
