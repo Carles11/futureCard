@@ -53,9 +53,11 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
     resetForm();
   };
-
   return (
-    <Form action="" onSubmit={handleFormSubmit}>
+    <Form 
+      action="" 
+      onSubmit={handleFormSubmit}
+      center>
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
