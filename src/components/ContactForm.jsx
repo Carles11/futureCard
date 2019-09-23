@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form, Input, Label } from '@src/css/elements/form';
-import { Button } from '@src/css/elements';
+import { Button, H3 } from '@src/css/elements';
 import { connect } from 'react-redux';
 
 import { sendEmail } from '@src/actions/contact/actionsSideEffects';
@@ -59,6 +59,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
       onSubmit={handleFormSubmit}
       center
     >
+      <H3 centered>Ask us. We bring you answers.</H3>
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
