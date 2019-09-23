@@ -18,7 +18,7 @@ const ServicesDesign = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_DESIGN_TITLE}`}
       description={DIC.SERVICES_DESCRIPTION}
-      image={BACKGROUND_IMG.CAREERS}
+      image={BACKGROUND_IMG.CARD_DESIGN}
     >
       <HeaderSection
         title={DIC.SERVICES_DESIGN_TITLE}

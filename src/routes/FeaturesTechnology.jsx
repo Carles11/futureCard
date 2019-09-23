@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
+import { scrollToFn } from '@src/utils/helpers';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
 
@@ -34,10 +36,20 @@ const FeaturesTechnology = ({
     }
   }, [language]);
 
+  useEffect(() => {
+    // eslint-disable-next-line no-restricted-globals
+    if (location.hash && features.length) {
+      // eslint-disable-next-line no-restricted-globals
+      scrollToFn(location.hash);
+    }
+    // eslint-disable-next-line no-restricted-globals
+  }, [features, location]);
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
       description={title}
+      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}
     >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>

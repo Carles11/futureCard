@@ -19,7 +19,7 @@ const H1 = styled.h1`
     
   ${props => props.sansSerif
     && css`
-      font-family: 'Hero regular', 'Raleway', sans-serif;
+      font-family: 'hero_lightregular', 'Raleway', sans-serif;
     `}
     
   ${props => props.upperCase

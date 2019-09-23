@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
 import {
@@ -41,6 +42,7 @@ const SolutionsCardManagement = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}
     description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
+    image={BACKGROUND_IMG.CARD_MANAGEMENT}
   >
     <HeaderSection
       title={DIC.NAV_LABEL_CARD_MANAGEMENT}

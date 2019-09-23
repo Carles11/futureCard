@@ -67,9 +67,7 @@ ViewLayout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  DIC: PropTypes.shape({
-    NAV_LABEL_SERVICES_FULFILLMENT: PropTypes.string.isRequired,
-  }),
+  DIC: PropTypes.shape({}),
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({

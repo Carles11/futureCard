@@ -6,7 +6,7 @@ import { FiArrowRightCircle } from 'react-icons/fi';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import Icon from '@src/components/Icon';
-import { NAVIGATION } from '@src/utils/constants';
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import healthCard from '@src/assets/image/health_card.png';
 
 import Box from '@src/css/blocks/Box';
@@ -28,6 +28,7 @@ const Solutions = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
+      image={BACKGROUND_IMG.OUR_SOLUTIONS}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_SOLUTIONS}
