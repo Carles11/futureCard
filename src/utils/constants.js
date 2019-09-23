@@ -806,11 +806,31 @@ const BACKGROUND_IMG = {
   ABOUT_FACILITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569098161/futurecard.com/facility_capabilities.jpg',
   CAREERS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569101218/futurecard.com/careers.jpg',
-  IDENTIFICATION:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195229/futurecard.com/careers.jpg',
+  CARD_PERSONALIZATION:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195018/futurecard.com/card-personalization.jpg',
+  CARD_CONSULTING:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195398/futurecard.com/consulting.jpg',
+  CARD_DESIGN:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195794/futurecard.com/card-design.jpg',
+  CARD_MANAGEMENT:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196285/futurecard.com/card-management.jpg',
+  CARD_MATERIALS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195995/futurecard.com/card-materials.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
+  DESIGN_SECURITY:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195584/futurecard.com/design-security.jpg',
+  IDENTIFICATION:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
+  NEWS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196504/futurecard.com/news.jpg',
+  OUR_SERVICES:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197399/futurecard.com/our-services.jpg',
+  OUR_SOLUTIONS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197548/futurecard.com/our-solutions.jpg',
+  TECHNOLOGY_MATERIALS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197692/futurecard.com/technology-materials.jpg',
   WHO_WE_ARE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
 };

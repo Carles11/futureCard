@@ -6,6 +6,7 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
 
@@ -48,7 +49,7 @@ const FeaturesTechnology = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
       description={title}
-    >
+      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}>
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
       <Article centered>
         <P>{content.join('.')}</P>

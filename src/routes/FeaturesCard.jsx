@@ -6,6 +6,7 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
 
@@ -49,7 +50,7 @@ const FeaturesCard = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_CARD_MATERIALS}`}
       description={title}
-    >
+      image={BACKGROUND_IMG.CARD_MATERIALS}>
       <HeaderSection
         title={DIC.NAV_LABEL_CARD_MATERIALS}
         subtitle={`${title}.`}
