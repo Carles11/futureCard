@@ -36,6 +36,10 @@ const H1 = styled.h1`
     && css`
       margin: ${props.withMargin} !important;
     `}
+    ${props => props.withAlign
+      && css`
+        text-align: ${props.withAlign};
+      `}
 `;
 
 export default withTheme(H1);

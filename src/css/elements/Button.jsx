@@ -70,6 +70,7 @@ const Button = styled.button`
   ${props => props.contact
     && css`
       align-self: center;
+      margin: 2rem;
     `}
 
   ${props => props.state === 'disabled'

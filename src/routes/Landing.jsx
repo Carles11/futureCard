@@ -14,12 +14,9 @@ import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
-import logoWhite from '@src/assets/image/logo_white.png';
+import logoLongDark from '@src/assets/image/FCI-logo-long-dark.png';
 
-import {
-  A, H1, H2, Hr, Header, Section,
-} from '@src/css/elements/index';
-import Layout from '@src/css/blocks/Layout';
+import { A, H1, H2, Hr, Header, Section } from '@src/css/elements/index';
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -33,9 +30,7 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {function} props.handleLocation
  */
 
-const Landing = ({
-  DIC, path, location, handleLocation,
-}) => {
+const Landing = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
   const position = useScroll();
   const [visible, setVisible] = useState(true);
@@ -51,10 +46,8 @@ const Landing = ({
 
   /** Handles scroll position to manage big logo visibility */
   const style = {
-    height: '170px',
-    width: 'auto',
-    top: '1rem',
-    bottom: '5rem',
+    height: 'auto',
+    width: '100%',
     visibility: 'visible',
   };
   if (!visible) style.visibility = 'hidden';
@@ -70,19 +63,15 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
-          <Layout.Header.Logo.Image
-            src={logoWhite}
-            style={style}
-            alt="Futurecard logo"
-          />
+          <img src={logoLongDark} style={style} alt='Futurecard logo' />
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>
-          <Hr withSize="50%" withMargin="0 0 2rem" />
-          <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
+          <Hr withSize='50%' withMargin='0 0 2rem' />
+          <H2 sansSerif invertColor tiny withMargin='1rem 0 3.5rem'>
             {DIC.LANDING_SUBTITLE}
           </H2>
-          <A role="button" to="/about-futurecard/">
+          <A role='button' to='/about-futurecard/'>
             {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
             <Icon>
               <FiArrowRightCircle />

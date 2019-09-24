@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
 import { Article, P } from '@src/css/elements';
-import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 import ViewLayout from '@src/components/ViewLayout';
 import { BACKGROUND_IMG } from '@src/utils/constants';
@@ -40,7 +39,6 @@ const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
       <Article centered>
         <P>{DIC.NEWS_CONTENT}</P>
       </Article>
-      <Footer />
     </ViewLayout>
   );
 };

@@ -24,7 +24,7 @@ html {
 
 body {
   position: relative;
-  font-family: 'hero_lightregular', 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: calc(16px + (18 - 14) * ((100vw - 300px) / (1600 - 100)));
   font-weight: 100;
   color: #212121;

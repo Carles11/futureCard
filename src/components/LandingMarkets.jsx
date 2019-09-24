@@ -49,6 +49,7 @@ const SECTIONS = [
 
 const LandingMarkets = ({ DIC }) => (
   <Article centered>
+    <HeaderSection title={DIC.LANDING_MAP_TITLE} />
     <Image
       loading="lazy"
       section
@@ -97,6 +98,7 @@ LandingMarkets.propTypes = {
     LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired,
     ABOUT_US_MARKETS: PropTypes.string.isRequired,
+    LANDING_MAP_TITLE: PropTypes.string.isRequired,
     MARKETS_PAYMENT: PropTypes.string.isRequired,
     MARKETS_DESCRIPTION_PAYMENT: PropTypes.string.isRequired,
     MARKETS_IDENTIFICATION: PropTypes.string.isRequired,

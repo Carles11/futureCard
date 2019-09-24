@@ -36,7 +36,8 @@ const SolutionsEndToEndRetail = ({
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
-      description={DIC.SOLUTIONS_DESCRIPTION}>
+      description={DIC.SOLUTIONS_DESCRIPTION}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_RETAIL_LOYALTY}
         subtitle={DIC.SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION}
@@ -47,7 +48,7 @@ const SolutionsEndToEndRetail = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle='Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards'
+        subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
