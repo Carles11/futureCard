@@ -12,7 +12,9 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
 import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
 
-const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
+const News = ({
+  DIC, path, location, news, handleLocation, handleGetNews,
+}) => {
   const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
 
@@ -27,7 +29,8 @@ const News = ({ DIC, path, location, news, handleLocation, handleGetNews }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_NEWS}`}
       description={DIC.NEWS_DESCRIPTION}
-      image={BACKGROUND_IMG.NEWS}>
+      image={BACKGROUND_IMG.NEWS}
+    >
       <Helmet
         title={DIC.NAV_LABEL_NEWS}
         meta={[

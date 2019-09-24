@@ -16,7 +16,9 @@ import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
 import logoLongDark from '@src/assets/image/FCI-logo-long-dark.png';
 
-import { A, H1, H2, Hr, Header, Section } from '@src/css/elements/index';
+import {
+  A, H1, H2, Hr, Header, Section,
+} from '@src/css/elements/index';
 
 import { getLocation } from '@src/actions/location/actions';
 
@@ -30,7 +32,9 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {function} props.handleLocation
  */
 
-const Landing = ({ DIC, path, location, handleLocation }) => {
+const Landing = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
   const position = useScroll();
   const [visible, setVisible] = useState(true);
@@ -63,15 +67,15 @@ const Landing = ({ DIC, path, location, handleLocation }) => {
       />
       <Background image={backgroundImg}>
         <Header background>
-          <img src={logoLongDark} style={style} alt='Futurecard logo' />
+          <img src={logoLongDark} style={style} alt="Futurecard logo" />
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>
-          <Hr withSize='50%' withMargin='0 0 2rem' />
-          <H2 sansSerif invertColor tiny withMargin='1rem 0 3.5rem'>
+          <Hr withSize="50%" withMargin="0 0 2rem" />
+          <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
             {DIC.LANDING_SUBTITLE}
           </H2>
-          <A role='button' to='/about-futurecard/'>
+          <A role="button" to="/about-futurecard/">
             {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
             <Icon>
               <FiArrowRightCircle />
