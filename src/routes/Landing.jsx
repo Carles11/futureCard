@@ -19,7 +19,6 @@ import logoLongDark from '@src/assets/image/FCI-logo-long-dark.png';
 import {
   A, H1, H2, Hr, Header, Section,
 } from '@src/css/elements/index';
-
 import { getLocation } from '@src/actions/location/actions';
 
 /**
@@ -53,6 +52,7 @@ const Landing = ({
     height: 'auto',
     width: '100%',
     visibility: 'visible',
+    margin: 'auto auto 60px auto',
   };
   if (!visible) style.visibility = 'hidden';
 
