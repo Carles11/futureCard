@@ -58,7 +58,7 @@ const ServicesDesign = ({ DIC }) => {
         </Box>
       </Article>
       <Button.Centered>
-        <A role='button' to='/our-services/'>
+        <A role="button" to="/our-services/">
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
           <Icon>
             <FiArrowRightCircle />
