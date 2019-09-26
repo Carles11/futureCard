@@ -21,12 +21,18 @@ const AboutFacility = ({ DIC }) => {
     >
       <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}.`} />
       <Article centered>
-        <P>{content.join('.')}</P>
+        {content.map(item => (
+          <P>
+            {item}
+.
+          </P>
+        ))}
         <List>
           {list.map(item => (
             <List.Item key={item.id}>{item.text}</List.Item>
           ))}
         </List>
+        <P>{DIC.ABOUT_US_FACILITY_DESCRIPTION_1}</P>
       </Article>
     </ViewLayout>
   );
@@ -35,8 +41,8 @@ const AboutFacility = ({ DIC }) => {
 AboutFacility.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
-    NAV_LABEL_FACILITY: PropTypes.string.isRequired,
     ABOUT_US_FACILITY_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_FACILITY_DESCRIPTION_1: PropTypes.string.isRequired,
     ABOUT_US_FACILITY_LIST: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number,

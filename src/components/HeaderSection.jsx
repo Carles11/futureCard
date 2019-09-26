@@ -7,13 +7,13 @@ import {
 
 const HeaderSection = ({ title, subtitle }) => (
   <Header centered>
-    <H3 secundaryColor withMargin="1rem 0 0.75rem">
+    <H2 secundaryColor withMargin="1rem 0 0.75rem" withAlign="center">
       {title}
-    </H3>
+    </H2>
     {!!subtitle && (
-      <H2 withMargin="0" centered small>
+      <H3 withMargin="0" centered small>
         {subtitle}
-      </H2>
+      </H3>
     )}
     <Hr withSize="180px" withMargin="1.5rem 0 2rem" withAlign="center" />
   </Header>

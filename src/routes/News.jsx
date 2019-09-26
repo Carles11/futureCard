@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HeaderSection from '@src/components/HeaderSection';
-import { Section, Article, P } from '@src/css/elements';
-import Footer from '@src/components/Footer';
+import { Article, P } from '@src/css/elements';
 import useLocation from '@src/hooks/useLocation';
+import ViewLayout from '@src/components/ViewLayout';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
@@ -25,7 +26,11 @@ const News = ({
   }, [news]);
 
   return (
-    <Section>
+    <ViewLayout
+      title={`${DIC.NAV_LABEL_NEWS}`}
+      description={DIC.NEWS_DESCRIPTION}
+      image={BACKGROUND_IMG.NEWS}
+    >
       <Helmet
         title={DIC.NAV_LABEL_NEWS}
         meta={[
@@ -37,8 +42,7 @@ const News = ({
       <Article centered>
         <P>{DIC.NEWS_CONTENT}</P>
       </Article>
-      <Footer />
-    </Section>
+    </ViewLayout>
   );
 };
 

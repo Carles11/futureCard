@@ -104,6 +104,11 @@ const NAVIGATION = [
     link: '/our-services',
     child: [
       {
+        key: 13,
+        label: 'CONSULTING',
+        link: '/our-services/card-consulting',
+      },
+      {
         key: 10,
         label: 'CARD_DESIGN',
         link: '/our-services/card-design',
@@ -117,11 +122,6 @@ const NAVIGATION = [
         key: 12,
         label: 'FULFILLMENT',
         link: '/our-services/fulfillment-packaging',
-      },
-      {
-        key: 13,
-        label: 'CONSULTING',
-        link: '/our-services/card-consulting',
       },
     ],
   },

@@ -23,7 +23,7 @@ const Services = ({ DIC }) => {
     >
       <HeaderSection
         title={DIC.NAV_LABEL_SERVICES}
-        subtitle={`${title}.`}
+        subtitle={`${title}`}
       />
       <Article centered>
         <P>{`${content.join('.')}`}</P>

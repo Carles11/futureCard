@@ -6,7 +6,6 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
-
 import Box from '@src/css/blocks/Box/index';
 import {
   Article, H3, Hr, P,
@@ -25,7 +24,7 @@ const About = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.ABOUT_TITLE}`}
       description={DIC.ABOUT_US_DESCRIPTION}
-      image={BACKGROUND_IMG.WHO_WE_ARE}
+      image={BACKGROUND_IMG.ABOUT_US}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_WHO_WE_ARE}

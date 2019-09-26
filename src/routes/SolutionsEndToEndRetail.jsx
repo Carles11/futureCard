@@ -48,7 +48,7 @@ const SolutionsEndToEndRetail = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer"
+        subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>

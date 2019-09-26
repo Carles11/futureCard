@@ -13,6 +13,11 @@ const H2 = styled.h2`
       flex: ${props.flex};
     `}
 
+  ${props => props.secundaryColor
+    && css`
+      color: ${props.theme.mainColor};
+    `}
+    
   ${props => props.invertColor
     && css`
       color: #ffffff;
@@ -20,7 +25,7 @@ const H2 = styled.h2`
 
   ${props => props.serif
     && css`
-      font-family: 'hero_lightregular', 'Volkhov', serif;
+      font-family: 'hero_lightregular', serif;
       font-weight: 100;
     `}
   
@@ -47,6 +52,11 @@ const H2 = styled.h2`
     && css`
       text-align: center;
     `};
+    
+    ${props => props.withAlign
+      && css`
+        text-align: ${props.withAlign};
+      `}
 `;
 
 export default withTheme(H2);

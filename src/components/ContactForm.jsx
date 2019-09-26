@@ -4,9 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form, Input, Label } from '@src/css/elements/form';
-import {
-  Button, H3,
-} from '@src/css/elements';
+import { Button, H3 } from '@src/css/elements';
 import { connect } from 'react-redux';
 
 import { sendEmail } from '@src/actions/contact/actionsSideEffects';
@@ -28,10 +26,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
 
   useEffect(() => {
     if (!data) {
-      setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_NOT_SENT}` });
-      setTimeout(() => {
-        setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
-      }, 2000);
+      setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SEND}` });
     } else if (data) {
       // eslint-disable-next-line no-use-before-define
       setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENT}` });
@@ -57,12 +52,8 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     resetForm();
   };
   return (
-    <Form
-      action=""
-      onSubmit={handleFormSubmit}
-      center
-    >
-      <H3 align>Ask us. Get the answer.</H3>
+    <Form action="" onSubmit={handleFormSubmit} center>
+      <H3 centered>Ask us. We bring you answers.</H3>
       <Label htmlFor="name">{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id="name" type="text" required onChange={handleInputChange} />
       <Label htmlFor="email">{DIC.CONTACT_LABEL_EMAIL}</Label>
@@ -71,6 +62,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
       <Input id="telephone" type="tel" onChange={handleInputChange} />
       <Label htmlFor="message">{DIC.CONTACT_LABEL_MESSAGE}</Label>
       <Input
+        textarea
         id="message"
         type="text-area"
         minlength="20"

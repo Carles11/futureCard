@@ -26,7 +26,7 @@ const SECTIONS = [
 const LandingAbout = ({ DIC }) => (
   <Article centered>
     <HeaderSection
-      title={DIC.NAV_LABEL_WHO_WE_ARE}
+      title={DIC.NAV_LABEL_OUR_BUSINESS}
       subtitle={DIC.ABOUT_US_DESCRIPTION}
     />
 
@@ -72,6 +72,7 @@ LandingAbout.propTypes = {
     ABOUT_US_SOLUTIONS: PropTypes.string.isRequired,
     ABOUT_US_SERVICES: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
+    NAV_LABEL_OUR_BUSINESS: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired,

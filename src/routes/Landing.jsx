@@ -14,13 +14,11 @@ import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
-import logoWhite from '@src/assets/image/logo_white.png';
+import logoLongDark from '@src/assets/image/FCI-logo-long-dark.png';
 
 import {
   A, H1, H2, Hr, Header, Section,
 } from '@src/css/elements/index';
-import Layout from '@src/css/blocks/Layout';
-
 import { getLocation } from '@src/actions/location/actions';
 
 /**
@@ -51,11 +49,10 @@ const Landing = ({
 
   /** Handles scroll position to manage big logo visibility */
   const style = {
-    height: '170px',
-    width: 'auto',
-    top: '1rem',
-    bottom: '5rem',
+    height: 'auto',
+    width: '100%',
     visibility: 'visible',
+    margin: 'auto auto 60px auto',
   };
   if (!visible) style.visibility = 'hidden';
 
@@ -70,11 +67,7 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
-          <Layout.Header.Logo.Image
-            src={logoWhite}
-            style={style}
-            alt="Futurecard logo"
-          />
+          <img src={logoLongDark} style={style} alt="Futurecard logo" />
           <H1 invertColor sansSerif upperCase>
             {DIC.LANDING_TITLE}
           </H1>

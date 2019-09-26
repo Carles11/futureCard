@@ -13,7 +13,7 @@ const H1 = styled.h1`
   
   ${props => props.serif
     && css`
-      font-family: 'Hero light', 'Volkhov', serif;
+      font-family: 'Hero light', serif;
       font-weight: 100;
     `}
     
@@ -36,6 +36,10 @@ const H1 = styled.h1`
     && css`
       margin: ${props.withMargin} !important;
     `}
+    ${props => props.withAlign
+      && css`
+        text-align: ${props.withAlign};
+      `}
 `;
 
 export default withTheme(H1);

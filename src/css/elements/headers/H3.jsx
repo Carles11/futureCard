@@ -18,12 +18,12 @@ const H3 = styled.h3`
 
   ${props => props.sansSerif
     && css`
-      font-family: 'hero_lightregular', 'Raleway', sans-serif;
+      font-family: 'hero_lightregular', sans-serif;
     `}
 
   ${props => props.serif
     && css`
-      font-family: 'hero_lightregular', 'Volkhov', serif;
+      font-family: 'hero_lightregular', serif;
       font-weight: 100;
     `}
 
@@ -46,11 +46,18 @@ const H3 = styled.h3`
     && css`
       text-align: center;
     `}
+<<<<<<< HEAD
 
   ${props => props.align
     && css`
      margin-left: 1rem;
     `}
+=======
+    ${props => props.withAlign
+      && css`
+        text-align: ${props.withAlign};
+      `}
+>>>>>>> 3b426497da0d60d2e434a5ad90154c1f7936a4cd
 `;
 
 export default withTheme(H3);

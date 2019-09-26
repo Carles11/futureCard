@@ -13,6 +13,7 @@ const Logo = styled.figure`
 const Image = styled.img`
   position: relative;
   margin: 0;
+  margin-bottom: 100px;
   padding: 0;
   width: 100%;
 `;
