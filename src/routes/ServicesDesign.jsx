@@ -9,7 +9,7 @@ import Box from '@src/css/blocks/Box';
 import Icon from '@src/components/Icon';
 
 import {
-  Article, A, P, H4, Hr,
+  Article, A, Button, P, H4, Hr,
 } from '@src/css/elements';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
@@ -57,12 +57,14 @@ const ServicesDesign = ({ DIC }) => {
           })}
         </Box>
       </Article>
-      <A role="button" to="/our-services/">
-        {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-        <Icon>
-          <FiArrowRightCircle />
-        </Icon>
-      </A>
+      <Button.Centered>
+        <A role='button' to='/our-services/'>
+          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+          <Icon>
+            <FiArrowRightCircle />
+          </Icon>
+        </A>
+      </Button.Centered>
     </ViewLayout>
   );
 };

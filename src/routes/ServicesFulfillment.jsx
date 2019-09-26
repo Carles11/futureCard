@@ -9,7 +9,7 @@ import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Icon from '@src/components/Icon';
 
 import Box from '@src/css/blocks/Box';
-import { Article, A, P, H4, Hr } from '@src/css/elements';
+import { Article, A, Button, P, H4, Hr } from '@src/css/elements';
 
 const ServicesFulfillment = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
@@ -51,12 +51,14 @@ const ServicesFulfillment = ({ DIC }) => {
           })}
         </Box>
       </Article>
-      <A role='button' to='/our-services/'>
-        {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-        <Icon>
-          <FiArrowRightCircle />
-        </Icon>
-      </A>
+      <Button.Centered>
+        <A role='button' to='/our-services/'>
+          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+          <Icon>
+            <FiArrowRightCircle />
+          </Icon>
+        </A>
+      </Button.Centered>
     </ViewLayout>
   );
 };

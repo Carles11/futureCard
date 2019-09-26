@@ -44,6 +44,7 @@ const buttonDefault = css`
 `;
 
 const Button = styled.button`
+
   ${buttonDefault}
 
   ${props =>
@@ -123,6 +124,9 @@ const Centered = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  position: relative;
+  margin-bottom: 3rem;
 `;
 
 Button.Icon = Icon;
