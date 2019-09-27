@@ -5,9 +5,10 @@ import styled, { css } from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const P = styled.p`
+  font-family: Raleway, sans-serif;
   color: ${props => props.theme.fontColor};
   font-size: calc(16px + (17 - 15) * ((100vw - 600px) / (1600 - 900)));
-  line-height: 1.75;
+  line-height: 1.5;
   text-align: left;
 
   ${props => props.message
@@ -65,7 +66,7 @@ const P = styled.p`
 
   ${props => props.small
     && css`
-      font-size: 0.9rem;
+      font-size: 0.98rem;
       line-height: 1.4rem;
     `}
   

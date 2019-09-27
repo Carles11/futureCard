@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import Box from '@src/css/blocks/Box';
+import Icon from '@src/components/Icon';
 
 import {
-  Article, P, H4, Hr,
+  Article, A, Button, P, H4, Hr,
 } from '@src/css/elements';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
@@ -55,12 +57,21 @@ const ServicesDesign = ({ DIC }) => {
           })}
         </Box>
       </Article>
+      <Button.Centered>
+        <A role="button" to="/our-services/">
+          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+          <Icon>
+            <FiArrowRightCircle />
+          </Icon>
+        </A>
+      </Button.Centered>
     </ViewLayout>
   );
 };
 
 ServicesDesign.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     SERVICES_TITLE: PropTypes.string.isRequired,
     SERVICES_SUBTITLE: PropTypes.string.isRequired,

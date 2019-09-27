@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
+import Icon from '@src/components/Icon';
 
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Box from '@src/css/blocks/Box';
 import {
-  Article, P, H4, Hr,
+  Article, A, Button, P, H4, Hr,
 } from '@src/css/elements';
 
 const ServicesConsulting = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.filter(
+    item => item.label === 'FULFILLMENT',
+  );
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_CONSULTING_TITLE}`}
@@ -27,7 +33,7 @@ const ServicesConsulting = ({ DIC }) => {
         <P>{DIC.SERVICES_CONSULTING_CONTENT_0}</P>
         <P>{DIC.SERVICES_CONSULTING_CONTENT_1}</P>
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -54,12 +60,21 @@ const ServicesConsulting = ({ DIC }) => {
           })}
         </Box>
       </Article>
+      <Button.Centered>
+        <A role="button" to="/our-services/">
+          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+          <Icon>
+            <FiArrowRightCircle />
+          </Icon>
+        </A>
+      </Button.Centered>
     </ViewLayout>
   );
 };
 
 ServicesConsulting.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     SERVICES_TITLE: PropTypes.string.isRequired,
     SERVICES_SUBTITLE: PropTypes.string.isRequired,

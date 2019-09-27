@@ -36,7 +36,6 @@ const buttonDefault = css`
       border: 2px solid ${props.theme.mainColor};
     }
   `}
-
   ${props => props.align
     && css`
       text-align: ${props.align};
@@ -44,6 +43,7 @@ const buttonDefault = css`
 `;
 
 const Button = styled.button`
+
   ${buttonDefault}
 
   ${props => props.invert
@@ -105,6 +105,7 @@ const Button = styled.button`
       padding: 1rem 0 1rem 1rem;
     }
   `}
+  
 
 `;
 
@@ -112,6 +113,16 @@ const Icon = styled.i`
   margin-right: 0.5rem;
 `;
 
+const Centered = styled.div`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  margin-bottom: 3rem;
+`;
+
 Button.Icon = Icon;
+Button.Centered = Centered;
 
 export default withTheme(Button);

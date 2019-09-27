@@ -13,7 +13,7 @@ const H1 = styled.h1`
   
   ${props => props.serif
     && css`
-      font-family: 'Hero light', 'Volkhov', serif;
+      font-family: 'Hero light', serif;
       font-weight: 100;
     `}
     

@@ -31,6 +31,11 @@ const LinkComponent = styled(
     margin-right: 0;
   }
 
+  ${props => props.centered
+    && css`
+      margin: 50px;
+    `}
+
   ${props => props.with_background
     && css`
       background: #fafafa;
