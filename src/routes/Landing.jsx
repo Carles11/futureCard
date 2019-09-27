@@ -14,7 +14,7 @@ import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
-import logoLong from '@src/assets/image/FCI-logo-long-white.png';
+import logoLong from '@src/assets/image/FCI-logo-long-white-lowRES.png';
 
 import { A, H1, H2, Hr, Header, Section, Image } from '@src/css/elements/index';
 import { getLocation } from '@src/actions/location/actions';
