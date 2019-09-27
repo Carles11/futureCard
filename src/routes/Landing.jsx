@@ -36,7 +36,7 @@ const Landing = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
-  const position = useScroll();
+  const position = useScroll(true);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -46,6 +46,7 @@ const Landing = ({
     if (position && position <= 200) {
       setVisible(true);
     }
+    return () => {};
   }, [position]);
 
   /** Handles scroll position to manage big logo visibility */

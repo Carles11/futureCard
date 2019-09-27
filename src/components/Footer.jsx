@@ -48,7 +48,9 @@ const FooterComponent = ({
   const [state, dispatch] = useReducer(footerReducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: 'ALL', language, navigation: NAVIGATION });
+    const admin = { key: 50, label: 'ADMIN', link: '/admin' };
+    dispatch({ type: 'ALL', language, navigation: [...NAVIGATION, admin] });
+    return () => {};
   }, [language]);
 
   function handleLanguage(value) {

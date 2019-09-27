@@ -31,7 +31,7 @@ const ViewLayout = ({
 
     const navigation = NAVIGATION.find(item => item.link === path);
 
-    if (navigation.child) {
+    if (navigation && navigation.child) {
       return setBreadcrumb([{ label: navigation.label }, ...navigation.child]);
     }
 

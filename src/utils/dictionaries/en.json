@@ -98,6 +98,7 @@
   "MANAGEMENT_CARD_LIFE_CYCLE": "Card Lyfe Cycle Management",
   "MANAGEMENT_DESCRIPTION_CARD_LIFE_CYCLE": "The FC Card Life Cycle Management System manages the card activities in the field starting from the cardholder acquisition and provisioning, activation, deactivation, block, unblock, load, retire activities and field usage management. This can be integrated to a transaction processing system for authentication services and transaction data analysis. The system can manage the card processing account of merchants or retailers and can be integrated to an acquirer to facilitate the transaction processing.",
   "NAV_LABEL_ABOUT": "About Us",
+  "NAV_LABEL_ADMIN": "Admin",
   "NAV_LABEL_OUR_BUSINESS": "Our Business",
   "NAV_LABEL_CARD_DESIGN": "Card Design",
   "NAV_LABEL_CARD_HOLDERS": "Card Holders Enrollment",

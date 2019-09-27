@@ -78,6 +78,17 @@ const Grid = styled.div`
     && css`
       margin: ${props.withMargin} !important;
     `}
+  
+  ${props => props.withWidth
+    && css`
+      width: ${props.withWidth};
+
+      @media only screen and (max-width: 1024px) {
+        width: 100%;
+        padding: 2rem 0rem 2rem 2rem;
+
+      }
+    `}
 
   ${props => props.middle
     && css`
