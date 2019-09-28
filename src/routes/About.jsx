@@ -7,9 +7,7 @@ import HeaderSection from '@src/components/HeaderSection';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box/index';
-import {
-  Article, H3, Hr, P,
-} from '@src/css/elements/index';
+import { Article, H3, Hr, P } from '@src/css/elements/index';
 
 /**
  * About View Component
@@ -24,11 +22,10 @@ const About = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.ABOUT_TITLE}`}
       description={DIC.ABOUT_US_DESCRIPTION}
-      image={BACKGROUND_IMG.ABOUT_US}
-    >
+      image={BACKGROUND_IMG.ABOUT_US}>
       <HeaderSection
         title={DIC.NAV_LABEL_WHO_WE_ARE}
-        subtitle={DIC.ABOUT_US_DESCRIPTION}
+        subtitle={DIC.ABOUT_US_DESCRIPTION_PAGE}
       />
       <Article centered>
         <P>{DIC.ABOUT_US_CONTENT_0}</P>
@@ -37,7 +34,7 @@ const About = ({ DIC }) => {
       </Article>
       <Article centered>
         <Box>
-          {sections.child.map((section) => {
+          {sections.child.map(section => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
 
@@ -45,18 +42,17 @@ const About = ({ DIC }) => {
               <Box.Link
                 key={section.key}
                 to={section.link}
-                with_background="true"
-                with_scale="true"
-              >
-                <H3 withMargin="1.5rem 0.5rem 1rem" centered>
+                with_background='true'
+                with_scale='true'>
+                <H3 withMargin='1.5rem 0.5rem 1rem' centered>
                   {DIC[TITLE]}
                 </H3>
                 <Hr
-                  withSize="80px"
-                  withMargin="0 auto 1rem"
-                  withAlign="center"
+                  withSize='80px'
+                  withMargin='0 auto 1rem'
+                  withAlign='center'
                 />
-                <P small withPadding="0 1rem 0.5rem" withAlign="center">
+                <P small withPadding='0 1rem 0.5rem' withAlign='center'>
                   {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
@@ -72,6 +68,7 @@ About.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_DESCRIPTION_PAGE: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_0: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_1: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_2: PropTypes.string.isRequired,

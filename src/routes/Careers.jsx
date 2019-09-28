@@ -18,10 +18,9 @@ const Careers = ({ DIC }) => {
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
-      description={`${title}.`}
-      image={BACKGROUND_IMG.CAREERS}
-    >
-      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}.`} />
+      description={`${title}`}
+      image={BACKGROUND_IMG.CAREERS}>
+      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
         <P message>

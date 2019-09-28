@@ -835,6 +835,29 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
 };
 
+const PAYMENT_LOGOS = [
+  {
+    id: 0,
+    label: 'VISA',
+    src: '../src/assets/image/payment-logos/visa-card-logo-9.png',
+  },
+  {
+    id: 1,
+    label: 'MASTERCARD',
+    src: '../src/assets/image/payment-logos/mastercard-logo.png',
+  },
+  {
+    id: 2,
+    label: 'UNIONPAY',
+    src: '../src/assets/image/payment-logos/unionpay-logo.png',
+  },
+  {
+    id: 3,
+    label: 'PAYPAK',
+    src: '../src/assets/image/payment-logos/paypak-logo.png',
+  },
+];
+
 export {
   ADDRESSES,
   OPTIONS_PAYMENT,
@@ -843,6 +866,7 @@ export {
   OPTIONS_TELECOM,
   OPTIONS_RETAIL,
   OPTIONS_GENERAL,
+  PAYMENT_LOGOS,
   LANGUAGE,
   NAVIGATION,
   BACKGROUND_IMG,

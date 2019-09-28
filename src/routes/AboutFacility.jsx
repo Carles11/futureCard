@@ -16,20 +16,18 @@ const AboutFacility = ({ DIC }) => {
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_FACILITY}`}
-      description={`${title}.`}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
-    >
-      <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}.`} />
+      description={`${title}`}
+      image={BACKGROUND_IMG.ABOUT_FACILITY}>
+      <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}`} />
       <Article centered>
         {content.map(item => (
-          <P>
-            {item}
-.
-          </P>
+          <P>{item}.</P>
         ))}
         <List>
           {list.map(item => (
-            <List.Item key={item.id}>{item.text}</List.Item>
+            <List.Item withDecoration key={item.id}>
+              {item.text}
+            </List.Item>
           ))}
         </List>
         <P>{DIC.ABOUT_US_FACILITY_DESCRIPTION_1}</P>
