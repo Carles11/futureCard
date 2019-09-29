@@ -43,8 +43,19 @@ export const resetOneNews = () => ({
   type: ACTION.RESET_ONE_NEWS,
 });
 
-export const setCareers = (careers, message) => ({
+export const setCareers = (careers, count, message) => ({
   type: ACTION.SET_CAREERS,
   careers,
+  count,
   message,
+});
+
+export const setCareer = (career, message) => ({
+  type: ACTION.SET_CAREER,
+  career,
+  message,
+});
+
+export const resetCareer = () => ({
+  type: ACTION.RESET_CAREER,
 });

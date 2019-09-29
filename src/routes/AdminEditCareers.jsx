@@ -22,9 +22,9 @@ import {
 import isAdmin from '@src/hooks/isAdmin';
 
 import {
-  getOneNews,
-  createNews,
-  updateNews,
+  getCareer,
+  createCareer,
+  updateCareer,
 } from '@src/actions/admin/actionsSideEffects';
 
 const INITIAL_STATE = {
@@ -72,14 +72,14 @@ function reducer(state, action) {
   }
 }
 
-const AdminEditNews = ({
+const AdminEditCareers = ({
   token,
   match,
-  news,
+  career,
   message,
-  handleGetOneNews,
-  handleCreateNews,
-  handleUpdateNews,
+  handleGetCareer,
+  handleCreateCareer,
+  handleUpdateCareer,
 }) => {
   const admin = isAdmin(token);
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -91,17 +91,17 @@ const AdminEditNews = ({
     const { id } = match.params;
 
     if (id && id !== 'new') {
-      handleGetOneNews(id);
+      handleGetCareer(id);
     }
   }, [match]);
 
   /**
-   * Update state  if Edit Mode
+   * Update state if Edit Mode
    * */
   useEffect(() => {
     const {
       title = '', text = '', file = '', link = '',
-    } = news;
+    } = career;
     dispatch({
       type: 'ALL',
       title,
@@ -109,7 +109,7 @@ const AdminEditNews = ({
       file,
       link,
     });
-  }, [news]);
+  }, [career]);
 
   /**
    * Redirect to User List when User is Created/Updated
@@ -129,10 +129,10 @@ const AdminEditNews = ({
 
     const { imagePreview, ...data } = body;
 
-    if (Object.keys(news).length && news._id) {
-      handleUpdateNews(news._id, data);
+    if (Object.keys(career).length && career._id) {
+      handleUpdateCareer(career._id, data);
     } else {
-      handleCreateNews(data);
+      handleCreateCareer(data);
     }
   }
 
@@ -154,6 +154,7 @@ const AdminEditNews = ({
     dispatch({ type: 'FILE', file });
   }
 
+
   return (
     <Fragment>
       {admin === null && (
@@ -161,28 +162,30 @@ const AdminEditNews = ({
           <Loader />
         </Grid>
       )}
-      {state.redirect && <Redirect to="/admin/news" />}
+      {state.redirect && <Redirect to="/admin/careers" />}
       {admin !== null && !admin && <Redirect to="/admin" />}
       {admin && (
         <ViewLayout
-          title="Edit News"
-          description="FutureCard admin panel | News"
+          title="Edit Careers"
+          description="FutureCard admin panel | Careers"
         >
           <HeaderSection
-            title="Admin News"
-            subtitle="Create and edit the latest news of FutureCard"
+            title="Admin Careers"
+            subtitle="Publish job offers and documents from FutureCards"
           />
           <Article centered>
             <Grid column>
               <Grid middle>
                 <Grid flex="1">
                   <H4 withMargin="1rem 0">
-                    {Object.keys(news).length ? 'Update News' : 'Create News'}
+                    {Object.keys(career).length
+                      ? 'Update Career'
+                      : 'Create Career'}
                   </H4>
                 </Grid>
                 <Grid heightProp="50px">
-                  <A role="button" to="/admin/news">
-                    Back to News List
+                  <A role="button" to="/admin/careers">
+                    Back to Careers List
                   </A>
                 </Grid>
               </Grid>
@@ -209,11 +212,11 @@ const AdminEditNews = ({
                   value={state.text}
                   onChange={handleInputChange}
                 />
-                {!state.imagePreview && !!news.image && (
+                {!state.imagePreview && !!career.image && (
                   <Fragment>
                     <Label>Current Image</Label>
                     <Figure preview>
-                      <Image preview src={news.image} />
+                      <Image preview src={career.image} />
                     </Figure>
                   </Fragment>
                 )}
@@ -245,7 +248,9 @@ const AdminEditNews = ({
                   />
                 </Fragment>
                 <Button contact type="submit">
-                  {!!Object.keys(news).length && news._id ? 'Update' : 'Create'}
+                  {!!Object.keys(career).length && career._id
+                    ? 'Update'
+                    : 'Create'}
                 </Button>
               </Form>
             </Grid>
@@ -256,35 +261,35 @@ const AdminEditNews = ({
   );
 };
 
-AdminEditNews.propTypes = {
+AdminEditCareers.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
     }),
   }).isRequired,
   token: PropTypes.string.isRequired,
-  news: PropTypes.shape({
+  career: PropTypes.shape({
     _id: PropTypes.string,
   }),
   message: PropTypes.string,
-  handleGetOneNews: PropTypes.func.isRequired,
-  handleCreateNews: PropTypes.func.isRequired,
-  handleUpdateNews: PropTypes.func.isRequired,
+  handleGetCareer: PropTypes.func.isRequired,
+  handleCreateCareer: PropTypes.func.isRequired,
+  handleUpdateCareer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
-  news: admin.news.itemSelected,
-  message: admin.news.message,
+  career: admin.careers.itemSelected,
+  message: admin.careers.message,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetOneNews: id => dispatch(getOneNews(id)),
-  handleCreateNews: body => dispatch(createNews(body)),
-  handleUpdateNews: (id, body) => dispatch(updateNews(id, body)),
+  handleGetCareer: id => dispatch(getCareer(id)),
+  handleCreateCareer: body => dispatch(createCareer(body)),
+  handleUpdateCareer: (id, body) => dispatch(updateCareer(id, body)),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AdminEditNews);
+)(AdminEditCareers);
