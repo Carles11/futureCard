@@ -33,8 +33,8 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
         <P>{content.join('.')}</P>
         <Image
           src={IssuanceGraphic}
-          withMargin='auto'
-          alt='Issuance Graphic FutureCard'
+          withMargin="auto"
+          alt="Issuance Graphic FutureCard"
         />
       </Article>
     </ViewLayout>

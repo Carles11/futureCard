@@ -12,10 +12,13 @@ import {
   BACKGROUND_IMG,
   OPTIONS_PAYMENT,
   OPTIONS_GENERAL,
-  PAYMENT_LOGOS,
 } from '@src/utils/constants';
 
 import Layout from '@src/css/blocks/Layout';
+import VISA from '@src/assets/image/payment-logos/visa-card-logo-9.png';
+import MASTERCARD from '@src/assets/image/payment-logos/mastercard-logo.png';
+import UNIONPAY from '@src/assets/image/payment-logos/unionpay-logo.png';
+import PAYPAK from '@src/assets/image/payment-logos/paypak-logo.png';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -25,6 +28,32 @@ import { getCards } from '@src/actions/cards/actionsSideEffects';
  * @param {Object} props
  * @param {Object} props.DIC
  */
+const PAYMENT_LOGOS = [
+  {
+    id: 0,
+    label: 'VISA',
+    src: VISA,
+    link: 'https://www.visa.com',
+  },
+  {
+    id: 1,
+    label: 'MASTERCARD',
+    src: MASTERCARD,
+    link: 'https://www.mastercard.com',
+  },
+  {
+    id: 2,
+    label: 'UNIONPAY',
+    src: UNIONPAY,
+    link: 'http://www.unionpayintl.com/en/',
+  },
+  {
+    id: 3,
+    label: 'PAYPAK',
+    src: PAYPAK,
+    link: 'https://1link.net.pk/pay-pak/',
+  },
+];
 
 const SolutionsEndToEndPayment = ({
   DIC,
