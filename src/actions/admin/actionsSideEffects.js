@@ -86,7 +86,7 @@ export const getNews = () => async (dispatch) => {
 export const createNews = obj => async (dispatch) => {
   try {
     const body = new FormData();
-    body.append('file', obj.file, obj.file.name);
+    if (obj.file) body.append('file', obj.file, obj.file.name);
     body.append('title', obj.title);
     body.append('text', obj.text);
     body.append('link', obj.link);
@@ -102,8 +102,15 @@ export const createNews = obj => async (dispatch) => {
   }
 };
 
-export const updateNews = (id, body) => async (dispatch) => {
+export const updateNews = (id, obj) => async (dispatch) => {
   try {
+    const body = new FormData();
+    if (obj.file) body.append('file', obj.file, obj.file.name);
+    body.append('title', obj.title);
+    body.append('text', obj.text);
+    body.append('link', obj.link);
+    body.append('creator', obj.creator);
+
     const { data, success } = await api.put(`news/${id}`, body);
 
     if (success) {
@@ -136,7 +143,64 @@ export const deleteNews = id => async (dispatch) => {
 /** CAREERS */
 export const getCareers = () => async (dispatch) => {
   try {
-    const { data, message } = await api.get('careers');
+    const { data, count, message } = await api.get('careers');
+    dispatch(ACTION.setCareers(data, count, message));
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+};
+
+export const createCareer = obj => async (dispatch) => {
+  try {
+    const body = new FormData();
+    if (obj.file) body.append('file', obj.file, obj.file.name);
+    body.append('title', obj.title);
+    body.append('text', obj.text);
+    body.append('link', obj.link);
+    body.append('creator', obj.creator);
+
+    const { data, success } = await api.post('careers', body);
+    if (success) {
+      return dispatch(ACTION.setCareer(data, 'UPDATED'));
+    }
+    throw new Error('Something went wrong');
+  } catch (error) {
+    throw new Error('Somthing went wrong');
+  }
+};
+
+export const updateCareer = (id, obj) => async (dispatch) => {
+  try {
+    const body = new FormData();
+    if (obj.file) body.append('file', obj.file, obj.file.name);
+    body.append('title', obj.title);
+    body.append('text', obj.text);
+    body.append('link', obj.link);
+    body.append('creator', obj.creator);
+
+    const { data, success } = await api.put(`careers/${id}`, body);
+
+    if (success) {
+      return dispatch(ACTION.setCareer(data, 'UPDATED'));
+    }
+    throw new Error('Something went wrong');
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+};
+
+export const getCareer = id => async (dispatch) => {
+  try {
+    const { data, message } = await api.get(`careers/${id}`);
+    dispatch(ACTION.setCareer(data, message));
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+};
+
+export const deleteCareer = id => async (dispatch) => {
+  try {
+    const { data, message } = await api.delete(`career/${id}`);
     dispatch(ACTION.setCareers(data, message));
   } catch (error) {
     throw new Error('Something went wrong');

@@ -51,7 +51,7 @@ const FeaturesTechnology = ({
       description={title}
       image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}
     >
-      <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}.`} />
+      <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
       </Article>

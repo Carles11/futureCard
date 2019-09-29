@@ -8,7 +8,6 @@ import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
-
 import { Article, P } from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
@@ -50,7 +49,7 @@ const FeaturesDesign = ({
       description={title}
       image={BACKGROUND_IMG.DESIGN_SECURITY}
     >
-      <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}.`} />
+      <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
       </Article>

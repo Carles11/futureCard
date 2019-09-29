@@ -22,10 +22,7 @@ const SolutionsCardManagementCardHolder = ({ DIC }) => {
       description={title}
       image={BACKGROUND_IMG.CARD_HOLDER}
     >
-      <HeaderSection
-        title={DIC.MANAGEMENT_CARD_HOLDER}
-        subtitle={`${title}.`}
-      />
+      <HeaderSection title={DIC.MANAGEMENT_CARD_HOLDER} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
       </Article>

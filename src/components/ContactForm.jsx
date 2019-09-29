@@ -3,7 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { Form, Input, Label } from '@src/css/elements/form';
+import {
+  Form, Input, Textarea, Label,
+} from '@src/css/elements/form';
 import { Button, H3 } from '@src/css/elements';
 import { connect } from 'react-redux';
 
@@ -60,7 +62,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
       <Label htmlFor="telephone">{DIC.CONTACT_LABEL_TELEPHONE}</Label>
       <Input id="telephone" type="tel" onChange={handleInputChange} />
       <Label htmlFor="message">{DIC.CONTACT_LABEL_MESSAGE}</Label>
-      <Input
+      <Textarea
         textarea
         id="message"
         type="text-area"

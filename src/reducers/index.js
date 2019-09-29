@@ -4,7 +4,7 @@ import contact from './contact';
 import dictionary from './dictionary';
 import theme from './theme';
 import location from './location';
-import career from './career';
+import careers from './careers';
 import news from './news';
 import cards from './cards';
 import features from './features';
@@ -15,7 +15,7 @@ export default combineReducers({
   theme,
   location,
   contact,
-  career,
+  careers,
   news,
   cards,
   features,

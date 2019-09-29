@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 
-import { Article, P } from '@src/css/elements';
+import { Article, P, Image } from '@src/css/elements';
 import { BACKGROUND_IMG } from '@src/utils/constants';
+import IssuanceGraphic from '@src/assets/image/graphics/Instant_Issuance.png';
 
 /**
  * SolutionsCardManagementInstantIssuance View Component
@@ -26,10 +27,16 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
     >
       <HeaderSection
         title={DIC.MANAGEMENT_INSTANT_ISSUANCE}
-        subtitle={`${title}.`}
+        subtitle={`${title}`}
       />
       <Article centered>
         <P>{content.join('.')}</P>
+        <Image
+          src={IssuanceGraphic}
+          withMargin="auto"
+          graphics
+          alt="Issuance Graphic FutureCard"
+        />
       </Article>
     </ViewLayout>
   );

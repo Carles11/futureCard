@@ -54,7 +54,7 @@ const FeaturesCard = ({
     >
       <HeaderSection
         title={DIC.NAV_LABEL_CARD_MATERIALS}
-        subtitle={`${title}.`}
+        subtitle={`${title}`}
       />
       <Article>
         <P>{content}</P>

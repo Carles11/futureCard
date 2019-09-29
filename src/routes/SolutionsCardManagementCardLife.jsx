@@ -26,7 +26,7 @@ const SolutionsCardManagementCardLife = ({ DIC }) => {
     >
       <HeaderSection
         title={DIC.MANAGEMENT_CARD_LIFE_CYCLE}
-        subtitle={`${title}.`}
+        subtitle={`${title}`}
       />
       <Article centered>
         <P>{content.join('.')}</P>

@@ -18,9 +18,8 @@ const AExternal = styled.a`
   }
   ${props => props.flex
     && css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
+      text-align: center;
     `}
 `;
 

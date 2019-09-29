@@ -10,3 +10,5 @@ export const SET_ONE_NEWS = 'SET_ONE_NEWS';
 export const RESET_ONE_NEWS = 'RESET_ONE_NEWS';
 
 export const SET_CAREERS = 'SET_CAREERS';
+export const SET_CAREER = 'SET_CAREER';
+export const RESET_CAREER = 'RESET_CAREER';
