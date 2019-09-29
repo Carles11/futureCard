@@ -854,21 +854,25 @@ const PAYMENT_LOGOS = [
     id: 0,
     label: 'VISA',
     src: '../src/assets/image/payment-logos/visa-card-logo-9.png',
+    link: 'https://www.visa.com',
   },
   {
     id: 1,
     label: 'MASTERCARD',
     src: '../src/assets/image/payment-logos/mastercard-logo.png',
+    link: 'https://www.mastercard.com',
   },
   {
     id: 2,
     label: 'UNIONPAY',
     src: '../src/assets/image/payment-logos/unionpay-logo.png',
+    link: 'http://www.unionpayintl.com/en/',
   },
   {
     id: 3,
     label: 'PAYPAK',
     src: '../src/assets/image/payment-logos/paypak-logo.png',
+    link: 'https://1link.net.pk/pay-pak/',
   },
 ];
 

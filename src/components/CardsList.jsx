@@ -46,7 +46,7 @@ const CardsList = memo(
                 {!!card.list && !!card.list.length && (
                   <List>
                     {card.list.map(item => (
-                      <List.Item key={item}>{item}</List.Item>
+                      <List.Item key={card.id}>{item}</List.Item>
                     ))}
                   </List>
                 )}

@@ -6,6 +6,8 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
+
+import { AExternal, Article, P } from '@src/css/elements';
 import {
   BACKGROUND_IMG,
   OPTIONS_PAYMENT,
@@ -13,7 +15,6 @@ import {
   PAYMENT_LOGOS,
 } from '@src/utils/constants';
 
-import { Article, P } from '@src/css/elements';
 import Layout from '@src/css/blocks/Layout';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
@@ -40,12 +41,6 @@ const SolutionsEndToEndPayment = ({
     }
   }, [language]);
 
-  const styleLogo = {
-    height: 'auto',
-    width: '10%',
-    margin: '20px',
-  };
-
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
@@ -61,12 +56,13 @@ const SolutionsEndToEndPayment = ({
       </Article>
 
       {PAYMENT_LOGOS.map(item => (
-        <Layout.Header.Logo.Image
-          key={item.id}
-          style={styleLogo}
-          src={item.src}
-          alt={`${item.label} logo`}
-        />
+        <AExternal flex href={item.link} target="_blank">
+          <Layout.Header.Logo.Image
+            logosAdapt
+            src={item.src}
+            alt={`${item.label}-logo`}
+          />
+        </AExternal>
       ))}
 
       <CardsList cards={cards} />
