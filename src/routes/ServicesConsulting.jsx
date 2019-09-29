@@ -10,7 +10,7 @@ import Icon from '@src/components/Icon';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Box from '@src/css/blocks/Box';
 import {
- Article, A, Button, P, H4, Hr 
+  Article, A, Button, P, H4, Hr,
 } from '@src/css/elements';
 
 const ServicesConsulting = ({ DIC }) => {

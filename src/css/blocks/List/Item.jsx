@@ -6,14 +6,12 @@ const Item = styled.li`
   line-height: 1.75;
   padding: 0.5rem 0;
 
-  ${props =>
-    props.link &&
-    css`
+  ${props => props.link
+    && css`
       line-height: 1;
     `}
-  ${props =>
-    props.withDecoration &&
-    css`
+  ${props => props.withDecoration
+    && css`
       list-style-type: circle;
     `}
 `;

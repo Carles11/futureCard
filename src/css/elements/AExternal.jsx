@@ -16,9 +16,8 @@ const AExternal = styled.a`
     color: ${props => props.theme.mainColor};
     text-decoration: none;
   }
-  ${props =>
-    props.flex &&
-    css`
+  ${props => props.flex
+    && css`
       display: inline-block;
       text-align: center;
     `}
