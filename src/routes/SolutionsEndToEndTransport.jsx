@@ -6,9 +6,10 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
+import { BACKGROUND_IMG, OPTIONS_TRANSPORT, OPTIONS_GENERAL } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
-import { OPTIONS_TRANSPORT, OPTIONS_GENERAL } from '@src/utils/constants';
+
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -37,6 +38,7 @@ const SolutionsEndToEndTransport = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
+      image={BACKGROUND_IMG.TRANSPORT_ACCESS}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_TRANSPORT_ACCESS}

@@ -2,16 +2,27 @@ import CONFIG from '../config';
 
 function getOptions(method, body) {
   const configDefault = CONFIG.OPTION[method];
-  const token = localStorage.getItem(CONFIG.API_TOKEN)
-    ? localStorage.getItem(CONFIG.API_TOKEN)
+  const session = localStorage.getItem(CONFIG.API_TOKEN_NAME)
+    ? JSON.parse(localStorage.getItem(CONFIG.API_TOKEN_NAME))
     : '';
 
-  const options = Object.keys(body).length
-    ? Object.assign({}, configDefault, {
+  const headers = {
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'access-token': Object.keys(session).length ? session.token : '',
+    }),
+    mode: 'cors',
+  };
+
+  let options = Object.assign({}, configDefault, {
+    ...headers,
+  });
+
+  if (body && Object.keys(body).length) {
+    options = Object.assign({}, options, {
       body: JSON.stringify(body),
-      'access-token': token,
-    })
-    : configDefault;
+    });
+  }
 
   return options;
 }
@@ -36,7 +47,7 @@ async function logIn(body) {
     const request = await fetch(`${CONFIG.API_AUTH}signin`, options);
     const response = await request.json();
 
-    localStorage.setItem('token', response.data);
+    localStorage.setItem(CONFIG.API_TOKEN_NAME, JSON.stringify(response.data));
 
     return response;
   } catch (error) {

@@ -15,9 +15,6 @@ import {
 
 const ServicesConsulting = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
-  const FILTERED_SECTIONS = SECTIONS.filter(
-    item => item.label === 'FULFILLMENT',
-  );
 
   return (
     <ViewLayout
@@ -33,7 +30,7 @@ const ServicesConsulting = ({ DIC }) => {
         <P>{DIC.SERVICES_CONSULTING_CONTENT_0}</P>
         <P>{DIC.SERVICES_CONSULTING_CONTENT_1}</P>
         <Box>
-          {FILTERED_SECTIONS.map((section) => {
+          {SECTIONS.child.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 

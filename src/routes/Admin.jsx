@@ -1,88 +1,84 @@
-import React, { Fragment, useReducer } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { Form, Input, Label } from '@src/css/elements/form';
-import { Grid, Button } from '@src/css/elements';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { logIn } from '@src/actions/admin/actionsSideEffects';
+import SignIn from '@src/components/SignIn';
+import Loader from '@src/components/Loader';
+import isAdmin from '@src/hooks/isAdmin';
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'INPUTS':
-      return {
-        ...state,
-        [action.name]: action.value,
-      };
-    default:
-      return {
-        ...state,
-      };
-  }
-}
+import Box from '@src/css/blocks/Box';
+import {
+  Article, P, H3, Hr, Grid,
+} from '@src/css/elements';
 
-const Admin = ({ token, handleLogIn }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    username: '',
-    password: '',
-  });
+const SECTIONS = [
+  {
+    id: 0,
+    label: 'Users',
+    description:
+      "Handle the users whom have access to edit the FutureCard's dynamic content.",
+    url: '/admin/users',
+  },
+  {
+    id: 1,
+    label: 'News',
+    description: 'Create and edit the latest news of FutureCard',
+    url: '/admin/news',
+  },
+  {
+    id: 2,
+    label: 'Careers',
+    description: 'Publish job offers and documents from FutureCards',
+    url: '/admin/careers',
+  },
+];
 
-  function handleInputChange(e) {
-    const { name, value } = e.target;
-
-    dispatch({ type: 'INPUTS', name, value });
-  }
-
-  function handleOnSubmit(e) {
-    e.preventDefault();
-
-    const { username, password } = state;
-
-    if (username && password) {
-      handleLogIn({ username, password });
-    }
-  }
+const Admin = ({ token }) => {
+  const admin = isAdmin(token);
 
   return (
     <Fragment>
-      {token ? (
+      {admin === null && (
+        <Grid loader>
+          <Loader />
+        </Grid>
+      )}
+      {admin !== null && !admin && <SignIn />}
+      {!!admin && (
         <ViewLayout
           title="Admin Panel"
           description="Handle the dynamic content of the FutureCard's web app."
         >
           <HeaderSection
-            title="Admin Panel"
+            title={`Welcome ${admin.username}`}
             subtitle="Handle the dynamic content of the FutureCard's web app."
           />
-        </ViewLayout>
-      ) : (
-        <ViewLayout title="Sign In" description="FutureCard admin panel">
-          <HeaderSection title="Sign In" subtitle="FutureCard's Admin Panel." />
-          <Grid withWidth="50%" withMargin="1rem auto 3rem" vertical middle>
-            <Form onSubmit={handleOnSubmit}>
-              <Label htmlFor="username">Username</Label>
-              <Input
-                id="username"
-                type="text"
-                name="username"
-                required
-                onChange={handleInputChange}
-              />
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                name="password"
-                autocomplete="current-password"
-                required
-                onChange={handleInputChange}
-              />
-              <Button contact type="submit">
-                Send
-              </Button>
-            </Form>
-          </Grid>
+          <Article centered>
+            <Box>
+              {SECTIONS.map(section => (
+                <Box.Link
+                  key={section.id}
+                  to={section.url}
+                  with_background="true"
+                  with_scale="true"
+                >
+                  <H3 withMargin="1.5rem 0.5rem 1rem" centered>
+                    {section.label}
+                  </H3>
+                  <Hr
+                    withSize="80px"
+                    withMargin="0 auto 1rem"
+                    withAlign="center"
+                  />
+                  <P small withPadding="0 2rem 0.5rem" withAlign="center">
+                    {section.description}
+                  </P>
+                </Box.Link>
+              ))}
+            </Box>
+          </Article>
         </ViewLayout>
       )}
     </Fragment>
@@ -91,18 +87,13 @@ const Admin = ({ token, handleLogIn }) => {
 
 Admin.propTypes = {
   token: PropTypes.string.isRequired,
-  handleLogIn: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
 });
 
-const mapDispatchToProps = dispatch => ({
-  handleLogIn: (username, password) => dispatch(logIn(username, password)),
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(Admin);

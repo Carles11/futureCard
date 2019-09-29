@@ -44,6 +44,10 @@ const Contact = lazy(() => import('./Contact'));
 const NotFound = lazy(() => import('./NotFound'));
 
 /** ADMIN */
+const AdminEditUser = lazy(() => import('./AdminEditUser'));
+const AdminUsers = lazy(() => import('./AdminUsers'));
+const AdminCareers = lazy(() => import('./AdminCareers'));
+const AdminNews = lazy(() => import('./AdminNews'));
 const Admin = lazy(() => import('./Admin'));
 
 const Routes = () => (
@@ -140,6 +144,12 @@ const Routes = () => (
 
       <Route path="/news" component={News} />
       <Route path="/contact-us" component={Contact} />
+
+      {/* ADMIN  */}
+      <Route path="/admin/users/:id" component={AdminEditUser} />
+      <Route path="/admin/users" component={AdminUsers} />
+      <Route path="/admin/careers" component={AdminCareers} />
+      <Route path="/admin/news" component={AdminNews} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>

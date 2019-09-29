@@ -20,7 +20,7 @@ const SolutionsCardManagementCentralIssuance = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_CENTRAL_ISSUANCE}`}
       description={title}
-      image={BACKGROUND_IMG.IDENTIFICATION}
+      image={BACKGROUND_IMG.CENTRAL_ISSUANCE}
     >
       <HeaderSection
         title={DIC.MANAGEMENT_CENTRAL_ISSUANCE}
