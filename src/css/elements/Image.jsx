@@ -22,6 +22,19 @@ const Image = styled.img`
       margin: ${props.withMargin};
     `}
 
+
+
+    ${props => props.graphics
+      && css`
+        margin: 100px ${props.withMargin};
+        width: 80%;
+        @media only screen and (min-width: 1024px) {
+          width: 60%;
+        }
+      `}
+
+
+
   ${props => props.responsive
     && css`
     width: 100%;

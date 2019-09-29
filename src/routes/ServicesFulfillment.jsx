@@ -10,8 +10,9 @@ import Icon from '@src/components/Icon';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+  Article, A, Button, P, H4, Hr, Image,
 } from '@src/css/elements';
+import FulfillGraphic from '@src/assets/image/graphics/Services_Fulfillment.png';
 
 const ServicesFulfillment = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
@@ -30,6 +31,12 @@ const ServicesFulfillment = ({ DIC }) => {
       />
       <Article centered>
         <P>{DIC.SERVICES_FULFILLMENT_CONTENT_0}</P>
+        <Image
+          src={FulfillGraphic}
+          withMargin="auto"
+          graphics
+          alt="Fulfillment Graphic FutureCard"
+        />
         <Box>
           {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;

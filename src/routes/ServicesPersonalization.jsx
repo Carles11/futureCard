@@ -7,10 +7,11 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Icon from '@src/components/Icon';
+import PersonalizationGraphic from '@src/assets/image/graphics/Services_Fulfillment.png';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+  Article, A, Button, P, H4, Hr, Image,
 } from '@src/css/elements';
 
 const ServicesPersonalization = ({ DIC }) => {
@@ -31,6 +32,12 @@ const ServicesPersonalization = ({ DIC }) => {
       />
       <Article centered>
         <P>{content.join('.')}</P>
+        <Image
+          src={PersonalizationGraphic}
+          withMargin="auto"
+          graphics
+          alt="Personalization Graphic FutureCard"
+        />
         <Box>
           {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;

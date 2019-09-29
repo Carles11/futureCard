@@ -13,8 +13,9 @@ import {
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, P, H4, Hr, Grid,
+  Article, P, H4, Hr, Grid, Image,
 } from '@src/css/elements';
+import SolutionsEndGraphic from '@src/assets/image/graphics/Solutions_End-to-End.png';
 
 const SECTIONS = [
   {
@@ -60,6 +61,12 @@ const SolutionsEndToEnd = ({ DIC }) => (
     />
     <Article centered>
       <P>{DIC.SOLUTIONS_END_TO_END_CONTENT}</P>
+      <Image
+        src={SolutionsEndGraphic}
+        withMargin="auto"
+        graphics
+        alt="Solutions EndtoEnd Graphic FutureCard"
+      />
       <Box>
         {SECTIONS.map((section) => {
           const TITLE = `MARKETS_${section.title}`;
