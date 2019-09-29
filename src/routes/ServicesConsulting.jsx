@@ -10,12 +10,14 @@ import Icon from '@src/components/Icon';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+ Article, A, Button, P, H4, Hr 
 } from '@src/css/elements';
 
 const ServicesConsulting = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
-
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'CONSULTING',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_CONSULTING_TITLE}`}
@@ -30,7 +32,7 @@ const ServicesConsulting = ({ DIC }) => {
         <P>{DIC.SERVICES_CONSULTING_CONTENT_0}</P>
         <P>{DIC.SERVICES_CONSULTING_CONTENT_1}</P>
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 

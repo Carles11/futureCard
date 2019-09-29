@@ -16,11 +16,11 @@ const AExternal = styled.a`
     color: ${props => props.theme.mainColor};
     text-decoration: none;
   }
-  ${props => props.flex
-    && css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  ${props =>
+    props.flex &&
+    css`
+      display: inline-block;
+      text-align: center;
     `}
 `;
 
