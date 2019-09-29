@@ -22,11 +22,10 @@ const SolutionsCardManagementCardLife = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_CARD_LIFE_CYCLE}`}
       description={title}
-      image={BACKGROUND_IMG.CARD_LIFE_CYCLE}
-    >
+      image={BACKGROUND_IMG.CARD_LIFE_CYCLE}>
       <HeaderSection
         title={DIC.MANAGEMENT_CARD_LIFE_CYCLE}
-        subtitle={`${title}.`}
+        subtitle={`${title}`}
       />
       <Article centered>
         <P>{content.join('.')}</P>
