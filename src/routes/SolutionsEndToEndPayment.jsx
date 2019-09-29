@@ -6,7 +6,9 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
-import { BACKGROUND_IMG, OPTIONS_PAYMENT, OPTIONS_GENERAL, PAYMENT_LOGOS} from '@src/utils/constants';
+import {
+  BACKGROUND_IMG, OPTIONS_PAYMENT, OPTIONS_GENERAL, PAYMENT_LOGOS,
+} from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
 import Layout from '@src/css/blocks/Layout';
@@ -64,7 +66,7 @@ const SolutionsEndToEndPayment = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle='Discover all the options and solutions we offer for our payment cards'
+        subtitle="Discover all the options and solutions we offer for our payment cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
