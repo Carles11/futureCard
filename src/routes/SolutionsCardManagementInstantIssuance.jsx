@@ -23,8 +23,7 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_INSTANT_ISSUANCE}`}
       description={title}
-      image={BACKGROUND_IMG.INSTANT_ISSUANCE}
-    >
+      image={BACKGROUND_IMG.INSTANT_ISSUANCE}>
       <HeaderSection
         title={DIC.MANAGEMENT_INSTANT_ISSUANCE}
         subtitle={`${title}.`}
@@ -33,8 +32,9 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
         <P>{content.join('.')}</P>
         <Image
           src={IssuanceGraphic}
-          withMargin="auto"
-          alt="Issuance Graphic FutureCard"
+          withMargin='auto'
+          graphics
+          alt='Issuance Graphic FutureCard'
         />
       </Article>
     </ViewLayout>

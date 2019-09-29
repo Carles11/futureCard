@@ -12,9 +12,7 @@ import {
 } from 'react-icons/fa';
 
 import Box from '@src/css/blocks/Box';
-import {
-  Article, P, H4, Hr, Grid, Image,
-} from '@src/css/elements';
+import { Article, P, H4, Hr, Grid, Image } from '@src/css/elements';
 import SolutionsEndGraphic from '@src/assets/image/graphics/Solutions_End-to-End.png';
 
 const SECTIONS = [
@@ -53,8 +51,7 @@ const SECTIONS = [
 const SolutionsEndToEnd = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_END_TO_END}`}
-    description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
-  >
+    description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}>
     <HeaderSection
       title={DIC.NAV_LABEL_END_TO_END}
       subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
@@ -63,11 +60,12 @@ const SolutionsEndToEnd = ({ DIC }) => (
       <P>{DIC.SOLUTIONS_END_TO_END_CONTENT}</P>
       <Image
         src={SolutionsEndGraphic}
-        withMargin="auto"
-        alt="Solutions EndtoEnd Graphic FutureCard"
+        withMargin='auto'
+        graphics
+        alt='Solutions EndtoEnd Graphic FutureCard'
       />
       <Box>
-        {SECTIONS.map((section) => {
+        {SECTIONS.map(section => {
           const TITLE = `MARKETS_${section.title}`;
           const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
 
@@ -75,22 +73,20 @@ const SolutionsEndToEnd = ({ DIC }) => (
             <Box.Link
               to={section.link}
               key={section.id}
-              with_scale="true"
-              with_background="true"
-            >
+              with_scale='true'
+              with_background='true'>
               <Grid
                 withIcon
-                withPadding="2rem 2rem 1rem"
+                withPadding='2rem 2rem 1rem'
                 flex={1}
-                vertical="center"
-              >
+                vertical='center'>
                 {section.icon}
               </Grid>
-              <H4 withMargin="0.5rem" centered>
+              <H4 withMargin='0.5rem' centered>
                 {DIC[TITLE]}
               </H4>
-              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small withPadding="0 1rem 0.5rem">
+              <Hr withSize='80px' withMargin='0 auto 1rem' withAlign='center' />
+              <P small withPadding='0 1rem 0.5rem'>
                 {DIC[CONTENT]}
               </P>
             </Box.Link>
