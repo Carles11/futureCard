@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
 
 const Image = styled.img`
-  ${props => props.section
-    && css`
+  ${props =>
+    props.section &&
+    css`
       position: relative;
       opacity: 0.9;
       top: 0;
@@ -17,13 +18,19 @@ const Image = styled.img`
         transform: translateX(-50%);
       }
     `}
-  ${props => props.withMargin
-    && css`
-      margin: ${props.withMargin};
+  ${props =>
+    props.withMargin &&
+    css`
+      margin: 100px ${props.withMargin};
+      width: 80%;
+      @media only screen and (min-width: 1024px) {
+        width: 60%;
+      }
     `}
 
-  ${props => props.responsive
-    && css`
+  ${props =>
+    props.responsive &&
+    css`
     width: 100%;
       @media only screen and (max-width: 1024px) {
         height: auto;
@@ -33,8 +40,9 @@ const Image = styled.img`
       }
     `}
 
-  ${props => props.preview
-    && css`
+  ${props =>
+    props.preview &&
+    css`
       width: 100%;
       height: auto;
       margin: 0;
