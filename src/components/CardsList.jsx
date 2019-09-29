@@ -17,10 +17,10 @@ const CardsList = memo(
             id={card.hash ? card.hash : card._id}
             key={card._id}
             centered
-            with_margin="3.5rem auto 0"
+            with_margin="1.5rem auto 0"
           >
             <Grid responsive>
-              <Grid flex="1">
+              <Grid flex="2">
                 <Figure card>
                   <Image
                     responsive
@@ -30,7 +30,7 @@ const CardsList = memo(
                   />
                 </Figure>
               </Grid>
-              <Grid column flex="1" withMargin="2rem 0 0">
+              <Grid column flex="3" withMargin="2rem 0 0">
                 {!!card.group && (
                   <P small highlight noMargin bold>
                     {!!card.group && card.group}

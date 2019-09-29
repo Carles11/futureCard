@@ -16,34 +16,15 @@ const Background = ({
   image, section, effect, children,
 }) => {
   const position = useScroll();
-  const [background, setBackground] = useState(
-    Array.isArray(image) ? image[0] : image,
-  );
   const [blur, setBlur] = useState(0);
 
-  function renderBackground() {
-    let index = 0;
-    index = index < image.length - 1 ? index + 1 : 0;
-    setBackground(image[index]);
-  }
-
-  useEffect(() => {
-    let interval;
-
-    if (Array.isArray(image)) {
-      interval = setInterval(() => {
-        renderBackground();
-      }, 10000);
-    }
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     if (effect && position > 0 && position < 300) {
       const currentBlur = Math.floor((position / 50) * 1);
       setBlur(currentBlur);
     }
+    return () => {};
   }, [position]);
 
   return (
@@ -51,7 +32,7 @@ const Background = ({
       <BackgroundImage
         blur={blur}
         section={section}
-        style={{ backgroundImage: `url(${background})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       {children}
     </Figure>

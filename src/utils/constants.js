@@ -804,33 +804,47 @@ const ADDRESSES = [
 
 const BACKGROUND_IMG = {
   ABOUT_FACILITY:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569098161/futurecard.com/facility_capabilities.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630594/futurecard.com/headers/facility.jpg',
   CAREERS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195229/futurecard.com/careers.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630384/futurecard.com/headers/careers.jpg',
+  CARD_HOLDER:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628503/futurecard.com/headers/card_holder.jpg',
   CARD_PERSONALIZATION:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195018/futurecard.com/card-personalization.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629558/futurecard.com/headers/card_personalization.jpg',
   CARD_CONSULTING:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195398/futurecard.com/consulting.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629896/futurecard.com/headers/consulting.jpg',
   CARD_DESIGN:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195794/futurecard.com/card-design.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630203/futurecard.com/headers/design.jpg',
+  CARD_LIFE_CYCLE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628933/futurecard.com/headers/card_life_cycle.jpg',
   CARD_MANAGEMENT:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196285/futurecard.com/card-management.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630489/futurecard.com/headers/cms.jpg',
   CARD_MATERIALS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195995/futurecard.com/card-materials.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630300/futurecard.com/headers/materials.jpg',
+  CARD_PAYMENT:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631664/futurecard.com/headers/payment.jpg',
+  CENTRAL_ISSUANCE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629728/futurecard.com/headers/central_issuance.jpg',
+  INSTANT_ISSUANCE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631527/futurecard.com/headers/instant_issuance.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
   DESIGN_SECURITY:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195584/futurecard.com/design-security.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
   IDENTIFICATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
   NEWS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196504/futurecard.com/news.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630992/futurecard.com/headers/news.jpg',
   OUR_SERVICES:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197399/futurecard.com/our-services.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631104/futurecard.com/headers/our_services.jpg',
   OUR_SOLUTIONS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197548/futurecard.com/our-solutions.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631190/futurecard.com/headers/our_solutions.jpg',
   TECHNOLOGY_MATERIALS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197692/futurecard.com/technology-materials.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631860/futurecard.com/headers/technology_materials.jpg',
+  TELECOM:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631272/futurecard.com/headers/telecom.jpg',
+  TRANSPORT_ACCESS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631969/futurecard.com/headers/transport_access.jpg',
   WHO_WE_ARE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
 };

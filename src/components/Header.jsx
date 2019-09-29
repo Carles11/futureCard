@@ -10,9 +10,13 @@ import useSize from '@src/hooks/useSize';
 import NavigationItem from '@src/components/NavigationItem';
 
 import Layout from '@src/css/blocks/Layout';
+import { logOut } from '@src/actions/admin/actionsSideEffects';
 import HeaderIcons from './HeaderIcons';
 
-const Header = ({ LANG: language, DIC, path }) => {
+
+const Header = ({
+  LANG: language, DIC, path, token, handleCloseSession,
+}) => {
   const initialState = {
     language,
     navigation: NAVIGATION,
@@ -82,14 +86,20 @@ const Header = ({ LANG: language, DIC, path }) => {
               </Fragment>
             );
           })}
+          {!!token && (
+            <Layout.Header.Navigation.Item
+              with_dark={state.dark ? state.dark.toString() : undefined}
+              onClick={handleCloseSession}
+            >
+              Close
+            </Layout.Header.Navigation.Item>
+          )}
         </Layout.Header.Navigation>
         <HeaderIcons
           visibility={state.visibility}
           handleIconClick={handleChangeVisibility}
         />
-        <Layout.Header.HeaderBackground
-          visible
-        />
+        <Layout.Header.HeaderBackground visible />
       </Layout.Header>
     </Fragment>
   );
@@ -141,15 +151,22 @@ Header.propTypes = {
     NAV_LABEL_CONTACT: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
+  handleCloseSession: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ dictionary, location }) => ({
+const mapStateToProps = ({ dictionary, location, admin }) => ({
   LANG: dictionary.language,
   DIC: dictionary.data,
   path: location.path,
+  token: admin.token,
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleCloseSession: () => dispatch(logOut()),
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(Header);

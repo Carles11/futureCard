@@ -24,6 +24,11 @@ const Hr = styled.hr`
     && css`
       text-align: ${props.withAlign};
     `}
+
+  ${props => props.invertColor
+    && css`
+      background: #ededed;
+    `}
 `;
 
 export default withTheme(Hr);

@@ -114,12 +114,18 @@ const A = styled(
       }
     `}
     
-  ${props => props.withIcon
+  ${props => props.withicon
     && css`
       font-size: 1.3rem;
       padding: 1rem;
       display: block;
       line-height: 0;
+
+      &:hover {
+        color: white;
+        background: ${props.theme.mainColor};
+        border: 2px solid ${props.theme.mainColor} !important;
+      }
     `}
 
     ${props => props.withmargin
@@ -138,6 +144,7 @@ const A = styled(
         font-size: 0.8rem;
         display: block;
       `}
+      
 `;
 
 const Icon = styled.i`

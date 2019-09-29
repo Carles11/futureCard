@@ -11,21 +11,18 @@ import { Article, P } from '@src/css/elements';
 
 const AboutFacility = ({ DIC }) => {
   const [title, ...content] = DIC.ABOUT_US_FACILITY_DESCRIPTION.split('.');
+  const contentObj = content.map((item, index) => ({ id: index, text: item }));
   const list = DIC.ABOUT_US_FACILITY_LIST;
 
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_FACILITY}`}
       description={`${title}`}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
-    >
+      image={BACKGROUND_IMG.ABOUT_FACILITY}>
       <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}`} />
       <Article centered>
-        {content.map(item => (
-          <P>
-            {item}
-.
-          </P>
+        {contentObj.map(item => (
+          <P key={item.id}>{item.text}</P>
         ))}
         <List>
           {list.map(item => (

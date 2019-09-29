@@ -15,12 +15,14 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
  * @param {Object} props.DIC
  */
 const SolutionsCardManagementCardLife = ({ DIC }) => {
-  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_CARD_LIFE_CYCLE.split('.');
+  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_CARD_LIFE_CYCLE.split(
+    '.',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_CARD_LIFE_CYCLE}`}
       description={title}
-      image={BACKGROUND_IMG.IDENTIFICATION}
+      image={BACKGROUND_IMG.CARD_LIFE_CYCLE}
     >
       <HeaderSection
         title={DIC.MANAGEMENT_CARD_LIFE_CYCLE}

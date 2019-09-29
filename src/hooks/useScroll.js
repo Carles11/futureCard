@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-function useScroll() {
-  const [position, setPosition] = useState(window.scrollY);
-
+function useScroll(subscribe = false) {
   useEffect(() => {
-    window.addEventListener('scroll', () => setPosition(window.scrollY));
-    return () => window.removeEventListener('scroll', () => setPosition(0));
-  }, [window.scrollY]);
+    function setPosition(value) {
+      return value;
+    }
 
-  return position;
+    if (subscribe) {
+      window.addEventListener('scroll', () => setPosition(window.scrollY));
+    }
+
+    return () => window.removeEventListener('scroll', () => setPosition(null));
+  }, [window.scrollY]);
 }
 
 export default useScroll;

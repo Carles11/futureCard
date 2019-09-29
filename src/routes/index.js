@@ -34,6 +34,7 @@ const ServicesConsulting = lazy(() => import('./ServicesConsulting'));
 const ServicesDesign = lazy(() => import('./ServicesDesign'));
 const ServicesFulfillment = lazy(() => import('./ServicesFulfillment'));
 const ServicesPersonalization = lazy(() => import('./ServicesPersonalization'));
+
 const Features = lazy(() => import('./Features'));
 const FeaturesCard = lazy(() => import('./FeaturesCard'));
 const FeaturesDesign = lazy(() => import('./FeaturesDesign'));
@@ -41,6 +42,13 @@ const FeaturesTechnology = lazy(() => import('./FeaturesTechnology'));
 const News = lazy(() => import('./News'));
 const Contact = lazy(() => import('./Contact'));
 const NotFound = lazy(() => import('./NotFound'));
+
+/** ADMIN */
+const AdminEditUser = lazy(() => import('./AdminEditUser'));
+const AdminUsers = lazy(() => import('./AdminUsers'));
+const AdminCareers = lazy(() => import('./AdminCareers'));
+const AdminNews = lazy(() => import('./AdminNews'));
+const Admin = lazy(() => import('./Admin'));
 
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>
@@ -136,6 +144,13 @@ const Routes = () => (
 
       <Route path="/news" component={News} />
       <Route path="/contact-us" component={Contact} />
+
+      {/* ADMIN  */}
+      <Route path="/admin/users/:id" component={AdminEditUser} />
+      <Route path="/admin/users" component={AdminUsers} />
+      <Route path="/admin/careers" component={AdminCareers} />
+      <Route path="/admin/news" component={AdminNews} />
+      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   </Suspense>
