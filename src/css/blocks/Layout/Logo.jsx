@@ -16,10 +16,9 @@ const Image = styled.img`
   margin-bottom: 100px;
   padding: 0;
   width: 100%;
-  ${props => props.logosAdapt
-    && css`
-      display: inline-block;
-      text-align: center;
+  ${props =>
+    props.logosAdapt &&
+    css`
       height: auto;
       width: 10%;
       margin: 20px;
