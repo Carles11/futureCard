@@ -18,7 +18,8 @@ const AboutFacility = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_FACILITY}`}
       description={`${title}`}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}>
+      image={BACKGROUND_IMG.ABOUT_FACILITY}
+    >
       <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}`} />
       <Article centered>
         {contentObj.map(item => (
