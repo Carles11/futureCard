@@ -47,7 +47,8 @@ const FeaturesDesign = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_DESIGN}`}
       description={title}
-      image={BACKGROUND_IMG.DESIGN_SECURITY}>
+      image={BACKGROUND_IMG.DESIGN_SECURITY}
+    >
       <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
