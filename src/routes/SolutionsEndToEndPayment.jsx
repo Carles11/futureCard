@@ -45,7 +45,8 @@ const SolutionsEndToEndPayment = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
       description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
-      image={BACKGROUND_IMG.CARD_PAYMENT}>
+      image={BACKGROUND_IMG.CARD_PAYMENT}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
@@ -54,7 +55,7 @@ const SolutionsEndToEndPayment = ({
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
       </Article>
       {PAYMENT_LOGOS.map(item => (
-        <AExternal href={item.link} target='_blank'>
+        <AExternal href={item.link} target="_blank">
           <Layout.Header.Logo.Image
             logosAdapt
             src={item.src}
@@ -65,7 +66,7 @@ const SolutionsEndToEndPayment = ({
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle='Discover all the options and solutions we offer for our payment cards'
+        subtitle="Discover all the options and solutions we offer for our payment cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
