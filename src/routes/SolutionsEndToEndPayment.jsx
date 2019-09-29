@@ -7,7 +7,7 @@ import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
-import { Article, P } from '@src/css/elements';
+import { AExternal, Article, P } from '@src/css/elements';
 import {
   OPTIONS_PAYMENT,
   OPTIONS_GENERAL,
@@ -39,16 +39,11 @@ const SolutionsEndToEndPayment = ({
     }
   }, [language]);
 
-  const styleLogo = {
-    height: 'auto',
-    width: '10%',
-    margin: '20px',
-  };
-
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
-      description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}>
+      description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
@@ -57,16 +52,18 @@ const SolutionsEndToEndPayment = ({
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
       </Article>
       {PAYMENT_LOGOS.map(item => (
-        <Layout.Header.Logo.Image
-          style={styleLogo}
-          src={item.src}
-          alt={`${item.label} logo`}
-        />
+        <AExternal href={item.link} target="_blank">
+          <Layout.Header.Logo.Image
+            logosAdapt
+            src={item.src}
+            alt={`${item.label}-logo`}
+          />
+        </AExternal>
       ))}
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
-        subtitle='Discover all the options and solutions we offer for our payment cards'
+        subtitle="Discover all the options and solutions we offer for our payment cards"
       />
       <CardsListOptions options={OPTIONS} />
     </ViewLayout>
