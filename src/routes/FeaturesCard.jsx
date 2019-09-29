@@ -50,7 +50,8 @@ const FeaturesCard = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_CARD_MATERIALS}`}
       description={title}
-      image={BACKGROUND_IMG.CARD_MATERIALS}>
+      image={BACKGROUND_IMG.CARD_MATERIALS}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_CARD_MATERIALS}
         subtitle={`${title}`}
