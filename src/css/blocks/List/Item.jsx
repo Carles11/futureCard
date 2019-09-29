@@ -9,6 +9,10 @@ const Item = styled.li`
     && css`
       line-height: 1;
     `}
+  ${props => props.withDecoration
+    && css`
+      list-style-type: circle;
+    `}
 `;
 
 export default Item;

@@ -28,7 +28,7 @@ const About = ({ DIC }) => {
     >
       <HeaderSection
         title={DIC.NAV_LABEL_WHO_WE_ARE}
-        subtitle={DIC.ABOUT_US_DESCRIPTION}
+        subtitle={DIC.ABOUT_US_DESCRIPTION_PAGE}
       />
       <Article centered>
         <P>{DIC.ABOUT_US_CONTENT_0}</P>
@@ -72,6 +72,7 @@ About.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
+    ABOUT_US_DESCRIPTION_PAGE: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_0: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_1: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_2: PropTypes.string.isRequired,

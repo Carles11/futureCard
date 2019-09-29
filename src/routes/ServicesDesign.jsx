@@ -15,7 +15,9 @@ import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
 const ServicesDesign = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
-
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'CARD_DESIGN',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_DESIGN_TITLE}`}
@@ -30,7 +32,7 @@ const ServicesDesign = ({ DIC }) => {
         <P>{DIC.SERVICES_DESIGN_CONTENT_0}</P>
         <P>{DIC.SERVICES_DESIGN_CONTENT_1}</P>
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 

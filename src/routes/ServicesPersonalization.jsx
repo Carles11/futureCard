@@ -16,6 +16,9 @@ import {
 const ServicesPersonalization = ({ DIC }) => {
   const [title, ...content] = DIC.SERVICES_PERSONALIZATION_CONTENT.split('.');
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'PERSONALIZATION',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_PERSONALIZATION}`}
@@ -29,7 +32,7 @@ const ServicesPersonalization = ({ DIC }) => {
       <Article centered>
         <P>{content.join('.')}</P>
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 

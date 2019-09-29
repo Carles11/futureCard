@@ -15,6 +15,9 @@ import {
 
 const ServicesFulfillment = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'FULFILLMENT',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_FULFILLMENT}`}
@@ -28,7 +31,7 @@ const ServicesFulfillment = ({ DIC }) => {
       <Article centered>
         <P>{DIC.SERVICES_FULFILLMENT_CONTENT_0}</P>
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
