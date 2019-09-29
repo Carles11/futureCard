@@ -103,7 +103,25 @@ function adminReducer(state = INITIAL_STATE, action) {
         careers: {
           ...state.careers,
           data: action.careers,
+          count: action.count,
           message: action.message,
+        },
+      };
+    case ACTION.SET_CAREER:
+      return {
+        ...state,
+        careers: {
+          ...state.careers,
+          itemSelected: action.career,
+          message: action.message,
+        },
+      };
+    case ACTION.RESET_CAREER:
+      return {
+        ...state,
+        careers: {
+          ...state.careers,
+          itemSelected: {},
         },
       };
     default:

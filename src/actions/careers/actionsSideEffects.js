@@ -6,7 +6,7 @@ export const getCareers = () => async (dispatch) => {
     const careers = await api.get('careers');
     dispatch(ACTION.getCareers(careers));
   } catch (error) {
-    dispatch(ACTION.ERROR_CAREERS(error.message));
+    throw new Error('Something went wrong!');
   }
 };
 

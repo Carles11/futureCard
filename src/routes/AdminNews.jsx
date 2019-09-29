@@ -45,11 +45,12 @@ const AdminNews = ({
   function removeNews(id) {
     if (
       // eslint-disable-next-line no-restricted-globals
-      confirm(`${admin.username}, are you sure you wanna remove this user?`)
+      confirm(`${admin.username}, are you sure you wanna remove this news?`)
     ) {
       handleRemoveNews(id);
     }
   }
+
 
   return (
     <Fragment>
@@ -88,7 +89,12 @@ const AdminNews = ({
               </Grid>
             </Grid>
             <Hr invertColor />
-            {news.length ? (
+            {!news.length && message === '' ? (
+              <Grid loader>
+                <Loader />
+              </Grid>
+            ) : null}
+            {!!news.length && message && (
               <Table id="news-table" role="grid">
                 <Table.Header>
                   <Table.Row header role="grid">
@@ -139,10 +145,6 @@ const AdminNews = ({
                   ))}
                 </Table.Body>
               </Table>
-            ) : (
-              <Grid loader>
-                <Loader />
-              </Grid>
             )}
           </Article>
         </ViewLayout>

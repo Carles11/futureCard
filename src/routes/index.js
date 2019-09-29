@@ -46,6 +46,7 @@ const NotFound = lazy(() => import('./NotFound'));
 /** ADMIN */
 const AdminEditUser = lazy(() => import('./AdminEditUser'));
 const AdminUsers = lazy(() => import('./AdminUsers'));
+const AdminEditCareers = lazy(() => import('./AdminEditCareers'));
 const AdminCareers = lazy(() => import('./AdminCareers'));
 const AdminEditNews = lazy(() => import('./AdminEditNews'));
 const AdminNews = lazy(() => import('./AdminNews'));
@@ -149,10 +150,12 @@ const Routes = () => (
       {/* ADMIN  */}
       <Route path="/admin/users/:id" component={AdminEditUser} />
       <Route path="/admin/users" component={AdminUsers} />
+      <Route path="/admin/careers/:id" component={AdminEditCareers} />
       <Route path="/admin/careers" component={AdminCareers} />
       <Route path="/admin/news/:id" component={AdminEditNews} />
       <Route path="/admin/news" component={AdminNews} />
       <Route path="/admin" component={Admin} />
+
       <Route component={NotFound} />
     </Switch>
   </Suspense>
