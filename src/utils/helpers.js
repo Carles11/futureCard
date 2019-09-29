@@ -50,3 +50,12 @@ export function scrollToFn(scrollTo) {
     });
   });
 }
+
+export function formatDate(date) {
+  const dateFormat = new Date(date);
+  const day = dateFormat.getDate();
+  const month = dateFormat.getMonth() + 1;
+  const year = dateFormat.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}

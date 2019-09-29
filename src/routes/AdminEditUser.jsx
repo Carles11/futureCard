@@ -104,7 +104,7 @@ const AdminEditUser = ({
     });
 
     if (Object.keys(user).length && user._id) {
-      const { password, ...rest } = state;
+      const { password, ...rest } = body;
       handleUpdateUser(user._id, rest);
     } else {
       handleCreateUser(body);

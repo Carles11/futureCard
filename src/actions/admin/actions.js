@@ -26,9 +26,10 @@ export const resetUser = () => ({
   type: ACTION.RESET_USER,
 });
 
-export const setNews = (news, message) => ({
+export const setNews = (news, count, message) => ({
   type: ACTION.SET_NEWS,
   news,
+  count,
   message,
 });
 
@@ -36,6 +37,10 @@ export const setOneNews = (oneNews, message) => ({
   type: ACTION.SET_ONE_NEWS,
   oneNews,
   message,
+});
+
+export const resetOneNews = () => ({
+  type: ACTION.RESET_ONE_NEWS,
 });
 
 export const setCareers = (careers, message) => ({

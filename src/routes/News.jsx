@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
+import Loader from '@src/components/Loader';
 import HeaderSection from '@src/components/HeaderSection';
-import { Article, P } from '@src/css/elements';
 import useLocation from '@src/hooks/useLocation';
 import ViewLayout from '@src/components/ViewLayout';
 import { BACKGROUND_IMG } from '@src/utils/constants';
+import { formatDate } from '@src/utils/helpers';
+import Icon from '@src/components/Icon';
+
+import Box from '@src/css/blocks/Box';
+import {
+  Article, P, Grid, H4, Hr, A,
+} from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
@@ -41,6 +49,52 @@ const News = ({
       <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
       <Article centered>
         <P>{DIC.NEWS_CONTENT}</P>
+        {!news.length ? (
+          <Grid withMargin="17rem" middle vertical="center">
+            <Loader />
+          </Grid>
+        ) : (
+          <Box wrap="true">
+            {news.map(item => (
+              <Box.Link
+                to={`news/${item._id}`}
+                key={item._id}
+                with_scale="true"
+                with_background="true"
+                wrap="true"
+              >
+                <Box.Figure>
+                  <Box.Figure.Image src={item.image} alt={item.title} />
+                </Box.Figure>
+                <Grid vertical="center">
+                  <P tiny withMargin="1.5rem 0 0.25rem" highlight>
+                    {`${DIC.NEWS_PUBLISHED_THE} ${formatDate(item.updatedAt)}`}
+                  </P>
+                </Grid>
+
+                <H4 withMargin="0 1rem 0.5rem" centered>
+                  {item.title}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P withPadding="0 1rem 0.75rem">{item.text}</P>
+                {!!item.link && (
+                  <Grid withMargin="0 0 1.5rem" vertical="center">
+                    <A role="button" to={item.link}>
+                      {DIC.LEARN_MORE}
+                      <Icon>
+                        <FiArrowRightCircle />
+                      </Icon>
+                    </A>
+                  </Grid>
+                )}
+              </Box.Link>
+            ))}
+          </Box>
+        )}
       </Article>
     </ViewLayout>
   );
@@ -59,23 +113,18 @@ News.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),
-  news: PropTypes.shape({
-    success: PropTypes.bool,
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        _id: PropTypes.string,
-      }),
-    ),
-    count: PropTypes.number,
-  }),
-
+  news: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+    }),
+  ),
   handleGetNews: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, location, news }) => ({
   DIC: dictionary.data,
   path: location.path,
-  news,
+  news: news.data,
 });
 
 const mapDispatchToProps = dispatch => ({

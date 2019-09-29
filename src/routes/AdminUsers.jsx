@@ -42,6 +42,11 @@ const AdminUser = ({
   }, [users]);
 
   function removeUser(id) {
+    if (id === admin.id) {
+      // eslint-disable-next-line no-restricted-globals
+      return alert('You cannot remove the active Admin User!');
+    }
+
     if (
       // eslint-disable-next-line no-restricted-globals
       confirm(`${admin.username}, are you sure you wanna remove this user?`)
@@ -88,7 +93,7 @@ const AdminUser = ({
             </Grid>
             <Hr invertColor />
             {users.length ? (
-              <Table id="orders-table" role="grid">
+              <Table id="users-table" role="grid">
                 <Table.Header>
                   <Table.Row header role="grid">
                     {COLUMNS.map(column => (
@@ -158,10 +163,10 @@ AdminUser.propTypes = {
     }),
   ),
   message: PropTypes.string,
-  handleGetUsers: PropTypes.func.isRequired,
   count: PropTypes.number,
   handleRemoveUser: PropTypes.func.isRequired,
   handleResetUser: PropTypes.func.isRequired,
+  handleGetUsers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({

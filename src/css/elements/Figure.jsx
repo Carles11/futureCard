@@ -30,7 +30,19 @@ const Figure = styled.figure`
         width: 100%;
         min-height: 50vh;
         overflow: hidden;
+        margin: 0;
+        padding: 0;
       `}
+
+      ${props => props.preview
+        && css`
+          position: relative;
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          margin: 0.5rem 0 0;
+          padding: 0;
+        `}
 `;
 
 export default Figure;

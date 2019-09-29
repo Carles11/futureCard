@@ -32,6 +32,14 @@ const Image = styled.img`
         left: 50%;
       }
     `}
+
+  ${props => props.preview
+    && css`
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    `}
 `;
 
 export default Image;

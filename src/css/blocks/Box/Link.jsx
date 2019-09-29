@@ -31,6 +31,16 @@ const LinkComponent = styled(
     margin-right: 0;
   }
 
+  ${props => props.wrap
+    && css`
+      flex: none;
+      width: 400px;
+
+      @media only screen and (max-width: 1024px) {
+        width: 100%;
+      }
+    `}
+
   ${props => props.centered
     && css`
       margin: 50px;

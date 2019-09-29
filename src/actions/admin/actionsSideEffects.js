@@ -76,8 +76,40 @@ export const deleteUser = id => async (dispatch) => {
 /** NEWS */
 export const getNews = () => async (dispatch) => {
   try {
-    const { data, message } = await api.get('news');
-    dispatch(ACTION.setNews(data, message));
+    const { data, count, message } = await api.get('news');
+    dispatch(ACTION.setNews(data, count, message));
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+};
+
+export const createNews = obj => async (dispatch) => {
+  try {
+    const body = new FormData();
+    body.append('file', obj.file, obj.file.name);
+    body.append('title', obj.title);
+    body.append('text', obj.text);
+    body.append('link', obj.link);
+    body.append('creator', obj.creator);
+
+    const { data, success } = await api.post('news', body);
+    if (success) {
+      return dispatch(ACTION.setOneNews(data, 'UPDATED'));
+    }
+    throw new Error('Something went wrong');
+  } catch (error) {
+    throw new Error('Somthing went wrong');
+  }
+};
+
+export const updateNews = (id, body) => async (dispatch) => {
+  try {
+    const { data, success } = await api.put(`news/${id}`, body);
+
+    if (success) {
+      return dispatch(ACTION.setOneNews(data, 'UPDATED'));
+    }
+    throw new Error('Something went wrong');
   } catch (error) {
     throw new Error('Something went wrong');
   }
@@ -89,6 +121,15 @@ export const getOneNews = id => async (dispatch) => {
     dispatch(ACTION.setOneNews(data, message));
   } catch (error) {
     throw new Error('Somethig went wrong');
+  }
+};
+
+export const deleteNews = id => async (dispatch) => {
+  try {
+    const { data, message } = await api.delete(`news/${id}`);
+    dispatch(ACTION.setNews(data, message));
+  } catch (error) {
+    throw new Error('Something went wrong');
   }
 };
 

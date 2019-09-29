@@ -16,11 +16,13 @@ const INITIAL_STATE = {
   news: {
     itemSelected: {},
     data: [],
+    count: 0,
     message: '',
   },
   careers: {
     itemSelected: {},
     data: [],
+    count: 0,
     message: '',
   },
 };
@@ -74,6 +76,7 @@ function adminReducer(state = INITIAL_STATE, action) {
         news: {
           ...state.news,
           data: action.news,
+          count: action.count,
           message: action.message,
         },
       };
@@ -84,6 +87,14 @@ function adminReducer(state = INITIAL_STATE, action) {
           ...state.news,
           itemSelected: action.oneNews,
           message: action.message,
+        },
+      };
+    case ACTION.RESET_ONE_NEWS:
+      return {
+        ...state,
+        news: {
+          ...state.news,
+          itemSelected: {},
         },
       };
     case ACTION.SET_CAREERS:

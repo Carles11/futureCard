@@ -1,6 +1,12 @@
 import CONFIG from '../config';
 
 function getOptions(method, body) {
+  const type = method === 'POST' || method === 'PUT'
+    ? body.creator || body.username
+      ? 'application/json'
+      : ''
+    : 'application/json';
+
   const configDefault = CONFIG.OPTION[method];
   const session = localStorage.getItem(CONFIG.API_TOKEN_NAME)
     ? JSON.parse(localStorage.getItem(CONFIG.API_TOKEN_NAME))
@@ -8,19 +14,22 @@ function getOptions(method, body) {
 
   const headers = {
     headers: new Headers({
-      'Content-Type': 'application/json',
       'access-token': Object.keys(session).length ? session.token : '',
     }),
     mode: 'cors',
   };
 
+  if (type) {
+    headers.headers.append('Content-Type', type);
+  }
+
   let options = Object.assign({}, configDefault, {
     ...headers,
   });
 
-  if (body && Object.keys(body).length) {
+  if (method === 'POST' || method === 'PUT') {
     options = Object.assign({}, options, {
-      body: JSON.stringify(body),
+      body: type ? JSON.stringify(body) : body,
     });
   }
 

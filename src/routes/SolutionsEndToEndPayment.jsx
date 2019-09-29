@@ -7,7 +7,10 @@ import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 import {
-  BACKGROUND_IMG, OPTIONS_PAYMENT, OPTIONS_GENERAL, PAYMENT_LOGOS,
+  BACKGROUND_IMG,
+  OPTIONS_PAYMENT,
+  OPTIONS_GENERAL,
+  PAYMENT_LOGOS,
 } from '@src/utils/constants';
 
 import { Article, P } from '@src/css/elements';
@@ -56,13 +59,16 @@ const SolutionsEndToEndPayment = ({
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
       </Article>
+
       {PAYMENT_LOGOS.map(item => (
         <Layout.Header.Logo.Image
+          key={item.id}
           style={styleLogo}
           src={item.src}
           alt={`${item.label} logo`}
         />
       ))}
+
       <CardsList cards={cards} />
       <HeaderSection
         title={DIC.LOOKING_FOR}
