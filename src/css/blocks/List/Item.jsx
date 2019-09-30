@@ -12,7 +12,7 @@ const Item = styled.li`
     `}
   ${props => props.withDecoration
     && css`
-      list-style-type: circle;
+
     `}
 `;
 
