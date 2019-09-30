@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FiArrowRightCircle } from 'react-icons/fi';
+import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
 
 import HeaderSection from '@src/components/HeaderSection';
 
 import Loader from '@src/components/Loader';
-import Icon from '@src/components/Icon';
 import { formatDate } from '@src/utils/helpers';
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H4, Hr, P,
+  Button, Article, Grid, H4, Hr, P,
 } from '@src/css/elements';
 
 import { getNews } from '@src/actions/news/actionsSideEffects';
 
-const LandingNews = ({ DIC, news, handleGetNews }) => {
+const LandingNews = ({
+  DIC, news, total, handleGetNews,
+}) => {
+  const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
+  let currentNews = news.slice(count, count + 3);
 
+  useEffect(() => {
+    currentNews = news.slice(count, count + 3);
+  }, [count]);
+
+  function handlePrev() {
+    let prev = count - 3;
+    prev = prev <= total ? 0 : prev;
+    setCount(prev);
+  }
+  function handleNext() {
+    let next = count + 3;
+    next = next >= total ? 0 : next;
+    setCount(next);
+  }
   useEffect(() => {
     if (!news.success && !loading) {
       setLoading(true);
@@ -32,53 +49,52 @@ const LandingNews = ({ DIC, news, handleGetNews }) => {
         title={DIC.NAV_LABEL_NEWS}
         subtitle={DIC.NEWS_DESCRIPTION}
       />
-      {/* <Grid middle vertical='center' withMargin='1rem 0 2rem'>
-        <Button withIcon onClick={fakeApiRequest}>
+      <Grid middle vertical="center" withMargin="1rem 0 2rem">
+        <Button withIcon onClick={handlePrev}>
           <FiArrowLeftCircle />
         </Button>
-        <P withMargin='0 1rem'>{`${count} of 36`}</P>
-        <Button withIcon onClick={fakeApiRequest}>
+        <P withMargin="0 1rem">{`${count} of ${total}`}</P>
+        <Button withIcon onClick={handleNext}>
           <FiArrowRightCircle />
         </Button>
-      </Grid> */}
+      </Grid>
       {!news.length ? (
         <Grid withMargin="17rem" middle vertical="center">
           <Loader />
         </Grid>
       ) : (
-        <Box wrap="true">
-          {news.map(item => (
+        <Box>
+          {currentNews.map(item => (
             <Box.Link
               to={`news/${item._id}`}
               key={item._id}
               with_scale="true"
               with_background="true"
-              wrap="true"
             >
               <Box.Figure>
                 <Box.Figure.Image src={item.image} alt={item.title} />
               </Box.Figure>
               <Grid vertical="center">
-                <P tiny withMargin="1.5rem 0 0.25rem" highlight>
+                <P small withMargin="1.5rem 0 0.5rem" highlight>
                   {`${DIC.NEWS_PUBLISHED_THE} ${formatDate(item.updatedAt)}`}
                 </P>
               </Grid>
 
-              <H4 withMargin="0 1rem 0.5rem" centered>
+              <H4 withMargin="0 1rem 0.75rem" centered>
                 {item.title}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
               <P withPadding="0 1rem 0.75rem">{item.text}</P>
-              {!!item.link && (
-                <Grid withMargin="0 0 1.5rem" vertical="center">
-                  <A role="button" to={item.link}>
+              {/* {!!item.link && (
+                <Grid withMargin='0 0 1.5rem' vertical='center'>
+                  <A role='button' to={item.link}>
                     {DIC.LEARN_MORE}
                     <Icon>
                       <FiArrowRightCircle />
                     </Icon>
                   </A>
                 </Grid>
-              )}
+              )} */}
             </Box.Link>
           ))}
         </Box>
@@ -100,10 +116,12 @@ LandingNews.propTypes = {
     }),
   ),
   handleGetNews: PropTypes.func.isRequired,
+  total: PropTypes.number,
 };
 
 const mapStateToProps = ({ news }) => ({
   news: news.data,
+  total: news.count,
 });
 
 const mapDispatchToProps = dispatch => ({
