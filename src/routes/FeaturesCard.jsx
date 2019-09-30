@@ -8,12 +8,9 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import {
-  A, Article, Button, H4, Hr, P,
-} from '@src/css/elements';
-import Box from '@src/css/blocks/Box';
+import { A, Article, Button, P } from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
@@ -51,17 +48,16 @@ const FeaturesCard = ({
     // eslint-disable-next-line no-restricted-globals
   }, [features, location]);
 
-  const SECTIONS = NAVIGATION.find(nav => nav.label === 'CARDS');
-  const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== 'CARD_MATERIALS',
-  );
+  // const SECTIONS = NAVIGATION.find(nav => nav.label === 'CARDS');
+  // const FILTERED_SECTIONS = SECTIONS.child.filter(
+  //   item => item.label !== 'CARD_MATERIALS',
+  // );
 
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_CARD_MATERIALS}`}
       description={title}
-      image={BACKGROUND_IMG.CARD_MATERIALS}
-    >
+      image={BACKGROUND_IMG.CARD_MATERIALS}>
       <HeaderSection
         title={DIC.NAV_LABEL_CARD_MATERIALS}
         subtitle={`${title}`}
@@ -70,7 +66,7 @@ const FeaturesCard = ({
         <P>{content}</P>
       </Article>
       <CardsList cards={features} />
-      <Box>
+      {/* <Box>
         {FILTERED_SECTIONS.map((section) => {
           const TITLE = `NAV_LABEL_${section.label}`;
           const CONTENT = `CARD_FEATURES_${section.label}_DESCRIPTION`;
@@ -92,9 +88,9 @@ const FeaturesCard = ({
             </Box.Link>
           );
         })}
-      </Box>
-      <Button.Centered>
-        <A role="button" to="/card-features">
+      </Box> */}
+      <Button.Centered withMargin='3.3rem'>
+        <A role='button' to='/card-features'>
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>
             <FiArrowRightCircle />

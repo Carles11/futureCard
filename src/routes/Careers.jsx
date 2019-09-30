@@ -6,7 +6,7 @@ import Icon from '@src/components/Icon';
 import Loader from '@src/components/Loader';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { formatDate } from '@src/utils/helpers';
 
@@ -30,10 +30,10 @@ const Careers = ({
       handleGetCareers();
     }
   }, [careers]);
-  const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
-  const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== 'CAREERS',
-  );
+  // const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
+  // const FILTERED_SECTIONS = SECTIONS.child.filter(
+  //   item => item.label !== 'CAREERS',
+  // );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
@@ -104,7 +104,7 @@ const Careers = ({
             ))}
           </Box>
         )}
-        <Box>
+        {/* <Box>
           {FILTERED_SECTIONS.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
@@ -130,8 +130,8 @@ const Careers = ({
               </Box.Link>
             );
           })}
-        </Box>
-        <Button.Centered>
+        </Box> */}
+        <Button.Centered withMargin="3.3rem">
           <A role="button" to="/card-features">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
             <Icon>
