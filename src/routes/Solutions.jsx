@@ -40,7 +40,7 @@ const Solutions = ({ DIC }) => {
         <Box>
           {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
-            const CONTENT = `SOLUTIONS_${section.label}_DESCRIPTION`;
+            const CONTENT = `SOLUTIONS_${section.label}_CONTENT`;
 
             return (
               <Box.Item key={section.key} with_background="true">
@@ -53,7 +53,7 @@ const Solutions = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 2rem 0.5rem">
-                  {DIC[CONTENT]}
+                  {`${(DIC[CONTENT].split('.'))[0]}.`}
                 </P>
                 {section.child ? (
                   <List>
