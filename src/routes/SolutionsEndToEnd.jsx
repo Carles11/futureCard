@@ -16,6 +16,7 @@ import {
   Article, P, H4, Hr, Grid, Image,
 } from '@src/css/elements';
 import SolutionsEndGraphic from '@src/assets/image/graphics/Solutions_End-to-End.png';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 const SECTIONS = [
   {
@@ -54,6 +55,7 @@ const SolutionsEndToEnd = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_END_TO_END}`}
     description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
+    image={BACKGROUND_IMG.END_TO_END}
   >
     <HeaderSection
       title={DIC.NAV_LABEL_END_TO_END}
