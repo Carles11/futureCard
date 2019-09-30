@@ -813,7 +813,7 @@ const BACKGROUND_IMG = {
   ABOUT_FACILITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630594/futurecard.com/headers/facility.jpg',
   CAREERS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630384/futurecard.com/headers/careers.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879152/futurecard.com/headers/careers.jpg',
   CARD_HOLDER:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628503/futurecard.com/headers/card_holder.jpg',
   CARD_PERSONALIZATION:
@@ -823,7 +823,7 @@ const BACKGROUND_IMG = {
   CARD_DESIGN:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630203/futurecard.com/headers/design.jpg',
   CARD_FEATURES:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807981/futurecard.com/headers/features.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879427/futurecard.com/headers/features.jpg',
   CARD_LIFE_CYCLE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628933/futurecard.com/headers/card_life_cycle.jpg',
   CARD_MANAGEMENT:
@@ -845,7 +845,7 @@ const BACKGROUND_IMG = {
   IDENTIFICATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
   NEWS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630992/futurecard.com/headers/news.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879526/futurecard.com/headers/news.jpg',
   OUR_SERVICES:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569808138/futurecard.com/headers/services.jpg',
   OUR_SOLUTIONS:
@@ -858,6 +858,8 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631969/futurecard.com/headers/transport_access.jpg',
   WHO_WE_ARE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
+  FULFILLMENT:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879271/futurecard.com/headers/fullfillment.jpg',
 };
 
 const PAYMENT_LOGOS = [

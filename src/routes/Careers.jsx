@@ -18,7 +18,9 @@ import {
 import { getLocation } from '@src/actions/location/actions';
 import { getCareers } from '@src/actions/careers/actionsSideEffects';
 
-const Careers = ({ DIC, careers, handleGetCareers }) => {
+const Careers = ({
+  DIC, careers, count, handleGetCareers,
+}) => {
   const [loading, setLoading] = useState(false);
   const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
@@ -40,7 +42,22 @@ const Careers = ({ DIC, careers, handleGetCareers }) => {
     >
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
-        <P>{content.join('.')}</P>
+        <P withMargin="0 0 4rem">{content.join('.')}</P>
+        <Grid column>
+          <Grid middle>
+            <Grid flex="1">
+              <H4 withMargin="1rem 0">{`Found ${count} job Offer/s.`}</H4>
+            </Grid>
+            <Grid heightProp="50px">
+              <Grid withMargin="0">
+                <A role="button" to="/admin/careers">
+                  Upload your CV
+                </A>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Hr invertColor />
         {!careers.length ? (
           <Grid withMargin="17rem" middle vertical="center">
             <Loader />
@@ -139,12 +156,14 @@ Careers.propTypes = {
     }),
   ),
   handleGetCareers: PropTypes.func.isRequired,
+  count: PropTypes.number,
 };
 
 const mapStateToProps = ({ dictionary, location, careers }) => ({
   DIC: dictionary.data,
   path: location.path,
   careers: careers.data,
+  count: careers.count,
 });
 
 const mapDispatchToProps = dispatch => ({
