@@ -17,7 +17,7 @@ const Features = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS}`}
       description={DIC.CARD_FEATURES_DESCRIPTION}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
+      image={BACKGROUND_IMG.CARD_FEATURES}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_CARDS}

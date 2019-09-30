@@ -172,9 +172,14 @@ const OPTIONS_PAYMENT = [
         link: '/card-features/card-materials#pvc',
       },
       {
-        id: 2,
-        label: 'ECO PVC (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        id: 4,
+        label: 'PET-F (Plastic)',
+        link: '/card-features/card-materials#pet-f',
+      },
+      {
+        id: 5,
+        label: 'PC',
+        link: '/card-features/card-materials#pc',
       },
       {
         id: 3,
@@ -182,9 +187,9 @@ const OPTIONS_PAYMENT = [
         link: '/card-features/card-materials#pet-g',
       },
       {
-        id: 4,
-        label: 'PET-F (Plastic)',
-        link: '/card-features/card-materials#pet-f',
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/card-features/card-materials#pet-g',
       },
       {
         id: 5,
@@ -221,7 +226,7 @@ const OPTIONS_PAYMENT = [
       },
       {
         id: 11,
-        label: 'Magstripe',
+        label: 'Magnetic Stripe',
         link: '/card-features/technology-materials#magnetic-stripe',
       },
     ],
@@ -338,7 +343,7 @@ const OPTIONS_IDENTIFICATION = [
       },
       {
         id: 11,
-        label: 'Magstripe',
+        label: 'Magnetic Stripe',
         link: '/card-features/technology-materials#magnetic-stripe',
       },
     ],
@@ -803,6 +808,8 @@ const ADDRESSES = [
 ];
 
 const BACKGROUND_IMG = {
+  ABOUT_US:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807382/futurecard.com/headers/about_us.jpg',
   ABOUT_FACILITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630594/futurecard.com/headers/facility.jpg',
   CAREERS:
@@ -812,9 +819,11 @@ const BACKGROUND_IMG = {
   CARD_PERSONALIZATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629558/futurecard.com/headers/card_personalization.jpg',
   CARD_CONSULTING:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629896/futurecard.com/headers/consulting.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807894/futurecard.com/headers/consulting.jpg',
   CARD_DESIGN:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630203/futurecard.com/headers/design.jpg',
+  CARD_FEATURES:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807981/futurecard.com/headers/features.jpg',
   CARD_LIFE_CYCLE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628933/futurecard.com/headers/card_life_cycle.jpg',
   CARD_MANAGEMENT:
@@ -831,12 +840,14 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
   DESIGN_SECURITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
+  END_TO_END:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569808713/futurecard.com/headers/endtoend.jpg',
   IDENTIFICATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
   NEWS:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630992/futurecard.com/headers/news.jpg',
   OUR_SERVICES:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631104/futurecard.com/headers/our_services.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569808138/futurecard.com/headers/services.jpg',
   OUR_SOLUTIONS:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631190/futurecard.com/headers/our_solutions.jpg',
   TECHNOLOGY_MATERIALS:
