@@ -18,6 +18,7 @@ const Item = styled(
     ...rest
   }) => <NavLink children={children} {...rest} />,
 )`
+  width: 150px;
   font-size: 0.8rem;
   color: ${props => props.theme.fontColor};
   text-transform: uppercase;
@@ -29,8 +30,9 @@ const Item = styled(
     border: none;
   }
 
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       background: ${props.theme.mainColor};
       color: white;
     `}
