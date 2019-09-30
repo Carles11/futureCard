@@ -10,7 +10,9 @@ import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import { A, Article, Button, P } from '@src/css/elements';
+import {
+  A, Article, Button, P,
+} from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
@@ -56,7 +58,8 @@ const FeaturesTechnology = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
       description={title}
-      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}>
+      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}
+    >
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
@@ -85,8 +88,8 @@ const FeaturesTechnology = ({
           );
         })}
       </Box> */}
-      <Button.Centered withMargin='3.3rem'>
-        <A role='button' to='/card-features'>
+      <Button.Centered withMargin="3.3rem">
+        <A role="button" to="/card-features">
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>
             <FiArrowRightCircle />
