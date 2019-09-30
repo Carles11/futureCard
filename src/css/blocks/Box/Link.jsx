@@ -23,18 +23,12 @@ const LinkComponent = styled(
   margin: 0 0.75rem;
   text-decoration: none;
 
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
 
   ${props => props.wrap
     && css`
       flex: none;
-      width: 400px;
+      width: 425px;
+      margin: 0 0.75rem 1.5rem
 
       @media only screen and (max-width: 1024px) {
         width: 100%;

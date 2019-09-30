@@ -21,7 +21,13 @@ import { getLocation } from '@src/actions/location/actions';
 import { getNews } from '@src/actions/news/actionsSideEffects';
 
 const News = ({
-  DIC, path, location, news, handleLocation, handleGetNews,
+  DIC,
+  path,
+  location,
+  news,
+  count,
+  handleLocation,
+  handleGetNews,
 }) => {
   const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
@@ -48,7 +54,15 @@ const News = ({
       />
       <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
       <Article centered>
-        <P>{DIC.NEWS_CONTENT}</P>
+        <P withMargin="0 0 4rem">{DIC.NEWS_CONTENT}</P>
+        <Grid column>
+          <Grid middle>
+            <Grid flex="1">
+              <H4 withMargin="1rem 0">{`Found ${count} News.`}</H4>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Hr invertColor />
         {!news.length ? (
           <Grid withMargin="17rem" middle vertical="center">
             <Loader />
@@ -67,12 +81,12 @@ const News = ({
                   <Box.Figure.Image src={item.image} alt={item.title} />
                 </Box.Figure>
                 <Grid vertical="center">
-                  <P tiny withMargin="1.5rem 0 0.25rem" highlight>
+                  <P small withMargin="1.5rem 0 0.5rem" highlight>
                     {`${DIC.NEWS_PUBLISHED_THE} ${formatDate(item.updatedAt)}`}
                   </P>
                 </Grid>
 
-                <H4 withMargin="0 1rem 0.5rem" centered>
+                <H4 withMargin="0 1rem 0.75rem" centered>
                   {item.title}
                 </H4>
                 <Hr
@@ -119,12 +133,14 @@ News.propTypes = {
     }),
   ),
   handleGetNews: PropTypes.func.isRequired,
+  count: PropTypes.number,
 };
 
 const mapStateToProps = ({ dictionary, location, news }) => ({
   DIC: dictionary.data,
   path: location.path,
   news: news.data,
+  count: news.count,
 });
 
 const mapDispatchToProps = dispatch => ({
