@@ -53,7 +53,7 @@ const Features = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem">
-                  {`${DIC[CONTENT].split('.')[0]}.`}
+                  {`${DIC[CONTENT].split('.')[1]}.`}
                 </P>
               </Box.Link>
             );

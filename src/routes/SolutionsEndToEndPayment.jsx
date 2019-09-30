@@ -84,9 +84,9 @@ const SolutionsEndToEndPayment = ({
 
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
-        <Grid responsive withMargin="3rem 0 2rem" middle vertical="center">
+        <Grid responsive withMargin="5rem auto 2rem" middle vertical="center">
           {PAYMENT_LOGOS.map(item => (
-            <Grid withMargin="0 1rem 1rem">
+            <Grid key={item.id} flex="1" withMargin="0 1rem 1rem">
               <AExternal href={item.link} target="_blank">
                 <Image logosAdapt src={item.src} alt={`${item.label}-logo`} />
               </AExternal>
@@ -94,11 +94,13 @@ const SolutionsEndToEndPayment = ({
           ))}
         </Grid>
         <CardsList cards={cards} />
-        <HeaderSection
-          title={DIC.LOOKING_FOR}
-          subtitle="Discover all the options and solutions we offer for our payment cards"
-        />
-        <CardsListOptions options={OPTIONS} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our payment cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
       </Article>
     </ViewLayout>
   );
