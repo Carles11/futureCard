@@ -53,7 +53,7 @@ const LandingMarkets = ({ DIC }) => (
     <Image
       loading="lazy"
       section
-      withMargin="0 0 0"
+      withMargin="-2rem 0 0"
       src={BACKGROUND_IMG.CONTACT_MAP}
       alt={DIC.INDUSTRY_FOCUS}
     />

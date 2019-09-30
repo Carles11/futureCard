@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FiArrowRightCircle } from 'react-icons/fi';
 
 import HeaderSection from '@src/components/HeaderSection';
-import Icon from '@src/components/Icon';
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H3, Hr, P,
+  Article, H3, Hr, P,
 } from '@src/css/elements';
 
 const SECTIONS = [
@@ -38,7 +36,12 @@ const LandingAbout = ({ DIC }) => (
         const CONTENT = `ABOUT_US_${section.title}`;
 
         return (
-          <Box.Item key={section.id} with_background>
+          <Box.Link
+            to={section.link}
+            key={section.id}
+            with_background
+            with_scale
+          >
             <H3 withMargin="1.5rem 0.5rem 1rem" centered>
               {DIC[TITLE]}
             </H3>
@@ -46,17 +49,17 @@ const LandingAbout = ({ DIC }) => (
             <P small withPadding="0 1rem 0.5rem">
               {DIC[CONTENT]}
             </P>
-            {section.link && (
-              <Grid withMargin="0 0 1.5rem" vertical="center">
-                <A role="button" to={section.link}>
+            {/* {section.link && (
+              <Grid withMargin='0 0 1.5rem' vertical='center'>
+                <A role='button'>
                   {DIC.LEARN_MORE}
                   <Icon>
                     <FiArrowRightCircle />
                   </Icon>
                 </A>
               </Grid>
-            )}
-          </Box.Item>
+            )} */}
+          </Box.Link>
         );
       })}
     </Box>

@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FiArrowRightCircle } from 'react-icons/fi';
-
+import Icon from '@src/components/Icon';
 import Loader from '@src/components/Loader';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { BACKGROUND_IMG } from '@src/utils/constants';
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+
 import { formatDate } from '@src/utils/helpers';
-import Icon from '@src/components/Icon';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, P, Grid, H4, Hr, A,
+  A, Article, Grid, Button, H4, Hr, P,
 } from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
@@ -30,7 +30,10 @@ const Careers = ({
       handleGetCareers();
     }
   }, [careers]);
-
+  const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'CAREERS',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
@@ -101,6 +104,41 @@ const Careers = ({
             ))}
           </Box>
         )}
+        <Box>
+          {FILTERED_SECTIONS.map((section) => {
+            const TITLE = `NAV_LABEL_${section.label}`;
+            const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
+
+            return (
+              <Box.Link
+                to={section.link}
+                key={section.key}
+                with_scale="true"
+                with_background="true"
+              >
+                <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
+                  {DIC[TITLE]}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P small centered withPadding="0 1rem 0.5rem">
+                  {`${DIC[CONTENT].split('.')[0]}.`}
+                </P>
+              </Box.Link>
+            );
+          })}
+        </Box>
+        <Button.Centered>
+          <A role="button" to="/card-features">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
     </ViewLayout>
   );

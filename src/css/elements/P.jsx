@@ -34,6 +34,11 @@ const P = styled.p`
       font-weight: 600;
     `}
 
+  ${props => !!props.centered
+    && css`
+      text-align: center;
+    `}
+
   ${props => !!props.invertColor
     && css`
       color: white;
