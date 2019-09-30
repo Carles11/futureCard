@@ -7,7 +7,7 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Icon from '@src/components/Icon';
-import PersonalizationGraphic from '@src/assets/image/graphics/Services_Fulfillment.png';
+import PersonalizationGraphic from '@src/assets/image/graphics/Services_Personalization.png';
 
 import Box from '@src/css/blocks/Box';
 import {

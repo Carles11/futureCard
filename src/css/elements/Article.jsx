@@ -19,7 +19,7 @@ const Article = styled.article`
         flex-direction: column;
         max-width: 1440px;
         margin: 0 auto;
-        padding: 1rem 2rem 4rem;
+        padding: 1rem 2rem 1rem;
         box-sizing: border-box;
       }
       @media only screen and (max-width: 1024px) {

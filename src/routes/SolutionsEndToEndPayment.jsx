@@ -7,14 +7,15 @@ import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
-import { AExternal, Article, P } from '@src/css/elements';
+import {
+  AExternal, Article, P, Image, Grid,
+} from '@src/css/elements';
 import {
   BACKGROUND_IMG,
   OPTIONS_PAYMENT,
   OPTIONS_GENERAL,
 } from '@src/utils/constants';
 
-import Layout from '@src/css/blocks/Layout';
 import VISA from '@src/assets/image/payment-logos/visa-card-logo-9.png';
 import MASTERCARD from '@src/assets/image/payment-logos/mastercard-logo.png';
 import UNIONPAY from '@src/assets/image/payment-logos/unionpay-logo.png';
@@ -80,26 +81,25 @@ const SolutionsEndToEndPayment = ({
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
       />
+
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
+        <Grid responsive withMargin="3rem 0 2rem" middle vertical="center">
+          {PAYMENT_LOGOS.map(item => (
+            <Grid withMargin="0 1rem 1rem">
+              <AExternal href={item.link} target="_blank">
+                <Image logosAdapt src={item.src} alt={`${item.label}-logo`} />
+              </AExternal>
+            </Grid>
+          ))}
+        </Grid>
+        <CardsList cards={cards} />
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our payment cards"
+        />
+        <CardsListOptions options={OPTIONS} />
       </Article>
-
-      {PAYMENT_LOGOS.map(item => (
-        <AExternal flex href={item.link} target="_blank">
-          <Layout.Header.Logo.Image
-            logosAdapt
-            src={item.src}
-            alt={`${item.label}-logo`}
-          />
-        </AExternal>
-      ))}
-
-      <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our payment cards"
-      />
-      <CardsListOptions options={OPTIONS} />
     </ViewLayout>
   );
 };
