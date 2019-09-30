@@ -10,9 +10,7 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
 
 // import Box from '@src/css/blocks/Box';
 import List from '@src/css/blocks/List';
-import {
-  A, Article, Button, P,
-} from '@src/css/elements';
+import { A, Article, Button, P } from '@src/css/elements';
 
 const AboutFacility = ({ DIC }) => {
   const [title, ...first] = DIC.ABOUT_US_FACILITY_DESCRIPTION.split('.');
@@ -30,8 +28,7 @@ const AboutFacility = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_FACILITY}`}
       description={`${title}`}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
-    >
+      image={BACKGROUND_IMG.ABOUT_FACILITY}>
       <HeaderSection title={DIC.NAV_LABEL_FACILITY} subtitle={`${title}`} />
       <Article centered>
         <P>{`${para1}. ${para2}.`}</P>
@@ -73,8 +70,8 @@ const AboutFacility = ({ DIC }) => {
             );
           })}
         </Box> */}
-        <Button.Centered withMargin="3.3rem">
-          <A role="button" to="/card-features">
+        <Button.Centered withMargin='3.3rem'>
+          <A role='button' to='/about-futurecard'>
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
             <Icon>
               <FiArrowRightCircle />
