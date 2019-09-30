@@ -30,9 +30,8 @@ const Item = styled(
     border: none;
   }
 
-  ${props =>
-    props.active &&
-    css`
+  ${props => props.active
+    && css`
       background: ${props.theme.mainColor};
       color: white;
     `}
