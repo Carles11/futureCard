@@ -22,7 +22,6 @@ const Careers = ({
   DIC, careers, count, handleGetCareers,
 }) => {
   const [loading, setLoading] = useState(false);
-  const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
   useEffect(() => {
     if (!careers.success && !loading) {
@@ -34,6 +33,11 @@ const Careers = ({
   // const FILTERED_SECTIONS = SECTIONS.child.filter(
   //   item => item.label !== 'CAREERS',
   // );
+
+  const [title, ...first] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4] = second;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
@@ -42,7 +46,8 @@ const Careers = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
-        <P withMargin="0 0 4rem">{content.join('.')}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P withMargin="0 0 4rem">{`${para3}. ${para4}.`}</P>
         <Grid column>
           <Grid middle>
             <Grid flex="1">

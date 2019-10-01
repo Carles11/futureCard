@@ -42,6 +42,13 @@ const SolutionsEndToEndIdentification = ({
     }
   }, [language]);
 
+  const [
+    title,
+    ...first
+  ] = DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
@@ -53,7 +60,9 @@ const SolutionsEndToEndIdentification = ({
         subtitle={DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_DESCRIPTION}
       />
       <Article centered>
-        <P>{DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT}</P>
+        <P>{`${title}. ${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}. ${para5}.`}</P>
+        <P>{`${para6}.`}</P>
         <CardsList cards={cards} />
         <HeaderSection
           title={DIC.LOOKING_FOR}

@@ -20,9 +20,15 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
  * @param {Object} props.DIC
  */
 const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
-  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_INSTANT_ISSUANCE.split(
+  const [title, ...first] = DIC.MANAGEMENT_DESCRIPTION_INSTANT_ISSUANCE.split(
     '.',
   );
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6, ...fourth] = third;
+  const [para7, para8, ...fifth] = fourth;
+  const [para9] = fifth;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_INSTANT_ISSUANCE}`}
@@ -34,7 +40,10 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
         subtitle={`${title}`}
       />
       <Article centered>
-        <P>{content.join('.')}</P>
+        <P>{`${para1}. ${para2}. ${para3}. ${para4}.`}</P>
+        <P>{`${para5}. ${para6}. ${para7}.`}</P>
+        <P>{` ${para8}. ${para9}.`}</P>
+
         {/* <Image
           src={IssuanceGraphic}
           withMargin="auto"

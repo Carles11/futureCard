@@ -50,58 +50,69 @@ const SECTIONS = [
   },
 ];
 
-const SolutionsEndToEnd = ({ DIC }) => (
-  <ViewLayout
-    title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_END_TO_END}`}
-    description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
-    image={BACKGROUND_IMG.END_TO_END}
-  >
-    <HeaderSection
-      title={DIC.NAV_LABEL_END_TO_END}
-      subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
-    />
-    <Article centered>
-      <P>{DIC.SOLUTIONS_END_TO_END_CONTENT}</P>
-      <Image
-        src={SolutionsEndGraphic}
-        withMargin="auto"
-        graphics
-        alt="Solutions EndtoEnd Graphic FutureCard"
-      />
-      <Box>
-        {SECTIONS.map((section) => {
-          const TITLE = `MARKETS_${section.title}`;
-          const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
+const SolutionsEndToEnd = ({ DIC }) => {
+  const [title, ...first] = DIC.SOLUTIONS_END_TO_END_CONTENT.split('.');
+  const [para1, para2, ...second] = first;
 
-          return (
-            <Box.Link
-              to={section.link}
-              key={section.id}
-              with_scale="true"
-              with_background="true"
-            >
-              <Grid
-                withIcon
-                withPadding="2rem 2rem 1rem"
-                flex={1}
-                vertical="center"
+  return (
+    <ViewLayout
+      title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_END_TO_END}`}
+      description={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
+      image={BACKGROUND_IMG.END_TO_END}
+    >
+      <HeaderSection
+        title={DIC.NAV_LABEL_END_TO_END}
+        subtitle={DIC.SOLUTIONS_END_TO_END_DESCRIPTION}
+      />
+      <Article centered>
+        <P>{`${title}. ${para1}. ${para2}.`}</P>
+        <P>{`${second}`}</P>
+
+        <Image
+          src={SolutionsEndGraphic}
+          withMargin="auto"
+          graphics
+          alt="Solutions EndtoEnd Graphic FutureCard"
+        />
+        <Box>
+          {SECTIONS.map((section) => {
+            const TITLE = `MARKETS_${section.title}`;
+            const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
+
+            return (
+              <Box.Link
+                to={section.link}
+                key={section.id}
+                with_scale="true"
+                with_background="true"
               >
-                <Image src={section.icon} />
-              </Grid>
-              <H4 withMargin="0.5rem" centered>
-                {DIC[TITLE]}
-              </H4>
-              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small withPadding="0 1rem 0.5rem">
-                {DIC[CONTENT]}
-              </P>
-            </Box.Link>
-          );
-        })}
-      </Box>
-    </Article>
-  </ViewLayout>
-);
+                <Grid
+                  withIcon
+                  withPadding="2rem 2rem 1rem"
+                  flex={1}
+                  vertical="center"
+                >
+                  <Image src={section.icon} />
+                </Grid>
+                <H4 withMargin="0.5rem" centered>
+                  {DIC[TITLE]}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P small withPadding="0 1rem 0.5rem">
+                  {DIC[CONTENT]}
+                </P>
+              </Box.Link>
+            );
+          })}
+        </Box>
+      </Article>
+    </ViewLayout>
+  );
+};
 
 SolutionsEndToEnd.propTypes = {
   DIC: PropTypes.shape({

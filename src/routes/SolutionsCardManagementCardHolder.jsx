@@ -19,7 +19,11 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
  * @param {Object} props.DIC
  */
 const SolutionsCardManagementCardHolder = ({ DIC }) => {
-  const [title, ...content] = DIC.MANAGEMENT_DESCRIPTION_CARD_HOLDER.split('.');
+  const [title, ...first] = DIC.MANAGEMENT_DESCRIPTION_CARD_HOLDER.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_CARD_HOLDER}`}
@@ -28,7 +32,9 @@ const SolutionsCardManagementCardHolder = ({ DIC }) => {
     >
       <HeaderSection title={DIC.MANAGEMENT_CARD_HOLDER} subtitle={`${title}`} />
       <Article centered>
-        <P>{content.join('.')}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}. ${para5}. ${para6}.`}</P>
+
         <Button.Centered withMargin="3.3rem">
           <A role="button" to="/our-solutions/card-management-systems">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}

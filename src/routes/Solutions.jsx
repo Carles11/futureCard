@@ -23,6 +23,9 @@ import {
  */
 const Solutions = ({ DIC }) => {
   const sections = NAVIGATION.find(nav => nav.label === 'SOLUTIONS');
+  const [title, ...first] = DIC.SOLUTIONS_CONTENT.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
 
   return (
     <ViewLayout
@@ -36,7 +39,9 @@ const Solutions = ({ DIC }) => {
       />
 
       <Article centered>
-        <P>{DIC.SOLUTIONS_CONTENT}</P>
+        <P>{`${title}. ${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${third}.`}</P>
         <Box>
           {sections.child.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
@@ -53,7 +58,7 @@ const Solutions = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 2rem 0.5rem">
-                  {`${(DIC[CONTENT].split('.'))[0]}.`}
+                  {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
                 {section.child ? (
                   <List>

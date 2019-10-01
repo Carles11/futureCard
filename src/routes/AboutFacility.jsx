@@ -37,7 +37,7 @@ const AboutFacility = ({ DIC }) => {
         <P>{`${para1}. ${para2}.`}</P>
         <P>{`${para3}. ${para4}.`}</P>
         <P>{`${para5}.`}</P>
-        <P>{`${para6}`}</P>
+        <P>{`${para6}.`}</P>
         <List>
           {list.map(item => (
             <List.Item withDecoration key={item.id}>

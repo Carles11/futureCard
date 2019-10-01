@@ -36,6 +36,8 @@ const SolutionsEndToEndRetail = ({
       handleGetCards('retail', language);
     }
   }, [language]);
+  const [title, ...first] = DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT.split('.');
+  const [para1, para2] = first;
 
   return (
     <ViewLayout
@@ -47,7 +49,8 @@ const SolutionsEndToEndRetail = ({
         subtitle={DIC.SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION}
       />
       <Article centered>
-        <P>{DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT}</P>
+        <P>{`${title}. ${para1}. `}</P>
+        <P>{`${para2}.`}</P>
       </Article>
       <CardsList cards={cards} />
       <HeaderSection

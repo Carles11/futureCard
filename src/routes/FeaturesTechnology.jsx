@@ -10,9 +10,7 @@ import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import {
-  A, Article, Button, P,
-} from '@src/css/elements';
+import { A, Article, Button, P } from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
@@ -30,10 +28,6 @@ const FeaturesTechnology = ({
   featuresLang,
   handleGetFeatures,
 }) => {
-  const [title, ...content] = DIC.CARD_FEATURES_TECHNOLOGY_DESCRIPTION.split(
-    '.',
-  );
-
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
       handleGetFeatures('technology', language);
@@ -53,16 +47,20 @@ const FeaturesTechnology = ({
   // const FILTERED_SECTIONS = SECTIONS.child.filter(
   //   item => item.label !== 'TECHNOLOGY',
   // );
-
+  const [title, ...first] = DIC.CARD_FEATURES_TECHNOLOGY_DESCRIPTION.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5] = third;
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_TECHNOLOGY}`}
       description={title}
-      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}
-    >
+      image={BACKGROUND_IMG.TECHNOLOGY_MATERIALS}>
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}`} />
       <Article centered>
-        <P>{content.join('.')}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${para5}`}</P>
       </Article>
       <CardsList cards={features} />
       {/* <Box>
@@ -88,8 +86,8 @@ const FeaturesTechnology = ({
           );
         })}
       </Box> */}
-      <Button.Centered withMargin="3.3rem">
-        <A role="button" to="/card-features">
+      <Button.Centered withMargin='3.3rem'>
+        <A role='button' to='/card-features'>
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>
             <FiArrowRightCircle />

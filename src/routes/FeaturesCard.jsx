@@ -30,10 +30,12 @@ const FeaturesCard = ({
   featuresLang,
   handleGetFeatures,
 }) => {
-  const [
-    title,
-    ...content
-  ] = DIC.CARD_FEATURES_CARD_MATERIALS_DESCRIPTION.split('.');
+  const [title, ...first] = DIC.CARD_FEATURES_CARD_MATERIALS_DESCRIPTION.split(
+    '.',
+  );
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
 
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
@@ -66,7 +68,10 @@ const FeaturesCard = ({
         subtitle={`${title}`}
       />
       <Article>
-        <P>{content.join('. ')}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${para5}.`}</P>
+        <P>{`${para6}.`}</P>
       </Article>
       <CardsList cards={features} />
       {/* <Box>

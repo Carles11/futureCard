@@ -30,7 +30,6 @@ const ServicesDesign = ({ DIC }) => {
       />
       <Article centered>
         <P>{DIC.SERVICES_DESIGN_CONTENT_0}</P>
-        <P>{DIC.SERVICES_DESIGN_CONTENT_1}</P>
         <Box>
           {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
@@ -79,7 +78,6 @@ ServicesDesign.propTypes = {
     SERVICES_SUBTITLE: PropTypes.string.isRequired,
     SERVICES_DESCRIPTION: PropTypes.string.isRequired,
     SERVICES_DESIGN_CONTENT_0: PropTypes.string.isRequired,
-    SERVICES_DESIGN_CONTENT_1: PropTypes.string.isRequired,
     SERVICES_DESIGN_SUBTITLE: PropTypes.string.isRequired,
     SERVICES_DESIGN_TITLE: PropTypes.string.isRequired,
   }).isRequired,

@@ -31,6 +31,7 @@ const ServicesPersonalization = ({ DIC }) => {
         subtitle={DIC.SERVICES_PERSONALIZATION_SUBTITLE}
       />
       <Article centered>
+        <P>{`${title}.`}</P>
         <P>{content.join('.')}</P>
         <Image
           src={PersonalizationGraphic}
