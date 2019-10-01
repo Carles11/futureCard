@@ -10,9 +10,7 @@ import IDENTIFICATION from '@src/assets/icons/futurecard-identification.png';
 import TRANSPORT_ACCESS from '@src/assets/icons/futurecard-transport2.png';
 import TELECOM from '@src/assets/icons/futurecard-telecom.png';
 import LOYALTY_RETAIL from '@src/assets/icons/futurecard-loyalty-retail.png';
-import {
-  Article, Grid, H4, Hr, Image, P,
-} from '@src/css/elements';
+import { Article, Grid, H4, Hr, Image, P } from '@src/css/elements';
 import Box from '@src/css/blocks/Box';
 
 const SECTIONS = [
@@ -52,16 +50,16 @@ const LandingMarkets = ({ DIC }) => (
   <Article centered>
     <HeaderSection title={DIC.LANDING_MAP_TITLE} />
     <Image
-      loading="lazy"
+      loading='lazy'
       section
-      withMargin="-2rem 0 0"
-      src={BACKGROUND_IMG.CONTACT_MAP}
+      withMargin='-2rem 0 0'
+      src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
       alt={DIC.INDUSTRY_FOCUS}
     />
     <HeaderSection title={DIC.INDUSTRY_FOCUS} subtitle={DIC.ABOUT_US_MARKETS} />
 
     <Box>
-      {SECTIONS.map((section) => {
+      {SECTIONS.map(section => {
         const TITLE = `MARKETS_${section.title}`;
         const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
 
@@ -69,22 +67,20 @@ const LandingMarkets = ({ DIC }) => (
           <Box.Link
             to={section.link}
             key={section.id}
-            with_scale="true"
-            with_background="true"
-          >
+            with_scale='true'
+            with_background='true'>
             <Grid
               withIcon
-              withPadding="2rem 2rem 1rem"
+              withPadding='2rem 2rem 1rem'
               flex={1}
-              vertical="center"
-            >
-              <Image src={section.icon} alt="category icon futurecard" />
+              vertical='center'>
+              <Image src={section.icon} alt='category icon futurecard' />
             </Grid>
-            <H4 withMargin="0.5rem" centered>
+            <H4 withMargin='0.5rem' centered>
               {DIC[TITLE]}
             </H4>
-            <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem" withAlign="left">
+            <Hr withSize='80px' withMargin='0 auto 1rem' withAlign='center' />
+            <P small withPadding='0 1rem 0.5rem' withAlign='left'>
               {DIC[CONTENT]}
             </P>
           </Box.Link>

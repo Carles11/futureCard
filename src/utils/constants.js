@@ -838,6 +838,8 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631527/futurecard.com/headers/instant_issuance.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
+  CONTACT_MAP_IN_CARLES_CLOUDINARY:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1569949560/FutureCard/FCI-World-Map-low.png',
   DESIGN_SECURITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
   END_TO_END:
