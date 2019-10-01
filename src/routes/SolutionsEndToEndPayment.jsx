@@ -1,14 +1,22 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
+import Icon from '@src/components/Icon';
 
 import {
-  AExternal, Article, P, Image, Grid,
+  AExternal,
+  A,
+  Article,
+  Button,
+  P,
+  Image,
+  Grid,
 } from '@src/css/elements';
 import {
   BACKGROUND_IMG,
@@ -101,6 +109,14 @@ const SolutionsEndToEndPayment = ({
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
+        <Button.Centered>
+          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
     </ViewLayout>
   );
@@ -111,6 +127,7 @@ SolutionsEndToEndPayment.propTypes = {
     LOOKING_FOR: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_PAYMENT: PropTypes.string.isRequired,
+    NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_PAYMENT_CONTENT: PropTypes.string.isRequired,
   }).isRequired,

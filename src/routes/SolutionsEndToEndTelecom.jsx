@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
@@ -8,7 +9,10 @@ import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 import { BACKGROUND_IMG, OPTIONS_TELECOM, OPTIONS_GENERAL } from '@src/utils/constants';
 
-import { Article, P } from '@src/css/elements';
+import {
+  Article, A, Button, P,
+} from '@src/css/elements';
+import Icon from '@src/components/Icon';
 
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
@@ -53,6 +57,17 @@ const SolutionsEndToEndTelecom = ({
         subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
       />
       <CardsListOptions options={OPTIONS} />
+      <Article>
+        <Button.Centered>
+          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
+
+      </Article>
     </ViewLayout>
   );
 };

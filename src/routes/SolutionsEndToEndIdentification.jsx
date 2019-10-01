@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
-import { Article, P } from '@src/css/elements';
+import {
+  Article, A, Button, P,
+} from '@src/css/elements';
+import Icon from '@src/components/Icon';
+
 import {
   OPTIONS_GENERAL,
   OPTIONS_IDENTIFICATION,
@@ -49,13 +54,21 @@ const SolutionsEndToEndIdentification = ({
       />
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT}</P>
+        <CardsList cards={cards} />
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our ID cards"
+        />
+        <CardsListOptions options={OPTIONS} />
+        <Button.Centered>
+          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our ID cards"
-      />
-      <CardsListOptions options={OPTIONS} />
     </ViewLayout>
   );
 };

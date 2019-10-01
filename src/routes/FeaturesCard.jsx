@@ -66,7 +66,7 @@ const FeaturesCard = ({
         subtitle={`${title}`}
       />
       <Article>
-        <P>{content}</P>
+        <P>{content.join('. ')}</P>
       </Article>
       <CardsList cards={features} />
       {/* <Box>

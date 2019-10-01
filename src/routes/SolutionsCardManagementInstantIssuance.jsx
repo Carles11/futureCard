@@ -8,10 +8,10 @@ import HeaderSection from '@src/components/HeaderSection';
 import Icon from '@src/components/Icon';
 
 import {
-  A, Article, Button, P, Image,
+  A, Article, Button, P,
 } from '@src/css/elements';
 import { BACKGROUND_IMG } from '@src/utils/constants';
-import IssuanceGraphic from '@src/assets/image/graphics/Instant_Issuance.png';
+// import IssuanceGraphic from '@src/assets/image/graphics/Instant_Issuance.png';
 
 /**
  * SolutionsCardManagementInstantIssuance View Component
@@ -35,12 +35,12 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
       />
       <Article centered>
         <P>{content.join('.')}</P>
-        <Image
+        {/* <Image
           src={IssuanceGraphic}
           withMargin="auto"
           graphics
           alt="Issuance Graphic FutureCard"
-        />
+        /> */}
         <Button.Centered withMargin="3.3rem">
           <A role="button" to="/our-solutions/card-management-systems">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}
