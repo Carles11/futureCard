@@ -7,7 +7,9 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import Icon from '@src/components/Icon';
 
-import { A, Article, Button, P, Image } from '@src/css/elements';
+import {
+  A, Article, Button, P, Image,
+} from '@src/css/elements';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 import IssuanceGraphic from '@src/assets/image/graphics/Instant_Issuance.png';
 
@@ -25,7 +27,8 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.MANAGEMENT_INSTANT_ISSUANCE}`}
       description={title}
-      image={BACKGROUND_IMG.INSTANT_ISSUANCE}>
+      image={BACKGROUND_IMG.INSTANT_ISSUANCE}
+    >
       <HeaderSection
         title={DIC.MANAGEMENT_INSTANT_ISSUANCE}
         subtitle={`${title}`}
@@ -34,12 +37,12 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
         <P>{content.join('.')}</P>
         <Image
           src={IssuanceGraphic}
-          withMargin='auto'
+          withMargin="auto"
           graphics
-          alt='Issuance Graphic FutureCard'
+          alt="Issuance Graphic FutureCard"
         />
-        <Button.Centered withMargin='3.3rem'>
-          <A role='button' to='/our-solutions/card-management-systems'>
+        <Button.Centered withMargin="3.3rem">
+          <A role="button" to="/our-solutions/card-management-systems">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}
             <Icon>
               <FiArrowRightCircle />

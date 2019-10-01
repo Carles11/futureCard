@@ -7,7 +7,7 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 
 import {
- A, Article, Button, P 
+  A, Article, Button, P,
 } from '@src/css/elements';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 import Icon from '@src/components/Icon';
