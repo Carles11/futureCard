@@ -7,7 +7,7 @@ import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
-import { Article, P } from '@src/css/elements';
+import { Article, P, Grid } from '@src/css/elements';
 import {
   OPTIONS_GENERAL,
   OPTIONS_IDENTIFICATION,
@@ -41,8 +41,7 @@ const SolutionsEndToEndIdentification = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
-      image={BACKGROUND_IMG.IDENTIFICATION}
-    >
+      image={BACKGROUND_IMG.IDENTIFICATION}>
       <HeaderSection
         title={DIC.NAV_LABEL_IDENTIFICATION}
         subtitle={DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_DESCRIPTION}
@@ -51,11 +50,13 @@ const SolutionsEndToEndIdentification = ({
         <P>{DIC.SOLUTIONS_END_TO_END_IDENTIFICATION_CONTENT}</P>
       </Article>
       <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our ID cards"
-      />
-      <CardsListOptions options={OPTIONS} />
+      <Grid column withMargin='4rem 0 2rem'>
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle='Discover all the options and solutions we offer for our ID cards'
+        />
+        <CardsListOptions options={OPTIONS} />
+      </Grid>
     </ViewLayout>
   );
 };

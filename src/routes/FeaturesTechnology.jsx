@@ -64,39 +64,43 @@ const FeaturesTechnology = ({
       <HeaderSection title={DIC.NAV_LABEL_TECHNOLOGY} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
-      </Article>
-      <CardsList cards={features} />
-      <Box>
-        {FILTERED_SECTIONS.map((section) => {
-          const TITLE = `NAV_LABEL_${section.label}`;
-          const CONTENT = `CARD_FEATURES_${section.label}_DESCRIPTION`;
+        <CardsList cards={features} />
+        <Box>
+          {FILTERED_SECTIONS.map((section) => {
+            const TITLE = `NAV_LABEL_${section.label}`;
+            const CONTENT = `CARD_FEATURES_${section.label}_DESCRIPTION`;
 
-          return (
-            <Box.Link
-              to={section.link}
-              key={section.key}
-              with_scale="true"
-              with_background="true"
-            >
-              <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
-                {DIC[TITLE]}
-              </H4>
-              <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P small centered withPadding="0 1rem 0.5rem">
-                {`${DIC[CONTENT].split('.')[0]}.`}
-              </P>
-            </Box.Link>
-          );
-        })}
-      </Box>
-      <Button.Centered>
-        <A role="button" to="/card-features">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
+            return (
+              <Box.Link
+                to={section.link}
+                key={section.key}
+                with_scale="true"
+                with_background="true"
+              >
+                <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
+                  {DIC[TITLE]}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P small centered withPadding="0 1rem 0.5rem">
+                  {`${DIC[CONTENT].split('.')[0]}.`}
+                </P>
+              </Box.Link>
+            );
+          })}
+        </Box>
+        <Button.Centered>
+          <A role="button" to="/card-features">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
+      </Article>
     </ViewLayout>
   );
 };

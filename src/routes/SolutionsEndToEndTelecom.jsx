@@ -6,10 +6,13 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
-import { BACKGROUND_IMG, OPTIONS_TELECOM, OPTIONS_GENERAL } from '@src/utils/constants';
+import {
+  BACKGROUND_IMG,
+  OPTIONS_TELECOM,
+  OPTIONS_GENERAL,
+} from '@src/utils/constants';
 
-import { Article, P } from '@src/css/elements';
-
+import { Article, P, Grid } from '@src/css/elements';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -48,11 +51,13 @@ const SolutionsEndToEndTelecom = ({
         <P>{DIC.SOLUTIONS_END_TO_END_TELECOM_CONTENT}</P>
       </Article>
       <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
-      />
-      <CardsListOptions options={OPTIONS} />
+      <Grid column withMargin="4rem 0 2rem">
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
+        />
+        <CardsListOptions options={OPTIONS} />
+      </Grid>
     </ViewLayout>
   );
 };
