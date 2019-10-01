@@ -16,12 +16,11 @@ const Image = styled.img`
   margin-bottom: 100px;
   padding: 0;
   width: 100%;
-  ${props =>
-    props.logosAdapt &&
-    css`
-      height: auto;
-      width: 15%;
-      margin: 200px;
+  ${props => props.logosAdapt
+    && css`
+    height: 'auto',
+    width: '50%',
+    margin: '20px',
     `}
 `;
 
