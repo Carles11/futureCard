@@ -13,7 +13,9 @@ import HeaderSection from '@src/components/HeaderSection';
 
 import { getLocation } from '@src/actions/location/actions';
 
-const Contact = ({ DIC, path, location, handleLocation }) => {
+const Contact = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (
