@@ -78,13 +78,16 @@ const SolutionsEndToEndPayment = ({
       handleGetCards('payment', language);
     }
   }, [language]);
-
+  const style = {
+    height: 'auto',
+    width: '50%',
+    margin: '20px',
+  };
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
       description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
-      image={BACKGROUND_IMG.CARD_PAYMENT}
-    >
+      image={BACKGROUND_IMG.CARD_PAYMENT}>
       <HeaderSection
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
@@ -92,25 +95,30 @@ const SolutionsEndToEndPayment = ({
 
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
-        <Grid responsive withMargin="5rem auto 2rem" middle vertical="center">
+        <Grid responsive withMargin='5rem auto 2rem' middle vertical='center'>
           {PAYMENT_LOGOS.map(item => (
-            <Grid key={item.id} flex="1" withMargin="0 1rem 1rem">
-              <AExternal href={item.link} target="_blank">
-                <Image logosAdapt src={item.src} alt={`${item.label}-logo`} />
+            <Grid key={item.id} flex='1' withMargin='0 1rem 1rem'>
+              <AExternal href={item.link} target='_blank'>
+                <Image
+                  style={style}
+                  logosAdapt
+                  src={item.src}
+                  alt={`${item.label}-logo`}
+                />
               </AExternal>
             </Grid>
           ))}
         </Grid>
         <CardsList cards={cards} />
-        <Grid column withMargin="4rem 0 2rem">
+        <Grid column withMargin='4rem 0 2rem'>
           <HeaderSection
             title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our payment cards"
+            subtitle='Discover all the options and solutions we offer for our payment cards'
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
         <Button.Centered>
-          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+          <A role='button' to='/our-solutions/end-to-end-card-solutions'>
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
             <Icon>
               <FiArrowRightCircle />
