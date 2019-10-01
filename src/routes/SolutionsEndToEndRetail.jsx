@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
-import { Article, P, Grid } from '@src/css/elements';
+import {
+  Article, P, Grid, A, Button,
+} from '@src/css/elements';
+import Icon from '@src/components/Icon';
 import { OPTIONS_RETAIL, OPTIONS_GENERAL } from '@src/utils/constants';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
@@ -32,6 +36,8 @@ const SolutionsEndToEndRetail = ({
       handleGetCards('retail', language);
     }
   }, [language]);
+  const [title, ...first] = DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT.split('.');
+  const [para1, para2] = first;
 
   return (
     <ViewLayout
@@ -43,16 +49,28 @@ const SolutionsEndToEndRetail = ({
         subtitle={DIC.SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION}
       />
       <Article centered>
-        <P>{DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT}</P>
+        <P>{`${title}. ${para1}. `}</P>
+        <P>{`${para2}.`}</P>
+
+        <CardsList cards={cards} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
       </Article>
-      <CardsList cards={cards} />
-      <Grid column withMargin="4rem 0 2rem">
-        <HeaderSection
-          title={DIC.LOOKING_FOR}
-          subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
-        />
-        <CardsListOptions options={OPTIONS} />
-      </Grid>
+      <Article>
+        <Button.Centered>
+          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
+      </Article>
     </ViewLayout>
   );
 };

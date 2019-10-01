@@ -8,12 +8,11 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import {
-  A, Article, Button, H4, Hr, P,
+  A, Article, Button, P,
 } from '@src/css/elements';
-import Box from '@src/css/blocks/Box';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
@@ -31,10 +30,12 @@ const FeaturesCard = ({
   featuresLang,
   handleGetFeatures,
 }) => {
-  const [
-    title,
-    ...content
-  ] = DIC.CARD_FEATURES_CARD_MATERIALS_DESCRIPTION.split('.');
+  const [title, ...first] = DIC.CARD_FEATURES_CARD_MATERIALS_DESCRIPTION.split(
+    '.',
+  );
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
 
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
@@ -51,10 +52,10 @@ const FeaturesCard = ({
     // eslint-disable-next-line no-restricted-globals
   }, [features, location]);
 
-  const SECTIONS = NAVIGATION.find(nav => nav.label === 'CARDS');
-  const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== 'CARD_MATERIALS',
-  );
+  // const SECTIONS = NAVIGATION.find(nav => nav.label === 'CARDS');
+  // const FILTERED_SECTIONS = SECTIONS.child.filter(
+  //   item => item.label !== 'CARD_MATERIALS',
+  // );
 
   return (
     <ViewLayout
@@ -67,10 +68,13 @@ const FeaturesCard = ({
         subtitle={`${title}`}
       />
       <Article>
-        <P>{content}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${para5}.`}</P>
+        <P>{`${para6}.`}</P>
       </Article>
       <CardsList cards={features} />
-      <Box>
+      {/* <Box>
         {FILTERED_SECTIONS.map((section) => {
           const TITLE = `NAV_LABEL_${section.label}`;
           const CONTENT = `CARD_FEATURES_${section.label}_DESCRIPTION`;
@@ -92,8 +96,8 @@ const FeaturesCard = ({
             </Box.Link>
           );
         })}
-      </Box>
-      <Button.Centered>
+      </Box> */}
+      <Button.Centered withMargin="3.3rem">
         <A role="button" to="/card-features">
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>

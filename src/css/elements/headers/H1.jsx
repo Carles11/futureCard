@@ -27,6 +27,10 @@ const H1 = styled.h1`
       text-transform: upperCase;
     `}
 
+    ${props => props.firstCapital
+      && css`
+        textTransform: capitalize;
+      `}
   ${props => props.withSize
     && css`
       font-size: ${props.withSize};

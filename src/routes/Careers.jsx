@@ -6,7 +6,7 @@ import Icon from '@src/components/Icon';
 import Loader from '@src/components/Loader';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import { formatDate } from '@src/utils/helpers';
 
@@ -22,7 +22,6 @@ const Careers = ({
   DIC, careers, count, handleGetCareers,
 }) => {
   const [loading, setLoading] = useState(false);
-  const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
   useEffect(() => {
     if (!careers.success && !loading) {
@@ -30,10 +29,15 @@ const Careers = ({
       handleGetCareers();
     }
   }, [careers]);
-  const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
-  const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== 'CAREERS',
-  );
+  // const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
+  // const FILTERED_SECTIONS = SECTIONS.child.filter(
+  //   item => item.label !== 'CAREERS',
+  // );
+
+  const [title, ...first] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4] = second;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
@@ -42,7 +46,8 @@ const Careers = ({
     >
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
-        <P withMargin="0 0 4rem">{content.join('.')}</P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P withMargin="0 0 4rem">{`${para3}. ${para4}.`}</P>
         <Grid column>
           <Grid middle>
             <Grid flex="1">
@@ -104,7 +109,7 @@ const Careers = ({
             ))}
           </Box>
         )}
-        <Box>
+        {/* <Box>
           {FILTERED_SECTIONS.map((section) => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
@@ -130,9 +135,9 @@ const Careers = ({
               </Box.Link>
             );
           })}
-        </Box>
-        <Button.Centered>
-          <A role="button" to="/card-features">
+        </Box> */}
+        <Button.Centered withMargin="3.3rem">
+          <A role="button" to="/about-futurecard">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
             <Icon>
               <FiArrowRightCircle />

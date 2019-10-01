@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 import HeaderSection from '@src/components/HeaderSection';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import { FaUniversity } from 'react-icons/fa';
-import { FaMoneyBillAlt } from 'react-icons/fa';
-import { FaMobileAlt } from 'react-icons/fa';
-import { FaUsers } from 'react-icons/fa';
+import PAYMENT from '@src/assets/icons/futurecard-payment.png';
+import IDENTIFICATION from '@src/assets/icons/futurecard-identification.png';
+import TRANSPORT_ACCESS from '@src/assets/icons/futurecard-transport2.png';
+import TELECOM from '@src/assets/icons/futurecard-telecom.png';
+import LOYALTY_RETAIL from '@src/assets/icons/futurecard-loyalty-retail.png';
 import {
   Article, Grid, H4, Hr, Image, P,
 } from '@src/css/elements';
@@ -19,31 +20,31 @@ const SECTIONS = [
     id: 1,
     title: 'PAYMENT',
     link: '/our-solutions/end-to-end-card-solutions/payment',
-    icon: <FaUniversity />,
+    icon: PAYMENT,
   },
   {
     id: 2,
     title: 'IDENTIFICATION',
     link: '/our-solutions/end-to-end-card-solutions/identification',
-    icon: <FaMoneyBillAlt />,
+    icon: IDENTIFICATION,
   },
   {
     id: 3,
     title: 'TRANSPORT_ACCESS',
     link: '/our-solutions/end-to-end-card-solutions/transport-and-access',
-    icon: <FaMobileAlt />,
+    icon: TRANSPORT_ACCESS,
   },
   {
     id: 4,
     title: 'TELECOM',
     link: '/our-solutions/end-to-end-card-solutions/telecom',
-    icon: <FaUsers />,
+    icon: TELECOM,
   },
   {
     id: 5,
     title: 'LOYALTY_RETAIL',
     link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
-    icon: <FaMoneyBillAlt />,
+    icon: LOYALTY_RETAIL,
   },
 ];
 
@@ -54,7 +55,7 @@ const LandingMarkets = ({ DIC }) => (
       loading="lazy"
       section
       withMargin="-2rem 0 0"
-      src={BACKGROUND_IMG.CONTACT_MAP}
+      src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
       alt={DIC.INDUSTRY_FOCUS}
     />
     <HeaderSection title={DIC.INDUSTRY_FOCUS} subtitle={DIC.ABOUT_US_MARKETS} />
@@ -77,7 +78,7 @@ const LandingMarkets = ({ DIC }) => (
               flex={1}
               vertical="center"
             >
-              {section.icon}
+              <Image src={section.icon} alt="category icon futurecard" />
             </Grid>
             <H4 withMargin="0.5rem" centered>
               {DIC[TITLE]}

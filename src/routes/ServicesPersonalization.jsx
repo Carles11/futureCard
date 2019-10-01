@@ -31,6 +31,7 @@ const ServicesPersonalization = ({ DIC }) => {
         subtitle={DIC.SERVICES_PERSONALIZATION_SUBTITLE}
       />
       <Article centered>
+        <P>{`${title}.`}</P>
         <P>{content.join('.')}</P>
         <Image
           src={PersonalizationGraphic}
@@ -65,15 +66,15 @@ const ServicesPersonalization = ({ DIC }) => {
             );
           })}
         </Box>
+        <Button.Centered>
+          <A role="button" to="/our-services/">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };

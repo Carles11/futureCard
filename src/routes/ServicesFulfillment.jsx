@@ -19,6 +19,11 @@ const ServicesFulfillment = ({ DIC }) => {
   const FILTERED_SECTIONS = SECTIONS.child.filter(
     item => item.label !== 'FULFILLMENT',
   );
+  const [title, ...first] = DIC.SERVICES_FULFILLMENT_CONTENT_0.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_FULFILLMENT}`}
@@ -30,7 +35,10 @@ const ServicesFulfillment = ({ DIC }) => {
         subtitle={DIC.SERVICES_FULFILLMENT_SUBTITLE}
       />
       <Article centered>
-        <P>{DIC.SERVICES_FULFILLMENT_CONTENT_0}</P>
+        <P>{`${title}. ${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${para5}. ${para6}.`}</P>
+
         <Image
           src={FulfillGraphic}
           withMargin="auto"
@@ -64,15 +72,15 @@ const ServicesFulfillment = ({ DIC }) => {
             );
           })}
         </Box>
+        <Button.Centered>
+          <A role="button" to="/our-services/">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };

@@ -18,9 +18,9 @@ const Image = styled.img`
   width: 100%;
   ${props => props.logosAdapt
     && css`
-      height: auto;
-      width: 30%;
-      margin: 20px;
+    height: 'auto',
+    width: '50%',
+    margin: '20px',
     `}
 `;
 

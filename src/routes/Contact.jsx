@@ -34,7 +34,7 @@ const Contact = ({
         title={DIC.CONTACT_TITLE}
         subtitle={DIC.CONTACT_SUBTITLE}
       />
-      <Image responsive src={BACKGROUND_IMG.CONTACT_MAP} />
+      <Image responsive src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY} />
       <Article centered>
         <ContactForm />
       </Article>

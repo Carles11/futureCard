@@ -838,6 +838,8 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631527/futurecard.com/headers/instant_issuance.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
+  CONTACT_MAP_IN_CARLES_CLOUDINARY:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1569949560/FutureCard/FCI-World-Map-low.png',
   DESIGN_SECURITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
   END_TO_END:
@@ -862,32 +864,65 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879271/futurecard.com/headers/fullfillment.jpg',
 };
 
-const PAYMENT_LOGOS = [
-  {
-    id: 0,
-    label: 'VISA',
-    src: '../src/assets/image/payment-logos/visa-card-logo-9.png',
-    link: 'https://www.visa.com',
-  },
-  {
-    id: 1,
-    label: 'MASTERCARD',
-    src: '../src/assets/image/payment-logos/mastercard-logo.png',
-    link: 'https://www.mastercard.com',
-  },
-  {
-    id: 2,
-    label: 'UNIONPAY',
-    src: '../src/assets/image/payment-logos/unionpay-logo.png',
-    link: 'http://www.unionpayintl.com/en/',
-  },
-  {
-    id: 3,
-    label: 'PAYPAK',
-    src: '../src/assets/image/payment-logos/paypak-logo.png',
-    link: 'https://1link.net.pk/pay-pak/',
-  },
-];
+// const PAYMENT_LOGOS = [
+//   {
+//     id: 0,
+//     label: 'VISA',
+//     src: '../src/assets/image/payment-logos/visa-card-logo-9.png',
+//     link: 'https://www.visa.com',
+//   },
+//   {
+//     id: 1,
+//     label: 'MASTERCARD',
+//     src: '../src/assets/image/payment-logos/mastercard-logo.png',
+//     link: 'https://www.mastercard.com',
+//   },
+//   {
+//     id: 2,
+//     label: 'UNIONPAY',
+//     src: '../src/assets/image/payment-logos/unionpay-logo.png',
+//     link: 'http://www.unionpayintl.com/en/',
+//   },
+//   {
+//     id: 3,
+//     label: 'PAYPAK',
+//     src: '../src/assets/image/payment-logos/paypak-logo.png',
+//     link: 'https://1link.net.pk/pay-pak/',
+//   },
+// ];
+
+// const LANDING_ICONS = [
+//   {
+//     id: 1,
+//     title: 'PAYMENT',
+//     link: '/our-solutions/end-to-end-card-solutions/payment',
+//     icon: '@src/assets/image/icons/futurecard-payment.png',
+//   },
+//   {
+//     id: 2,
+//     title: 'IDENTIFICATION',
+//     link: '/our-solutions/end-to-end-card-solutions/identification',
+//     icon: '@src/assets/image/icons/futurecard-identification.png',
+//   },
+//   {
+//     id: 3,
+//     title: 'TRANSPORT_ACCESS',
+//     link: '/our-solutions/end-to-end-card-solutions/transport-and-access',
+//     icon: '@src/assets/image/icons/futurecard-transport2.png',
+//   },
+//   {
+//     id: 4,
+//     title: 'TELECOM',
+//     link: '/our-solutions/end-to-end-card-solutions/telecom',
+//     icon: '@src/assets/image/icons/futurecard-telecom.png',
+//   },
+//   {
+//     id: 5,
+//     title: 'LOYALTY_RETAIL',
+//     link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
+//     icon: '@src/assets/image/icons/futurecard-loyalty-retail.png',
+//   },
+// ];
 
 export {
   ADDRESSES,
@@ -897,7 +932,6 @@ export {
   OPTIONS_TELECOM,
   OPTIONS_RETAIL,
   OPTIONS_GENERAL,
-  PAYMENT_LOGOS,
   LANGUAGE,
   NAVIGATION,
   BACKGROUND_IMG,
