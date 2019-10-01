@@ -11,12 +11,16 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
 import { formatDate } from '@src/utils/helpers';
 
 import Box from '@src/css/blocks/Box';
-import { A, Article, Grid, Button, H4, Hr, P } from '@src/css/elements';
+import {
+  A, Article, Grid, Button, H4, Hr, P,
+} from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
 import { getCareers } from '@src/actions/careers/actionsSideEffects';
 
-const Careers = ({ DIC, careers, count, handleGetCareers }) => {
+const Careers = ({
+  DIC, careers, count, handleGetCareers,
+}) => {
   const [loading, setLoading] = useState(false);
   const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
 
@@ -34,18 +38,19 @@ const Careers = ({ DIC, careers, count, handleGetCareers }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
       description={`${title}`}
-      image={BACKGROUND_IMG.CAREERS}>
+      image={BACKGROUND_IMG.CAREERS}
+    >
       <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
-        <P withMargin='0 0 4rem'>{content.join('.')}</P>
+        <P withMargin="0 0 4rem">{content.join('.')}</P>
         <Grid column>
           <Grid middle>
-            <Grid flex='1'>
-              <H4 withMargin='1rem 0'>{`Found ${count} job Offer/s.`}</H4>
+            <Grid flex="1">
+              <H4 withMargin="1rem 0">{`Found ${count} job Offer/s.`}</H4>
             </Grid>
-            <Grid heightProp='50px'>
-              <Grid withMargin='0'>
-                <A role='button' to='/admin/careers'>
+            <Grid heightProp="50px">
+              <Grid withMargin="0">
+                <A role="button" to="/admin/careers">
                   Upload your CV
                 </A>
               </Grid>
@@ -54,39 +59,40 @@ const Careers = ({ DIC, careers, count, handleGetCareers }) => {
         </Grid>
         <Hr invertColor />
         {!careers.length ? (
-          <Grid withMargin='17rem' middle vertical='center'>
+          <Grid withMargin="17rem" middle vertical="center">
             <Loader />
           </Grid>
         ) : (
-          <Box wrap='true'>
+          <Box wrap="true">
             {careers.map(item => (
               <Box.Link
-                to='#'
+                to="#"
                 key={item._id}
-                with_scale='true'
-                with_background='true'
-                wrap='true'>
+                with_scale="true"
+                with_background="true"
+                wrap="true"
+              >
                 <Box.Figure>
                   <Box.Figure.Image src={item.image} alt={item.title} />
                 </Box.Figure>
-                <Grid vertical='center'>
-                  <P tiny withMargin='1.5rem 0 0.25rem' highlight>
+                <Grid vertical="center">
+                  <P tiny withMargin="1.5rem 0 0.25rem" highlight>
                     {`${DIC.NEWS_PUBLISHED_THE} ${formatDate(item.updatedAt)}`}
                   </P>
                 </Grid>
 
-                <H4 withMargin='0 1rem 0.5rem' centered>
+                <H4 withMargin="0 1rem 0.5rem" centered>
                   {item.title}
                 </H4>
                 <Hr
-                  withSize='80px'
-                  withMargin='0 auto 1rem'
-                  withAlign='center'
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
                 />
-                <P withPadding='0 1rem 0.75rem'>{item.text}</P>
+                <P withPadding="0 1rem 0.75rem">{item.text}</P>
                 {!!item.link && (
-                  <Grid withMargin='0 0 1.5rem' vertical='center'>
-                    <A role='button' to={item.link}>
+                  <Grid withMargin="0 0 1.5rem" vertical="center">
+                    <A role="button" to={item.link}>
                       {DIC.LEARN_MORE}
                       <Icon>
                         <FiArrowRightCircle />
@@ -125,8 +131,8 @@ const Careers = ({ DIC, careers, count, handleGetCareers }) => {
             );
           })}
         </Box> */}
-        <Button.Centered withMargin='3.3rem'>
-          <A role='button' to='/about-futurecard'>
+        <Button.Centered withMargin="3.3rem">
+          <A role="button" to="/about-futurecard">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
             <Icon>
               <FiArrowRightCircle />

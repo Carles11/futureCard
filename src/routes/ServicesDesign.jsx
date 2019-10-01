@@ -8,9 +8,7 @@ import HeaderSection from '@src/components/HeaderSection';
 import Box from '@src/css/blocks/Box';
 import Icon from '@src/components/Icon';
 
-import {
-  Article, A, Button, P, H4, Hr,
-} from '@src/css/elements';
+import { Article, A, Button, P, H4, Hr } from '@src/css/elements';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
 const ServicesDesign = ({ DIC }) => {
@@ -22,8 +20,7 @@ const ServicesDesign = ({ DIC }) => {
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_DESIGN_TITLE}`}
       description={DIC.SERVICES_DESCRIPTION}
-      image={BACKGROUND_IMG.CARD_DESIGN}
-    >
+      image={BACKGROUND_IMG.CARD_DESIGN}>
       <HeaderSection
         title={DIC.SERVICES_DESIGN_TITLE}
         subtitle={DIC.SERVICES_DESIGN_SUBTITLE}
@@ -32,7 +29,7 @@ const ServicesDesign = ({ DIC }) => {
         <P>{DIC.SERVICES_DESIGN_CONTENT_0}</P>
         <P>{DIC.SERVICES_DESIGN_CONTENT_1}</P>
         <Box>
-          {FILTERED_SECTIONS.map((section) => {
+          {FILTERED_SECTIONS.map(section => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -40,33 +37,32 @@ const ServicesDesign = ({ DIC }) => {
               <Box.Link
                 to={section.link}
                 key={section.key}
-                with_scale="true"
-                with_background="true"
-              >
-                <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
+                with_scale='true'
+                with_background='true'>
+                <H4 withMargin='1.5rem 0.5rem 0.5rem' centered>
                   {DIC[TITLE]}
                 </H4>
                 <Hr
-                  withSize="80px"
-                  withMargin="0 auto 1rem"
-                  withAlign="center"
+                  withSize='80px'
+                  withMargin='0 auto 1rem'
+                  withAlign='center'
                 />
-                <P small withPadding="0 1rem 0.5rem">
+                <P small withPadding='0 1rem 0.5rem'>
                   {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
             );
           })}
         </Box>
+        <Button.Centered withMargin='3.3rem'>
+          <A role='button' to='/our-services/'>
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };
