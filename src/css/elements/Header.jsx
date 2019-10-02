@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 const Header = styled.header`
   padding: 1rem;
 
-
-  ${props => props.background
-    && css`
+  ${props =>
+    props.background &&
+    css`
     padding: 5%;
     box-sizing: border-box;
     width: 60%
@@ -18,16 +18,18 @@ const Header = styled.header`
       width: 100%;
       padding: 1.5rem;
     }
-    @media only screen and (max-width: 400px) {
-      color: red;
-      font-size: 0.2rem;
+    @media only screen and (max-width: 1024px) {
       width: 100%;
       padding: 1.5rem;
     }
+    @media only screen and (max-width: 400px) {
+     
+    }
   `}
 
-  ${props => props.centered
-    && css`
+  ${props =>
+    props.centered &&
+    css`
       @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;
@@ -48,8 +50,9 @@ const Header = styled.header`
         z-index: 1;
       }
     `}
-    ${props => props.left
-      && css`
+    ${props =>
+      props.left &&
+      css`
         @media only screen and (min-width: 1024px) {
           display: flex;
           flex-direction: column;
