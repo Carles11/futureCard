@@ -10,7 +10,8 @@ const Icon = ({ children }) => (
         marginLeft: '0.4rem',
         fontSize: '1.05rem',
       },
-    }}>
+    }}
+  >
     {children}
   </IconContext.Provider>
 );

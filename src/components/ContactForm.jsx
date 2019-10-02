@@ -59,8 +59,10 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
       <H2 withMargin='auto' centered>
         {DIC.CONTACT_DESCRIPTION}
       </H2>
-      <H3 centered>{DIC.CONTACT_DESCRIPTION_SUBLINE}</H3>
-      <Hr withSize='45%' withMargin='auto' />
+      <H3 withMargin='1rem auto' centered>
+        {DIC.CONTACT_DESCRIPTION_SUBLINE}
+      </H3>
+      <Hr withSize='45%' withMargin='1.3rem auto' />
       <H4 centered>{DIC.CONTACT_SUBDESCRIPTION}</H4>
       <Label htmlFor='name'>{DIC.CONTACT_LABEL_NAME}</Label>
       <Input id='name' type='text' required onChange={handleInputChange} />
