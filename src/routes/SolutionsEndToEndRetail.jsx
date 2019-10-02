@@ -9,10 +9,10 @@ import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
 import {
-  Article, A, Button, P,
+  Article, P, Grid, A, Button,
 } from '@src/css/elements';
 import Icon from '@src/components/Icon';
-import { OPTIONS_RETAIL, OPTIONS_GENERAL } from '@src/utils/constants';
+import { OPTIONS_RETAIL, OPTIONS_GENERAL, BACKGROUND_IMG } from '@src/utils/constants';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -43,6 +43,7 @@ const SolutionsEndToEndRetail = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
+      image={BACKGROUND_IMG.RETAIL_LOYALTY}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_RETAIL_LOYALTY}
@@ -51,13 +52,16 @@ const SolutionsEndToEndRetail = ({
       <Article centered>
         <P>{`${title}. ${para1}. `}</P>
         <P>{`${para2}.`}</P>
+
+        <CardsList cards={cards} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
       </Article>
-      <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
-      />
-      <CardsListOptions options={OPTIONS} />
       <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">

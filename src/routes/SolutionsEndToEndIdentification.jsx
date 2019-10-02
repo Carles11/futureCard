@@ -9,7 +9,7 @@ import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
 
 import {
-  Article, A, Button, P,
+  Article, A, Button, P, Grid,
 } from '@src/css/elements';
 import Icon from '@src/components/Icon';
 
@@ -64,11 +64,15 @@ const SolutionsEndToEndIdentification = ({
         <P>{`${para3}. ${para4}. ${para5}.`}</P>
         <P>{`${para6}.`}</P>
         <CardsList cards={cards} />
-        <HeaderSection
-          title={DIC.LOOKING_FOR}
-          subtitle="Discover all the options and solutions we offer for our ID cards"
-        />
-        <CardsListOptions options={OPTIONS} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our ID cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
+      </Article>
+      <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}

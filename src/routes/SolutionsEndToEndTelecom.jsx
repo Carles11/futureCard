@@ -7,13 +7,16 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import CardsListOptions from '@src/components/CardsListOptions';
-import { BACKGROUND_IMG, OPTIONS_TELECOM, OPTIONS_GENERAL } from '@src/utils/constants';
+import {
+  BACKGROUND_IMG,
+  OPTIONS_TELECOM,
+  OPTIONS_GENERAL,
+} from '@src/utils/constants';
 
 import {
-  Article, A, Button, P,
+  Article, A, Button, Grid, P,
 } from '@src/css/elements';
 import Icon from '@src/components/Icon';
-
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -50,13 +53,16 @@ const SolutionsEndToEndTelecom = ({
       />
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_TELECOM_CONTENT}</P>
+
+        <CardsList cards={cards} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
       </Article>
-      <CardsList cards={cards} />
-      <HeaderSection
-        title={DIC.LOOKING_FOR}
-        subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
-      />
-      <CardsListOptions options={OPTIONS} />
       <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">
@@ -66,7 +72,6 @@ const SolutionsEndToEndTelecom = ({
             </Icon>
           </A>
         </Button.Centered>
-
       </Article>
     </ViewLayout>
   );

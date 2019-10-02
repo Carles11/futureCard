@@ -43,6 +43,7 @@ const Figure = styled.figure`
           margin: 0.5rem 0 0;
           padding: 0;
         `}
+      
 `;
 
 export default Figure;

@@ -118,6 +118,8 @@ const SolutionsEndToEndPayment = ({
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
+      </Article>
+      <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}

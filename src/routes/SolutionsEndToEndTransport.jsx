@@ -12,12 +12,11 @@ import {
   OPTIONS_TRANSPORT,
   OPTIONS_GENERAL,
 } from '@src/utils/constants';
-import Icon from '@src/components/Icon';
 
 import {
-  Article, A, Button, P,
+  Article, P, A, Button, Grid,
 } from '@src/css/elements';
-
+import Icon from '@src/components/Icon';
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
 /**
@@ -54,11 +53,16 @@ const SolutionsEndToEndTransport = ({
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CONTENT}</P>
         <CardsList cards={cards} />
-        <HeaderSection
-          title={DIC.LOOKING_FOR}
-          subtitle="Discover all the options and solutions we offer for our Transport & Transport Cards"
-        />
-        <CardsListOptions options={OPTIONS} />
+        <Grid column withMargin="4rem 0 2rem">
+          <HeaderSection
+            title={DIC.LOOKING_FOR}
+            subtitle="Discover all the options and solutions we offer for our Transport & Transport Cards"
+          />
+          <CardsListOptions options={OPTIONS} />
+        </Grid>
+      </Article>
+
+      <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}

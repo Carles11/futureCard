@@ -14,11 +14,10 @@ import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
-import logoLong from '@src/assets/image/FCI-logo-landing.png';
 
 import {
-  A, H1, H2, Hr, Header, Section, Image,
-} from '@src/css/elements/index';
+  A, H1, H2, Hr, Header, Section, Span,
+} from '@src/css/elements';
 import { getLocation } from '@src/actions/location/actions';
 
 /**
@@ -68,18 +67,8 @@ const Landing = ({
       <Background image={backgroundImg}>
         <Header background>
           <H1 invertColor sansSerif firstCapital>
-            <Image
-              responsive
-              withMargin="8rem auto 0px 0px"
-              src={logoLong}
-              style={styleLogo}
-              alt="Futurecard logo"
-            />
-            {' '}
-            FutureCard
-            {' '}
+            <Span invert>FutureCard, </Span>
             <br />
-            {' '}
             {DIC.LANDING_TITLE}
           </H1>
           <Hr withSize="50%" withMargin="0 0 2rem" />

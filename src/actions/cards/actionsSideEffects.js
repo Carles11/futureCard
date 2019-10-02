@@ -10,4 +10,11 @@ export const getCards = (code, lang) => async (dispatch) => {
   }
 };
 
-export function fakeLint() {}
+export const getAllCards = () => async (dispatch) => {
+  try {
+    const { data, count } = await api.get('cards');
+    dispatch(ACTION.getAllCards(data, count));
+  } catch (error) {
+    throw new Error('Something went wrong');
+  }
+};
