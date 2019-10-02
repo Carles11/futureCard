@@ -12,7 +12,7 @@ import {
   Article, P, Grid, A, Button,
 } from '@src/css/elements';
 import Icon from '@src/components/Icon';
-import { OPTIONS_RETAIL, OPTIONS_GENERAL } from '@src/utils/constants';
+import { OPTIONS_RETAIL, OPTIONS_GENERAL, BACKGROUND_IMG } from '@src/utils/constants';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -43,6 +43,7 @@ const SolutionsEndToEndRetail = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS}`}
       description={DIC.SOLUTIONS_DESCRIPTION}
+      image={BACKGROUND_IMG.RETAIL_LOYALTY}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_RETAIL_LOYALTY}

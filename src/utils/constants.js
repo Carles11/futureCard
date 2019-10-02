@@ -815,13 +815,13 @@ const BACKGROUND_IMG = {
   CAREERS:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879152/futurecard.com/headers/careers.jpg',
   CARD_HOLDER:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628503/futurecard.com/headers/card_holder.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023397/futurecard.com/headers/Card_Holder_Enrollment.jpg',
   CARD_PERSONALIZATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629558/futurecard.com/headers/card_personalization.jpg',
   CARD_CONSULTING:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807894/futurecard.com/headers/consulting.jpg',
   CARD_DESIGN:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630203/futurecard.com/headers/design.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023208/futurecard.com/headers/Card_Design3.5.jpg',
   CARD_FEATURES:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879427/futurecard.com/headers/features.jpg',
   CARD_LIFE_CYCLE:
@@ -831,11 +831,11 @@ const BACKGROUND_IMG = {
   CARD_MATERIALS:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630300/futurecard.com/headers/materials.jpg',
   CARD_PAYMENT:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631664/futurecard.com/headers/payment.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023310/futurecard.com/headers/payment.jpg',
   CENTRAL_ISSUANCE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629728/futurecard.com/headers/central_issuance.jpg',
   INSTANT_ISSUANCE:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631527/futurecard.com/headers/instant_issuance.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023553/futurecard.com/headers/Instant_Issuance_high.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
   CONTACT_MAP_IN_CARLES_CLOUDINARY:
@@ -843,15 +843,17 @@ const BACKGROUND_IMG = {
   DESIGN_SECURITY:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
   END_TO_END:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569808713/futurecard.com/headers/endtoend.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023105/futurecard.com/headers/End-to-End_Card_Solutions.jpg',
+  RETAIL_LOYALTY:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570022927/futurecard.com/headers/retail.jpg',
   IDENTIFICATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
   NEWS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879526/futurecard.com/headers/news.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023655/futurecard.com/headers/News2.jpg',
   OUR_SERVICES:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569808138/futurecard.com/headers/services.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023773/futurecard.com/headers/services.jpg',
   OUR_SOLUTIONS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631190/futurecard.com/headers/our_solutions.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023880/futurecard.com/headers/Solutions1.jpg',
   TECHNOLOGY_MATERIALS:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631860/futurecard.com/headers/technology_materials.jpg',
   TELECOM:
@@ -863,66 +865,6 @@ const BACKGROUND_IMG = {
   FULFILLMENT:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879271/futurecard.com/headers/fullfillment.jpg',
 };
-
-// const PAYMENT_LOGOS = [
-//   {
-//     id: 0,
-//     label: 'VISA',
-//     src: '../src/assets/image/payment-logos/visa-card-logo-9.png',
-//     link: 'https://www.visa.com',
-//   },
-//   {
-//     id: 1,
-//     label: 'MASTERCARD',
-//     src: '../src/assets/image/payment-logos/mastercard-logo.png',
-//     link: 'https://www.mastercard.com',
-//   },
-//   {
-//     id: 2,
-//     label: 'UNIONPAY',
-//     src: '../src/assets/image/payment-logos/unionpay-logo.png',
-//     link: 'http://www.unionpayintl.com/en/',
-//   },
-//   {
-//     id: 3,
-//     label: 'PAYPAK',
-//     src: '../src/assets/image/payment-logos/paypak-logo.png',
-//     link: 'https://1link.net.pk/pay-pak/',
-//   },
-// ];
-
-// const LANDING_ICONS = [
-//   {
-//     id: 1,
-//     title: 'PAYMENT',
-//     link: '/our-solutions/end-to-end-card-solutions/payment',
-//     icon: '@src/assets/image/icons/futurecard-payment.png',
-//   },
-//   {
-//     id: 2,
-//     title: 'IDENTIFICATION',
-//     link: '/our-solutions/end-to-end-card-solutions/identification',
-//     icon: '@src/assets/image/icons/futurecard-identification.png',
-//   },
-//   {
-//     id: 3,
-//     title: 'TRANSPORT_ACCESS',
-//     link: '/our-solutions/end-to-end-card-solutions/transport-and-access',
-//     icon: '@src/assets/image/icons/futurecard-transport2.png',
-//   },
-//   {
-//     id: 4,
-//     title: 'TELECOM',
-//     link: '/our-solutions/end-to-end-card-solutions/telecom',
-//     icon: '@src/assets/image/icons/futurecard-telecom.png',
-//   },
-//   {
-//     id: 5,
-//     title: 'LOYALTY_RETAIL',
-//     link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
-//     icon: '@src/assets/image/icons/futurecard-loyalty-retail.png',
-//   },
-// ];
 
 export {
   ADDRESSES,

@@ -19,6 +19,12 @@ const List = styled.ul`
       align-items: center;
       padding: 0 3rem;
     `}
+
+  ${props => props.wrapping
+    && css`
+      display: flex;
+      flex-wrap: wrap;
+    `}
 `;
 
 List.Item = Item;

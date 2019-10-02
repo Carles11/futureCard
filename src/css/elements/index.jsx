@@ -18,6 +18,7 @@ import Image from './Image';
 
 import P from './P';
 import Section from './Section';
+import Span from './Span';
 
 export {
   A,
@@ -40,4 +41,5 @@ export {
   Image,
   P,
   Section,
+  Span,
 };

@@ -1,2 +1,2 @@
 export const GET_CARDS = 'GET_CARDS';
-export const SET_CARDS = 'SET_CARDS';
+export const GET_ALL_CARDS = 'GET_ALL_CARDS';
