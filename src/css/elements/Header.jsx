@@ -18,6 +18,12 @@ const Header = styled.header`
       width: 100%;
       padding: 1.5rem;
     }
+    @media only screen and (max-width: 400px) {
+      color: red;
+      font-size: 0.2rem;
+      width: 100%;
+      padding: 1.5rem;
+    }
   `}
 
   ${props => props.centered
