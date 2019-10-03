@@ -10,7 +10,6 @@ const Careers = lazy(() => import('./Careers'));
 
 /** SOLUTIONS ROUTES */
 const Solutions = lazy(() => import('./Solutions'));
-
 const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */

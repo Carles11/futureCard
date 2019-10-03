@@ -8,9 +8,10 @@ import Header from './components/Header';
 
 const App = ({ DIC }) => (
   <Fragment>
-    <Helmet titleTemplate="%s | Future Card" defaultTitle="Future Card">
-      <link rel="canonical" href="https://futurecard.com" />
-      <meta name="description" content={DIC.APP_DESCRIPTION} />
+    <div>holakease</div>
+    <Helmet titleTemplate='%s | Future Card' defaultTitle='Future Card'>
+      <link rel='canonical' href='https://futurecard.com' />
+      <meta name='description' content={DIC.APP_DESCRIPTION} />
     </Helmet>
     <Header />
     <Routes />

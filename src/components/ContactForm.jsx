@@ -56,10 +56,6 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
   };
   return (
     <Form action="" onSubmit={handleFormSubmit} center>
-      {/* <HeaderSection
-        title={DIC.CONTACT_DESCRIPTION}
-        subtitel={DIC.CONTACT_DESCRIPTION_SUBLINE}
-      /> */}
       <H2 secundaryColor withMargin="auto" centered>
         {DIC.CONTACT_DESCRIPTION}
       </H2>
