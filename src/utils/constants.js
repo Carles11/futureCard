@@ -746,16 +746,16 @@ const LANGUAGE = [
     label: 'ENGLISH',
     value: 'en',
   },
-  {
-    id: 1,
-    label: 'ESPAÑOL',
-    value: 'es',
-  },
-  {
-    id: 2,
-    label: 'FRANÇAIS',
-    value: 'fr',
-  },
+  // {
+  //   id: 1,
+  //   label: 'ESPAÑOL',
+  //   value: 'es',
+  // },
+  // {
+  //   id: 2,
+  //   label: 'FRANÇAIS',
+  //   value: 'fr',
+  // },
 ];
 
 const ADDRESSES = [
