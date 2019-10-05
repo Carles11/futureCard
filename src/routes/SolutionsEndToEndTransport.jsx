@@ -13,7 +13,7 @@ import {
   OPTIONS_GENERAL
 } from "@src/utils/constants";
 
-import { Article, P, A, Button, Grid, H3 } from "@src/css/elements";
+import { Article, A, Button, Grid } from "@src/css/elements";
 import Icon from "@src/components/Icon";
 import { getCards } from "@src/actions/cards/actionsSideEffects";
 
@@ -49,12 +49,6 @@ const SolutionsEndToEndTransport = ({
         subtitle={DIC.SOLUTIONS_END_TO_END_TRANSPORT_DESCRIPTION}
       />
       <Article centered>
-        <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CONTENT}</P>
-        <H3>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CARDS_DESCRIPTION}</H3>
-        <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CARDS_CONTENT}</P>
-        <H3>{DIC.SOLUTIONS_END_TO_END_ACCESS_CARDS_DESCRIPTION}</H3>
-        <P>{DIC.SOLUTIONS_END_TO_END_ACCESS_CARDS_CONTENT}</P>
-
         <CardsList cards={cards} />
         <Grid column withMargin="4rem 0 2rem">
           <HeaderSection
