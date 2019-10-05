@@ -24,12 +24,12 @@ import {
   OPTIONS_GENERAL
 } from "@src/utils/constants";
 
-import VISA from '@src/assets/image/payment-logos/visa-card-logo-9.png';
-import MASTERCARD from '@src/assets/image/payment-logos/mastercard-logo.png';
-import UNIONPAY from '@src/assets/image/payment-logos/unionpay-logo.png';
-import PAYPAK from '@src/assets/image/payment-logos/paypak-logo.png';
-import GIMAC from '@src/assets/image/payment-logos/gimac-logo.png';
-import MERCURY from '@src/assets/image/payment-logos/mercury-logo.png';
+import VISA from "@src/assets/image/payment-logos/visa-card-logo-9.png";
+import MASTERCARD from "@src/assets/image/payment-logos/mastercard-logo.png";
+import UNIONPAY from "@src/assets/image/payment-logos/unionpay-logo.png";
+import PAYPAK from "@src/assets/image/payment-logos/paypak-logo.png";
+import GIMAC from "@src/assets/image/payment-logos/gimac-logo.png";
+import MERCURY from "@src/assets/image/payment-logos/mercury-logo.png";
 
 import { getCards } from "@src/actions/cards/actionsSideEffects";
 
@@ -62,20 +62,20 @@ const PAYMENT_LOGOS = [
     id: 3,
     label: "PAYPAK",
     src: PAYPAK,
-    link: 'https://1link.net.pk/pay-pak/',
+    link: "https://1link.net.pk/pay-pak/"
   },
   {
     id: 4,
-    label: 'GIMAC',
+    label: "GIMAC",
     src: GIMAC,
-    link: 'https://gimac-afr.com/',
+    link: "https://gimac-afr.com/"
   },
   {
     id: 5,
-    label: 'MERCURY',
+    label: "MERCURY",
     src: MERCURY,
-    link: 'https://www.mercury-pay.com/',
-  },
+    link: "https://www.mercury-pay.com/"
+  }
 ];
 
 const SolutionsEndToEndPayment = ({
