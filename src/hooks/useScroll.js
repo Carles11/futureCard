@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 function useScroll(subscribe = false) {
   useEffect(() => {
@@ -7,10 +7,10 @@ function useScroll(subscribe = false) {
     }
 
     if (subscribe) {
-      window.addEventListener('scroll', () => setPosition(window.scrollY));
+      window.addEventListener("scroll", () => setPosition(window.scrollY));
     }
 
-    return () => window.removeEventListener('scroll', () => setPosition(null));
+    return () => window.removeEventListener("scroll", () => setPosition(null));
   }, [window.scrollY]);
 }
 

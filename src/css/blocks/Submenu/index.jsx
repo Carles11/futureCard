@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
-import Item from './Item';
+import Item from "./Item";
 
 const AnimateVisibility = keyframes`
   0% {
@@ -33,8 +33,9 @@ const Submenu = styled.div`
   box-shadow: 0px 0px 5px 0px rgba(224, 224, 224, 0.75);
   border-top: 3px solid ${props => props.theme.background};
 
-  ${props => props
-    && css`
+  ${props =>
+    props &&
+    css`
       animation: ${AnimateVisibility} 0.25s ease-in-out 0s;
     `}
 

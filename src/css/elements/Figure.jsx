@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const Figure = styled.figure`
-  ${props => props.card
-    && css`
+  ${props =>
+    props.card &&
+    css`
       position: relative;
       max-width: 100%;
       width: 100%;
@@ -15,8 +16,9 @@ const Figure = styled.figure`
         margin: 0 auto 2rem;
       }
     `}
-  ${props => props.background
-    && css`
+  ${props =>
+    props.background &&
+    css`
       position: relative;
       margin: -90px 0 0;
       width: 100%;
@@ -24,8 +26,9 @@ const Figure = styled.figure`
       overflow: hidden;
     `}
 
-    ${props => props.section
-      && css`
+    ${props =>
+      props.section &&
+      css`
         position: relative;
         width: 100%;
         min-height: 50vh;
@@ -34,8 +37,9 @@ const Figure = styled.figure`
         padding: 0;
       `}
 
-    ${props => props.preview
-      && css`
+    ${props =>
+      props.preview &&
+      css`
         position: relative;
         width: 100%;
         height: auto;
@@ -44,8 +48,9 @@ const Figure = styled.figure`
         padding: 0;
       `}
     
-    ${props => props.carousel
-      && css`
+    ${props =>
+      props.carousel &&
+      css`
         display: flex;
         align-items: center;
         margin: 0;

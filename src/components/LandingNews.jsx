@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 
-import HeaderSection from '@src/components/HeaderSection';
+import HeaderSection from "@src/components/HeaderSection";
 
-import Loader from '@src/components/Loader';
-import { formatDate } from '@src/utils/helpers';
+import Loader from "@src/components/Loader";
+import { formatDate } from "@src/utils/helpers";
 
-import Box from '@src/css/blocks/Box';
-import {
-  Button, Article, Grid, H4, Hr, P,
-} from '@src/css/elements';
+import Box from "@src/css/blocks/Box";
+import { Button, Article, Grid, H4, Hr, P } from "@src/css/elements";
 
-import { getNews } from '@src/actions/news/actionsSideEffects';
+import { getNews } from "@src/actions/news/actionsSideEffects";
 
-const LandingNews = ({
-  DIC, news, total, handleGetNews,
-}) => {
+const LandingNews = ({ DIC, news, total, handleGetNews }) => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
   let currentNews = news.slice(count, count + 3);
@@ -108,27 +104,27 @@ LandingNews.propTypes = {
     LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
-    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired
   }).isRequired,
   news: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
-    }),
+      _id: PropTypes.string
+    })
   ),
   handleGetNews: PropTypes.func.isRequired,
-  total: PropTypes.number,
+  total: PropTypes.number
 };
 
 const mapStateToProps = ({ news }) => ({
   news: news.data,
-  total: news.count,
+  total: news.count
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetNews: () => dispatch(getNews()),
+  handleGetNews: () => dispatch(getNews())
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(LandingNews);

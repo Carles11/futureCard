@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Content from './Content';
-import Footer from './Footer';
-import Header from './Header';
-import HeaderBackground from './HeaderBackground';
-import Item from './Item';
-import ItemFooter from './ItemFooter';
-import Link from './Link';
-import LinkFooter from './LinkFooter';
-import Logo from './Logo';
-import MapWrapper from './MapWrapper';
-import Navigation from './Navigation';
-import Overlay from './Overlay';
-import Container from './Container';
+import Content from "./Content";
+import Footer from "./Footer";
+import Header from "./Header";
+import HeaderBackground from "./HeaderBackground";
+import Item from "./Item";
+import ItemFooter from "./ItemFooter";
+import Link from "./Link";
+import LinkFooter from "./LinkFooter";
+import Logo from "./Logo";
+import MapWrapper from "./MapWrapper";
+import Navigation from "./Navigation";
+import Overlay from "./Overlay";
+import Container from "./Container";
 
 const Layout = styled.div``;
 

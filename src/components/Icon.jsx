@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { IconContext } from 'react-icons';
+import React from "react";
+import PropTypes from "prop-types";
+import { IconContext } from "react-icons";
 
 const Icon = ({ children }) => (
   <IconContext.Provider
     value={{
       style: {
-        verticalAlign: 'text-bottom',
-        marginLeft: '0.4rem',
-        fontSize: '1.05rem',
-      },
+        verticalAlign: "text-bottom",
+        marginLeft: "0.4rem",
+        fontSize: "1.05rem"
+      }
     }}
   >
     {children}
@@ -17,7 +17,7 @@ const Icon = ({ children }) => (
 );
 
 Icon.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Icon;

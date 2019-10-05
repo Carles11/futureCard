@@ -1,9 +1,9 @@
-import api from '@src/utils/API';
-import * as ACTION from './actions';
+import api from "@src/utils/API";
+import * as ACTION from "./actions";
 
-export const getNews = () => async (dispatch) => {
+export const getNews = () => async dispatch => {
   try {
-    const news = await api.get('news');
+    const news = await api.get("news");
     dispatch(ACTION.getNews(news));
   } catch (error) {
     dispatch(ACTION.errorNews(error.message));

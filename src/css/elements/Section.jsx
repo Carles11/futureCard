@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from "styled-components";
 
 const AnimateVisibility = keyframes`
   0% {
@@ -24,8 +24,9 @@ const Section = styled.section`
   margin: 0;
   box-sizing: border-box;
 
-  ${props => props
-    && css`
+  ${props =>
+    props &&
+    css`
       animation: ${AnimateVisibility} 0.3s ease-in-out 0s;
     `}
 `;

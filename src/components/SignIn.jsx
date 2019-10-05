@@ -1,23 +1,23 @@
-import React, { useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useReducer } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import { Form, Input, Label } from '@src/css/elements/form';
-import { Grid, Button } from '@src/css/elements';
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import { logIn } from '@src/actions/admin/actionsSideEffects';
+import { Form, Input, Label } from "@src/css/elements/form";
+import { Grid, Button } from "@src/css/elements";
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import { logIn } from "@src/actions/admin/actionsSideEffects";
 
 const SignIn = ({ handleLogIn }) => {
   const [state, dispatch] = useReducer(reducer, {
-    username: '',
-    password: '',
+    username: "",
+    password: ""
   });
 
   function handleInputChange(e) {
     const { name, value } = e.target;
 
-    dispatch({ type: 'INPUTS', name, value });
+    dispatch({ type: "INPUTS", name, value });
   }
 
   function handleOnSubmit(e) {
@@ -61,19 +61,19 @@ const SignIn = ({ handleLogIn }) => {
 };
 
 SignIn.propTypes = {
-  handleLogIn: PropTypes.func.isRequired,
+  handleLogIn: PropTypes.func.isRequired
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'INPUTS':
+    case "INPUTS":
       return {
         ...state,
-        [action.name]: action.value,
+        [action.name]: action.value
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }
@@ -81,10 +81,10 @@ function reducer(state, action) {
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  handleLogIn: (username, password) => dispatch(logIn(username, password)),
+  handleLogIn: (username, password) => dispatch(logIn(username, password))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(SignIn);

@@ -1,4 +1,4 @@
-import * as ACTION from './actionsType';
+import * as ACTION from "./actionsType";
 
 export function getLocation(location) {
   return { type: ACTION.GET_LOCATION, location };

@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const ItemFooter = styled.button`
   background: transparent;
@@ -21,8 +21,9 @@ const ItemFooter = styled.button`
     color: ${props => props.theme.mainColor};
   }
 
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       color: ${props.theme.mainColor};
     `}
 `;

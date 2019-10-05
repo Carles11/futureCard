@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import { Figure, BackgroundImage } from '@src/css/elements/index';
-import useScroll from '@src/hooks/useScroll';
+import { Figure, BackgroundImage } from "@src/css/elements/index";
+import useScroll from "@src/hooks/useScroll";
 
 /**
  * Renders a background Image
@@ -12,12 +12,9 @@ import useScroll from '@src/hooks/useScroll';
  * @param {any} props.children
  * @param {boolean} props.effect
  */
-const Background = ({
-  image, section, effect, children,
-}) => {
+const Background = ({ image, section, effect, children }) => {
   const position = useScroll();
   const [blur, setBlur] = useState(0);
-
 
   useEffect(() => {
     if (effect && position > 0 && position < 300) {
@@ -43,7 +40,7 @@ Background.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   section: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   children: PropTypes.node,
-  effect: PropTypes.bool,
+  effect: PropTypes.bool
 };
 
 export default Background;

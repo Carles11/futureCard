@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect, useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { Fragment, useEffect, useReducer } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import Loader from '@src/components/Loader';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import Loader from "@src/components/Loader";
 import {
   A,
   Article,
@@ -14,60 +14,58 @@ import {
   H4,
   Hr,
   Figure,
-  Image,
-} from '@src/css/elements';
-import {
-  Form, Input, Label, Textarea,
-} from '@src/css/elements/form';
-import isAdmin from '@src/hooks/isAdmin';
+  Image
+} from "@src/css/elements";
+import { Form, Input, Label, Textarea } from "@src/css/elements/form";
+import isAdmin from "@src/hooks/isAdmin";
 
 import {
   getOneNews,
   createNews,
-  updateNews,
-} from '@src/actions/admin/actionsSideEffects';
+  updateNews
+} from "@src/actions/admin/actionsSideEffects";
 
 const INITIAL_STATE = {
-  title: '',
-  text: '',
-  file: '',
-  imagePreview: '',
-  link: '',
+  title: "",
+  text: "",
+  file: "",
+  imagePreview: "",
+  link: ""
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'INPUT':
+    case "INPUT":
       return {
         ...state,
-        [action.name]: action.value,
+        [action.name]: action.value
       };
-    case 'FILE':
+    case "FILE":
       return {
         ...state,
-        file: action.file,
+        file: action.file
       };
-    case 'PREVIEW':
+    case "PREVIEW":
       return {
         ...state,
-        imagePreview: action.imagePreview,
+        imagePreview: action.imagePreview
       };
-    case 'ALL':
+    case "ALL":
       return {
         ...state,
         title: action.title,
         text: action.text,
         file: action.file,
-        link: action.link,
+        link: action.link
       };
-    case 'REDIRECT':
+    case "REDIRECT":
       return {
         ...state,
-        redirect: action.redirect,
+        redirect: action.redirect
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }
@@ -79,7 +77,7 @@ const AdminEditNews = ({
   message,
   handleGetOneNews,
   handleCreateNews,
-  handleUpdateNews,
+  handleUpdateNews
 }) => {
   const admin = isAdmin(token);
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -90,7 +88,7 @@ const AdminEditNews = ({
   useEffect(() => {
     const { id } = match.params;
 
-    if (id && id !== 'new') {
+    if (id && id !== "new") {
       handleGetOneNews(id);
     }
   }, [match]);
@@ -99,15 +97,13 @@ const AdminEditNews = ({
    * Update state  if Edit Mode
    * */
   useEffect(() => {
-    const {
-      title = '', text = '', file = '', link = '',
-    } = news;
+    const { title = "", text = "", file = "", link = "" } = news;
     dispatch({
-      type: 'ALL',
+      type: "ALL",
       title,
       text,
       file,
-      link,
+      link
     });
   }, [news]);
 
@@ -115,8 +111,8 @@ const AdminEditNews = ({
    * Redirect to User List when User is Created/Updated
    * */
   useEffect(() => {
-    if (message === 'UPDATED') {
-      dispatch({ type: 'REDIRECT', redirect: true });
+    if (message === "UPDATED") {
+      dispatch({ type: "REDIRECT", redirect: true });
     }
   }, [message]);
 
@@ -124,7 +120,7 @@ const AdminEditNews = ({
     e.preventDefault();
 
     const body = Object.assign({}, state, {
-      creator: admin.id,
+      creator: admin.id
     });
 
     const { imagePreview, ...data } = body;
@@ -138,7 +134,7 @@ const AdminEditNews = ({
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    dispatch({ type: 'INPUT', name, value });
+    dispatch({ type: "INPUT", name, value });
   }
 
   function handleImageChange(e) {
@@ -147,11 +143,11 @@ const AdminEditNews = ({
     const file = e.target.files[0];
 
     reader.onloadend = () => {
-      dispatch({ type: 'PREVIEW', imagePreview: reader.result });
+      dispatch({ type: "PREVIEW", imagePreview: reader.result });
     };
 
     reader.readAsDataURL(file);
-    dispatch({ type: 'FILE', file });
+    dispatch({ type: "FILE", file });
   }
 
   return (
@@ -177,7 +173,7 @@ const AdminEditNews = ({
               <Grid middle>
                 <Grid flex="1">
                   <H4 withMargin="1rem 0">
-                    {Object.keys(news).length ? 'Update News' : 'Create News'}
+                    {Object.keys(news).length ? "Update News" : "Create News"}
                   </H4>
                 </Grid>
                 <Grid heightProp="50px">
@@ -245,7 +241,7 @@ const AdminEditNews = ({
                   />
                 </Fragment>
                 <Button contact type="submit">
-                  {!!Object.keys(news).length && news._id ? 'Update' : 'Create'}
+                  {!!Object.keys(news).length && news._id ? "Update" : "Create"}
                 </Button>
               </Form>
             </Grid>
@@ -259,32 +255,32 @@ const AdminEditNews = ({
 AdminEditNews.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
+      id: PropTypes.string
+    })
   }).isRequired,
   token: PropTypes.string.isRequired,
   news: PropTypes.shape({
-    _id: PropTypes.string,
+    _id: PropTypes.string
   }),
   message: PropTypes.string,
   handleGetOneNews: PropTypes.func.isRequired,
   handleCreateNews: PropTypes.func.isRequired,
-  handleUpdateNews: PropTypes.func.isRequired,
+  handleUpdateNews: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   news: admin.news.itemSelected,
-  message: admin.news.message,
+  message: admin.news.message
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetOneNews: id => dispatch(getOneNews(id)),
   handleCreateNews: body => dispatch(createNews(body)),
-  handleUpdateNews: (id, body) => dispatch(updateNews(id, body)),
+  handleUpdateNews: (id, body) => dispatch(updateNews(id, body))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(AdminEditNews);

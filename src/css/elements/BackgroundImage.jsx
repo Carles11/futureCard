@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const BackgroundImage = styled.div`
   position: absolute;
@@ -10,13 +10,14 @@ const BackgroundImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
-  ${props => props.section
-    && css`
+  ${props =>
+    props.section &&
+    css`
       height: 50vh;
     `}
 
   /* eslint-ignore */
-  ${(props) => {
+  ${props => {
     if (props.blur) {
       const value = `${props.blur}px`;
 

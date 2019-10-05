@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { FiArrowRightCircle } from 'react-icons/fi';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { FiArrowRightCircle } from "react-icons/fi";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import CardsList from '@src/components/CardsList';
-import CardsListOptions from '@src/components/CardsListOptions';
-import Icon from '@src/components/Icon';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import CardsList from "@src/components/CardsList";
+import CardsListOptions from "@src/components/CardsListOptions";
+import Icon from "@src/components/Icon";
 
 import {
   AExternal,
@@ -16,20 +16,20 @@ import {
   Button,
   P,
   Image,
-  Grid,
-} from '@src/css/elements';
+  Grid
+} from "@src/css/elements";
 import {
   BACKGROUND_IMG,
   OPTIONS_PAYMENT,
-  OPTIONS_GENERAL,
-} from '@src/utils/constants';
+  OPTIONS_GENERAL
+} from "@src/utils/constants";
 
-import VISA from '@src/assets/image/payment-logos/visa-card-logo-9.png';
-import MASTERCARD from '@src/assets/image/payment-logos/mastercard-logo.png';
-import UNIONPAY from '@src/assets/image/payment-logos/unionpay-logo.png';
-import PAYPAK from '@src/assets/image/payment-logos/paypak-logo.png';
+import VISA from "@src/assets/image/payment-logos/visa-card-logo-9.png";
+import MASTERCARD from "@src/assets/image/payment-logos/mastercard-logo.png";
+import UNIONPAY from "@src/assets/image/payment-logos/unionpay-logo.png";
+import PAYPAK from "@src/assets/image/payment-logos/paypak-logo.png";
 
-import { getCards } from '@src/actions/cards/actionsSideEffects';
+import { getCards } from "@src/actions/cards/actionsSideEffects";
 
 /**
  * SolutionsEndToEndPayment View Component
@@ -40,28 +40,28 @@ import { getCards } from '@src/actions/cards/actionsSideEffects';
 const PAYMENT_LOGOS = [
   {
     id: 0,
-    label: 'VISA',
+    label: "VISA",
     src: VISA,
-    link: 'https://www.visa.com',
+    link: "https://www.visa.com"
   },
   {
     id: 1,
-    label: 'MASTERCARD',
+    label: "MASTERCARD",
     src: MASTERCARD,
-    link: 'https://www.mastercard.com',
+    link: "https://www.mastercard.com"
   },
   {
     id: 2,
-    label: 'UNIONPAY',
+    label: "UNIONPAY",
     src: UNIONPAY,
-    link: 'http://www.unionpayintl.com/en/',
+    link: "http://www.unionpayintl.com/en/"
   },
   {
     id: 3,
-    label: 'PAYPAK',
+    label: "PAYPAK",
     src: PAYPAK,
-    link: 'https://1link.net.pk/pay-pak/',
-  },
+    link: "https://1link.net.pk/pay-pak/"
+  }
 ];
 
 const SolutionsEndToEndPayment = ({
@@ -69,19 +69,19 @@ const SolutionsEndToEndPayment = ({
   language,
   cards,
   cardsLang,
-  handleGetCards,
+  handleGetCards
 }) => {
   const OPTIONS = [...OPTIONS_PAYMENT, ...OPTIONS_GENERAL];
 
   useEffect(() => {
     if (!cards.length || cardsLang !== language) {
-      handleGetCards('payment', language);
+      handleGetCards("payment", language);
     }
   }, [language]);
   const style = {
-    height: 'auto',
-    width: '50%',
-    margin: '20px',
+    height: "auto",
+    width: "50%",
+    margin: "20px"
   };
   return (
     <ViewLayout
@@ -140,7 +140,7 @@ SolutionsEndToEndPayment.propTypes = {
     NAV_LABEL_PAYMENT: PropTypes.string.isRequired,
     NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION: PropTypes.string.isRequired,
-    SOLUTIONS_END_TO_END_PAYMENT_CONTENT: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_PAYMENT_CONTENT: PropTypes.string.isRequired
   }).isRequired,
   language: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(
@@ -148,25 +148,25 @@ SolutionsEndToEndPayment.propTypes = {
       _id: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string,
-    }),
+      img: PropTypes.string
+    })
   ),
   cardsLang: PropTypes.string.isRequired,
-  handleGetCards: PropTypes.func.isRequired,
+  handleGetCards: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ dictionary, cards }) => ({
   DIC: dictionary.data,
   language: dictionary.language,
   cards: cards.payment,
-  cardsLang: cards.lang,
+  cardsLang: cards.lang
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetCards: (code, lang) => dispatch(getCards(code, lang)),
+  handleGetCards: (code, lang) => dispatch(getCards(code, lang))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(SolutionsEndToEndPayment);

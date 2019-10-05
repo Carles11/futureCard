@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const HeaderBackground = styled.div`
   width: 100%;
@@ -13,8 +13,9 @@ const HeaderBackground = styled.div`
   border-bottom: 1px solid #dddddd;
   transition: opacity 0.5s;
 
-  ${props => props.visible
-    && css`
+  ${props =>
+    props.visible &&
+    css`
       opacity: 0.9;
     `}
 `;

@@ -1,10 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const Header = styled.header`
   padding: 1rem;
 
-  ${props => props.background
-    && css`
+  ${props =>
+    props.background &&
+    css`
     padding: 5%;
     box-sizing: border-box;
     width: 60%
@@ -26,8 +27,9 @@ const Header = styled.header`
     }
   `}
 
-  ${props => props.centered
-    && css`
+  ${props =>
+    props.centered &&
+    css`
       @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;
@@ -48,8 +50,9 @@ const Header = styled.header`
         z-index: 1;
       }
     `}
-    ${props => props.left
-      && css`
+    ${props =>
+      props.left &&
+      css`
         @media only screen and (min-width: 1024px) {
           display: flex;
           flex-direction: column;

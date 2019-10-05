@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export const SEND_EMAIL = 'SEND_EMAIL';
+export const SEND_EMAIL = "SEND_EMAIL";

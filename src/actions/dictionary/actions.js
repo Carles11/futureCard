@@ -1,4 +1,4 @@
-import * as ACTION from './actionsType';
+import * as ACTION from "./actionsType";
 
 export function getDictionary(language, dictionary) {
   return { type: ACTION.GET_DICTIONARY, language, dictionary };

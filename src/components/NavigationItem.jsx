@@ -1,13 +1,11 @@
-import React, { useState, memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, memo } from "react";
+import PropTypes from "prop-types";
 
-import Submenu from '@src/components/Submenu';
+import Submenu from "@src/components/Submenu";
 
-import Layout from '@src/css/blocks/Layout';
+import Layout from "@src/css/blocks/Layout";
 
-const NavigationItem = memo(({
-  item, label, path, DIC, fn,
-}) => {
+const NavigationItem = memo(({ item, label, path, DIC, fn }) => {
   const [visible, setVisible] = useState(false);
 
   function handleSubmenu() {
@@ -36,21 +34,21 @@ const NavigationItem = memo(({
 
 function areEqual(prevProps, nextProps) {
   return (
-    prevProps.dark === nextProps.dark
-    && prevProps.DIC === nextProps.DIC
-    && prevProps.path === nextProps.path
+    prevProps.dark === nextProps.dark &&
+    prevProps.DIC === nextProps.DIC &&
+    prevProps.path === nextProps.path
   );
 }
 
 NavigationItem.propTypes = {
   item: PropTypes.shape({
     key: PropTypes.number.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
   }),
   label: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   fn: PropTypes.func.isRequired,
-  DIC: PropTypes.shape({}),
+  DIC: PropTypes.shape({})
 };
 
 export default NavigationItem;
