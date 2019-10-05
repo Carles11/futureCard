@@ -164,7 +164,7 @@ const FooterComponent = ({
         <Grid darker withMargin="0" withPadding="1rem 5%">
           <Grid flex={1}>
             <P invertColor small>
-              {YEAR} 
+              {YEAR}
               &copy; FutureCard Industries L.L.C
             </P>
           </Grid>
