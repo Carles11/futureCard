@@ -1,10 +1,10 @@
-import * as ACTION from '../actions/news/actionsType';
+import * as ACTION from "../actions/news/actionsType";
 
 const INITIAL_STATE = {
   success: false,
   data: [],
   item: {},
-  count: 0,
+  count: 0
 };
 
 export default function newsReducer(state = INITIAL_STATE, action) {
@@ -14,16 +14,16 @@ export default function newsReducer(state = INITIAL_STATE, action) {
         ...state,
         data: action.news.data,
         success: action.news.success,
-        count: action.news.count,
+        count: action.news.count
       };
     case ACTION.GET_ONE_NEWS:
       return {
         ...state,
-        item: { ...action.item },
+        item: { ...action.item }
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }
