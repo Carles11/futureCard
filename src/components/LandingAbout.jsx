@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import HeaderSection from '@src/components/HeaderSection';
 
 import Box from '@src/css/blocks/Box';
-import {
-  Article, H3, Hr, P,
-} from '@src/css/elements';
+import { Article, H3, Hr, P } from '@src/css/elements';
 
 const SECTIONS = [
   {
@@ -31,7 +29,7 @@ const LandingAbout = ({ DIC }) => (
     <P>{DIC.ABOUT_US_CONTENT}</P>
 
     <Box>
-      {SECTIONS.map((section) => {
+      {SECTIONS.map(section => {
         const TITLE = `NAV_LABEL_${section.title}`;
         const CONTENT = `ABOUT_US_${section.title}`;
 
@@ -39,26 +37,15 @@ const LandingAbout = ({ DIC }) => (
           <Box.Link
             to={section.link}
             key={section.id}
-            with_background
-            with_scale
-          >
-            <H3 withMargin="1.5rem 0.5rem 1rem" centered>
+            with_background='true'
+            with_scale='true'>
+            <H3 withMargin='1.5rem 0.5rem 1rem' centered>
               {DIC[TITLE]}
             </H3>
-            <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem">
+            <Hr withSize='80px' withMargin='0 auto 1rem' withAlign='center' />
+            <P small withPadding='0 1rem 0.5rem'>
               {DIC[CONTENT]}
             </P>
-            {/* {section.link && (
-              <Grid withMargin='0 0 1.5rem' vertical='center'>
-                <A role='button'>
-                  {DIC.LEARN_MORE}
-                  <Icon>
-                    <FiArrowRightCircle />
-                  </Icon>
-                </A>
-              </Grid>
-            )} */}
           </Box.Link>
         );
       })}
