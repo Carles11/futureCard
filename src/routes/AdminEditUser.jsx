@@ -1,52 +1,50 @@
-import React, { Fragment, useEffect, useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { Fragment, useEffect, useReducer } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import Loader from '@src/components/Loader';
-import {
-  A, Article, Grid, Button, H4, Hr,
-} from '@src/css/elements';
-import { Form, Input, Label } from '@src/css/elements/form';
-import isAdmin from '@src/hooks/isAdmin';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import Loader from "@src/components/Loader";
+import { A, Article, Grid, Button, H4, Hr } from "@src/css/elements";
+import { Form, Input, Label } from "@src/css/elements/form";
+import isAdmin from "@src/hooks/isAdmin";
 
 import {
   getUser,
   createUser,
-  updateUser,
-} from '@src/actions/admin/actionsSideEffects';
+  updateUser
+} from "@src/actions/admin/actionsSideEffects";
 
 const INITIAL_STATE = {
-  username: '',
-  firstname: '',
-  lastname: '',
-  password: '',
+  username: "",
+  firstname: "",
+  lastname: "",
+  password: ""
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'INPUT':
+    case "INPUT":
       return {
         ...state,
-        [action.name]: action.value,
+        [action.name]: action.value
       };
-    case 'ALL':
+    case "ALL":
       return {
         ...state,
         firstname: action.firstname,
         lastname: action.lastname,
-        username: action.username,
+        username: action.username
       };
-    case 'REDIRECT':
+    case "REDIRECT":
       return {
         ...state,
-        redirect: action.redirect,
+        redirect: action.redirect
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }
@@ -58,7 +56,7 @@ const AdminEditUser = ({
   message,
   handleGetUser,
   handleCreateUser,
-  handleUpdateUser,
+  handleUpdateUser
 }) => {
   const admin = isAdmin(token);
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -69,7 +67,7 @@ const AdminEditUser = ({
   useEffect(() => {
     const { id } = match.params;
 
-    if (id && id !== 'new') {
+    if (id && id !== "new") {
       handleGetUser(id);
     }
   }, [match]);
@@ -78,12 +76,12 @@ const AdminEditUser = ({
    * Update state with User date if Edit Mode
    * */
   useEffect(() => {
-    const { username = '', firstname = '', lastname = '' } = user;
+    const { username = "", firstname = "", lastname = "" } = user;
     dispatch({
-      type: 'ALL',
+      type: "ALL",
       username,
       firstname,
-      lastname,
+      lastname
     });
   }, [user]);
 
@@ -91,8 +89,8 @@ const AdminEditUser = ({
    * Redirect to User List when User is Created/Updated
    * */
   useEffect(() => {
-    if (message === 'UPDATED') {
-      dispatch({ type: 'REDIRECT', redirect: true });
+    if (message === "UPDATED") {
+      dispatch({ type: "REDIRECT", redirect: true });
     }
   }, [message]);
 
@@ -100,7 +98,7 @@ const AdminEditUser = ({
     e.preventDefault();
 
     const body = Object.assign({}, state, {
-      creator: admin.id,
+      creator: admin.id
     });
 
     if (Object.keys(user).length && user._id) {
@@ -113,7 +111,7 @@ const AdminEditUser = ({
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    dispatch({ type: 'INPUT', name, value });
+    dispatch({ type: "INPUT", name, value });
   }
 
   return (
@@ -140,8 +138,8 @@ const AdminEditUser = ({
                 <Grid flex="1">
                   <H4 withMargin="1rem 0">
                     {Object.keys(user).length
-                      ? 'Update User'
-                      : 'Create New User'}
+                      ? "Update User"
+                      : "Create New User"}
                   </H4>
                 </Grid>
                 <Grid heightProp="50px">
@@ -195,7 +193,7 @@ const AdminEditUser = ({
                   </Fragment>
                 )}
                 <Button contact type="submit">
-                  {!!Object.keys(user).length && user._id ? 'Update' : 'Create'}
+                  {!!Object.keys(user).length && user._id ? "Update" : "Create"}
                 </Button>
               </Form>
             </Grid>
@@ -209,32 +207,32 @@ const AdminEditUser = ({
 AdminEditUser.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
+      id: PropTypes.string
+    })
   }).isRequired,
   token: PropTypes.string.isRequired,
   user: PropTypes.shape({
-    _id: PropTypes.string,
+    _id: PropTypes.string
   }),
   message: PropTypes.string,
   handleGetUser: PropTypes.func.isRequired,
   handleCreateUser: PropTypes.func.isRequired,
-  handleUpdateUser: PropTypes.func.isRequired,
+  handleUpdateUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   user: admin.users.itemSelected,
-  message: admin.users.message,
+  message: admin.users.message
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetUser: id => dispatch(getUser(id)),
   handleCreateUser: body => dispatch(createUser(body)),
-  handleUpdateUser: (id, body) => dispatch(updateUser(id, body)),
+  handleUpdateUser: (id, body) => dispatch(updateUser(id, body))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(AdminEditUser);

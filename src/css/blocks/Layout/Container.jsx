@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const Container = styled.div`
   position: relative;
@@ -17,8 +17,9 @@ const Container = styled.div`
   cursor: pointer;
   outline: none;
 
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       border-bottom: 3px solid ${props.theme.mainColor};
     `}
 
@@ -26,8 +27,9 @@ const Container = styled.div`
     border-bottom: 3px solid ${props => props.theme.mainColor};
   }
 
-  ${props => props.with_dark
-    && css`
+  ${props =>
+    props.with_dark &&
+    css`
       color: white;
     `}
 

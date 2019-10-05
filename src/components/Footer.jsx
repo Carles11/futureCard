@@ -1,15 +1,13 @@
-import React, { useReducer, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import {
-  FiInstagram, FiMail, FiFacebook, FiLinkedin,
-} from 'react-icons/fi';
+import React, { useReducer, useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { FiInstagram, FiMail, FiFacebook, FiLinkedin } from "react-icons/fi";
 
-import { ADDRESSES, LANGUAGE, NAVIGATION } from '@src/utils/constants';
-import { setDictionary } from '@src/actions/dictionary/actionsSideEffects';
-import Icon from '@src/components/Icon';
+import { ADDRESSES, LANGUAGE, NAVIGATION } from "@src/utils/constants";
+import { setDictionary } from "@src/actions/dictionary/actionsSideEffects";
+import Icon from "@src/components/Icon";
 
-import Layout from '@src/css/blocks/Layout';
+import Layout from "@src/css/blocks/Layout";
 import {
   AExternal,
   Address,
@@ -18,22 +16,22 @@ import {
   H3,
   H4,
   Hr,
-  P,
-} from '@src/css/elements';
+  P
+} from "@src/css/elements";
 
 const YEAR = new Date().getFullYear();
 
 function footerReducer(state, action) {
   switch (action.type) {
-    case 'ALL':
+    case "ALL":
       return {
         ...state,
         language: action.language,
-        navigation: [...action.navigation],
+        navigation: [...action.navigation]
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }
@@ -42,14 +40,14 @@ const FooterComponent = ({
   LANG: language,
   DIC,
   handleSetDictionary,
-  path,
+  path
 }) => {
   const initialState = { language, navigation: NAVIGATION };
   const [state, dispatch] = useReducer(footerReducer, initialState);
 
   useEffect(() => {
-    const admin = { key: 50, label: 'ADMIN', link: '/admin' };
-    dispatch({ type: 'ALL', language, navigation: [...NAVIGATION, admin] });
+    const admin = { key: 50, label: "ADMIN", link: "/admin" };
+    dispatch({ type: "ALL", language, navigation: [...NAVIGATION, admin] });
     return () => {};
   }, [language]);
 
@@ -114,7 +112,7 @@ const FooterComponent = ({
             </Grid>
             <Grid withMargin="1rem 0" wrapping>
               <Layout.Footer>
-                {state.navigation.map((item) => {
+                {state.navigation.map(item => {
                   const LABEL = `NAV_LABEL_${item.label}`;
 
                   return (
@@ -146,7 +144,7 @@ const FooterComponent = ({
             </Grid>
             <Grid withMargin="1rem 0" wrapping>
               <Layout.Footer>
-                {LANGUAGE.map((item) => {
+                {LANGUAGE.map(item => {
                   const active = item.value === state.language;
 
                   return (
@@ -166,9 +164,8 @@ const FooterComponent = ({
         <Grid darker withMargin="0" withPadding="1rem 5%">
           <Grid flex={1}>
             <P invertColor small>
-              {YEAR}
-              {' '}
-&copy; FutureCard Industries L.L.C
+              {YEAR} 
+              &copy; FutureCard Industries L.L.C
             </P>
           </Grid>
           <Grid middle>
@@ -214,23 +211,23 @@ FooterComponent.propTypes = {
     NAV_LABEL_LANGUAGE: PropTypes.string.isRequired,
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
-    NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES: PropTypes.string.isRequired
   }).isRequired,
   handleSetDictionary: PropTypes.func.isRequired,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
   LANG: dictionary.language,
   DIC: dictionary.data,
-  path: location.path,
+  path: location.path
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleSetDictionary: lang => dispatch(setDictionary(lang)),
+  handleSetDictionary: lang => dispatch(setDictionary(lang))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(FooterComponent);

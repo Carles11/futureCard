@@ -1,10 +1,10 @@
-import getDic from '@src/utils/dictionaries';
-import { handleLocalStorage } from '@src/utils/helpers';
-import * as ACTION from './actions';
+import getDic from "@src/utils/dictionaries";
+import { handleLocalStorage } from "@src/utils/helpers";
+import * as ACTION from "./actions";
 
-export const getDictionary = () => (dispatch) => {
+export const getDictionary = () => dispatch => {
   try {
-    const language = handleLocalStorage('READ', 'lang');
+    const language = handleLocalStorage("READ", "lang");
     const dictionary = getDic(language);
 
     dispatch(ACTION.getDictionary(language, dictionary));
@@ -13,9 +13,9 @@ export const getDictionary = () => (dispatch) => {
   }
 };
 
-export const setDictionary = lang => (dispatch) => {
+export const setDictionary = lang => dispatch => {
   try {
-    handleLocalStorage('CREATE', 'lang', lang);
+    handleLocalStorage("CREATE", "lang", lang);
     const dictionary = getDic(lang);
 
     dispatch(ACTION.setDictionary(lang, dictionary));

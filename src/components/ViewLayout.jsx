@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { connect } from "react-redux";
 
-import useLocation from '@src/hooks/useLocation';
-import { NAVIGATION } from '@src/utils/constants';
+import useLocation from "@src/hooks/useLocation";
+import { NAVIGATION } from "@src/utils/constants";
 
-import { Section } from '@src/css/elements';
+import { Section } from "@src/css/elements";
 
-import { getLocation } from '@src/actions/location/actions';
-import Footer from './Footer';
-import Breadcrumb from './Breadcrumb';
-import Background from './Background';
+import { getLocation } from "@src/actions/location/actions";
+import Footer from "./Footer";
+import Breadcrumb from "./Breadcrumb";
+import Background from "./Background";
 
 const ViewLayout = ({
   title,
@@ -20,7 +20,7 @@ const ViewLayout = ({
   DIC,
   path,
   children,
-  handleLocation,
+  handleLocation
 }) => {
   const [breadcrumb, setBreadcrumb] = useState([]);
 
@@ -43,8 +43,8 @@ const ViewLayout = ({
       <Helmet
         title={title}
         meta={[
-          { name: 'description', content: `${description}` },
-          { property: 'og:title', content: 'welcome to futurecard.com' },
+          { name: "description", content: `${description}` },
+          { property: "og:title", content: "welcome to futurecard.com" }
         ]}
       />
       {!!image && <Background effect section={!!image} image={image} />}
@@ -65,21 +65,21 @@ ViewLayout.propTypes = {
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string.isRequired
   }),
-  DIC: PropTypes.shape({}),
+  DIC: PropTypes.shape({})
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
   DIC: dictionary.data,
-  path: location.path,
+  path: location.path
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleLocation: location => dispatch(getLocation(location)),
+  handleLocation: location => dispatch(getLocation(location))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(ViewLayout);

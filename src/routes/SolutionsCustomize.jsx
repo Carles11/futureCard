@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import { Article, P } from '@src/css/elements';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import { Article, P } from "@src/css/elements";
 
 const SolutionsCustomize = ({ DIC }) => (
   <ViewLayout
@@ -25,15 +25,15 @@ SolutionsCustomize.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_CUSTOMIZE: PropTypes.string.isRequired,
-    SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired,
-  }).isRequired,
+    SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired
+  }).isRequired
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data,
+  DIC: dictionary.data
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(SolutionsCustomize);

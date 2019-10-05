@@ -1,8 +1,8 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const Link = styled(
   ({
@@ -16,7 +16,7 @@ const Link = styled(
     staticContext,
     theme,
     ...rest
-  }) => <NavLink children={children} {...rest} />,
+  }) => <NavLink children={children} {...rest} />
 )`
   position: relative;
   font-size: 0.85rem;
@@ -28,8 +28,9 @@ const Link = styled(
   border-bottom: 3px solid transparent;
   transition: border-color 0.3s ease-in-out;
 
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       border-bottom: 3px solid ${props.theme.mainColor};
     `}
 
@@ -37,8 +38,9 @@ const Link = styled(
     border-bottom: 3px solid ${props => props.theme.background};
   }
 
-  ${props => props.with_dark
-    && css`
+  ${props =>
+    props.with_dark &&
+    css`
       color: white;
     `}
 
@@ -67,8 +69,9 @@ const Link = styled(
       }
     }
 
-    ${props => props.active
-      && css`
+    ${props =>
+      props.active &&
+      css`
         border: none;
         box-sizing: border-box;
         border-bottom: 1px solid #080b16;

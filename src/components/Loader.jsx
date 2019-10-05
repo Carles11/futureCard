@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import loaderImg from '@src/assets/image/loader.gif';
+import loaderImg from "@src/assets/image/loader.gif";
 
-import { Grid } from '@src/css/elements';
+import { Grid } from "@src/css/elements";
 
 const Loader = ({ loader }) => (
   <Grid loader={loader}>
@@ -12,7 +12,7 @@ const Loader = ({ loader }) => (
 );
 
 Loader.propTypes = {
-  loader: PropTypes.bool,
+  loader: PropTypes.bool
 };
 
 export default Loader;

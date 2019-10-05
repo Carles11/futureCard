@@ -1,8 +1,8 @@
 // @flow
 
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const AExternal = styled.a`
   color: ${props => props.theme.mainColor};
@@ -15,8 +15,9 @@ const AExternal = styled.a`
     color: ${props => props.theme.mainColor};
     text-decoration: none;
   }
-  ${props => props.flex
-    && css`
+  ${props =>
+    props.flex &&
+    css`
       display: inline-block;
       text-align: center;
     `}

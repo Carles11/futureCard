@@ -1,31 +1,47 @@
-import React, { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { lazy, Suspense } from "react";
+import { Switch, Route } from "react-router-dom";
 
-import Loader from '@src/components/Loader';
+import Loader from "@src/components/Loader";
 
-const Landing = lazy(() => import('./Landing'));
-const About = lazy(() => import('./About'));
-const AboutFacility = lazy(() => import('./AboutFacility'));
-const Careers = lazy(() => import('./Careers'));
+const Landing = lazy(() => import("./Landing"));
+const About = lazy(() => import("./About"));
+const AboutFacility = lazy(() => import("./AboutFacility"));
+const Careers = lazy(() => import("./Careers"));
 
 /** SOLUTIONS ROUTES */
-const Solutions = lazy(() => import('./Solutions'));
-const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
+const Solutions = lazy(() => import("./Solutions"));
+const SolutionsCustomize = lazy(() => import("./SolutionsCustomize"));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */
-const SolutionsCardManagement = lazy(() => import('./SolutionsCardManagement'));
-const SolutionsCardManagementCentralIssuance = lazy(() => import('./SolutionsCardManagementCentralIssuance'));
-const SolutionsCardManagementInstantIssuance = lazy(() => import('./SolutionsCardManagementInstantIssuance'));
-const SolutionsCardManagementCardHolder = lazy(() => import('./SolutionsCardManagementCardHolder'));
-const SolutionsCardManagementCardLife = lazy(() => import('./SolutionsCardManagementCardLife'));
+const SolutionsCardManagement = lazy(() => import("./SolutionsCardManagement"));
+const SolutionsCardManagementCentralIssuance = lazy(() =>
+  import("./SolutionsCardManagementCentralIssuance")
+);
+const SolutionsCardManagementInstantIssuance = lazy(() =>
+  import("./SolutionsCardManagementInstantIssuance")
+);
+const SolutionsCardManagementCardHolder = lazy(() =>
+  import("./SolutionsCardManagementCardHolder")
+);
+const SolutionsCardManagementCardLife = lazy(() =>
+  import("./SolutionsCardManagementCardLife")
+);
 
 /** SOLUTIONS END TO END ROUTES */
-const SolutionsEndToEnd = lazy(() => import('./SolutionsEndToEnd'));
-const SolutionsEndToEndPayment = lazy(() => import('./SolutionsEndToEndPayment'));
-const SolutionsEndToEndIdentification = lazy(() => import('./SolutionsEndToEndIdentification'));
-const SolutionsEndToEndTransport = lazy(() => import('./SolutionsEndToEndTransport'));
-const SolutionsEndToEndTelecom = lazy(() => import('./SolutionsEndToEndTelecom'));
-const SolutionsEndToEndRetail = lazy(() => import('./SolutionsEndToEndRetail'));
+const SolutionsEndToEnd = lazy(() => import("./SolutionsEndToEnd"));
+const SolutionsEndToEndPayment = lazy(() =>
+  import("./SolutionsEndToEndPayment")
+);
+const SolutionsEndToEndIdentification = lazy(() =>
+  import("./SolutionsEndToEndIdentification")
+);
+const SolutionsEndToEndTransport = lazy(() =>
+  import("./SolutionsEndToEndTransport")
+);
+const SolutionsEndToEndTelecom = lazy(() =>
+  import("./SolutionsEndToEndTelecom")
+);
+const SolutionsEndToEndRetail = lazy(() => import("./SolutionsEndToEndRetail"));
 
 /** SERVICES ROUTES */
 const Services = lazy(() => import('./Services'));
@@ -48,13 +64,13 @@ const Contact = lazy(() => import('./Contact'));
 const NotFound = lazy(() => import('./NotFound'));
 
 /** ADMIN */
-const AdminEditUser = lazy(() => import('./AdminEditUser'));
-const AdminUsers = lazy(() => import('./AdminUsers'));
-const AdminEditCareers = lazy(() => import('./AdminEditCareers'));
-const AdminCareers = lazy(() => import('./AdminCareers'));
-const AdminEditNews = lazy(() => import('./AdminEditNews'));
-const AdminNews = lazy(() => import('./AdminNews'));
-const Admin = lazy(() => import('./Admin'));
+const AdminEditUser = lazy(() => import("./AdminEditUser"));
+const AdminUsers = lazy(() => import("./AdminUsers"));
+const AdminEditCareers = lazy(() => import("./AdminEditCareers"));
+const AdminCareers = lazy(() => import("./AdminCareers"));
+const AdminEditNews = lazy(() => import("./AdminEditNews"));
+const AdminNews = lazy(() => import("./AdminNews"));
+const Admin = lazy(() => import("./Admin"));
 
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>

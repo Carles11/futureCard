@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import { NAVIGATION, BACKGROUND_IMG } from "@src/utils/constants";
 
-import Box from '@src/css/blocks/Box/index';
-import {
-  Article, H3, Hr, P,
-} from '@src/css/elements/index';
+import Box from "@src/css/blocks/Box/index";
+import { Article, H3, Hr, P } from "@src/css/elements/index";
 
 /**
  * About View Component
@@ -18,7 +16,7 @@ import {
  * @param {Object} props.DIC
  */
 const About = ({ DIC }) => {
-  const sections = NAVIGATION.find(nav => nav.label === 'ABOUT');
+  const sections = NAVIGATION.find(nav => nav.label === "ABOUT");
 
   return (
     <ViewLayout
@@ -37,7 +35,7 @@ const About = ({ DIC }) => {
       </Article>
       <Article centered>
         <Box>
-          {sections.child.map((section) => {
+          {sections.child.map(section => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
 
@@ -57,7 +55,7 @@ const About = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem" withAlign="center">
-                  {`${DIC[CONTENT].split('.')[1]}.`}
+                  {`${DIC[CONTENT].split(".")[1]}.`}
                 </P>
               </Box.Link>
             );
@@ -75,15 +73,15 @@ About.propTypes = {
     ABOUT_US_DESCRIPTION_PAGE: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_0: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_1: PropTypes.string.isRequired,
-    ABOUT_US_CONTENT_2: PropTypes.string.isRequired,
-  }).isRequired,
+    ABOUT_US_CONTENT_2: PropTypes.string.isRequired
+  }).isRequired
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data,
+  DIC: dictionary.data
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(About);

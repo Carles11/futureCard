@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import Header from './Header';
-import Row from './Row';
-import Body from './Body';
-import Column from './Column';
+import Header from "./Header";
+import Row from "./Row";
+import Body from "./Body";
+import Column from "./Column";
 
 const Table = styled.table`
   display: table;
@@ -14,8 +14,9 @@ const Table = styled.table`
   border-spacing: 0;
   margin: 1rem 0 1rem 0;
 
-  ${props => props.margin
-    && css`
+  ${props =>
+    props.margin &&
+    css`
       margin: ${props.margin};
     `}
 `;

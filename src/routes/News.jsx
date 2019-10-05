@@ -15,8 +15,8 @@ import {
   Article, P, Grid, H4, Hr,
 } from '@src/css/elements';
 
-import { getLocation } from '@src/actions/location/actions';
-import { getNews } from '@src/actions/news/actionsSideEffects';
+import { getLocation } from "@src/actions/location/actions";
+import { getNews } from "@src/actions/news/actionsSideEffects";
 
 const News = ({
   DIC,
@@ -25,7 +25,7 @@ const News = ({
   news,
   count,
   handleLocation,
-  handleGetNews,
+  handleGetNews
 }) => {
   const [loading, setLoading] = useState(false);
   useLocation(path, location, handleLocation);
@@ -46,8 +46,8 @@ const News = ({
       <Helmet
         title={DIC.NAV_LABEL_NEWS}
         meta={[
-          { name: 'description', content: `${DIC.NEWS_DESCRIPTION}` },
-          { property: 'og:title', content: 'welcome to futurecard.com' },
+          { name: "description", content: `${DIC.NEWS_DESCRIPTION}` },
+          { property: "og:title", content: "welcome to futurecard.com" }
         ]}
       />
       <HeaderSection title={DIC.NEWS_TITLE} subtitle={DIC.NEWS_DESCRIPTION} />
@@ -108,35 +108,35 @@ News.propTypes = {
     NEWS_TITLE: PropTypes.string.isRequired,
     NEWS_SUBTITLE: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
-    NEWS_CONTENT: PropTypes.string.isRequired,
+    NEWS_CONTENT: PropTypes.string.isRequired
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string.isRequired
   }),
   news: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
-    }),
+      _id: PropTypes.string
+    })
   ),
   handleGetNews: PropTypes.func.isRequired,
-  count: PropTypes.number,
+  count: PropTypes.number
 };
 
 const mapStateToProps = ({ dictionary, location, news }) => ({
   DIC: dictionary.data,
   path: location.path,
   news: news.data,
-  count: news.count,
+  count: news.count
 });
 
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
-  handleGetNews: () => dispatch(getNews()),
+  handleGetNews: () => dispatch(getNews())
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(News);

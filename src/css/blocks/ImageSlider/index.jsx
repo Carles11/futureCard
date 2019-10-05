@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Figure from './Figure';
-import Image from './Image';
+import Figure from "./Figure";
+import Image from "./Image";
 
 const ImageSlider = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const ImageSlider = styled.div`
   padding: 2rem 0;
   min-height: 40vh;
 
-  @media only screen and (min-width: 768px) and (max-width: 1024px){
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
     min-height: 25vh;
   }
 

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import withTheme from '@src/css/Theme';
+import styled, { css } from "styled-components";
+import withTheme from "@src/css/Theme";
 
 const Input = styled.input`
   border: none;
@@ -8,8 +8,9 @@ const Input = styled.input`
   margin: 10px 17px 17px 17px;
   color: ${props => props.theme.fontColor};
   outline: none;
-  ${props => props.textarea
-    && css`
+  ${props =>
+    props.textarea &&
+    css`
       height: 100px;
     `}
   input:invalid {

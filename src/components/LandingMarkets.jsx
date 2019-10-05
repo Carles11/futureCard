@@ -1,67 +1,67 @@
 /* eslint-disable import/no-duplicates */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import HeaderSection from '@src/components/HeaderSection';
-import { BACKGROUND_IMG } from '@src/utils/constants';
+import HeaderSection from "@src/components/HeaderSection";
+import { BACKGROUND_IMG } from "@src/utils/constants";
 
-import PAYMENT from '@src/assets/icons/futurecard-payment.png';
-import IDENTIFICATION from '@src/assets/icons/futurecard-identification.png';
-import TRANSPORT_ACCESS from '@src/assets/icons/futurecard-transport2.png';
-import TELECOM from '@src/assets/icons/futurecard-telecom.png';
-import LOYALTY_RETAIL from '@src/assets/icons/futurecard-loyalty-retail.png';
-import {
-  Article, Grid, H4, Hr, Image, P,
-} from '@src/css/elements';
-import Box from '@src/css/blocks/Box';
+import PAYMENT from "@src/assets/icons/futurecard-payment.png";
+import IDENTIFICATION from "@src/assets/icons/futurecard-identification.png";
+import TRANSPORT_ACCESS from "@src/assets/icons/futurecard-transport2.png";
+import TELECOM from "@src/assets/icons/futurecard-telecom.png";
+import LOYALTY_RETAIL from "@src/assets/icons/futurecard-loyalty-retail.png";
+import { Article, Grid, H4, Hr, Image, P } from "@src/css/elements";
+import Box from "@src/css/blocks/Box";
 
 const SECTIONS = [
   {
     id: 1,
-    title: 'PAYMENT',
-    link: '/our-solutions/end-to-end-card-solutions/payment',
-    icon: PAYMENT,
+    title: "PAYMENT",
+    link: "/our-solutions/end-to-end-card-solutions/payment",
+    icon: PAYMENT
   },
   {
     id: 2,
-    title: 'IDENTIFICATION',
-    link: '/our-solutions/end-to-end-card-solutions/identification',
-    icon: IDENTIFICATION,
+    title: "IDENTIFICATION",
+    link: "/our-solutions/end-to-end-card-solutions/identification",
+    icon: IDENTIFICATION
   },
   {
     id: 3,
-    title: 'TRANSPORT_ACCESS',
-    link: '/our-solutions/end-to-end-card-solutions/transport-and-access',
-    icon: TRANSPORT_ACCESS,
+    title: "TRANSPORT_ACCESS",
+    link: "/our-solutions/end-to-end-card-solutions/transport-and-access",
+    icon: TRANSPORT_ACCESS
   },
   {
     id: 4,
-    title: 'TELECOM',
-    link: '/our-solutions/end-to-end-card-solutions/telecom',
-    icon: TELECOM,
+    title: "TELECOM",
+    link: "/our-solutions/end-to-end-card-solutions/telecom",
+    icon: TELECOM
   },
   {
     id: 5,
-    title: 'LOYALTY_RETAIL',
-    link: '/our-solutions/end-to-end-card-solutions/retail_loyalty',
-    icon: LOYALTY_RETAIL,
-  },
+    title: "LOYALTY_RETAIL",
+    link: "/our-solutions/end-to-end-card-solutions/retail_loyalty",
+    icon: LOYALTY_RETAIL
+  }
 ];
 
 const LandingMarkets = ({ DIC }) => (
   <Article centered>
     <HeaderSection title={DIC.LANDING_MAP_TITLE} />
-    <Image
-      loading="lazy"
-      section
-      withMargin="-2rem 0 0"
-      src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
-      alt={DIC.INDUSTRY_FOCUS}
-    />
+    <div id="portal">
+      <Image
+        loading="lazy"
+        section
+        withMargin="-2rem 0 0"
+        src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
+        alt={DIC.INDUSTRY_FOCUS}
+      />
+    </div>
     <HeaderSection title={DIC.INDUSTRY_FOCUS} subtitle={DIC.ABOUT_US_MARKETS} />
 
     <Box>
-      {SECTIONS.map((section) => {
+      {SECTIONS.map(section => {
         const TITLE = `MARKETS_${section.title}`;
         const CONTENT = `MARKETS_DESCRIPTION_${section.title}`;
 
@@ -109,8 +109,8 @@ LandingMarkets.propTypes = {
     MARKETS_TELECOM: PropTypes.string.isRequired,
     MARKETS_DESCRIPTION_TELECOM: PropTypes.string.isRequired,
     MARKETS_LOYALTY_RETAIL: PropTypes.string.isRequired,
-    MARKETS_DESCRIPTION_LOYALTY_RETAIL: PropTypes.string.isRequired,
-  }).isRequired,
+    MARKETS_DESCRIPTION_LOYALTY_RETAIL: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default LandingMarkets;

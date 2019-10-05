@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import CONFIG from '@src/config';
+import { useState, useEffect } from "react";
+import CONFIG from "@src/config";
 
-const isAdmin = (token) => {
+const isAdmin = token => {
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
@@ -15,11 +15,11 @@ const isAdmin = (token) => {
         : false;
 
       if (
-        !!response
-        && !!Object.keys(response).length
-        && response.token
-        && response.username
-        && response.id
+        !!response &&
+        !!Object.keys(response).length &&
+        response.token &&
+        response.username &&
+        response.id
       ) {
         return setAdmin(response);
       }

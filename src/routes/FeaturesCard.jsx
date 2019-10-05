@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import { FiArrowRightCircle } from 'react-icons/fi';
-import Icon from '@src/components/Icon';
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import CardsList from '@src/components/CardsList';
-import { scrollToFn } from '@src/utils/helpers';
-import { BACKGROUND_IMG } from '@src/utils/constants';
+import { FiArrowRightCircle } from "react-icons/fi";
+import Icon from "@src/components/Icon";
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import CardsList from "@src/components/CardsList";
+import { scrollToFn } from "@src/utils/helpers";
+import { BACKGROUND_IMG } from "@src/utils/constants";
 
-import {
-  A, Article, Button, P,
-} from '@src/css/elements';
+import { A, Article, Button, P } from "@src/css/elements";
 
-import { getFeatures } from '@src/actions/features/actionsSideEffects';
+import { getFeatures } from "@src/actions/features/actionsSideEffects";
 
 /**
  * FeaturesCard View Component
@@ -28,10 +26,10 @@ const FeaturesCard = ({
   language,
   features,
   featuresLang,
-  handleGetFeatures,
+  handleGetFeatures
 }) => {
   const [title, ...first] = DIC.CARD_FEATURES_CARD_MATERIALS_DESCRIPTION.split(
-    '.',
+    "."
   );
   const [para1, para2, ...second] = first;
   const [para3, para4, ...third] = second;
@@ -39,7 +37,7 @@ const FeaturesCard = ({
 
   useEffect(() => {
     if (!features.length || featuresLang !== language) {
-      handleGetFeatures('materials', language);
+      handleGetFeatures("materials", language);
     }
   }, [language]);
 
@@ -90,7 +88,7 @@ FeaturesCard.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_CARDS: PropTypes.string.isRequired,
     NAV_LABEL_CARD_MATERIALS: PropTypes.string.isRequired,
-    CARD_FEATURES_CARD_MATERIALS_DESCRIPTION: PropTypes.string.isRequired,
+    CARD_FEATURES_CARD_MATERIALS_DESCRIPTION: PropTypes.string.isRequired
   }).isRequired,
   language: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(
@@ -98,25 +96,25 @@ FeaturesCard.propTypes = {
       _id: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string,
-    }),
+      img: PropTypes.string
+    })
   ),
   featuresLang: PropTypes.string.isRequired,
-  handleGetFeatures: PropTypes.func.isRequired,
+  handleGetFeatures: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ dictionary, features }) => ({
   DIC: dictionary.data,
   language: dictionary.language,
   features: features.materials,
-  featuresLang: features.lang,
+  featuresLang: features.lang
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetFeatures: (code, lang) => dispatch(getFeatures(code, lang)),
+  handleGetFeatures: (code, lang) => dispatch(getFeatures(code, lang))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(FeaturesCard);

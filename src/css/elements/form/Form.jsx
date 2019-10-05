@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const Form = styled.form`
   display: flex;
@@ -11,14 +11,14 @@ const Form = styled.form`
   display: flex;
   z-index: 500;
 
-  ${props => props.center
-    && css`
+  ${props =>
+    props.center &&
+    css`
       align-self: center;
       width: 70%;
     `}
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1024px) {
     width: 90%;
-
   }
 `;
 
