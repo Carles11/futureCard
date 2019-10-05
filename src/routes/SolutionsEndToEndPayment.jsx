@@ -101,7 +101,8 @@ const SolutionsEndToEndPayment = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
       description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
-      image={BACKGROUND_IMG.CARD_PAYMENT}>
+      image={BACKGROUND_IMG.CARD_PAYMENT}
+    >
       <HeaderSection
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
@@ -109,10 +110,10 @@ const SolutionsEndToEndPayment = ({
 
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
-        <Grid responsive withMargin='5rem auto 2rem' middle vertical='center'>
+        <Grid responsive withMargin="5rem auto 2rem" middle vertical="center">
           {PAYMENT_LOGOS.map(item => (
-            <Grid key={item.id} flex='1' withMargin='0 1rem 1rem'>
-              <AExternal href={item.link} target='_blank'>
+            <Grid key={item.id} flex="1" withMargin="0 1rem 1rem">
+              <AExternal href={item.link} target="_blank">
                 <Image
                   style={style}
                   logosAdapt
@@ -124,17 +125,17 @@ const SolutionsEndToEndPayment = ({
           ))}
         </Grid>
         <CardsList cards={cards} />
-        <Grid column withMargin='4rem 0 2rem'>
+        <Grid column withMargin="4rem 0 2rem">
           <HeaderSection
             title={DIC.LOOKING_FOR}
-            subtitle='Discover all the options and solutions we offer for our payment cards'
+            subtitle="Discover all the options and solutions we offer for our payment cards"
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
       </Article>
       <Article>
         <Button.Centered>
-          <A role='button' to='/our-solutions/end-to-end-card-solutions'>
+          <A role="button" to="/our-solutions/end-to-end-card-solutions">
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
             <Icon>
               <FiArrowRightCircle />
