@@ -76,11 +76,7 @@ const SolutionsCardManagement = ({ DIC }) => (
                 flex={1}
                 vertical="center"
               >
-                <Image
-                  style={style}
-                  logosAdapt
-                  src={section.icon} 
-                />
+                <Image style={style} logosAdapt src={section.icon} />
               </Grid>
               <H4 withMargin="0.5rem" centered>
                 {DIC[TITLE]}
