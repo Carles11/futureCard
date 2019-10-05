@@ -10,4 +10,12 @@ export const getNews = () => async dispatch => {
   }
 };
 
-export const setNews = () => async () => {};
+export const getOneNews = id => async dispatch => {
+  try {
+    const news = await api.get(`news/${id}`);
+    console.log(news);
+    dispatch(ACTION.getOneNews(news.data));
+  } catch (error) {
+    dispatch(ACTION.errorNews(error.message));
+  }
+};
