@@ -49,7 +49,7 @@ const CardsList = memo(
                       )}
                     </Grid>
                   )}
-                  <Grid column flex="3" withMargin="2rem 0 0">
+                  <Grid column flex="3" withMargin="1rem 0 0">
                     {!!card.group && (
                       <P flex small highlight withMargin="0 0 0.3rem" bold>
                         {!!card.group && <Span>{card.group}</Span>}
