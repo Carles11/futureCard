@@ -34,11 +34,16 @@ const ServicesDesign = lazy(() => import('./ServicesDesign'));
 const ServicesFulfillment = lazy(() => import('./ServicesFulfillment'));
 const ServicesPersonalization = lazy(() => import('./ServicesPersonalization'));
 
+/** FEATURES ROUTES */
 const Features = lazy(() => import('./Features'));
 const FeaturesCard = lazy(() => import('./FeaturesCard'));
 const FeaturesDesign = lazy(() => import('./FeaturesDesign'));
 const FeaturesTechnology = lazy(() => import('./FeaturesTechnology'));
+
+/** NEWS ROUTES */
+const NewsDetail = lazy(() => import('./NewsDetail'));
 const News = lazy(() => import('./News'));
+
 const Contact = lazy(() => import('./Contact'));
 const NotFound = lazy(() => import('./NotFound'));
 
@@ -143,7 +148,10 @@ const Routes = () => (
       />
       <Route path="/card-features" component={Features} />
 
+      {/* NEWS */}
+      <Route path="/news/:id" component={NewsDetail} />
       <Route path="/news" component={News} />
+
       <Route path="/contact-us" component={Contact} />
 
       {/* ADMIN  */}

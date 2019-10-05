@@ -35,43 +35,6 @@ const INITIAL_STATE = {
   link: '',
 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'INPUT':
-      return {
-        ...state,
-        [action.name]: action.value,
-      };
-    case 'FILE':
-      return {
-        ...state,
-        file: action.file,
-      };
-    case 'PREVIEW':
-      return {
-        ...state,
-        imagePreview: action.imagePreview,
-      };
-    case 'ALL':
-      return {
-        ...state,
-        title: action.title,
-        text: action.text,
-        file: action.file,
-        link: action.link,
-      };
-    case 'REDIRECT':
-      return {
-        ...state,
-        redirect: action.redirect,
-      };
-    default:
-      return {
-        ...state,
-      };
-  }
-}
-
 const AdminEditNews = ({
   token,
   match,
@@ -255,6 +218,43 @@ const AdminEditNews = ({
     </Fragment>
   );
 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'INPUT':
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case 'FILE':
+      return {
+        ...state,
+        file: action.file,
+      };
+    case 'PREVIEW':
+      return {
+        ...state,
+        imagePreview: action.imagePreview,
+      };
+    case 'ALL':
+      return {
+        ...state,
+        title: action.title,
+        text: action.text,
+        file: action.file,
+        link: action.link,
+      };
+    case 'REDIRECT':
+      return {
+        ...state,
+        redirect: action.redirect,
+      };
+    default:
+      return {
+        ...state,
+      };
+  }
+}
 
 AdminEditNews.propTypes = {
   match: PropTypes.shape({
