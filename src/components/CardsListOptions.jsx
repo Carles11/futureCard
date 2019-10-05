@@ -1,12 +1,10 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
-import Box from '@src/css/blocks/Box';
-import List from '@src/css/blocks/List';
+import Box from "@src/css/blocks/Box";
+import List from "@src/css/blocks/List";
 
-import {
-  A, Article, P, H3, Hr,
-} from '@src/css/elements';
+import { A, Article, P, H3, Hr } from "@src/css/elements";
 
 const CardsListOptions = memo(
   ({ options }) => (
@@ -35,7 +33,7 @@ const CardsListOptions = memo(
       </Box>
     </Article>
   ),
-  areEqual,
+  areEqual
 );
 
 CardsListOptions.propTypes = {
@@ -44,9 +42,9 @@ CardsListOptions.propTypes = {
       id: PropTypes.number,
       label: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string,
-    }),
-  ).isRequired,
+      img: PropTypes.string
+    })
+  ).isRequired
 };
 
 function areEqual(prevProps, nextProps) {

@@ -1,10 +1,10 @@
-import * as ACTION from '../actions/features/actionsType';
+import * as ACTION from "../actions/features/actionsType";
 
 const INITIAL_STATE = {
-  lang: '',
+  lang: "",
   technology: [],
   materials: [],
-  design: [],
+  design: []
 };
 
 export default function featuresReducer(state = INITIAL_STATE, action) {
@@ -13,11 +13,11 @@ export default function featuresReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         lang: action.lang,
-        [action.code]: [...action.features],
+        [action.code]: [...action.features]
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }

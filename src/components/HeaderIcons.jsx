@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const ButtonIconMenu = styled.button`
   position: absolute;
@@ -36,24 +36,27 @@ const Bar = styled.div`
 
 const Bar1 = styled(Bar)`
   transform-origin: top left;
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       transform: rotate(45deg);
     `}
 `;
 
 const Bar2 = styled(Bar)`
   opacity: 1;
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       opacity: 0;
     `}
 `;
 
 const Bar3 = styled(Bar)`
   transform-origin: bottom left;
-  ${props => props.active
-    && css`
+  ${props =>
+    props.active &&
+    css`
       transform: rotate(-45deg);
     `}
 `;
@@ -88,7 +91,7 @@ const IconMenu = ({ handleIconClick, visibility, theme }) => {
 IconMenu.propTypes = {
   handleIconClick: PropTypes.func.isRequired,
   visibility: PropTypes.bool.isRequired,
-  theme: PropTypes.shape({}).isRequired,
+  theme: PropTypes.shape({}).isRequired
 };
 
 export default withTheme(IconMenu);

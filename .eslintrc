@@ -1,5 +1,10 @@
 {
-  "extends": ["airbnb", "plugin:compat/recommended"],
+  "extends": [
+    "airbnb",
+    "plugin:compat/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
   "plugins": ["compat"],
   "rules": {
     "semi": [1, "always"],

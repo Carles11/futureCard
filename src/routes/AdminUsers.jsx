@@ -1,25 +1,23 @@
-import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { FiTrash, FiEdit } from 'react-icons/fi';
+import React, { Fragment, useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { FiTrash, FiEdit } from "react-icons/fi";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import Loader from '@src/components/Loader';
-import isAdmin from '@src/hooks/isAdmin';
-import { getUsers, deleteUser } from '@src/actions/admin/actionsSideEffects';
-import { resetUser } from '@src/actions/admin/actions';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import Loader from "@src/components/Loader";
+import isAdmin from "@src/hooks/isAdmin";
+import { getUsers, deleteUser } from "@src/actions/admin/actionsSideEffects";
+import { resetUser } from "@src/actions/admin/actions";
 
-import Table from '@src/css/blocks/Table';
-import {
-  A, Article, Button, Grid, P, H4, Hr,
-} from '@src/css/elements';
+import Table from "@src/css/blocks/Table";
+import { A, Article, Button, Grid, P, H4, Hr } from "@src/css/elements";
 
 const COLUMNS = [
-  { key: 0, label: 'User name', width: 40 },
-  { key: 1, label: 'FullName', width: 30 },
-  { key: 3, label: 'Edit', width: 30 },
+  { key: 0, label: "User name", width: 40 },
+  { key: 1, label: "FullName", width: 30 },
+  { key: 3, label: "Edit", width: 30 }
 ];
 
 const AdminUser = ({
@@ -29,14 +27,14 @@ const AdminUser = ({
   message,
   handleGetUsers,
   handleRemoveUser,
-  handleResetUser,
+  handleResetUser
 }) => {
   const admin = isAdmin(token);
 
   useEffect(() => {
     handleResetUser();
 
-    if (!users.length || message === 'UPDATED') {
+    if (!users.length || message === "UPDATED") {
       handleGetUsers();
     }
   }, [users]);
@@ -44,7 +42,7 @@ const AdminUser = ({
   function removeUser(id) {
     if (id === admin.id) {
       // eslint-disable-next-line no-restricted-globals
-      return alert('You cannot remove the active Admin User!');
+      return alert("You cannot remove the active Admin User!");
     }
 
     if (
@@ -159,30 +157,30 @@ AdminUser.propTypes = {
   token: PropTypes.string.isRequired,
   users: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
-    }),
+      _id: PropTypes.string
+    })
   ),
   message: PropTypes.string,
   count: PropTypes.number,
   handleRemoveUser: PropTypes.func.isRequired,
   handleResetUser: PropTypes.func.isRequired,
-  handleGetUsers: PropTypes.func.isRequired,
+  handleGetUsers: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   users: admin.users.data,
   count: admin.users.count,
-  message: admin.users.message,
+  message: admin.users.message
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetUsers: () => dispatch(getUsers()),
   handleRemoveUser: id => dispatch(deleteUser(id)),
-  handleResetUser: () => dispatch(resetUser()),
+  handleResetUser: () => dispatch(resetUser())
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(AdminUser);

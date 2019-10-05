@@ -1,10 +1,10 @@
-import * as ACTION from '../actions/careers/actionsType';
+import * as ACTION from "../actions/careers/actionsType";
 
 const INITIAL_STATE = {
   success: false,
   data: [],
   item: {},
-  count: 0,
+  count: 0
 };
 
 export default function careerReducer(state = INITIAL_STATE, action) {
@@ -14,11 +14,11 @@ export default function careerReducer(state = INITIAL_STATE, action) {
         ...state,
         data: action.careers.data,
         success: action.careers.success,
-        count: action.careers.count,
+        count: action.careers.count
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }

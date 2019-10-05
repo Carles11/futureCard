@@ -1,21 +1,19 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import { FiArrowRightCircle } from 'react-icons/fi';
-import Icon from '@src/components/Icon';
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
-import { BACKGROUND_IMG } from '@src/utils/constants';
+import { FiArrowRightCircle } from "react-icons/fi";
+import Icon from "@src/components/Icon";
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
+import { BACKGROUND_IMG } from "@src/utils/constants";
 
 // import Box from '@src/css/blocks/Box';
-import List from '@src/css/blocks/List';
-import {
-  A, Article, Button, P,
-} from '@src/css/elements';
+import List from "@src/css/blocks/List";
+import { A, Article, Button, P } from "@src/css/elements";
 
 const AboutFacility = ({ DIC }) => {
-  const [title, ...first] = DIC.ABOUT_US_FACILITY_DESCRIPTION.split('.');
+  const [title, ...first] = DIC.ABOUT_US_FACILITY_DESCRIPTION.split(".");
   const [para1, para2, ...second] = first;
   const [para3, para4, ...third] = second;
   const [para5, para6] = third;
@@ -94,17 +92,17 @@ AboutFacility.propTypes = {
     ABOUT_US_FACILITY_LIST: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number,
-        text: PropTypes.string,
-      }),
-    ),
-  }).isRequired,
+        text: PropTypes.string
+      })
+    )
+  }).isRequired
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data,
+  DIC: dictionary.data
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(AboutFacility);

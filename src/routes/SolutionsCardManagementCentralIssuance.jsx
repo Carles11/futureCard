@@ -1,16 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { FiArrowRightCircle } from 'react-icons/fi';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { FiArrowRightCircle } from "react-icons/fi";
 
-import ViewLayout from '@src/components/ViewLayout';
-import HeaderSection from '@src/components/HeaderSection';
+import ViewLayout from "@src/components/ViewLayout";
+import HeaderSection from "@src/components/HeaderSection";
 
-import {
-  A, Article, Button, P,
-} from '@src/css/elements';
-import { BACKGROUND_IMG } from '@src/utils/constants';
-import Icon from '@src/components/Icon';
+import { A, Article, Button, P } from "@src/css/elements";
+import { BACKGROUND_IMG } from "@src/utils/constants";
+import Icon from "@src/components/Icon";
 /**
  * SolutionsCardManagementCentralIssuance View Component
  *
@@ -19,7 +17,7 @@ import Icon from '@src/components/Icon';
  */
 const SolutionsCardManagementCentralIssuance = ({ DIC }) => {
   const [title, ...first] = DIC.MANAGEMENT_DESCRIPTION_CENTRAL_ISSUANCE.split(
-    '.',
+    "."
   );
   const [para1, para2, ...second] = first;
   const [para3, para4, ...third] = second;
@@ -56,15 +54,15 @@ SolutionsCardManagementCentralIssuance.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     MANAGEMENT_CENTRAL_ISSUANCE: PropTypes.string.isRequired,
-    MANAGEMENT_DESCRIPTION_CENTRAL_ISSUANCE: PropTypes.string.isRequired,
-  }).isRequired,
+    MANAGEMENT_DESCRIPTION_CENTRAL_ISSUANCE: PropTypes.string.isRequired
+  }).isRequired
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data,
+  DIC: dictionary.data
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(SolutionsCardManagementCentralIssuance);

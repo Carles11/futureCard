@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import registerServiceWorker from './registerServiceWorker';
-import store from './store';
+import registerServiceWorker from "./registerServiceWorker";
+import store from "./store";
 
-import App from './App';
-import './css/App.css';
-import './assets/favicon/favicon.ico';
+import App from "./App";
+import "./css/App.css";
+import "./assets/favicon/favicon.ico";
 
-const elem = document.querySelector('.root');
+const elem = document.querySelector(".root");
 
 const wrapApp = (AppComponent, appStore) => (
   <Router>

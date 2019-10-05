@@ -1,6 +1,6 @@
 // @flow
 
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const Item = styled.div`
   flex: 1;
@@ -15,20 +15,23 @@ const Item = styled.div`
     margin-right: 0;
   }
 
-  ${props => props.with_size
-    && css`
+  ${props =>
+    props.with_size &&
+    css`
       flex: auto;
       width: ${props.with_size};
     `}
 
-  ${props => props.with_background
-    && css`
+  ${props =>
+    props.with_background &&
+    css`
       background: #fafafa;
       border: 1px solid #fafafa;
     `}
 
-  ${props => props.withScale
-    && css`
+  ${props =>
+    props.withScale &&
+    css`
       transform: scale(1);
       box-shadow: 0;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;

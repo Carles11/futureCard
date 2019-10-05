@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const Navigation = styled.nav`
   position: absolute;
@@ -18,8 +18,9 @@ const Navigation = styled.nav`
     width: 100%;
     height: 100vh;
 
-    ${props => props.visible
-      && css`
+    ${props =>
+      props.visible &&
+      css`
         display: flex;
       `}
   }
