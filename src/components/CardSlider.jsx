@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-
 import ImageSlider from '@src/css/blocks/ImageSlider';
 import { Grid } from '@src/css/elements';
 import useInterval from '@src/hooks/useInterval';
@@ -29,9 +28,13 @@ const CardSlider = ({ cards, total, handleGetAllCards }) => {
       {!!cards && cards.length ? (
         <ImageSlider>
           {cards.slice(count, count + 2).map(card => (
-            <ImageSlider.Figure key={card._id}>
-              <ImageSlider.Image src={card.img} alt={card.name} />
-            </ImageSlider.Figure>
+            <Fragment key={card._id}>
+              {!!card.img && (
+                <ImageSlider.Figure>
+                  <ImageSlider.Image src={card.img} alt={card.name} />
+                </ImageSlider.Figure>
+              )}
+            </Fragment>
           ))}
         </ImageSlider>
       ) : (
