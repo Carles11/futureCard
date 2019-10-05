@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { FiArrowRightCircle } from "react-icons/fi";
 
 import Loader from "@src/components/Loader";
 import HeaderSection from "@src/components/HeaderSection";
@@ -10,10 +9,9 @@ import useLocation from "@src/hooks/useLocation";
 import ViewLayout from "@src/components/ViewLayout";
 import { BACKGROUND_IMG } from "@src/utils/constants";
 import { formatDate } from "@src/utils/helpers";
-import Icon from "@src/components/Icon";
 
 import Box from "@src/css/blocks/Box";
-import { Article, P, Grid, H4, Hr, A } from "@src/css/elements";
+import { Article, P, Grid, H4, Hr } from "@src/css/elements";
 
 import { getLocation } from "@src/actions/location/actions";
 import { getNews } from "@src/actions/news/actionsSideEffects";
@@ -93,16 +91,6 @@ const News = ({
                   withAlign="center"
                 />
                 <P withPadding="0 1rem 0.75rem">{item.text}</P>
-                {!!item.link && (
-                  <Grid withMargin="0 0 1.5rem" vertical="center">
-                    <A role="button" to={item.link}>
-                      {DIC.LEARN_MORE}
-                      <Icon>
-                        <FiArrowRightCircle />
-                      </Icon>
-                    </A>
-                  </Grid>
-                )}
               </Box.Link>
             ))}
           </Box>
