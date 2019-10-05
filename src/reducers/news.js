@@ -20,7 +20,7 @@ export default function newsReducer(state = INITIAL_STATE, action) {
       console.log(action);
       return {
         ...state,
-        item: { ...action.item },
+        item: { ...action.item }
       };
     default:
       return {

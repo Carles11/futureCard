@@ -10,7 +10,7 @@ export const getNews = () => async dispatch => {
   }
 };
 
-export const getOneNews = id => async (dispatch) => {
+export const getOneNews = id => async dispatch => {
   try {
     const news = await api.get(`news/${id}`);
     console.log(news);

@@ -217,37 +217,37 @@ const AdminEditNews = ({
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'INPUT':
+    case "INPUT":
       return {
         ...state,
-        [action.name]: action.value,
+        [action.name]: action.value
       };
-    case 'FILE':
+    case "FILE":
       return {
         ...state,
-        file: action.file,
+        file: action.file
       };
-    case 'PREVIEW':
+    case "PREVIEW":
       return {
         ...state,
-        imagePreview: action.imagePreview,
+        imagePreview: action.imagePreview
       };
-    case 'ALL':
+    case "ALL":
       return {
         ...state,
         title: action.title,
         text: action.text,
         file: action.file,
-        link: action.link,
+        link: action.link
       };
-    case 'REDIRECT':
+    case "REDIRECT":
       return {
         ...state,
-        redirect: action.redirect,
+        redirect: action.redirect
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 }

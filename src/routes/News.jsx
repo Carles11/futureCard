@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import Helmet from "react-helmet";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import Loader from '@src/components/Loader';
-import HeaderSection from '@src/components/HeaderSection';
-import useLocation from '@src/hooks/useLocation';
-import ViewLayout from '@src/components/ViewLayout';
-import { BACKGROUND_IMG } from '@src/utils/constants';
-import { formatDate } from '@src/utils/helpers';
+import Loader from "@src/components/Loader";
+import HeaderSection from "@src/components/HeaderSection";
+import useLocation from "@src/hooks/useLocation";
+import ViewLayout from "@src/components/ViewLayout";
+import { BACKGROUND_IMG } from "@src/utils/constants";
+import { formatDate } from "@src/utils/helpers";
 
-import Box from '@src/css/blocks/Box';
-import {
-  Article, P, Grid, H4, Hr,
-} from '@src/css/elements';
+import Box from "@src/css/blocks/Box";
+import { Article, P, Grid, H4, Hr } from "@src/css/elements";
 
 import { getLocation } from "@src/actions/location/actions";
 import { getNews } from "@src/actions/news/actionsSideEffects";
