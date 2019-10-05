@@ -29,6 +29,13 @@ const P = styled.p`
       }
   `}
 
+  ${props => props.flex
+    && css`
+      display: flex;
+      align-items: center;
+    `}
+
+
   ${props => !!props.bold
     && css`
       font-weight: 600;

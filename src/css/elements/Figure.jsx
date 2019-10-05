@@ -34,15 +34,23 @@ const Figure = styled.figure`
         padding: 0;
       `}
 
-      ${props => props.preview
-        && css`
-          position: relative;
-          width: 100%;
-          height: auto;
-          overflow: hidden;
-          margin: 0.5rem 0 0;
-          padding: 0;
-        `}
+    ${props => props.preview
+      && css`
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin: 0.5rem 0 0;
+        padding: 0;
+      `}
+    
+    ${props => props.carousel
+      && css`
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0 0.25rem 0 0;
+      `}
       
 `;
 

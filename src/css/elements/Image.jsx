@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import withTheme from '@src/css/Theme';
+
 const Image = styled.img`
   ${props => props.section
     && css`
@@ -17,12 +19,11 @@ const Image = styled.img`
         transform: translateX(-50%);
       }
     `}
+
   ${props => props.withMargin
     && css`
       margin: ${props.withMargin};
     `}
-
-
 
     ${props => props.graphics
       && css`
@@ -32,8 +33,6 @@ const Image = styled.img`
           width: 60%;
         }
       `}
-
-
 
   ${props => props.responsive
     && css`
@@ -53,6 +52,36 @@ const Image = styled.img`
       margin: 0;
       padding: 0;
     `}
+
+  ${props => props.carousel
+    && css`
+      opacity: 0.5;
+      transform: scale(1);
+      transition: opacity ease-in-out 0.1s, transform ease-in-out 0.1s;
+      cursor: pointer;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1
+        transform: scale(1.2);
+      }
+
+      ${props.active
+        && css`
+          opacity: 1 !important;
+          transform: scale(1.2) !important;
+        `}
+
+      @media only screen and (max-width: 1024px) {
+        height: auto;
+        width: 100%;
+      @media only screen and (max-width: 1024px) {
+        left: 50%;
+      }
+    `}
+
+  
 `;
 
-export default Image;
+export default withTheme(Image);
