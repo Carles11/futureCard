@@ -17,7 +17,6 @@ export default function newsReducer(state = INITIAL_STATE, action) {
         count: action.news.count
       };
     case ACTION.GET_ONE_NEWS:
-      console.log(action);
       return {
         ...state,
         item: { ...action.item }
