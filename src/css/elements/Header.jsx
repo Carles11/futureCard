@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 const Header = styled.header`
   padding: 1rem;
 
-
   ${props => props.background
     && css`
     padding: 5%;
@@ -17,6 +16,13 @@ const Header = styled.header`
     @media only screen and (max-width: 1024px) {
       width: 100%;
       padding: 1.5rem;
+    }
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+      padding: 1.5rem;
+    }
+    @media only screen and (max-width: 400px) {
+     
     }
   `}
 

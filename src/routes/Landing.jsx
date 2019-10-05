@@ -66,16 +66,21 @@ const Landing = ({
       />
       <Background image={backgroundImg}>
         <Header background>
-          <H1 invertColor sansSerif firstCapital>
+          <H1
+            invertColor
+            sansSerif
+            firstCapital
+            withMargin="8rem auto auto auto"
+          >
             <Span invert>FutureCard, </Span>
             <br />
             {DIC.LANDING_TITLE}
           </H1>
-          <Hr withSize="50%" withMargin="0 0 2rem" />
-          <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
+          <Hr withSize="50%" withMargin="1rem 0 1rem" />
+          <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
             {DIC.LANDING_SUBTITLE}
           </H2>
-          <A role="button" to="/about-futurecard/">
+          <A withmargin="1rem 0 2rem 0" role="button" to="/about-futurecard/">
             {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
             <Icon>
               <FiArrowRightCircle />

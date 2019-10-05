@@ -13,7 +13,6 @@ import Layout from '@src/css/blocks/Layout';
 import { logOut } from '@src/actions/admin/actionsSideEffects';
 import HeaderIcons from './HeaderIcons';
 
-
 const Header = ({
   LANG: language, DIC, path, token, handleCloseSession,
 }) => {

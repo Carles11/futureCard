@@ -29,7 +29,7 @@ const H1 = styled.h1`
 
     ${props => props.firstCapital
       && css`
-        textTransform: capitalize;
+        text-transform: capitalize;
       `}
   ${props => props.withSize
     && css`

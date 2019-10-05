@@ -14,7 +14,7 @@ import {
 } from '@src/utils/constants';
 
 import {
-  Article, P, A, Button, Grid,
+  Article, P, A, Button, Grid, H3,
 } from '@src/css/elements';
 import Icon from '@src/components/Icon';
 import { getCards } from '@src/actions/cards/actionsSideEffects';
@@ -52,11 +52,16 @@ const SolutionsEndToEndTransport = ({
       />
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CONTENT}</P>
+        <H3>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CARDS_DESCRIPTION}</H3>
+        <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CARDS_CONTENT}</P>
+        <H3>{DIC.SOLUTIONS_END_TO_END_ACCESS_CARDS_DESCRIPTION}</H3>
+        <P>{DIC.SOLUTIONS_END_TO_END_ACCESS_CARDS_CONTENT}</P>
+
         <CardsList cards={cards} />
         <Grid column withMargin="4rem 0 2rem">
           <HeaderSection
             title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our Transport & Transport Cards"
+            subtitle="Discover all the options and solutions we offer for our Transport & Access Cards"
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
@@ -78,6 +83,7 @@ const SolutionsEndToEndTransport = ({
 
 SolutionsEndToEndTransport.propTypes = {
   DIC: PropTypes.shape({
+    NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_TRANSPORT_CONTENT: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_TRANSPORT_DESCRIPTION: PropTypes.string.isRequired,
