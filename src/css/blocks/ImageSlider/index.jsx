@@ -12,8 +12,14 @@ const ImageSlider = styled.div`
   padding: 2rem 0;
   min-height: 40vh;
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (min-width: 768px) and (max-width: 1024px){
+    min-height: 25vh;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
     width: 100%;
+    min-height: 20vh;
   }
 `;
 

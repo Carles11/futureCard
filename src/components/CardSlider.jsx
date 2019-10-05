@@ -27,15 +27,17 @@ const CardSlider = ({ cards, total, handleGetAllCards }) => {
     <Fragment>
       {!!cards && cards.length ? (
         <ImageSlider>
-          {cards.slice(count, count + 2).map(card => (
-            <Fragment key={card._id}>
-              {!!card.img && (
-                <ImageSlider.Figure>
-                  <ImageSlider.Image src={card.img} alt={card.name} />
-                </ImageSlider.Figure>
-              )}
-            </Fragment>
-          ))}
+          {cards
+            .filter(item => item.img)
+            .slice(count, count + 2)
+            .map(card => (
+              <ImageSlider.Figure key={card._id}>
+                <ImageSlider.Image
+                  src={card.img}
+                  alt={card.name}
+                />
+              </ImageSlider.Figure>
+            ))}
         </ImageSlider>
       ) : (
         <Grid loader>
