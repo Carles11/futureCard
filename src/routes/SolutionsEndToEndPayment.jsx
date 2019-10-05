@@ -28,6 +28,8 @@ import VISA from '@src/assets/image/payment-logos/visa-card-logo-9.png';
 import MASTERCARD from '@src/assets/image/payment-logos/mastercard-logo.png';
 import UNIONPAY from '@src/assets/image/payment-logos/unionpay-logo.png';
 import PAYPAK from '@src/assets/image/payment-logos/paypak-logo.png';
+import GIMAC from '@src/assets/image/payment-logos/gimac-logo.png';
+import MERCURY from '@src/assets/image/payment-logos/mercury-logo.png';
 
 import { getCards } from '@src/actions/cards/actionsSideEffects';
 
@@ -62,6 +64,18 @@ const PAYMENT_LOGOS = [
     src: PAYPAK,
     link: 'https://1link.net.pk/pay-pak/',
   },
+  {
+    id: 4,
+    label: 'GIMAC',
+    src: GIMAC,
+    link: 'https://gimac-afr.com/',
+  },
+  {
+    id: 5,
+    label: 'MERCURY',
+    src: MERCURY,
+    link: 'https://www.mercury-pay.com/',
+  },
 ];
 
 const SolutionsEndToEndPayment = ({
@@ -87,8 +101,7 @@ const SolutionsEndToEndPayment = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_PAYMENT}`}
       description={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
-      image={BACKGROUND_IMG.CARD_PAYMENT}
-    >
+      image={BACKGROUND_IMG.CARD_PAYMENT}>
       <HeaderSection
         title={DIC.NAV_LABEL_PAYMENT}
         subtitle={DIC.SOLUTIONS_END_TO_END_PAYMENT_DESCRIPTION}
@@ -96,10 +109,10 @@ const SolutionsEndToEndPayment = ({
 
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_PAYMENT_CONTENT}</P>
-        <Grid responsive withMargin="5rem auto 2rem" middle vertical="center">
+        <Grid responsive withMargin='5rem auto 2rem' middle vertical='center'>
           {PAYMENT_LOGOS.map(item => (
-            <Grid key={item.id} flex="1" withMargin="0 1rem 1rem">
-              <AExternal href={item.link} target="_blank">
+            <Grid key={item.id} flex='1' withMargin='0 1rem 1rem'>
+              <AExternal href={item.link} target='_blank'>
                 <Image
                   style={style}
                   logosAdapt
@@ -111,17 +124,17 @@ const SolutionsEndToEndPayment = ({
           ))}
         </Grid>
         <CardsList cards={cards} />
-        <Grid column withMargin="4rem 0 2rem">
+        <Grid column withMargin='4rem 0 2rem'>
           <HeaderSection
             title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our payment cards"
+            subtitle='Discover all the options and solutions we offer for our payment cards'
           />
           <CardsListOptions options={OPTIONS} />
         </Grid>
       </Article>
       <Article>
         <Button.Centered>
-          <A role="button" to="/our-solutions/end-to-end-card-solutions">
+          <A role='button' to='/our-solutions/end-to-end-card-solutions'>
             {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_END_TO_END}`}
             <Icon>
               <FiArrowRightCircle />
