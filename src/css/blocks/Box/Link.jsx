@@ -30,7 +30,7 @@ const LinkComponent = styled(
       flex: none;
       width: 425px;
       margin: 0 0.75rem 1.5rem;
-      
+
       @media only screen and (max-width: 1024px) {
         width: 100%;
       }
