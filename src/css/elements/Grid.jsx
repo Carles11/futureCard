@@ -1,8 +1,8 @@
 // @flow
 
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const Grid = styled.div`
   display: flex;

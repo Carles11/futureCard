@@ -9,7 +9,7 @@ import Icon from "@src/components/Icon";
 
 import { A, Article, Button, P, Image } from "@src/css/elements";
 import { BACKGROUND_IMG } from "@src/utils/constants";
-import IssuanceGraphic from '@src/assets/image/graphics/Instant_Issuance.png';
+import IssuanceGraphic from "@src/assets/image/graphics/Instant_Issuance.png";
 
 /**
  * SolutionsCardManagementInstantIssuance View Component

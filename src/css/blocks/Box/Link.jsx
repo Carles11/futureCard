@@ -1,8 +1,8 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
-import withTheme from '@src/css/Theme';
+import withTheme from "@src/css/Theme";
 
 const LinkComponent = styled(
   ({
@@ -17,7 +17,7 @@ const LinkComponent = styled(
     staticContext,
     theme,
     ...rest
-  }) => <Link children={children} {...rest} />,
+  }) => <Link children={children} {...rest} />
 )`
   flex: 1;
   margin: 0 0.75rem;

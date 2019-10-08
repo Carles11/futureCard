@@ -1,17 +1,17 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import Helmet from "react-helmet";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-import ContactForm from '@src/components/ContactForm';
-import { Image, Section, Article } from '@src/css/elements/index';
+import ContactForm from "@src/components/ContactForm";
+import { Image, Section, Article } from "@src/css/elements/index";
 
-import { BACKGROUND_IMG } from '@src/utils/constants';
-import Footer from '@src/components/Footer';
-import useLocation from '@src/hooks/useLocation';
-import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from "@src/utils/constants";
+import Footer from "@src/components/Footer";
+import useLocation from "@src/hooks/useLocation";
+import HeaderSection from "@src/components/HeaderSection";
 
-import { getLocation } from '@src/actions/location/actions';
+import { getLocation } from "@src/actions/location/actions";
 
 const Contact = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
@@ -21,11 +21,11 @@ const Contact = ({ DIC, path, location, handleLocation }) => {
       <Helmet
         title={DIC.NAV_LABEL_CONTACT}
         meta={[
-          { name: 'description', content: `${DIC.CONTACT_DECRIPTION}` },
+          { name: "description", content: `${DIC.CONTACT_DECRIPTION}` },
           {
-            property: 'og:title',
-            content: 'Contact page of FutureCard Industries',
-          },
+            property: "og:title",
+            content: "Contact page of FutureCard Industries"
+          }
         ]}
       />
       <HeaderSection
@@ -49,25 +49,25 @@ Contact.propTypes = {
     NAV_LABEL_CONTACT: PropTypes.string.isRequired,
     CONTACT_TITLE: PropTypes.string.isRequired,
     CONTACT_SUBTITLE: PropTypes.string.isRequired,
-    CONTACT_DESCRIPTION: PropTypes.string.isRequired,
+    CONTACT_DESCRIPTION: PropTypes.string.isRequired
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
+    pathname: PropTypes.string.isRequired
+  })
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
   DIC: dictionary.data,
-  path: location.path,
+  path: location.path
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleLocation: location => dispatch(getLocation(location)),
+  handleLocation: location => dispatch(getLocation(location))
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Contact);
