@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const LinkComponent = styled(
   ({
@@ -17,7 +17,7 @@ const LinkComponent = styled(
     staticContext,
     theme,
     ...rest
-  }) => <Link children={children} {...rest} />
+  }) => <Link children={children} {...rest} />,
 )`
   flex: 1;
   margin: 0 0.75rem;
@@ -48,7 +48,20 @@ const LinkComponent = styled(
       background: #fafafa;
       border: 1px solid #fafafa;
     `}
-
+  ${props =>
+    props.midWidth &&
+    css`
+      width: 45%;
+      @media only screen and (min-width: 1024px) and (max-width: 1080px) {
+        width: 45%;
+      }
+      @media only screen and (min-width: 690px) and (max-width: 1024px) {
+        width: 55%;
+      }
+      @media only screen and (min-width: 320px) and (max-width: 690px) {
+        width: 85%;
+      }
+    `};
   ${props =>
     props.with_scale &&
     css`
