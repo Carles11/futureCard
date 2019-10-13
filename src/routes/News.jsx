@@ -8,7 +8,7 @@ import HeaderSection from "@src/components/HeaderSection";
 import useLocation from "@src/hooks/useLocation";
 import ViewLayout from "@src/components/ViewLayout";
 import { BACKGROUND_IMG } from "@src/utils/constants";
-import { formatDate } from "@src/utils/helpers";
+import { formatDate, truncate } from "@src/utils/helpers";
 
 import Box from "@src/css/blocks/Box";
 import { Article, P, Grid, H4, Hr } from "@src/css/elements";
@@ -71,7 +71,7 @@ const News = ({
                 key={item._id}
                 with_scale="true"
                 with_background="true"
-                wrap="true"
+                wrap_space="true"
               >
                 <Box.Figure>
                   <Box.Figure.Image src={item.image} alt={item.title} />
@@ -90,7 +90,7 @@ const News = ({
                   withMargin="0 auto 1rem"
                   withAlign="center"
                 />
-                <P withPadding="0 1rem 0.75rem">{item.text}</P>
+                <P withPadding="0 1rem 0.75rem">{truncate(item.text, 25)}</P>
               </Box.Link>
             ))}
           </Box>

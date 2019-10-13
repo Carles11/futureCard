@@ -8,11 +8,26 @@ const Header = styled.header`
     css`
     padding: 5%;
     box-sizing: border-box;
-    width: 60%
+    width: 50%
     position: absolute;
     z-index: 1;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
+    opacity: 0;
+    transition: transform 2000ms cubic-bezier(.03,.94,0,.99) 0.2s,
+    opacity 1000ms cubic-bezier(.03,.94,0,.99) 0.2s;
+
+    ${props.animate &&
+      css`
+        transform: translateY(-50%);
+        opacity: 1;
+      `}
+
+    ${props.initial &&
+      css`
+        transform: translateY(-60%);
+        opacity: 0;
+      `}
 
     @media only screen and (max-width: 1024px) {
       width: 100%;
@@ -21,15 +36,28 @@ const Header = styled.header`
     @media only screen and (max-width: 1024px) {
       width: 100%;
       padding: 1.5rem;
-    }
-    @media only screen and (max-width: 400px) {
-     
     }
   `}
 
   ${props =>
     props.centered &&
     css`
+      transform: translateY(100%)
+      opacity: 0;
+      transition: transform 2000ms cubic-bezier(0.03, 0.94, 0, 0.99) 0.1s,
+        opacity 1000ms cubic-bezier(0.03, 0.94, 0, 0.99) 0.1s;
+
+      ${props.animate &&
+        css`
+          transform: translateY(-5%);
+          opacity: 1;
+        `}
+
+      ${props.initial &&
+        css`
+          transform: translateY(1%);
+          opacity: 0;
+        `}
       @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;

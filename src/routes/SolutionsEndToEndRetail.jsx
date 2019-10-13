@@ -54,16 +54,16 @@ const SolutionsEndToEndRetail = ({
       <Article centered>
         <P>{`${title}. ${para1}. `}</P>
         <P>{`${para2}.`}</P>
-
-        <CardsList cards={cards} />
-        <Grid column withMargin="4rem 0 2rem">
-          <HeaderSection
-            title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
-          />
-          <CardsListOptions options={OPTIONS} />
-        </Grid>
       </Article>
+      <CardsList cards={cards} />
+      <Grid column withMargin="4rem 0 2rem">
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our Recharge and SIM/USIM Cards"
+        />
+        <CardsListOptions options={OPTIONS} />
+      </Grid>
+
       <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">

@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import HeaderSection from "@src/components/HeaderSection";
-import { BACKGROUND_IMG } from "@src/utils/constants";
 
 import PAYMENT from "@src/assets/icons/futurecard-payment.png";
 import IDENTIFICATION from "@src/assets/icons/futurecard-identification.png";
@@ -48,16 +47,6 @@ const SECTIONS = [
 
 const LandingMarkets = ({ DIC }) => (
   <Article centered>
-    <HeaderSection title={DIC.LANDING_MAP_TITLE} />
-    <div id="portal">
-      <Image
-        loading="lazy"
-        section
-        withMargin="-2rem 0 0"
-        src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
-        alt={DIC.INDUSTRY_FOCUS}
-      />
-    </div>
     <HeaderSection title={DIC.INDUSTRY_FOCUS} subtitle={DIC.ABOUT_US_MARKETS} />
 
     <Box>
@@ -70,7 +59,7 @@ const LandingMarkets = ({ DIC }) => (
             to={section.link}
             key={section.id}
             with_scale="true"
-            with_background="true"
+            with_background_white="true"
           >
             <Grid
               withIcon

@@ -10,6 +10,7 @@ const H3 = styled.h3`
     props.invertColor &&
     css`
       color: #ffffff;
+      text-shadow: 0px 0px 3px #333333;
     `}
 
   ${props =>

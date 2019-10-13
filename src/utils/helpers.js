@@ -59,3 +59,15 @@ export function formatDate(date) {
 
   return `${day}/${month}/${year}`;
 }
+
+export function truncate(str, noWords) {
+  let final = "";
+  const strLen = str.split(" ").length;
+
+  if (strLen > noWords) final = "...";
+
+  return `${str
+    .split(" ")
+    .splice(0, noWords)
+    .join(" ")}${final}`;
+}

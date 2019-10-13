@@ -10,8 +10,8 @@ const buttonDefault = css`
   background: transparent;
   color: ${props => props.theme.mainColor};
   margin: 0;
-  padding: 0.9rem 2.25rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.7rem 2.25rem 0.6rem;
+  font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 0.05em;
   text-align: center;
@@ -70,14 +70,14 @@ const A = styled(
 
       ${props.invert &&
         css`
-          color: ${props.theme.mainColor};
-          border: 2px solid ${props.theme.primary};
-          background: ${props.theme.primary};
+          color: white;
+          border: 2px solid ${props.theme.mainColor};
+          background: ${props.theme.mainColor};
 
           &:hover {
-            color: ${props.theme.primary};
+            color: white;
             background: transparent;
-            border: 2px solid ${props.theme.primary} !important;
+            border: 2px solid white !important;
           }
         `}
     `}
@@ -132,6 +132,12 @@ const A = styled(
         background: ${props.theme.mainColor};
         border: 2px solid ${props.theme.mainColor} !important;
       }
+    `}
+
+  ${props =>
+    props.icon &&
+    css`
+      padding-right: 3rem;
     `}
 
     ${props =>

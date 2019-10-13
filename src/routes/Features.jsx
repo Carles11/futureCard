@@ -10,7 +10,9 @@ import Box from "@src/css/blocks/Box";
 import { Article, P, H4, Hr } from "@src/css/elements";
 
 const Features = ({ DIC }) => {
-  const SECTIONS = NAVIGATION.find(item => item.label === "CARDS");
+  const SOLUTIONS = NAVIGATION.find(item => item.label === "SOLUTIONS");
+  const SECTIONS = SOLUTIONS.child.find(item => item.label === "CARDS");
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS}`}
@@ -35,13 +37,6 @@ const Features = ({ DIC }) => {
                 with_scale="true"
                 with_background="true"
               >
-                {/* <Grid
-                  withIcon
-                  withPadding='2rem 2rem 1rem'
-                  flex={1}
-                  vertical='center'>
-                  {section.icon}
-                </Grid> */}
                 <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
                   {DIC[TITLE]}
                 </H4>

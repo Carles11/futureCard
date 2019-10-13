@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import HeaderSection from "@src/components/HeaderSection";
+import { BACKGROUND_IMG } from "@src/utils/constants";
 
 import Box from "@src/css/blocks/Box";
 import { Article, H3, Hr, P } from "@src/css/elements";
@@ -10,43 +11,54 @@ const SECTIONS = [
   {
     id: 1,
     title: "SOLUTIONS",
-    link: "/our-solutions"
+    link: "/our-solutions",
+    bg: BACKGROUND_IMG.OUR_SOLUTIONS
   },
   {
     id: 2,
     title: "SERVICES",
-    link: "/our-services"
+    link: "/our-services",
+    bg: BACKGROUND_IMG.OUR_SERVICES
   }
 ];
 
-const LandingAbout = ({ DIC }) => (
-  <Article centered>
+const LandingAbout = ({ DIC, h }) => (
+  <Article centered size={h}>
     <HeaderSection
       title={DIC.NAV_LABEL_OUR_BUSINESS}
       subtitle={DIC.ABOUT_US_DESCRIPTION}
     />
-
     <P>{DIC.ABOUT_US_CONTENT}</P>
-
     <Box>
-      {SECTIONS.map(section => {
+      {SECTIONS.map((section, index) => {
         const TITLE = `NAV_LABEL_${section.title}`;
         const CONTENT = `ABOUT_US_${section.title}`;
+        const isEven = index % 2 === 0;
 
         return (
           <Box.Link
             to={section.link}
             key={section.id}
-            with_background="true"
-            with_scale="true"
+            nomargin="true"
+            with_height="325px"
+            with_scale
+            style={{ backgroundImage: `url(${section.bg})` }}
           >
-            <H3 withMargin="1.5rem 0.5rem 1rem" centered>
-              {DIC[TITLE]}
-            </H3>
-            <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem">
-              {DIC[CONTENT]}
-            </P>
+            <Box.Wrapper>
+              <H3 withMargin="1.5rem 0.5rem 1rem" centered invertColor>
+                {DIC[TITLE]}
+              </H3>
+              <Hr
+                withSize="80px"
+                withMargin="0 auto 1rem"
+                withAlign="center"
+                invertColor
+              />
+              <P small withPadding="0 3rem 0.5rem" invertColor centered>
+                {DIC[CONTENT]}
+              </P>
+            </Box.Wrapper>
+            <Box.Wrapper.Bg isEven={isEven} />
           </Box.Link>
         );
       })}
@@ -67,7 +79,8 @@ LandingAbout.propTypes = {
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  h: PropTypes.number
 };
 
 export default LandingAbout;

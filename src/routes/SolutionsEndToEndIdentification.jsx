@@ -61,15 +61,16 @@ const SolutionsEndToEndIdentification = ({
         <P>{`${title}. ${para1}. ${para2}.`}</P>
         <P>{`${para3}. ${para4}. ${para5}.`}</P>
         <P>{`${para6}.`}</P>
-        <CardsList cards={cards} />
-        <Grid column withMargin="4rem 0 2rem">
-          <HeaderSection
-            title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our ID cards"
-          />
-          <CardsListOptions options={OPTIONS} />
-        </Grid>
       </Article>
+      <CardsList cards={cards} />
+      <Grid column withMargin="4rem 0 2rem">
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our ID cards"
+        />
+        <CardsListOptions options={OPTIONS} />
+      </Grid>
+
       <Article>
         <Button.Centered>
           <A role="button" to="/our-solutions/end-to-end-card-solutions">

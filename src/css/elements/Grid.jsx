@@ -88,6 +88,14 @@ const Grid = styled.div`
     css`
       margin: ${props.withMargin} !important;
     `}
+
+  ${props =>
+    props.lastWithMargin &&
+    css`
+      &:last-of-type {
+        margin: ${props.lastWithMargin} !important;
+      }
+    `}
   
   ${props =>
     props.withWidth &&

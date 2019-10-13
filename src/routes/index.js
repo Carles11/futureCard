@@ -134,6 +134,19 @@ const Routes = () => (
         path="/our-solutions/end-to-end-card-solutions"
         component={SolutionsEndToEnd}
       />
+      <Route
+        path="/our-solutions/card-features/technology-materials"
+        component={FeaturesTechnology}
+      />
+      <Route
+        path="/our-solutions/card-features/card-materials"
+        component={FeaturesCard}
+      />
+      <Route
+        path="/our-solutions/card-features/design-and-security-features"
+        component={FeaturesDesign}
+      />
+      <Route path="/our-solutions/card-features" component={Features} />
       <Route path="/our-solutions" component={Solutions} />
 
       {/* OUR SERVICES */}
@@ -151,18 +164,6 @@ const Routes = () => (
         component={ServicesFulfillment}
       />
       <Route path="/our-services" component={Services} />
-
-      {/* CARD FEATURES */}
-      <Route
-        path="/card-features/technology-materials"
-        component={FeaturesTechnology}
-      />
-      <Route path="/card-features/card-materials" component={FeaturesCard} />
-      <Route
-        path="/card-features/design-and-security-features"
-        component={FeaturesDesign}
-      />
-      <Route path="/card-features" component={Features} />
 
       {/* NEWS */}
       <Route path="/news/:id" component={NewsDetail} />

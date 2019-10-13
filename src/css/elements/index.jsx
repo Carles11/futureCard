@@ -4,6 +4,7 @@ import Address from "./Address";
 import Article from "./Article";
 import BackgroundImage from "./BackgroundImage";
 import BackgroundMap from "./BackgroundMap";
+import Container from "./Container";
 import Button from "./Button";
 import Figure from "./Figure";
 import Form from "./form/Form";
@@ -26,6 +27,7 @@ export {
   BackgroundImage,
   BackgroundMap,
   Button,
+  Container,
   Figure,
   Footer,
   Form,

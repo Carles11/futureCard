@@ -33,6 +33,11 @@ const NewsDetail = ({
   handleGetNews,
   handleGetOneNews
 }) => {
+  const content = Object.keys(item).length && item.text.split(". ");
+  const contentObj =
+    content.length &&
+    content.map((item1, index) => ({ key: index, text: `${item1}.` }));
+
   useEffect(() => {
     const { id } = match.params;
 
@@ -86,7 +91,10 @@ const NewsDetail = ({
                       </Figure>
                     </Grid>
                     <Grid column flex="2">
-                      <P>{item.text}</P>
+                      {contentObj.map(par => (
+                        <P key={par.key}>{par.text}</P>
+                      ))}
+
                       {!!item.link && (
                         <AExternal target="_blank" href={item.link}>
                           <Grid middle>

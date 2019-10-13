@@ -31,6 +31,12 @@ const P = styled.p`
   `}
 
   ${props =>
+    props.maxWidth &&
+    css`
+      max-width: ${props.maxWidth};
+    `}
+
+  ${props =>
     props.flex &&
     css`
       display: flex;
@@ -54,6 +60,7 @@ const P = styled.p`
     !!props.invertColor &&
     css`
       color: white;
+      text-shadow: 0px 0px 3px #333333;
     `}
 
   ${props =>

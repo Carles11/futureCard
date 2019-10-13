@@ -6,7 +6,7 @@ import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 import HeaderSection from "@src/components/HeaderSection";
 
 import Loader from "@src/components/Loader";
-import { formatDate } from "@src/utils/helpers";
+import { formatDate, truncate } from "@src/utils/helpers";
 
 import Box from "@src/css/blocks/Box";
 import { Button, Article, Grid, H4, Hr, P } from "@src/css/elements";
@@ -80,7 +80,7 @@ const LandingNews = ({ DIC, news, total, handleGetNews }) => {
                 {item.title}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-              <P withPadding="0 1rem 0.75rem">{item.text}</P>
+              <P withPadding="0 1rem 0.75rem">{truncate(item.text, 25)}</P>
               {/* {!!item.link && (
                 <Grid withMargin='0 0 1.5rem' vertical='center'>
                   <A role='button' to={item.link}>

@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 
 import useLocation from "@src/hooks/useLocation";
 import { NAVIGATION } from "@src/utils/constants";
+import useWindowSize from "@src/hooks/useWindowSize";
 
-import { Section } from "@src/css/elements";
+import { Container, Section } from "@src/css/elements";
 
 import { getLocation } from "@src/actions/location/actions";
 import Footer from "./Footer";
@@ -23,6 +24,7 @@ const ViewLayout = ({
   handleLocation
 }) => {
   const [breadcrumb, setBreadcrumb] = useState([]);
+  const { h: height } = useWindowSize();
 
   useEffect(() => {
     // eslint-disable-next-line no-restricted-globals
@@ -47,11 +49,14 @@ const ViewLayout = ({
           { property: "og:title", content: "welcome to futurecard.com" }
         ]}
       />
-      {!!image && <Background effect section={!!image} image={image} />}
+      {!!image && <Background section={!!image} image={image} fixed />}
       {!!breadcrumb && !!breadcrumb.length && (
         <Breadcrumb DIC={DIC} items={breadcrumb} path={path} />
       )}
-      {children}
+      <Container position={height / 2.5} nopadding>
+        {children}
+      </Container>
+
       <Footer />
     </Section>
   );

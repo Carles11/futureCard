@@ -10,10 +10,22 @@ const Hr = styled.hr`
   margin-left: 0;
   text-align: left;
 
+  
   ${props =>
-    props.withSize &&
+    props.animation &&
     css`
-      width: ${props.withSize};
+      width: 0
+      transition: width 500ms ease-in-out 0.1s;
+
+      ${props.animate &&
+        css`
+          width: ${props.animate};
+        `}
+
+      ${props.initial &&
+        css`
+          width: 0;
+        `}
     `};
 
   ${props =>
@@ -33,6 +45,14 @@ const Hr = styled.hr`
     css`
       background: #ededed;
     `}
+    
+    ${props =>
+      props.withSize &&
+      css`
+        width: ${props.withSize};
+        transition: width 500ms ease-in-out 0.1s;
+      `};
+
 `;
 
 export default withTheme(Hr);

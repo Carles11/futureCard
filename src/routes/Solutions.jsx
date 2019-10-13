@@ -11,7 +11,38 @@ import healthCard from "@src/assets/image/health_card.png";
 
 import Box from "@src/css/blocks/Box";
 import List from "@src/css/blocks/List";
-import { A, Article, H3, Hr, P, Grid, Figure, Image } from "@src/css/elements";
+import {
+  A,
+  Article,
+  H3,
+  Hr,
+  P,
+  Grid,
+  Figure,
+  Image,
+  Container
+} from "@src/css/elements";
+
+const SECTIONS = [
+  {
+    key: 16,
+    label: "END_TO_END",
+    link: "/our-solutions/end-to-end-card-solutions",
+    bg: BACKGROUND_IMG.END_TO_END
+  },
+  {
+    key: 31,
+    label: "CARDS",
+    link: "/our-solutions/card-features",
+    bg: BACKGROUND_IMG.CARD_FEATURES
+  },
+  {
+    key: 17,
+    label: "CARD_MANAGEMENT",
+    link: "/our-solutions/card-management-systems",
+    bg: BACKGROUND_IMG.CARD_MANAGEMENT
+  }
+];
 
 /**
  * Solutions View Component
@@ -35,16 +66,62 @@ const Solutions = ({ DIC }) => {
         title={DIC.NAV_LABEL_SOLUTIONS}
         subtitle={DIC.SOLUTIONS_DESCRIPTION}
       />
+      <Article centered>
+        <Box wrap>
+          {SECTIONS.map((section, index) => {
+            const TITLE = `NAV_LABEL_${section.label}`;
+            const CONTENT = `SOLUTIONS_${section.label}_DESCRIPTION`;
+            const isEven = index % 2 === 0;
+
+            return (
+              <Box.Link
+                wrap
+                key={section.key}
+                to={section.link}
+                nomargin="true"
+                with_height="325px"
+                with_scale="true"
+                style={{ backgroundImage: `url(${section.bg})` }}
+              >
+                <Box.Wrapper>
+                  <H3 withMargin="1.5rem 0.5rem 1rem" centered invertColor>
+                    {DIC[TITLE]}
+                  </H3>
+                  <Hr
+                    withSize="80px"
+                    withMargin="0 auto 1rem"
+                    withAlign="center"
+                    invertColor
+                  />
+                  <P
+                    small
+                    withPadding="0 1rem 0.5rem"
+                    withAlign="center"
+                    invertColor
+                    centered
+                  >
+                    {DIC[CONTENT]}
+                  </P>
+                </Box.Wrapper>
+                <Box.Wrapper.Bg isEven={isEven} />
+              </Box.Link>
+            );
+          })}
+        </Box>
+      </Article>
+      <Container background nopadding>
+        <Article centered>
+          <P>{`${title}. ${para1}. ${para2}.`}</P>
+          <P>{`${para3}. ${para4}.`}</P>
+          <P>{`${third}.`}</P>
+        </Article>
+      </Container>
 
       <Article centered>
-        <P>{`${title}. ${para1}. ${para2}.`}</P>
-        <P>{`${para3}. ${para4}.`}</P>
-        <P>{`${third}.`}</P>
         <Box>
           {sections.child.map(section => {
             const TITLE = `NAV_LABEL_${section.label}`;
             const CONTENT = `SOLUTIONS_${section.label}_CONTENT`;
-
             return (
               <Box.Item key={section.key} with_background="true">
                 <H3 withMargin="1.5rem 0.5rem 1rem" centered>

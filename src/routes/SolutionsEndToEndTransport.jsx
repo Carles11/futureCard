@@ -50,16 +50,15 @@ const SolutionsEndToEndTransport = ({
       />
       <Article centered>
         <P>{DIC.SOLUTIONS_END_TO_END_TRANSPORT_CONTENT}</P>
-
-        <CardsList cards={cards} />
-        <Grid column withMargin="4rem 0 2rem">
-          <HeaderSection
-            title={DIC.LOOKING_FOR}
-            subtitle="Discover all the options and solutions we offer for our Transport & Access Cards"
-          />
-          <CardsListOptions options={OPTIONS} />
-        </Grid>
       </Article>
+      <CardsList cards={cards} />
+      <Grid column withMargin="4rem 0 2rem">
+        <HeaderSection
+          title={DIC.LOOKING_FOR}
+          subtitle="Discover all the options and solutions we offer for our Transport & Access Cards"
+        />
+        <CardsListOptions options={OPTIONS} />
+      </Grid>
 
       <Article>
         <Button.Centered>

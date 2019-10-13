@@ -71,7 +71,7 @@ const Careers = ({ DIC, careers, count, handleGetCareers }) => {
                 key={item._id}
                 with_scale="true"
                 with_background="true"
-                wrap="true"
+                wrap_space="true"
               >
                 <Box.Figure>
                   <Box.Figure.Image src={item.image} alt={item.title} />

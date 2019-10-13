@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 
-const BackgroundImage = styled.div`
+const BackgroundImage = styled.div.attrs({
+  style: props => ({
+    top: `${2 * -props.position}px`
+  })
+})`
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -27,6 +31,7 @@ const BackgroundImage = styled.div`
       `;
     }
   }}
+
 `;
 
 export default BackgroundImage;

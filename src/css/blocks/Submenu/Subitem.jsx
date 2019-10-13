@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 import withTheme from "@src/css/Theme";
 
-const LinkComponent = styled(
+const Item = styled(
   ({
     children,
     dispatch,
@@ -13,26 +13,28 @@ const LinkComponent = styled(
     history,
     location,
     match,
-    invert,
     staticContext,
     theme,
     ...rest
   }) => <NavLink children={children} {...rest} />
 )`
-  display: block;
-  color: ${props => props.theme.fontColor};
-  text-decoration: none;
+  width: auto;
   font-size: 0.8rem;
-  background: #f3f3f3;
-  border-bottom: 1px solid #dddddd;
-  padding: 1rem 2.5rem;
+  color: ${props => props.theme.fontColor};
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  margin: 0 0 0 3rem;
 
-  &.active,
   &:hover {
-    color: ${props => props.theme.mainColor};
-    text-decoration: none;
-    background: white;
+    text-decoration: underline;
   }
+
+  ${props =>
+    props.active &&
+    css`
+      color: ${props.theme.mainColor};
+    `}
 `;
 
-export default withTheme(LinkComponent);
+export default withTheme(Item);

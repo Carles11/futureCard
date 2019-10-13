@@ -73,7 +73,7 @@ const FeaturesCard = ({
       </Article>
       <CardsList cards={features} />
       <Button.Centered withMargin="3.3rem">
-        <A role="button" to="/card-features">
+        <A role="button" to="/our-solutions/card-features">
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>
             <FiArrowRightCircle />
