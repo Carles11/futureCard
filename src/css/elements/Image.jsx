@@ -77,6 +77,21 @@ const Image = styled.img`
     `}
 
   ${props =>
+    props.contactSize &&
+    css`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+      @media only screen and (max-width: 1024px) {
+        height: auto;
+        width: 80%;
+      @media only screen and (min-width: 1024px) {
+        left: 50%;
+      }
+    `}
+
+  ${props =>
     props.preview &&
     css`
       width: 100%;

@@ -68,6 +68,7 @@ const Grid = styled.div`
     css`
       width: 100%;
     `};
+  
 
 
   ${props =>
