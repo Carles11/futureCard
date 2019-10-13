@@ -32,13 +32,13 @@ const Contact = ({ DIC, path, location, handleLocation }) => {
         title={DIC.CONTACT_TITLE}
         subtitle={DIC.CONTACT_SUBTITLE}
       />
+      <Article centered>
+        <ContactForm />
+      </Article>
       <Image
         contactSize
         src={BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY}
       />
-      <Article centered>
-        <ContactForm />
-      </Article>
       <Footer />
     </Section>
   );

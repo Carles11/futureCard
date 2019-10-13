@@ -10,8 +10,7 @@
   "ABOUT_US_DESCRIPTION": "Dedicated to providing secure, advanced end-to-end card solutions",
   "ABOUT_US_DESCRIPTION_PAGE": "From a recharge cards supplier to an end-to-end card solution provider",
   "ABOUT_US_FACILITY_DESCRIPTION": "Catering to your end-to-end card solution needs. FutureCard offers a wide range of facilities to cater to the needs of various industrial sectors. Our diverse choice of services and card solutions have met with the approval of clients, and we are continuously working and adapting according to the changing market conditions so that we can always deliver the best services in the market to you. FutureCard operates a 7,100 sqm state - of -the - art facility located in the Industrial Area of Sharjah, UAE.The site is strategically situated on highway 311, connecting the emirates of the UAE, at 10 km of both Dubai Airport and Sharjah Airport, and 50 km of Jebel Ali harbor, perfectly positioned to ensure for flawless logistics to customers anywhere in the world. FutureCard directs its global activities from its UAE Headquarter where the planning, designing, creation and manufacturing of its unique cards are being done.The facility consists of:",
-  "ABOUT_US_FACILITY_LIST": [
-    {
+  "ABOUT_US_FACILITY_LIST": [{
       "id": 0,
       "text": "A cutting-edge factory, where all our Smart Cards, Plastic Cards as well as Paper and Cardboard Cards are being produced"
     },
@@ -77,7 +76,7 @@
   "CONTACT_LABEL_TELEPHONE": "Telephone (optional)",
   "CONTACT_LABEL_MESSAGE": "Message",
   "CONTACT_SUBDESCRIPTION": "Please complete the form below so that our team of experts can answer your questions and assist you in finding the right card solution for you",
-  "CONTACT_SUBTITLE": "Thank you for your interest in FutureCard",
+  "CONTACT_SUBTITLE": "What can we do for you?",
   "CONTACT_TITLE": "Contact Us",
   "INDUSTRY_FOCUS": "Industry Focus",
   "LANDING_MAP_TITLE": "FutureCard In The World",
