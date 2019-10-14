@@ -58,12 +58,12 @@ const FeaturesDesign = ({
         <P>{content.join('.')}</P>
       </Article>
       <Image
-        withMargin='2rem 0'
+        withMargin='2rem auto'
         withWidth='70%'
         src={BACKGROUND_IMG.SECURITY_FEATURES_FRONT}
       />
       <Image
-        withMargin='2rem 0'
+        withMargin='2rem auto 4rem auto'
         withWidth='70%'
         src={BACKGROUND_IMG.SECURITY_FEATURES_REVERSE}
       />
