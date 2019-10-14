@@ -1,43 +1,45 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Box from "@src/css/blocks/Box";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import Box from '@src/css/blocks/Box';
 
-import { Article, P, H3, Hr, Container } from "@src/css/elements";
-import { BACKGROUND_IMG } from "@src/utils/constants";
+import {
+  Article, P, H3, Hr, Container,
+} from '@src/css/elements';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 const SECTIONS = [
   {
     key: 13,
-    label: "CONSULTING",
-    link: "/our-services/card-consulting",
-    bg: BACKGROUND_IMG.CARD_CONSULTING
+    label: 'CONSULTING',
+    link: '/our-services/card-consulting',
+    bg: BACKGROUND_IMG.CARD_CONSULTING,
   },
   {
     key: 10,
-    label: "CARD_DESIGN",
-    link: "/our-services/card-design",
-    bg: BACKGROUND_IMG.CARD_DESIGN
+    label: 'CARD_DESIGN',
+    link: '/our-services/card-design',
+    bg: BACKGROUND_IMG.CARD_DESIGN,
   },
   {
     key: 11,
-    label: "PERSONALIZATION",
-    link: "/our-services/card-personalization",
-    bg: BACKGROUND_IMG.CARD_PERSONALIZATION
+    label: 'PERSONALIZATION',
+    link: '/our-services/card-personalization',
+    bg: BACKGROUND_IMG.CARD_PERSONALIZATION,
   },
   {
     key: 12,
-    label: "FULFILLMENT",
-    link: "/our-services/fulfillment-packaging",
-    bg: BACKGROUND_IMG.FULFILLMENT
-  }
+    label: 'FULFILLMENT',
+    link: '/our-services/fulfillment-packaging',
+    bg: BACKGROUND_IMG.FULFILLMENT,
+  },
 ];
 
 const Services = ({ DIC }) => {
-  const [title, ...first] = DIC.SERVICES_DESCRIPTION.split(".");
+  const [title, ...first] = DIC.SERVICES_DESCRIPTION.split('.');
   const [para1, para2, ...second] = first;
   const [para3, para4, ...third] = second;
   const [para5, para6] = third;
@@ -77,7 +79,7 @@ const Services = ({ DIC }) => {
                     invertColor
                   />
                   <P small withPadding="0 1rem 0.5rem" invertColor centered>
-                    {`${DIC[CONTENT].split(".")[0]}.`}
+                    {`${DIC[CONTENT].split('.')[0]}.`}
                   </P>
                 </Box.Wrapper>
                 <Box.Wrapper.Bg isEven={isEven} />
@@ -106,15 +108,15 @@ Services.propTypes = {
     SERVICES_DESIGN_CONTENT_0: PropTypes.string.isRequired,
     SERVICES_DESIGN_CONTENT_1: PropTypes.string.isRequired,
     SERVICES_DESIGN_SUBTITLE: PropTypes.string.isRequired,
-    SERVICES_DESIGN_TITLE: PropTypes.string.isRequired
-  }).isRequired
+    SERVICES_DESIGN_TITLE: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(Services);

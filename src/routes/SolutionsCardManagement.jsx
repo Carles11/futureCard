@@ -1,50 +1,52 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import { BACKGROUND_IMG } from "@src/utils/constants";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import Box from "@src/css/blocks/Box";
-import { Article, P, H4, Hr, Grid, Image } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  Article, P, H4, Hr, Grid, Image,
+} from '@src/css/elements';
 
-import CARDHOLDER from "@src/assets/CMS_icons/cardholder-icon.png";
-import CARDLIFECYCLE from "@src/assets/CMS_icons/cardlifecycle-icon.png";
-import CENTRALISSUANCE from "@src/assets/CMS_icons/centralIssuance-icon.png";
-import INSTANTISSUANCE from "@src/assets/CMS_icons/instantIssuance-icon.png";
+import CARDHOLDER from '@src/assets/CMS_icons/cardholder-icon.png';
+import CARDLIFECYCLE from '@src/assets/CMS_icons/cardlifecycle-icon.png';
+import CENTRALISSUANCE from '@src/assets/CMS_icons/centralIssuance-icon.png';
+import INSTANTISSUANCE from '@src/assets/CMS_icons/instantIssuance-icon.png';
 
 const SECTIONS = [
   {
     id: 1,
-    title: "CENTRAL_ISSUANCE",
-    link: "/our-solutions/card-management-systems/central-issuance",
-    icon: CENTRALISSUANCE
+    title: 'CENTRAL_ISSUANCE',
+    link: '/our-solutions/card-management-systems/central-issuance',
+    icon: CENTRALISSUANCE,
   },
   {
     id: 2,
-    title: "INSTANT_ISSUANCE",
-    link: "/our-solutions/card-management-systems/instant-issuance",
-    icon: INSTANTISSUANCE
+    title: 'INSTANT_ISSUANCE',
+    link: '/our-solutions/card-management-systems/instant-issuance',
+    icon: INSTANTISSUANCE,
   },
   {
     id: 3,
-    title: "CARD_HOLDER",
-    link: "/our-solutions/card-management-systems/cardholder-enrollment-system",
-    icon: CARDHOLDER
+    title: 'CARD_HOLDER',
+    link: '/our-solutions/card-management-systems/cardholder-enrollment-system',
+    icon: CARDHOLDER,
   },
   {
     id: 4,
-    title: "CARD_LIFE_CYCLE",
-    link: "/our-solutions/card-management-systems/card-life-cycle-management",
-    icon: CARDLIFECYCLE
-  }
+    title: 'CARD_LIFE_CYCLE',
+    link: '/our-solutions/card-management-systems/card-life-cycle-management',
+    icon: CARDLIFECYCLE,
+  },
 ];
 
 const style = {
-  height: "auto",
-  width: "75px",
-  margin: "20px"
+  height: 'auto',
+  width: '75px',
+  margin: '20px',
 };
 const SolutionsCardManagement = ({ DIC }) => (
   <ViewLayout
@@ -59,7 +61,7 @@ const SolutionsCardManagement = ({ DIC }) => (
     <Article centered>
       <P>{DIC.SOLUTIONS_CARD_MANAGEMENT_CONTENT}</P>
       <Box>
-        {SECTIONS.map(section => {
+        {SECTIONS.map((section) => {
           const TITLE = `MANAGEMENT_${section.title}`;
           const CONTENT = `MANAGEMENT_DESCRIPTION_${section.title}`;
 
@@ -83,7 +85,7 @@ const SolutionsCardManagement = ({ DIC }) => (
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
               <P small withPadding="0 1rem 0.5rem">
-                {`${DIC[CONTENT].split(".")[1]}`}
+                {`${DIC[CONTENT].split('.')[1]}`}
               </P>
             </Box.Link>
           );
@@ -99,15 +101,15 @@ SolutionsCardManagement.propTypes = {
     NAV_LABEL_CUSTOMIZE: PropTypes.string.isRequired,
     NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
     SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION: PropTypes.string.isRequired,
-    SOLUTIONS_CARD_MANAGEMENT_CONTENT: PropTypes.string.isRequired
-  }).isRequired
+    SOLUTIONS_CARD_MANAGEMENT_CONTENT: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(SolutionsCardManagement);

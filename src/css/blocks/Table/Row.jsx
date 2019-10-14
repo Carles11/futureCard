@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Row = styled.tr`
   position: relative;
@@ -13,9 +13,8 @@ const Row = styled.tr`
     background: #ededed;
   }
 
-  ${props =>
-    props.header &&
-    css`
+  ${props => props.header
+    && css`
       background: transparent !important;
       height: 60px;
       /* text-transform: uppercase; */
@@ -28,9 +27,8 @@ const Row = styled.tr`
       }
     `}
 
-  ${props =>
-    props.height &&
-    css`
+  ${props => props.height
+    && css`
       height: ${props.height}px !important;
     `}
 `;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import withTheme from "@src/css/Theme";
+import styled from 'styled-components';
+import withTheme from '@src/css/Theme';
 
 const Textarea = styled.textarea`
   border: none;

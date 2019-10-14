@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import useScroll from "@src/hooks/useScroll";
+import useScroll from '@src/hooks/useScroll';
 
-import { Header, H2, H3, Hr } from "@src/css/elements";
+import {
+  Header, H2, H3, Hr,
+} from '@src/css/elements';
 
 const HeaderSection = ({ title, subtitle }) => {
   const position = useScroll(true);
@@ -31,7 +33,7 @@ const HeaderSection = ({ title, subtitle }) => {
         withMargin="1.5rem 0 2rem"
         withAlign="center"
         animation
-        animate={!!animate && "180px"}
+        animate={!!animate && '180px'}
         initial={initial}
       />
     </Header>
@@ -40,7 +42,7 @@ const HeaderSection = ({ title, subtitle }) => {
 
 HeaderSection.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 };
 
 export default HeaderSection;

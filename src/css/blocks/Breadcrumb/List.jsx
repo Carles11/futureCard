@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
-import Item from "./Item";
+import Item from './Item';
 
 const AnimateVisibility = keyframes`
   0% {
@@ -34,9 +34,8 @@ const Breadcrumb = styled.ul`
     transition: top 0.2s ease-in-out;
     top: 2rem;
 
-    ${props =>
-      props.visible &&
-      css`
+    ${props => props.visible
+      && css`
         display: flex;
         animation: ${AnimateVisibility} 0.25s ease-in-out 0s;
         top: 3.72rem;
@@ -44,9 +43,8 @@ const Breadcrumb = styled.ul`
         width: 100%;
       `}
 
-    ${props =>
-      props.centered &&
-      css`
+    ${props => props.centered
+      && css`
         justify-content: center;
       `}
   }

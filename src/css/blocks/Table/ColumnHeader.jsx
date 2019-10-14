@@ -1,8 +1,8 @@
 // @flow
 
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Column = styled.th`
   font-size: 0.9rem;
@@ -16,9 +16,8 @@ const Column = styled.th`
     padding-left: 2rem;
   }
 
-  ${props =>
-    props.widthProp &&
-    css`
+  ${props => props.widthProp
+    && css`
       width: ${`${props.widthProp}%`};
     `};
 `;

@@ -1,30 +1,30 @@
-import * as ACTION from "@src/actions/admin/actionsType";
-import CONFIG from "@src/config";
+import * as ACTION from '@src/actions/admin/actionsType';
+import CONFIG from '@src/config';
 
 const localToken = localStorage.getItem(CONFIG.API_TOKEN_NAME)
   ? JSON.parse(localStorage.getItem(CONFIG.API_TOKEN_NAME))
-  : "";
+  : '';
 
 const INITIAL_STATE = {
-  token: Object.keys(localToken).length ? localToken.token : "",
+  token: Object.keys(localToken).length ? localToken.token : '',
   users: {
     itemSelected: {},
     data: [],
     count: 0,
-    message: ""
+    message: '',
   },
   news: {
     itemSelected: {},
     data: [],
     count: 0,
-    message: ""
+    message: '',
   },
   careers: {
     itemSelected: {},
     data: [],
     count: 0,
-    message: ""
-  }
+    message: '',
+  },
 };
 
 function adminReducer(state = INITIAL_STATE, action) {
@@ -35,13 +35,13 @@ function adminReducer(state = INITIAL_STATE, action) {
         token: action.data.token,
         session: {
           username: action.data.username,
-          id: action.data.id
-        }
+          id: action.data.id,
+        },
       };
     case ACTION.LOG_OUT:
       return {
         ...INITIAL_STATE,
-        token: ""
+        token: '',
       };
     case ACTION.SET_USERS:
       return {
@@ -50,8 +50,8 @@ function adminReducer(state = INITIAL_STATE, action) {
           ...state.users,
           data: action.users,
           count: action.count,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.SET_USER:
       return {
@@ -59,16 +59,16 @@ function adminReducer(state = INITIAL_STATE, action) {
         users: {
           ...state.users,
           itemSelected: action.user,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.RESET_USER:
       return {
         ...state,
         users: {
           ...state.users,
-          itemSelected: {}
-        }
+          itemSelected: {},
+        },
       };
     case ACTION.SET_NEWS:
       return {
@@ -77,8 +77,8 @@ function adminReducer(state = INITIAL_STATE, action) {
           ...state.news,
           data: action.news,
           count: action.count,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.SET_ONE_NEWS:
       return {
@@ -86,16 +86,16 @@ function adminReducer(state = INITIAL_STATE, action) {
         news: {
           ...state.news,
           itemSelected: action.oneNews,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.RESET_ONE_NEWS:
       return {
         ...state,
         news: {
           ...state.news,
-          itemSelected: {}
-        }
+          itemSelected: {},
+        },
       };
     case ACTION.SET_CAREERS:
       return {
@@ -104,8 +104,8 @@ function adminReducer(state = INITIAL_STATE, action) {
           ...state.careers,
           data: action.careers,
           count: action.count,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.SET_CAREER:
       return {
@@ -113,20 +113,20 @@ function adminReducer(state = INITIAL_STATE, action) {
         careers: {
           ...state.careers,
           itemSelected: action.career,
-          message: action.message
-        }
+          message: action.message,
+        },
       };
     case ACTION.RESET_CAREER:
       return {
         ...state,
         careers: {
           ...state.careers,
-          itemSelected: {}
-        }
+          itemSelected: {},
+        },
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 }

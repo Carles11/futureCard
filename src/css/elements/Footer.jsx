@@ -1,18 +1,19 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { hexToRgb } from "@src/utils/helpers";
-import withTheme from "@src/css/Theme";
+import { hexToRgb } from '@src/utils/helpers';
+import withTheme from '@src/css/Theme';
 
 const Footer = styled.footer`
+  position: relative;
   width: 100%;
   height: auto;
 
-  ${props => {
+  ${(props) => {
     const { r: rPrimary, g: gPrimary, b: bPrimary } = hexToRgb(
-      props.theme.background
+      props.theme.background,
     );
     const { r: rSecundary, g: gSecundary, b: bSecundary } = hexToRgb(
-      props.theme.fontColorDarker
+      props.theme.fontColorDarker,
     );
     return css`
       background: rgb(${rPrimary}, ${gPrimary}, ${bPrimary});

@@ -1,4 +1,4 @@
-import * as ACTION from "./actionsType";
+import * as ACTION from './actionsType';
 
 export function getCareers(careers) {
   return { type: ACTION.GET_CAREERS, careers };

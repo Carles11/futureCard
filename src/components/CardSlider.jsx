@@ -1,13 +1,13 @@
-import React, { Fragment, useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Fragment, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import ImageSlider from "@src/css/blocks/ImageSlider";
-import { Grid } from "@src/css/elements";
-import useInterval from "@src/hooks/useInterval";
+import ImageSlider from '@src/css/blocks/ImageSlider';
+import { Grid } from '@src/css/elements';
+import useInterval from '@src/hooks/useInterval';
 
-import { getAllCards } from "@src/actions/cards/actionsSideEffects";
-import Loader from "./Loader";
+import { getAllCards } from '@src/actions/cards/actionsSideEffects';
+import Loader from './Loader';
 
 const CardSlider = ({ cards, total, handleGetAllCards }) => {
   const [count, setCount] = useState(0);
@@ -51,23 +51,23 @@ CardSlider.propTypes = {
       _id: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string
-    })
+      img: PropTypes.string,
+    }),
   ).isRequired,
   handleGetAllCards: PropTypes.func.isRequired,
-  total: PropTypes.number
+  total: PropTypes.number,
 };
 
 const mapStateToProps = ({ cards }) => ({
   cards: cards.all,
-  total: cards.count
+  total: cards.count,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetAllCards: () => dispatch(getAllCards())
+  handleGetAllCards: () => dispatch(getAllCards()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(CardSlider);

@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Item = styled(
   ({
@@ -16,7 +16,7 @@ const Item = styled(
     staticContext,
     theme,
     ...rest
-  }) => <NavLink children={children} {...rest} />
+  }) => <NavLink children={children} {...rest} />,
 )`
   width: auto;
   font-size: 0.8rem;
@@ -30,9 +30,8 @@ const Item = styled(
     text-decoration: underline;
   }
 
-  ${props =>
-    props.active &&
-    css`
+  ${props => props.active
+    && css`
       color: ${props.theme.mainColor};
     `}
 `;

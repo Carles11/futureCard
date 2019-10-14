@@ -35,7 +35,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     }
   }, [data]);
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const { id, value } = e.target;
     setEmailBody({ ...emailBody, [id]: value });
   };
@@ -43,7 +43,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody(initialFormState);
   };
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     handleSendEmail(emailBody);

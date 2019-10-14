@@ -1,7 +1,7 @@
-import * as ACTION from "../actions/location/actionsType";
+import * as ACTION from '../actions/location/actionsType';
 
 const INITIAL_STATE = {
-  path: "/"
+  path: '/',
 };
 
 export default function locationReducer(state = INITIAL_STATE, action) {
@@ -9,11 +9,11 @@ export default function locationReducer(state = INITIAL_STATE, action) {
     case ACTION.GET_LOCATION:
       return {
         ...state,
-        path: action.location
+        path: action.location,
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 }

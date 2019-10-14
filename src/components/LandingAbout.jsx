@@ -1,25 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import HeaderSection from "@src/components/HeaderSection";
-import { BACKGROUND_IMG } from "@src/utils/constants";
+import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import Box from "@src/css/blocks/Box";
-import { Article, H3, Hr, P } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  Article, H3, Hr, P,
+} from '@src/css/elements';
 
 const SECTIONS = [
   {
     id: 1,
-    title: "SOLUTIONS",
-    link: "/our-solutions",
-    bg: BACKGROUND_IMG.OUR_SOLUTIONS
+    title: 'SOLUTIONS',
+    link: '/our-solutions',
+    bg: BACKGROUND_IMG.OUR_SOLUTIONS,
   },
   {
     id: 2,
-    title: "SERVICES",
-    link: "/our-services",
-    bg: BACKGROUND_IMG.OUR_SERVICES
-  }
+    title: 'SERVICES',
+    link: '/our-services',
+    bg: BACKGROUND_IMG.OUR_SERVICES,
+  },
 ];
 
 const LandingAbout = ({ DIC, h }) => (
@@ -78,9 +80,9 @@ LandingAbout.propTypes = {
     NAV_LABEL_OUR_BUSINESS: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
-    NAV_LABEL_MARKETS: PropTypes.string.isRequired
+    NAV_LABEL_MARKETS: PropTypes.string.isRequired,
   }).isRequired,
-  h: PropTypes.number
+  h: PropTypes.number,
 };
 
 export default LandingAbout;

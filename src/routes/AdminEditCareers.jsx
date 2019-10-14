@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect, useReducer } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import React, { Fragment, useEffect, useReducer } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Loader from "@src/components/Loader";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import Loader from '@src/components/Loader';
 import {
   A,
   Article,
@@ -14,58 +14,60 @@ import {
   H4,
   Hr,
   Figure,
-  Image
-} from "@src/css/elements";
-import { Form, Input, Label, Textarea } from "@src/css/elements/form";
-import isAdmin from "@src/hooks/isAdmin";
+  Image,
+} from '@src/css/elements';
+import {
+  Form, Input, Label, Textarea,
+} from '@src/css/elements/form';
+import isAdmin from '@src/hooks/isAdmin';
 
 import {
   getCareer,
   createCareer,
-  updateCareer
-} from "@src/actions/admin/actionsSideEffects";
+  updateCareer,
+} from '@src/actions/admin/actionsSideEffects';
 
 const INITIAL_STATE = {
-  title: "",
-  text: "",
-  file: "",
-  imagePreview: "",
-  link: ""
+  title: '',
+  text: '',
+  file: '',
+  imagePreview: '',
+  link: '',
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case "INPUT":
+    case 'INPUT':
       return {
         ...state,
-        [action.name]: action.value
+        [action.name]: action.value,
       };
-    case "FILE":
+    case 'FILE':
       return {
         ...state,
-        file: action.file
+        file: action.file,
       };
-    case "PREVIEW":
+    case 'PREVIEW':
       return {
         ...state,
-        imagePreview: action.imagePreview
+        imagePreview: action.imagePreview,
       };
-    case "ALL":
+    case 'ALL':
       return {
         ...state,
         title: action.title,
         text: action.text,
         file: action.file,
-        link: action.link
+        link: action.link,
       };
-    case "REDIRECT":
+    case 'REDIRECT':
       return {
         ...state,
-        redirect: action.redirect
+        redirect: action.redirect,
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 }
@@ -77,7 +79,7 @@ const AdminEditCareers = ({
   message,
   handleGetCareer,
   handleCreateCareer,
-  handleUpdateCareer
+  handleUpdateCareer,
 }) => {
   const admin = isAdmin(token);
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -88,7 +90,7 @@ const AdminEditCareers = ({
   useEffect(() => {
     const { id } = match.params;
 
-    if (id && id !== "new") {
+    if (id && id !== 'new') {
       handleGetCareer(id);
     }
   }, [match]);
@@ -97,13 +99,15 @@ const AdminEditCareers = ({
    * Update state if Edit Mode
    * */
   useEffect(() => {
-    const { title = "", text = "", file = "", link = "" } = career;
+    const {
+      title = '', text = '', file = '', link = '',
+    } = career;
     dispatch({
-      type: "ALL",
+      type: 'ALL',
       title,
       text,
       file,
-      link
+      link,
     });
   }, [career]);
 
@@ -111,8 +115,8 @@ const AdminEditCareers = ({
    * Redirect to User List when User is Created/Updated
    * */
   useEffect(() => {
-    if (message === "UPDATED") {
-      dispatch({ type: "REDIRECT", redirect: true });
+    if (message === 'UPDATED') {
+      dispatch({ type: 'REDIRECT', redirect: true });
     }
   }, [message]);
 
@@ -120,7 +124,7 @@ const AdminEditCareers = ({
     e.preventDefault();
 
     const body = Object.assign({}, state, {
-      creator: admin.id
+      creator: admin.id,
     });
 
     const { imagePreview, ...data } = body;
@@ -134,7 +138,7 @@ const AdminEditCareers = ({
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    dispatch({ type: "INPUT", name, value });
+    dispatch({ type: 'INPUT', name, value });
   }
 
   function handleImageChange(e) {
@@ -143,11 +147,11 @@ const AdminEditCareers = ({
     const file = e.target.files[0];
 
     reader.onloadend = () => {
-      dispatch({ type: "PREVIEW", imagePreview: reader.result });
+      dispatch({ type: 'PREVIEW', imagePreview: reader.result });
     };
 
     reader.readAsDataURL(file);
-    dispatch({ type: "FILE", file });
+    dispatch({ type: 'FILE', file });
   }
 
   return (
@@ -174,8 +178,8 @@ const AdminEditCareers = ({
                 <Grid flex="1">
                   <H4 withMargin="1rem 0">
                     {Object.keys(career).length
-                      ? "Update Career"
-                      : "Create Career"}
+                      ? 'Update Career'
+                      : 'Create Career'}
                   </H4>
                 </Grid>
                 <Grid heightProp="50px">
@@ -244,8 +248,8 @@ const AdminEditCareers = ({
                 </Fragment>
                 <Button contact type="submit">
                   {!!Object.keys(career).length && career._id
-                    ? "Update"
-                    : "Create"}
+                    ? 'Update'
+                    : 'Create'}
                 </Button>
               </Form>
             </Grid>
@@ -259,32 +263,32 @@ const AdminEditCareers = ({
 AdminEditCareers.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string
-    })
+      id: PropTypes.string,
+    }),
   }).isRequired,
   token: PropTypes.string.isRequired,
   career: PropTypes.shape({
-    _id: PropTypes.string
+    _id: PropTypes.string,
   }),
   message: PropTypes.string,
   handleGetCareer: PropTypes.func.isRequired,
   handleCreateCareer: PropTypes.func.isRequired,
-  handleUpdateCareer: PropTypes.func.isRequired
+  handleUpdateCareer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   career: admin.careers.itemSelected,
-  message: admin.careers.message
+  message: admin.careers.message,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetCareer: id => dispatch(getCareer(id)),
   handleCreateCareer: body => dispatch(createCareer(body)),
-  handleUpdateCareer: (id, body) => dispatch(updateCareer(id, body))
+  handleUpdateCareer: (id, body) => dispatch(updateCareer(id, body)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(AdminEditCareers);

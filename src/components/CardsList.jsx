@@ -1,9 +1,9 @@
-import React, { Fragment, memo } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment, memo } from 'react';
+import PropTypes from 'prop-types';
 
-import Loader from "@src/components/Loader";
+import Loader from '@src/components/Loader';
 
-import List from "@src/css/blocks/List";
+import List from '@src/css/blocks/List';
 import {
   Article,
   Grid,
@@ -13,9 +13,9 @@ import {
   H3,
   Span,
   Container,
-  Hr
-} from "@src/css/elements";
-import CardCarousel from "./CardCarousel";
+  Hr,
+} from '@src/css/elements';
+import CardCarousel from './CardCarousel';
 
 const CardsList = memo(
   ({ cards }) => (
@@ -25,8 +25,7 @@ const CardsList = memo(
           .sort((a, b) => (a.order > b.order ? 1 : -1))
           .map((card, index) => {
             const imageExist = !!card.img;
-            const isCarousel =
-              Array.isArray(card.img_list) && card.img_list.length;
+            const isCarousel = Array.isArray(card.img_list) && card.img_list.length;
 
             return (
               <Fragment>
@@ -35,15 +34,15 @@ const CardsList = memo(
                   key={card._id}
                   centered
                   with_margin={
-                    card.code === "technology"
-                      ? "1rem auto 0"
+                    card.code === 'technology'
+                      ? '1rem auto 0'
                       : imageExist || isCarousel
-                      ? "1.5rem auto 2.5rem"
-                      : "-5rem auto 2.5rem"
+                        ? '1.5rem auto 2.5rem'
+                        : '-5rem auto 2.5rem'
                   }
                 >
                   <Grid responsive>
-                    {card.code !== "technology" && (
+                    {card.code !== 'technology' && (
                       <Grid flex="1.5">
                         {!!isCarousel && (
                           <CardCarousel
@@ -107,7 +106,7 @@ const CardsList = memo(
       )}
     </Container>
   ),
-  areEqual
+  areEqual,
 );
 
 CardsList.propTypes = {
@@ -116,9 +115,9 @@ CardsList.propTypes = {
       _id: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string
-    })
-  ).isRequired
+      img: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 function areEqual(prevProps, nextProps) {
