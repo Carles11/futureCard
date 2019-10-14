@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Image = styled.img`
   ${props =>
@@ -57,11 +57,7 @@ const Image = styled.img`
     ${props =>
       props.graphics &&
       css`
-        margin: 100px ${props.withMargin};
-        width: 80%;
-        @media only screen and (min-width: 1024px) {
-          width: 60%;
-        }
+        width: 100%;
       `}
 
   ${props =>
