@@ -14,6 +14,7 @@ import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
 import useWindowSize from '@src/hooks/useWindowSize';
 import { BACKGROUND_IMG } from '@src/utils/constants';
+import arrowImg from '@src/assets/image/arrow.png';
 
 import {
   A,
@@ -26,6 +27,8 @@ import {
   Span,
   Figure,
   BackgroundImage,
+  Grid,
+  Image,
 } from '@src/css/elements';
 import { getLocation } from '@src/actions/location/actions';
 
@@ -38,10 +41,9 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {string} props.location
  * @param {function} props.handleLocation
  */
-const Landing = ({
-  DIC, path, location, handleLocation,
-}) => {
+const Landing = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
+  const [visible, setVisible] = useState(true);
   const [animate, setAnimate] = useState(false);
   const [initial, setInitial] = useState(false);
   const position = useScroll(true);
@@ -53,10 +55,12 @@ const Landing = ({
 
   useEffect(() => {
     if (!animate && position < 300) {
+      setVisible(true);
       setAnimate(true);
       setInitial(false);
     }
     if (!initial && position > 300) {
+      setVisible(false);
       setInitial(true);
       setAnimate(false);
     }
@@ -78,28 +82,30 @@ const Landing = ({
               invertColor
               sansSerif
               firstCapital
-              withMargin="8rem auto auto auto"
-            >
+              withMargin='8rem auto auto auto'>
               <Span invert>FutureCard, </Span>
               <br />
               {DIC.LANDING_TITLE}
             </H1>
             <Hr
-              withMargin="3rem 0"
+              withMargin='3rem 0'
               animation
               animate={!!animate && '50%'}
               initial={initial}
             />
-            <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
+            <H2 sansSerif invertColor tiny withMargin='1rem 0 1rem 0 '>
               {DIC.LANDING_SUBTITLE}
             </H2>
-            <A withmargin="2rem 0" icon role="button" to="/about-futurecard/">
+            <A withmargin='2rem 0' icon role='button' to='/about-futurecard/'>
               {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
               <Span icon>
                 <FiArrowRightCircle />
               </Span>
             </A>
           </Header>
+          <Grid heightProp={'100vh'}>
+            <Image src={arrowImg} arrow='true' visible={visible} />
+          </Grid>
         </Fragment>
       </Background>
       <Container position={height} background>
