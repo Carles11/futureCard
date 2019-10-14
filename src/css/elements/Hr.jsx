@@ -11,39 +11,44 @@ const Hr = styled.hr`
   text-align: left;
 
   
-  ${props => props.animation
-    && css`
+  ${props =>
+    props.animation &&
+    css`
       width: 0
       transition: width 500ms ease-in-out 0.1s;
 
-      ${props.animate
-        && css`
+      ${props.animate &&
+        css`
           width: ${props.animate};
         `}
 
-      ${props.initial
-        && css`
+      ${props.initial &&
+        css`
           width: 0;
         `}
     `};
 
-  ${props => props.withMargin
-    && css`
+  ${props =>
+    props.withMargin &&
+    css`
       margin: ${props.withMargin};
     `}
 
-  ${props => props.withAlign
-    && css`
-      text-align: ${props.withAlign};
+  ${props =>
+    props.withAlign &&
+    css`
+      text-align: ${props.withAlign} !important;
     `}
 
-  ${props => props.invertColor
-    && css`
+  ${props =>
+    props.invertColor &&
+    css`
       background: #ededed;
     `}
     
-    ${props => props.withSize
-      && css`
+    ${props =>
+      props.withSize &&
+      css`
         width: ${props.withSize};
         transition: width 500ms ease-in-out 0.1s;
       `};

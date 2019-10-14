@@ -71,14 +71,17 @@ const Image = styled.img`
     && css`
       margin: ${props.withMargin};
     `}
+  ${props => props.withWidth
+    && css`
+      width: ${props.withWidth};
+      @media only screen and (max-width: 1024px) {
+        width: 90%;
+      }
+    `}
 
     ${props => props.graphics
       && css`
-        margin: 100px ${props.withMargin};
-        width: 80%;
-        @media only screen and (min-width: 1024px) {
-          width: 60%;
-        }
+        width: 100%;
       `}
 
   ${props => props.responsive
