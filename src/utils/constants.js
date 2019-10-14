@@ -239,7 +239,8 @@ const OPTIONS_PAYMENT = [
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/our-solutions/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 10,
@@ -371,7 +372,8 @@ const OPTIONS_IDENTIFICATION = [
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/our-solutions/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 11,
@@ -478,7 +480,8 @@ const OPTIONS_TRANSPORT = [
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/our-solutions/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 10,
@@ -661,7 +664,8 @@ const OPTIONS_RETAIL = [
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/our-solutions/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 11,
@@ -920,6 +924,10 @@ const BACKGROUND_IMG = {
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
   FULFILLMENT:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879271/futurecard.com/headers/fullfillment.jpg',
+  SECURITY_FEATURES_FRONT:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1571074607/FutureCard/security-features-front-RS.png',
+  SECURITY_FEATURES_REVERSE:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1571073777/FutureCard/security-features-reverse-RS.png',
 };
 
 export {

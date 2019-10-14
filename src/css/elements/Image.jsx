@@ -49,10 +49,13 @@ const Image = styled.img`
     && css`
       margin: ${props.withMargin};
     `}
+  ${props => props.withWidth
+    && css`
+      width: ${props.withWidth};
+    `}
 
-    ${props =>
-      props.graphics &&
-      css`
+    ${props => props.graphics
+      && css`
         width: 100%;
       `}
 
