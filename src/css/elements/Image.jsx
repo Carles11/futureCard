@@ -1,6 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import withTheme from '@src/css/Theme';
+
+const AnimateLoader = keyframes`
+  0% { bottom: 5rem;}
+  50% { bottom: 3rem;}
+  100% { bottom: 5rem; }
+`;
 
 const Image = styled.img`
   ${props => props.menulogo
@@ -10,6 +16,22 @@ const Image = styled.img`
       transform: rotate(-30deg) translateY(-50%);
       left: 5rem;
       opacity: 0.25;
+    `}
+
+  ${props => props.arrow
+    && css`
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: ${AnimateLoader} 1000ms infinite ease-in-out;
+      padding: 1rem;
+      z-index: 1;
+
+      ${props.visible
+        && css`
+          opacity: 1;
+        `}
     `}
 
   ${props => props.box
