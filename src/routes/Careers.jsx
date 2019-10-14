@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { FiArrowRightCircle } from "react-icons/fi";
-import Icon from "@src/components/Icon";
-import Loader from "@src/components/Loader";
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import { BACKGROUND_IMG } from "@src/utils/constants";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { FiArrowRightCircle } from 'react-icons/fi';
+import Icon from '@src/components/Icon';
+import Loader from '@src/components/Loader';
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import { formatDate } from "@src/utils/helpers";
+import { formatDate } from '@src/utils/helpers';
 
-import Box from "@src/css/blocks/Box";
-import { A, Article, Grid, Button, H4, Hr, P } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  A, Article, Grid, Button, H4, Hr, P,
+} from '@src/css/elements';
 
-import { getLocation } from "@src/actions/location/actions";
-import { getCareers } from "@src/actions/careers/actionsSideEffects";
+import { getLocation } from '@src/actions/location/actions';
+import { getCareers } from '@src/actions/careers/actionsSideEffects';
 
-const Careers = ({ DIC, careers, count, handleGetCareers }) => {
+const Careers = ({
+  DIC, careers, count, handleGetCareers,
+}) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -30,7 +34,7 @@ const Careers = ({ DIC, careers, count, handleGetCareers }) => {
   //   item => item.label !== 'CAREERS',
   // );
 
-  const [title, ...first] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split(".");
+  const [title, ...first] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
   const [para1, para2, ...second] = first;
   const [para3, para4] = second;
 
@@ -149,30 +153,30 @@ Careers.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
-    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired
+    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
   careers: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string
-    })
+      _id: PropTypes.string,
+    }),
   ),
   handleGetCareers: PropTypes.func.isRequired,
-  count: PropTypes.number
+  count: PropTypes.number,
 };
 
 const mapStateToProps = ({ dictionary, location, careers }) => ({
   DIC: dictionary.data,
   path: location.path,
   careers: careers.data,
-  count: careers.count
+  count: careers.count,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
-  handleGetCareers: () => dispatch(getCareers())
+  handleGetCareers: () => dispatch(getCareers()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Careers);

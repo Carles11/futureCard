@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Article = styled.article`
   position: relative;
@@ -12,9 +12,8 @@ const Article = styled.article`
     padding: 0 2.5rem;
   }
 
-  ${props =>
-    props.centered &&
-    css`
+  ${props => props.centered
+    && css`
       @media only screen and (min-width: 1024px) {
         display: flex;
         flex-direction: column;
@@ -33,9 +32,8 @@ const Article = styled.article`
       }
     `}
 
-  ${props =>
-    props.with_margin &&
-    css`
+  ${props => props.with_margin
+    && css`
       margin: ${props.with_margin} !important;
     `}
 `;

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Container = styled.div`
   position: relative;
@@ -13,15 +13,13 @@ const Container = styled.div`
   z-index: 1;
   padding: 0 0 3rem;
 
-  ${props =>
-    props.background &&
-    css`
+  ${props => props.background
+    && css`
       background: #f5f5f5;
     `}
 
-  ${props =>
-    props.nopadding &&
-    css`
+  ${props => props.nopadding
+    && css`
       padding: 0;
       @media only screen and (min-width: 768px) and (max-width: 1224px) {
         padding: 0 !important;

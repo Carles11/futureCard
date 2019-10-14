@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Overlay = styled.div`
   display: none;
@@ -13,9 +13,8 @@ const Overlay = styled.div`
   opacity: 0.99;
 
   @media only screen and (max-width: 1024px) {
-    ${props =>
-      props.visible &&
-      css`
+    ${props => props.visible
+      && css`
         display: block;
       `}
   }

@@ -1,11 +1,11 @@
 // @flow
 
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import Item from "./Item";
-import Figure from "./Figure";
-import Link from "./Link";
-import Wrapper from "./Wrapper";
+import Item from './Item';
+import Figure from './Figure';
+import Link from './Link';
+import Wrapper from './Wrapper';
 
 const Box = styled.div`
   position: relative;
@@ -13,9 +13,8 @@ const Box = styled.div`
   width: 100%;
   margin: 2rem 0;
 
-  ${props =>
-    props.wrap &&
-    css`
+  ${props => props.wrap
+    && css`
       flex-wrap: wrap;
     `}
 
@@ -35,9 +34,8 @@ const WrapperBg = styled.div`
   opacity: 0.3;
   background: #0d1326;
 
-  ${props =>
-    props.isEven &&
-    css`
+  ${props => props.isEven
+    && css`
       background: white;
     `}
 `;

@@ -1,6 +1,6 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const AnimateMove = keyframes`
   0% {
@@ -12,15 +12,13 @@ const AnimateMove = keyframes`
 `;
 
 const Span = styled.span`
-  ${props =>
-    props.invertColor &&
-    css`
+  ${props => props.invertColor
+    && css`
       color: ${props.theme.mainColor};
     `}
 
-  ${props =>
-    props.tag &&
-    css`
+  ${props => props.tag
+    && css`
       border-radius: 3px;
       border: 1px solid ${props.theme.mainColor};
       color: ${props.theme.mainColor};
@@ -30,9 +28,8 @@ const Span = styled.span`
       line-height: 1.1rem;
     `}
 
-  ${props =>
-    props.icon &&
-    css`
+  ${props => props.icon
+    && css`
       position: absolute;
       top: 55%;
       transform: translateY(-50%);

@@ -1,19 +1,19 @@
-import React, { Fragment, useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { connect } from "react-redux";
-import { FiArrowRightCircle } from "react-icons/fi";
+import React, { Fragment, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
-import LandingAbout from "@src/components/LandingAbout";
-import LandingNews from "@src/components/LandingNews";
-import LandingMarkets from "@src/components/LandingMarkets";
-import Background from "@src/components/Background";
-import Footer from "@src/components/Footer";
-import backgroundImg from "@src/assets/image/background.jpg";
-import useLocation from "@src/hooks/useLocation";
-import useScroll from "@src/hooks/useScroll";
-import useWindowSize from "@src/hooks/useWindowSize";
-import { BACKGROUND_IMG } from "@src/utils/constants";
+import LandingAbout from '@src/components/LandingAbout';
+import LandingNews from '@src/components/LandingNews';
+import LandingMarkets from '@src/components/LandingMarkets';
+import Background from '@src/components/Background';
+import Footer from '@src/components/Footer';
+import backgroundImg from '@src/assets/image/background.jpg';
+import useLocation from '@src/hooks/useLocation';
+import useScroll from '@src/hooks/useScroll';
+import useWindowSize from '@src/hooks/useWindowSize';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import {
   A,
@@ -25,9 +25,9 @@ import {
   Section,
   Span,
   Figure,
-  BackgroundImage
-} from "@src/css/elements";
-import { getLocation } from "@src/actions/location/actions";
+  BackgroundImage,
+} from '@src/css/elements';
+import { getLocation } from '@src/actions/location/actions';
 
 /**
  * Landing Component
@@ -38,7 +38,9 @@ import { getLocation } from "@src/actions/location/actions";
  * @param {string} props.location
  * @param {function} props.handleLocation
  */
-const Landing = ({ DIC, path, location, handleLocation }) => {
+const Landing = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
   const [animate, setAnimate] = useState(false);
   const [initial, setInitial] = useState(false);
@@ -65,8 +67,8 @@ const Landing = ({ DIC, path, location, handleLocation }) => {
       <Helmet
         title={DIC.WELLCOME_TITLE}
         meta={[
-          { name: "description", content: `${DIC.APP_DESCRIPTION}` },
-          { property: "og:title", content: "welcome to futurecard.com" }
+          { name: 'description', content: `${DIC.APP_DESCRIPTION}` },
+          { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
       <Background image={backgroundImg} fixed>
@@ -85,7 +87,7 @@ const Landing = ({ DIC, path, location, handleLocation }) => {
             <Hr
               withMargin="3rem 0"
               animation
-              animate={!!animate && "50%"}
+              animate={!!animate && '50%'}
               initial={initial}
             />
             <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
@@ -108,7 +110,7 @@ const Landing = ({ DIC, path, location, handleLocation }) => {
           <BackgroundImage
             position={Math.floor(position / 10)}
             style={{
-              backgroundImage: `url(${BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY})`
+              backgroundImage: `url(${BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY})`,
             }}
           />
         </Figure>
@@ -130,25 +132,25 @@ Landing.propTypes = {
     ABOUT_US: PropTypes.string.isRequired,
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,
-    LEARN_MORE: PropTypes.string.isRequired
+    LEARN_MORE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  })
+    pathname: PropTypes.string.isRequired,
+  }),
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
   DIC: dictionary.data,
-  path: location.path
+  path: location.path,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleLocation: location => dispatch(getLocation(location))
+  handleLocation: location => dispatch(getLocation(location)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Landing);

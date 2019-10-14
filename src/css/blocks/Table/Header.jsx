@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Column from "./ColumnHeader";
+import Column from './ColumnHeader';
 
 const Header = styled.thead``;
 

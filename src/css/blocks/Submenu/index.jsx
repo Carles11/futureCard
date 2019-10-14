@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
-import Item from "./Item";
-import Subitem from "./Subitem";
+import Item from './Item';
+import Subitem from './Subitem';
 
 const Submenu = styled.div`
   position: fixed;

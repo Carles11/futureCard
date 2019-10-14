@@ -10,8 +10,8 @@ function useLocation(path, location, fn) {
 
   if (path === pathname) return;
 
-  const pathnameArr = pathname.split("/");
-  let result = "/";
+  const pathnameArr = pathname.split('/');
+  let result = '/';
 
   if (pathnameArr[1]) result += pathnameArr[1];
 

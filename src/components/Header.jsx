@@ -1,19 +1,21 @@
-import React, { Fragment, useReducer, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { Fragment, useReducer, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { NAVIGATION } from "@src/utils/constants";
-import logo from "@src/assets/image/logo.png";
-import logoWhite from "@src/assets/image/logo_white.png";
-import useSize from "@src/hooks/useSize";
-import NavigationItem from "@src/components/NavigationItem";
+import { NAVIGATION } from '@src/utils/constants';
+import logo from '@src/assets/image/logo.png';
+import logoWhite from '@src/assets/image/logo_white.png';
+import useSize from '@src/hooks/useSize';
+import NavigationItem from '@src/components/NavigationItem';
 
-import Layout from "@src/css/blocks/Layout";
-import { logOut } from "@src/actions/admin/actionsSideEffects";
-import HeaderIcons from "./HeaderIcons";
+import Layout from '@src/css/blocks/Layout';
+import { logOut } from '@src/actions/admin/actionsSideEffects';
+import HeaderIcons from './HeaderIcons';
 
-const Header = ({ LANG: language, DIC, path, token, handleCloseSession }) => {
+const Header = ({
+  LANG: language, DIC, path, token, handleCloseSession,
+}) => {
   const initialState = {
     language,
     navigation: NAVIGATION,
@@ -21,7 +23,7 @@ const Header = ({ LANG: language, DIC, path, token, handleCloseSession }) => {
     position: false,
     dark: false,
     mobile: false,
-    active: false
+    active: false,
   };
   const [state, dispatch] = useReducer(headerReducer, initialState);
   const size = useSize();
@@ -29,16 +31,16 @@ const Header = ({ LANG: language, DIC, path, token, handleCloseSession }) => {
   /** Handles screen resolution and effects in the menu */
   useEffect(() => {
     if (size.w <= 1024 && !state.mobile) {
-      dispatch({ type: "MOBILE", mobile: true });
+      dispatch({ type: 'MOBILE', mobile: true });
     }
 
     if (size.w > 1024 && !!state.mobile) {
-      dispatch({ type: "MOBILE", mobile: false });
+      dispatch({ type: 'MOBILE', mobile: false });
     }
   }, [size]);
 
   function handleChangeVisibility(visibility) {
-    dispatch({ type: "CHANGE", visibility });
+    dispatch({ type: 'CHANGE', visibility });
   }
 
   return (
@@ -54,7 +56,7 @@ const Header = ({ LANG: language, DIC, path, token, handleCloseSession }) => {
           </Link>
         </Layout.Header.Logo>
         <Layout.Header.Navigation visible={state.visibility}>
-          {state.navigation.map(item => {
+          {state.navigation.map((item) => {
             const LABEL = `NAV_LABEL_${item.label}`;
             return (
               <Fragment key={item.key}>
@@ -104,34 +106,34 @@ const Header = ({ LANG: language, DIC, path, token, handleCloseSession }) => {
 
 function headerReducer(state, action) {
   switch (action.type) {
-    case "CHANGE":
+    case 'CHANGE':
       return {
         ...state,
-        visibility: action.visibility
+        visibility: action.visibility,
       };
-    case "SCROLL":
+    case 'SCROLL':
       return {
         ...state,
-        position: action.position
+        position: action.position,
       };
-    case "DARK":
+    case 'DARK':
       return {
         ...state,
-        dark: action.dark
+        dark: action.dark,
       };
-    case "SUBMENU":
+    case 'SUBMENU':
       return {
         ...state,
-        active: action.active
+        active: action.active,
       };
-    case "MOBILE":
+    case 'MOBILE':
       return {
         ...state,
-        mobile: action.mobile
+        mobile: action.mobile,
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 }
@@ -145,25 +147,25 @@ Header.propTypes = {
 
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
-    NAV_LABEL_CONTACT: PropTypes.string.isRequired
+    NAV_LABEL_CONTACT: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
-  handleCloseSession: PropTypes.func.isRequired
+  handleCloseSession: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, location, admin }) => ({
   LANG: dictionary.language,
   DIC: dictionary.data,
   path: location.path,
-  token: admin.token
+  token: admin.token,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleCloseSession: () => dispatch(logOut())
+  handleCloseSession: () => dispatch(logOut()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Header);

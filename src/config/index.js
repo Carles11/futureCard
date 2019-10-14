@@ -1,26 +1,26 @@
 const config = {
-  env: process.env.NODE_ENV || "development",
+  env: process.env.NODE_ENV || 'development',
   OPTION: {
     GET: {
-      method: "GET"
+      method: 'GET',
     },
     POST: {
-      method: "POST"
+      method: 'POST',
     },
     PUT: {
-      method: "PUT"
+      method: 'PUT',
     },
     DELETE: {
-      method: "DELETE"
-    }
-  }
+      method: 'DELETE',
+    },
+  },
 };
 
 let envConfig;
 
 try {
-  if (config.env === "test") {
-    config.env = "testing";
+  if (config.env === 'test') {
+    config.env = 'testing';
   }
   // eslint-disable-next-line
   envConfig = require(`./${config.env}`).default;

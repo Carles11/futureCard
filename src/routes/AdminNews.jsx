@@ -1,24 +1,25 @@
-import React, { Fragment, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { FiTrash, FiEdit } from "react-icons/fi";
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { FiTrash, FiEdit } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Loader from "@src/components/Loader";
-import isAdmin from "@src/hooks/isAdmin";
-import { formatDate } from "@src/utils/helpers";
-import { getNews, deleteNews } from "@src/actions/admin/actionsSideEffects";
-import { resetOneNews } from "@src/actions/admin/actions";
+import HeaderSection from '@src/components/HeaderSection';
+import Loader from '@src/components/Loader';
+import isAdmin from '@src/hooks/isAdmin';
+import { formatDate } from '@src/utils/helpers';
+import { getNews, deleteNews } from '@src/actions/admin/actionsSideEffects';
+import { resetOneNews } from '@src/actions/admin/actions';
 
-import Table from "@src/css/blocks/Table";
-import { A, Article, Button, Grid, P, H4, Hr } from "@src/css/elements";
+import Table from '@src/css/blocks/Table';
+import {
+  A, Article, Button, Grid, P, H4, Hr,
+} from '@src/css/elements';
 
 const COLUMNS = [
-  { key: 0, label: "Title", width: 50 },
-  { key: 1, label: "Published at", width: 30 },
-  { key: 2, label: "Edit", width: 20 }
+  { key: 0, label: 'Title', width: 50 },
+  { key: 1, label: 'Published at', width: 30 },
+  { key: 2, label: 'Edit', width: 20 },
 ];
 
 const AdminNews = ({
@@ -28,14 +29,14 @@ const AdminNews = ({
   message,
   handleGetNews,
   handleRemoveNews,
-  handleResetNews
+  handleResetNews,
 }) => {
   const admin = isAdmin(token);
 
   useEffect(() => {
     handleResetNews();
 
-    if ((!news.length && !message) || message === "UPDATED") {
+    if ((!news.length && !message) || message === 'UPDATED') {
       handleGetNews();
     }
   }, [news]);
@@ -58,9 +59,12 @@ const AdminNews = ({
       )}
       {admin !== null && !admin && <Redirect to="/admin" />}
       {!!admin && (
-        <ViewLayout
-          title="Admin News"
-          description="FutureCard admin panel | News"
+        <Grid
+          column
+          vertical="flex-start"
+          middle
+          heightProp="100vh"
+          withMargin="100px 0 0 "
         >
           <HeaderSection
             title="Admin News"
@@ -86,7 +90,7 @@ const AdminNews = ({
               </Grid>
             </Grid>
             <Hr invertColor />
-            {!news.length && message === "" ? (
+            {!news.length && message === '' ? (
               <Grid loader>
                 <Loader />
               </Grid>
@@ -144,7 +148,7 @@ const AdminNews = ({
               </Table>
             )}
           </Article>
-        </ViewLayout>
+        </Grid>
       )}
     </Fragment>
   );
@@ -154,30 +158,30 @@ AdminNews.propTypes = {
   token: PropTypes.string.isRequired,
   news: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired
-    })
+      _id: PropTypes.string.isRequired,
+    }),
   ),
   message: PropTypes.string,
   count: PropTypes.number,
   handleGetNews: PropTypes.func.isRequired,
   handleRemoveNews: PropTypes.func.isRequired,
-  handleResetNews: PropTypes.func.isRequired
+  handleResetNews: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   news: admin.news.data,
   count: admin.news.count,
-  message: admin.news.message
+  message: admin.news.message,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetNews: () => dispatch(getNews()),
   handleRemoveNews: id => dispatch(deleteNews(id)),
-  handleResetNews: () => dispatch(resetOneNews())
+  handleResetNews: () => dispatch(resetOneNews()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(AdminNews);

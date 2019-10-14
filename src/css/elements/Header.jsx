@@ -1,11 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Header = styled.header`
   padding: 1rem;
 
-  ${props =>
-    props.background &&
-    css`
+  ${props => props.background
+    && css`
     padding: 5%;
     box-sizing: border-box;
     width: 50%
@@ -17,14 +16,14 @@ const Header = styled.header`
     transition: transform 2000ms cubic-bezier(.03,.94,0,.99) 0.2s,
     opacity 1000ms cubic-bezier(.03,.94,0,.99) 0.2s;
 
-    ${props.animate &&
-      css`
+    ${props.animate
+      && css`
         transform: translateY(-50%);
         opacity: 1;
       `}
 
-    ${props.initial &&
-      css`
+    ${props.initial
+      && css`
         transform: translateY(-60%);
         opacity: 0;
       `}
@@ -39,22 +38,21 @@ const Header = styled.header`
     }
   `}
 
-  ${props =>
-    props.centered &&
-    css`
+  ${props => props.centered
+    && css`
       transform: translateY(100%)
       opacity: 0;
       transition: transform 2000ms cubic-bezier(0.03, 0.94, 0, 0.99) 0.1s,
         opacity 1000ms cubic-bezier(0.03, 0.94, 0, 0.99) 0.1s;
 
-      ${props.animate &&
-        css`
+      ${props.animate
+        && css`
           transform: translateY(-5%);
           opacity: 1;
         `}
 
-      ${props.initial &&
-        css`
+      ${props.initial
+        && css`
           transform: translateY(1%);
           opacity: 0;
         `}
@@ -78,9 +76,8 @@ const Header = styled.header`
         z-index: 1;
       }
     `}
-    ${props =>
-      props.left &&
-      css`
+    ${props => props.left
+      && css`
         @media only screen and (min-width: 1024px) {
           display: flex;
           flex-direction: column;

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Figure from "./Figure";
-import Image from "./Image";
+import Figure from './Figure';
+import Image from './Image';
 
 const ImageSlider = styled.div`
   display: flex;

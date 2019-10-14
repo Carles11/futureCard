@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Item = styled(
   ({
@@ -17,7 +17,7 @@ const Item = styled(
     staticContext,
     theme,
     ...rest
-  }) => <Link children={children} {...rest} />
+  }) => <Link children={children} {...rest} />,
 )`
   background: transparent;
   color: white;

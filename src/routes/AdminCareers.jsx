@@ -1,27 +1,28 @@
-import React, { Fragment, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { FiTrash, FiEdit } from "react-icons/fi";
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { FiTrash, FiEdit } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Loader from "@src/components/Loader";
-import isAdmin from "@src/hooks/isAdmin";
-import { formatDate } from "@src/utils/helpers";
+import HeaderSection from '@src/components/HeaderSection';
+import Loader from '@src/components/Loader';
+import isAdmin from '@src/hooks/isAdmin';
+import { formatDate } from '@src/utils/helpers';
 import {
   getCareers,
-  deleteCareer
-} from "@src/actions/admin/actionsSideEffects";
-import { resetCareer } from "@src/actions/admin/actions";
+  deleteCareer,
+} from '@src/actions/admin/actionsSideEffects';
+import { resetCareer } from '@src/actions/admin/actions';
 
-import Table from "@src/css/blocks/Table";
-import { A, Article, Button, Grid, P, H4, Hr } from "@src/css/elements";
+import Table from '@src/css/blocks/Table';
+import {
+  A, Article, Button, Grid, P, H4, Hr,
+} from '@src/css/elements';
 
 const COLUMNS = [
-  { key: 0, label: "Title", width: 50 },
-  { key: 1, label: "Published at", width: 30 },
-  { key: 2, label: "Edit", width: 20 }
+  { key: 0, label: 'Title', width: 50 },
+  { key: 1, label: 'Published at', width: 30 },
+  { key: 2, label: 'Edit', width: 20 },
 ];
 
 const AdminCareers = ({
@@ -31,14 +32,14 @@ const AdminCareers = ({
   message,
   handleGetCareers,
   handleRemoveCareer,
-  handleResetCareer
+  handleResetCareer,
 }) => {
   const admin = isAdmin(token);
 
   useEffect(() => {
     handleResetCareer();
 
-    if ((!careers.length && !message) || message === "UPDATED") {
+    if ((!careers.length && !message) || message === 'UPDATED') {
       handleGetCareers();
     }
   }, [careers]);
@@ -61,9 +62,12 @@ const AdminCareers = ({
       )}
       {isAdmin !== null && !isAdmin && <Redirect to="/admin" />}
       {!!isAdmin && (
-        <ViewLayout
-          title="Admin Careers"
-          description="FutureCard admin panel | Careers"
+        <Grid
+          column
+          vertical="flex-start"
+          middle
+          heightProp="100vh"
+          withMargin="100px 0 0 "
         >
           <HeaderSection
             title="Admin Careers"
@@ -89,7 +93,7 @@ const AdminCareers = ({
               </Grid>
             </Grid>
             <Hr invertColor />
-            {!careers.length && message === "" ? (
+            {!careers.length && message === '' ? (
               <Grid loader>
                 <Loader />
               </Grid>
@@ -149,7 +153,7 @@ const AdminCareers = ({
               </Table>
             )}
           </Article>
-        </ViewLayout>
+        </Grid>
       )}
     </Fragment>
   );
@@ -159,30 +163,30 @@ AdminCareers.propTypes = {
   token: PropTypes.string.isRequired,
   careers: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired
-    })
+      _id: PropTypes.string.isRequired,
+    }),
   ),
   message: PropTypes.string,
   count: PropTypes.number,
   handleGetCareers: PropTypes.func.isRequired,
   handleRemoveCareer: PropTypes.func.isRequired,
-  handleResetCareer: PropTypes.func.isRequired
+  handleResetCareer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
   token: admin.token,
   careers: admin.careers.data,
   count: admin.careers.count,
-  message: admin.careers.message
+  message: admin.careers.message,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleGetCareers: () => dispatch(getCareers()),
   handleRemoveCareer: id => dispatch(deleteCareer(id)),
-  handleResetCareer: () => dispatch(resetCareer())
+  handleResetCareer: () => dispatch(resetCareer()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(AdminCareers);

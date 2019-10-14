@@ -1,21 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { FiArrowRightCircle } from "react-icons/fi";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Icon from "@src/components/Icon";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import Icon from '@src/components/Icon';
 
-import { NAVIGATION, BACKGROUND_IMG } from "@src/utils/constants";
-import Box from "@src/css/blocks/Box";
-import { Article, A, Button, P, H4, Hr, Image } from "@src/css/elements";
-import ConsultingGraphic from "@src/assets/image/graphics/Services_Consulting.png";
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import Box from '@src/css/blocks/Box';
+import {
+  Article, A, Button, P, H4, Hr, Image,
+} from '@src/css/elements';
+import ConsultingGraphic from '@src/assets/image/graphics/Services_Consulting.png';
 
 const ServicesConsulting = ({ DIC }) => {
-  const SECTIONS = NAVIGATION.find(item => item.label === "SERVICES");
+  const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
   const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== "CONSULTING"
+    item => item.label !== 'CONSULTING',
   );
   return (
     <ViewLayout
@@ -37,7 +39,7 @@ const ServicesConsulting = ({ DIC }) => {
           alt="Consulting Graphic FutureCard"
         />
         <Box>
-          {FILTERED_SECTIONS.map(section => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -57,7 +59,7 @@ const ServicesConsulting = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem">
-                  {`${DIC[CONTENT].split(".")[0]}.`}
+                  {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
             );
@@ -86,15 +88,15 @@ ServicesConsulting.propTypes = {
     SERVICES_CONSULTING_CONTENT_0: PropTypes.string.isRequired,
     SERVICES_CONSULTING_CONTENT_1: PropTypes.string.isRequired,
     SERVICES_CONSULTING_SUBTITLE: PropTypes.string.isRequired,
-    SERVICES_CONSULTING_TITLE: PropTypes.string.isRequired
-  }).isRequired
+    SERVICES_CONSULTING_TITLE: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(ServicesConsulting);

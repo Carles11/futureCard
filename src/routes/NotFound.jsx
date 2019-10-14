@@ -1,15 +1,19 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { Section, Grid, H1, H2, P, A } from "@src/css/elements";
-import Footer from "@src/components/Footer";
-import useLocation from "@src/hooks/useLocation";
+import {
+  Section, Grid, H1, H2, P, A,
+} from '@src/css/elements';
+import Footer from '@src/components/Footer';
+import useLocation from '@src/hooks/useLocation';
 
-import { getLocation } from "@src/actions/location/actions";
+import { getLocation } from '@src/actions/location/actions';
 
-const NotFound = ({ DIC, path, location, handleLocation }) => {
+const NotFound = ({
+  DIC, path, location, handleLocation,
+}) => {
   useLocation(path, location, handleLocation);
 
   return (
@@ -17,8 +21,8 @@ const NotFound = ({ DIC, path, location, handleLocation }) => {
       <Helmet
         title={DIC.NOT_FOUND}
         meta={[
-          { name: "description", content: `${DIC.NOT_FOUND_DESCRIPTION}` },
-          { property: "og:title", content: "welcome to futurecard.com" }
+          { name: 'description', content: `${DIC.NOT_FOUND_DESCRIPTION}` },
+          { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
       <Grid column middle vertical="center" withPadding="8rem 2rem 10rem">
@@ -44,25 +48,25 @@ NotFound.propTypes = {
   DIC: PropTypes.shape({
     NOT_FOUND: PropTypes.string.isRequired,
     NOT_FOUND_DESCRIPTION: PropTypes.string.isRequired,
-    NOT_FOUND_LINK: PropTypes.string.isRequired
+    NOT_FOUND_LINK: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  })
+    pathname: PropTypes.string.isRequired,
+  }),
 };
 
 const mapStateToProps = ({ dictionary, location }) => ({
   DIC: dictionary.data,
-  path: location.path
+  path: location.path,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleLocation: location => dispatch(getLocation(location))
+  handleLocation: location => dispatch(getLocation(location)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(NotFound);

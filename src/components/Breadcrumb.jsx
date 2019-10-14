@@ -1,9 +1,9 @@
-import React, { memo, useState } from "react";
-import PropTypes from "prop-types";
+import React, { memo, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import Breadcrumb from "@src/css/blocks/Breadcrumb";
-import { H2, Button } from "@src/css/elements";
-import { FiChevronDown } from "react-icons/fi";
+import Breadcrumb from '@src/css/blocks/Breadcrumb';
+import { H2, Button } from '@src/css/elements';
+import { FiChevronDown } from 'react-icons/fi';
 
 const BreadcrumbComponent = ({ items, DIC }) => {
   const [visible, setVisible] = useState(false);
@@ -26,7 +26,7 @@ const BreadcrumbComponent = ({ items, DIC }) => {
       </Breadcrumb.Header>
 
       <Breadcrumb.List visible={visible}>
-        {data.map(item => {
+        {data.map((item) => {
           const LABEL = `NAV_LABEL_${item.label}`;
 
           return (
@@ -46,7 +46,7 @@ const areEqual = (prevProps, nextProps) => prevProps.items === nextProps.items;
 
 BreadcrumbComponent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape()),
-  DIC: PropTypes.shape({})
+  DIC: PropTypes.shape({}),
 };
 
 export default memo(BreadcrumbComponent, areEqual);

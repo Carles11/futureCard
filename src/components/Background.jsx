@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Figure, BackgroundImage } from "@src/css/elements/index";
-import useScroll from "@src/hooks/useScroll";
+import { Figure, BackgroundImage } from '@src/css/elements/index';
+import useScroll from '@src/hooks/useScroll';
 
 /**
  * Renders a background Image
@@ -12,7 +12,9 @@ import useScroll from "@src/hooks/useScroll";
  * @param {any} props.children
  * @param {boolean} props.effect
  */
-const Background = ({ image, section, fixed, children }) => {
+const Background = ({
+  image, section, fixed, children,
+}) => {
   const position = useScroll();
 
   return (
@@ -31,7 +33,7 @@ Background.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   section: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   children: PropTypes.node,
-  fixed: PropTypes.bool
+  fixed: PropTypes.bool,
 };
 
 export default Background;
