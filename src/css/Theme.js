@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 /**
  * Add theme reducer to the Component passed as argument

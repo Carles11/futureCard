@@ -1,21 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { FiArrowRightCircle } from "react-icons/fi";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import Icon from "@src/components/Icon";
-import CardSlider from "@src/components/CardSlider";
-import { NAVIGATION, BACKGROUND_IMG } from "@src/utils/constants";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import Icon from '@src/components/Icon';
+import CardSlider from '@src/components/CardSlider';
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 
-import Box from "@src/css/blocks/Box";
-import { Article, A, Button, P, H4, Hr } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  Article, A, Button, P, H4, Hr,
+} from '@src/css/elements';
 
 const ServicesDesign = ({ DIC }) => {
-  const SECTIONS = NAVIGATION.find(item => item.label === "SERVICES");
+  const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
   const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== "CARD_DESIGN"
+    item => item.label !== 'CARD_DESIGN',
   );
   return (
     <ViewLayout
@@ -31,7 +33,7 @@ const ServicesDesign = ({ DIC }) => {
         <P>{DIC.SERVICES_DESIGN_CONTENT_0}</P>
         <CardSlider />
         <Box>
-          {FILTERED_SECTIONS.map(section => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -51,7 +53,7 @@ const ServicesDesign = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem">
-                  {`${DIC[CONTENT].split(".")[0]}.`}
+                  {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
             );
@@ -79,15 +81,15 @@ ServicesDesign.propTypes = {
     SERVICES_DESCRIPTION: PropTypes.string.isRequired,
     SERVICES_DESIGN_CONTENT_0: PropTypes.string.isRequired,
     SERVICES_DESIGN_SUBTITLE: PropTypes.string.isRequired,
-    SERVICES_DESIGN_TITLE: PropTypes.string.isRequired
-  }).isRequired
+    SERVICES_DESIGN_TITLE: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(ServicesDesign);

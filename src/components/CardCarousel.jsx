@@ -1,7 +1,7 @@
-import React, { Fragment, useState, memo } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment, useState, memo } from 'react';
+import PropTypes from 'prop-types';
 
-import { Grid, Figure, Image } from "@src/css/elements";
+import { Grid, Figure, Image } from '@src/css/elements';
 
 const CardCarousel = memo(({ images, name }) => {
   const [active, setActive] = useState(0);
@@ -40,7 +40,7 @@ function areEqual(prepProps, nextProps) {
 
 CardCarousel.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string),
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 };
 
 export default CardCarousel;

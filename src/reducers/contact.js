@@ -1,7 +1,7 @@
-import * as ACTION from "../actions/contact/actionsType";
+import * as ACTION from '../actions/contact/actionsType';
 
 const INITIAL_STATE = {
-  emailBody: {}
+  emailBody: {},
 };
 
 export default function mailReducer(state = INITIAL_STATE, action) {

@@ -1,36 +1,38 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import SignIn from "@src/components/SignIn";
-import Loader from "@src/components/Loader";
-import isAdmin from "@src/hooks/isAdmin";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import SignIn from '@src/components/SignIn';
+import Loader from '@src/components/Loader';
+import isAdmin from '@src/hooks/isAdmin';
 
-import Box from "@src/css/blocks/Box";
-import { Article, P, H3, Hr, Grid } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  Article, P, H3, Hr, Grid,
+} from '@src/css/elements';
 
 const SECTIONS = [
   {
     id: 0,
-    label: "Users",
+    label: 'Users',
     description:
       "Handle the users whom have access to edit the FutureCard's dynamic content.",
-    url: "/admin/users"
+    url: '/admin/users',
   },
   {
     id: 1,
-    label: "News",
-    description: "Create and edit the latest news of FutureCard",
-    url: "/admin/news"
+    label: 'News',
+    description: 'Create and edit the latest news of FutureCard',
+    url: '/admin/news',
   },
   {
     id: 2,
-    label: "Careers",
-    description: "Publish job offers and documents from FutureCards",
-    url: "/admin/careers"
-  }
+    label: 'Careers',
+    description: 'Publish job offers and documents from FutureCards',
+    url: '/admin/careers',
+  },
 ];
 
 const Admin = ({ token }) => {
@@ -84,14 +86,14 @@ const Admin = ({ token }) => {
 };
 
 Admin.propTypes = {
-  token: PropTypes.string.isRequired
+  token: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = ({ admin }) => ({
-  token: admin.token
+  token: admin.token,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(Admin);

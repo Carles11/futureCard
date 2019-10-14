@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const LinkComponent = styled(
   ({
@@ -17,16 +17,15 @@ const LinkComponent = styled(
     staticContext,
     theme,
     ...rest
-  }) => <Link children={children} {...rest} />
+  }) => <Link children={children} {...rest} />,
 )`
   flex: 1;
   margin: 0 0.75rem;
   text-decoration: none;
 
 
-  ${props =>
-    props.wrap &&
-    css`
+  ${props => props.wrap
+    && css`
       flex: auto;
       width: 525px !important;
       margin: 0 0 1.5rem;
@@ -37,9 +36,8 @@ const LinkComponent = styled(
       }
     `}
 
-    ${props =>
-      props.wrap_space &&
-      css`
+    ${props => props.wrap_space
+      && css`
         flex: none;
         width: 425px !important;
         margin: 0 0.75rem 1.5rem !important;
@@ -49,21 +47,18 @@ const LinkComponent = styled(
         }
       `}
 
-  ${props =>
-    props.centered &&
-    css`
+  ${props => props.centered
+    && css`
       margin: 50px;
     `}
 
-  ${props =>
-    props.noMargin &&
-    css`
+  ${props => props.noMargin
+    && css`
       margin: 0;
     `} 
 
-  ${props =>
-    props.with_height &&
-    css`
+  ${props => props.with_height
+    && css`
       position: relative;
       flex: auto !important;
       width: 150%;
@@ -80,24 +75,21 @@ const LinkComponent = styled(
       }
     `}
     
-  ${props =>
-    props.nomargin &&
-    css`
+  ${props => props.nomargin
+    && css`
       margin: 0;
     `}
 
-  ${props =>
-    props.with_background &&
-    css`
+  ${props => props.with_background
+    && css`
       background: #f3f3f3;
       border: 1px solid #f3f3f3;
     `}
 
   
 
-  ${props =>
-    props.with_scale &&
-    css`
+  ${props => props.with_scale
+    && css`
       transform: scale(1);
       box-shadow: 0;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
@@ -111,9 +103,8 @@ const LinkComponent = styled(
       }
     `}
     
-    ${props =>
-      props.with_background_white &&
-      css`
+    ${props => props.with_background_white
+      && css`
         background: white !important;
         border: 1px solid #eeeeee !important;
       `}

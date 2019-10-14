@@ -1,8 +1,8 @@
 // @flow
 
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const P = styled.p`
   font-family: Raleway, sans-serif;
@@ -11,9 +11,8 @@ const P = styled.p`
   line-height: 1.5;
   text-align: left;
 
-  ${props =>
-    props.message &&
-    css`
+  ${props => props.message
+    && css`
     display: block;
     margin: 2.5rem auto 2rem;
     text-align: center;
@@ -30,92 +29,78 @@ const P = styled.p`
       }
   `}
 
-  ${props =>
-    props.maxWidth &&
-    css`
+  ${props => props.maxWidth
+    && css`
       max-width: ${props.maxWidth};
     `}
 
-  ${props =>
-    props.flex &&
-    css`
+  ${props => props.flex
+    && css`
       display: flex;
       align-items: center;
     `}
 
 
-  ${props =>
-    !!props.bold &&
-    css`
+  ${props => !!props.bold
+    && css`
       font-weight: 600;
     `}
 
-  ${props =>
-    !!props.centered &&
-    css`
+  ${props => !!props.centered
+    && css`
       text-align: center;
     `}
 
-  ${props =>
-    !!props.invertColor &&
-    css`
+  ${props => !!props.invertColor
+    && css`
       color: white;
       text-shadow: 0px 0px 3px #333333;
     `}
 
-  ${props =>
-    props.highlight &&
-    css`
+  ${props => props.highlight
+    && css`
       color: ${props.theme.mainColor};
     `}
 
-  ${props =>
-    !!props.withAlign &&
-    css`
+  ${props => !!props.withAlign
+    && css`
       text-align: ${props.withAlign};
     `}
   
-  ${props =>
-    !!props.noMargin &&
-    css`
+  ${props => !!props.noMargin
+    && css`
       margin: 0;
     `}
 
-  ${props =>
-    !!props.withMargin &&
-    css`
+  ${props => !!props.withMargin
+    && css`
       margin: ${props.withMargin};
     `}
 
-  ${props =>
-    !!props.withPadding &&
-    css`
+  ${props => !!props.withPadding
+    && css`
       padding: ${props.withPadding};
     `}
 
-  ${props =>
-    props.small &&
-    css`
+  ${props => props.small
+    && css`
       font-size: 0.98rem;
       line-height: 1.4rem;
     `}
   
-  ${props =>
-    props.tiny &&
-    css`
+  ${props => props.tiny
+    && css`
       font-size: 0.75rem;
       line-height: 1.2rem;
     `}
   
-  ${props =>
-    props.uppercase &&
-    css`
+  ${props => props.uppercase
+    && css`
       text-transform: uppercase;
     `}
   
-  ${props =>
-    props.disabled &&
-    css`
+  ${props => props.disabled
+    && css`
       opacity: 0.25;
     `}
 `;

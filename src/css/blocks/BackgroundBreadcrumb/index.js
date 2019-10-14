@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Item from "./Item";
+import Item from './Item';
 
 const BackgroundBreadcrumb = styled.div`
   display: flex;

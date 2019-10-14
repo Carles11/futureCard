@@ -1,22 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { FiArrowRightCircle } from "react-icons/fi";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import { NAVIGATION, BACKGROUND_IMG } from "@src/utils/constants";
-import Icon from "@src/components/Icon";
-import PersonalizationGraphic from "@src/assets/image/graphics/Services_Personalization.png";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
+import Icon from '@src/components/Icon';
+import PersonalizationGraphic from '@src/assets/image/graphics/Services_Personalization.png';
 
-import Box from "@src/css/blocks/Box";
-import { Article, A, Button, P, H4, Hr, Image } from "@src/css/elements";
+import Box from '@src/css/blocks/Box';
+import {
+  Article, A, Button, P, H4, Hr, Image,
+} from '@src/css/elements';
 
 const ServicesPersonalization = ({ DIC }) => {
-  const [title, ...content] = DIC.SERVICES_PERSONALIZATION_CONTENT.split(".");
-  const SECTIONS = NAVIGATION.find(item => item.label === "SERVICES");
+  const [title, ...content] = DIC.SERVICES_PERSONALIZATION_CONTENT.split('.');
+  const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
   const FILTERED_SECTIONS = SECTIONS.child.filter(
-    item => item.label !== "PERSONALIZATION"
+    item => item.label !== 'PERSONALIZATION',
   );
   return (
     <ViewLayout
@@ -30,7 +32,7 @@ const ServicesPersonalization = ({ DIC }) => {
       />
       <Article centered>
         <P>{`${title}.`}</P>
-        <P>{content.join(".")}</P>
+        <P>{content.join('.')}</P>
         <Image
           src={PersonalizationGraphic}
           withMargin="auto"
@@ -38,7 +40,7 @@ const ServicesPersonalization = ({ DIC }) => {
           alt="Personalization Graphic FutureCard"
         />
         <Box>
-          {FILTERED_SECTIONS.map(section => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -58,7 +60,7 @@ const ServicesPersonalization = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem">
-                  {`${DIC[CONTENT].split(".")[0]}.`}
+                  {`${DIC[CONTENT].split('.')[0]}.`}
                 </P>
               </Box.Link>
             );
@@ -85,15 +87,15 @@ ServicesPersonalization.propTypes = {
     SERVICES_PERSONALIZATION_CONTENT: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_DESCRIPTION: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_SUBTITLE: PropTypes.string.isRequired,
-    SERVICES_PERSONALIZATION_TITLE: PropTypes.string.isRequired
-  }).isRequired
+    SERVICES_PERSONALIZATION_TITLE: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(ServicesPersonalization);

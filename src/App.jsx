@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { connect } from "react-redux";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
-import Routes from "./routes";
-import Header from "./components/Header";
+import Routes from './routes';
+import Header from './components/Header';
 
 const App = ({ DIC }) => (
   <Fragment>
@@ -19,17 +19,17 @@ const App = ({ DIC }) => (
 
 App.propTypes = {
   DIC: PropTypes.shape({
-    APP_DESCRIPTION: PropTypes.string.isRequired
-  }).isRequired
+    APP_DESCRIPTION: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = ({ dictionary }) => ({
-  DIC: dictionary.data
+  DIC: dictionary.data,
 });
 
 export const AppWrapper = App;
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(App);

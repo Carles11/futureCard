@@ -1,11 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Image = styled.img`
-  ${props =>
-    props.menulogo &&
-    css`
+  ${props => props.menulogo
+    && css`
       position: absolute;
       top: 50%;
       transform: rotate(-30deg) translateY(-50%);
@@ -13,9 +12,8 @@ const Image = styled.img`
       opacity: 0.25;
     `}
 
-  ${props =>
-    props.box &&
-    css`
+  ${props => props.box
+    && css`
       position: absolute;
       width: 150%;
       height: auto;
@@ -30,9 +28,8 @@ const Image = styled.img`
       }
     `}
     
-  ${props =>
-    props.section &&
-    css`
+  ${props => props.section
+    && css`
       position: relative;
       opacity: 0.9;
       top: 0;
@@ -48,15 +45,13 @@ const Image = styled.img`
       }
     `}
 
-  ${props =>
-    props.withMargin &&
-    css`
+  ${props => props.withMargin
+    && css`
       margin: ${props.withMargin};
     `}
 
-    ${props =>
-      props.graphics &&
-      css`
+    ${props => props.graphics
+      && css`
         margin: 100px ${props.withMargin};
         width: 80%;
         @media only screen and (min-width: 1024px) {
@@ -64,9 +59,8 @@ const Image = styled.img`
         }
       `}
 
-  ${props =>
-    props.responsive &&
-    css`
+  ${props => props.responsive
+    && css`
     width: 100%;
       @media only screen and (max-width: 1024px) {
         height: auto;
@@ -76,9 +70,8 @@ const Image = styled.img`
       }
     `}
 
-  ${props =>
-    props.contactSize &&
-    css`
+  ${props => props.contactSize
+    && css`
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -91,18 +84,16 @@ const Image = styled.img`
       }
     `}
 
-  ${props =>
-    props.preview &&
-    css`
+  ${props => props.preview
+    && css`
       width: 100%;
       height: auto;
       margin: 0;
       padding: 0;
     `}
 
-  ${props =>
-    props.carousel &&
-    css`
+  ${props => props.carousel
+    && css`
       opacity: 0.5;
       transform: scale(1);
       transition: opacity ease-in-out 0.1s, transform ease-in-out 0.1s;
@@ -117,8 +108,8 @@ const Image = styled.img`
         z-index: 2;
       }
 
-      ${props.active &&
-        css`
+      ${props.active
+        && css`
           opacity: 1 !important;
           transform: scale(1.2) !important;
           z-index: 1;

@@ -1,8 +1,8 @@
 // @flow
 
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import withTheme from "@src/css/Theme";
+import withTheme from '@src/css/Theme';
 
 const Grid = styled.div`
   display: flex;
@@ -17,45 +17,39 @@ const Grid = styled.div`
     margin-right: 0;
   }
 
-  ${props =>
-    props.responsive &&
-    css`
+  ${props => props.responsive
+    && css`
       @media only screen and (max-width: 1024px) {
         flex-direction: column;
         align-items: center;
       }
     `}
 
-  ${props =>
-    props.wrapping &&
-    css`
+  ${props => props.wrapping
+    && css`
       flex-wrap: wrap;
     `}
 
-  ${props =>
-    props.loader &&
-    css`
+  ${props => props.loader
+    && css`
       display: flex;
       justify-content: center;
       align-items: center;
       height: 50vh;
     `}
 
-  ${props =>
-    props.vertical &&
-    css`
+  ${props => props.vertical
+    && css`
       justify-content: ${props.vertical};
     `}
 
-  ${props =>
-    props.column &&
-    css`
+  ${props => props.column
+    && css`
       flex-direction: column;
     `};
 
-  ${props =>
-    props.queryColumn &&
-    css`
+  ${props => props.queryColumn
+    && css`
       @media only screen and (max-width: 1024px) {
         flex-direction: column;
         width: 100%;
@@ -63,44 +57,38 @@ const Grid = styled.div`
       }
     `};
 
-  ${props =>
-    props.maxWidth &&
-    css`
+  ${props => props.maxWidth
+    && css`
       width: 100%;
     `};
   
 
 
-  ${props =>
-    props.withIcon &&
-    css`
+  ${props => props.withIcon
+    && css`
       font-size: 4rem;
       color: ${props.theme.mainColor};
     `}
 
-  ${props =>
-    props.withPadding &&
-    css`
+  ${props => props.withPadding
+    && css`
       padding: ${props.withPadding};
     `}
 
-  ${props =>
-    props.withMargin &&
-    css`
+  ${props => props.withMargin
+    && css`
       margin: ${props.withMargin} !important;
     `}
 
-  ${props =>
-    props.lastWithMargin &&
-    css`
+  ${props => props.lastWithMargin
+    && css`
       &:last-of-type {
         margin: ${props.lastWithMargin} !important;
       }
     `}
   
-  ${props =>
-    props.withWidth &&
-    css`
+  ${props => props.withWidth
+    && css`
       width: ${props.withWidth};
 
       @media only screen and (max-width: 1024px) {
@@ -109,33 +97,28 @@ const Grid = styled.div`
       }
     `}
 
-  ${props =>
-    props.middle &&
-    css`
+  ${props => props.middle
+    && css`
       align-items: center;
     `}
   
-  ${props =>
-    props.right &&
-    css`
+  ${props => props.right
+    && css`
       align-items: flex-end;
     `}
   
-  ${props =>
-    props.flex &&
-    css`
+  ${props => props.flex
+    && css`
       flex: ${props.flex};
     `}
 
-  ${props =>
-    props.heightProp &&
-    css`
+  ${props => props.heightProp
+    && css`
       height: ${props.heightProp};
     `}
   
-  ${props =>
-    props.darker &&
-    css`
+  ${props => props.darker
+    && css`
       background: ${props.theme.fontColorDarker};
     `}
 `;

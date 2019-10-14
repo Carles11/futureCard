@@ -1,25 +1,27 @@
 /* eslint-disable no-alert */
 
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 // import HeaderSection from '@src/components';
-import { Form, Input, Textarea, Label } from "@src/css/elements/form";
-import { Button, H4 } from "@src/css/elements";
-import { connect } from "react-redux";
+import {
+  Form, Input, Textarea, Label,
+} from '@src/css/elements/form';
+import { Button, H4 } from '@src/css/elements';
+import { connect } from 'react-redux';
 
-import { sendEmail } from "@src/actions/contact/actionsSideEffects";
+import { sendEmail } from '@src/actions/contact/actionsSideEffects';
 
 // add handleSubmit && handleChange
 
 const ContactForm = ({ DIC, handleSendEmail, data }) => {
   const initialFormState = {
-    name: "",
-    email: "",
-    telephone: "",
-    message: "",
+    name: '',
+    email: '',
+    telephone: '',
+    message: '',
     sent: false,
     buttonText: `${DIC.BUTTON_SEND}`,
-    subject: "New message received from www.FutureCard.com"
+    subject: 'New message received from www.FutureCard.com',
   };
   const [emailBody, setEmailBody] = useState(initialFormState);
 
@@ -35,7 +37,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     }
   }, [data]);
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const { id, value } = e.target;
     setEmailBody({ ...emailBody, [id]: value });
   };
@@ -43,7 +45,7 @@ const ContactForm = ({ DIC, handleSendEmail, data }) => {
     setEmailBody(initialFormState);
   };
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     setEmailBody({ ...emailBody, buttonText: `${DIC.BUTTON_SENDING}` });
     handleSendEmail(emailBody);
@@ -93,21 +95,21 @@ ContactForm.propTypes = {
     CONTACT_LABEL_MESSAGE: PropTypes.string.isRequired,
     BUTTON_SEND: PropTypes.string.isRequired,
     BUTTON_NOT_SENT: PropTypes.string.isRequired,
-    BUTTON_SENDING: PropTypes.string.isRequired
+    BUTTON_SENDING: PropTypes.string.isRequired,
   }).isRequired,
   handleSendEmail: PropTypes.func.isRequired,
-  data: PropTypes.string.isRequired
+  data: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, contact }) => ({
   DIC: dictionary.data,
-  data: contact.emailBody.data
+  data: contact.emailBody.data,
 });
 const mapDispatchToProps = dispatch => ({
-  handleSendEmail: emailBody => dispatch(sendEmail(emailBody))
+  handleSendEmail: emailBody => dispatch(sendEmail(emailBody)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ContactForm);

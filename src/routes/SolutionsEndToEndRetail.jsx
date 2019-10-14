@@ -1,22 +1,24 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { FiArrowRightCircle } from "react-icons/fi";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { FiArrowRightCircle } from 'react-icons/fi';
 
-import ViewLayout from "@src/components/ViewLayout";
-import HeaderSection from "@src/components/HeaderSection";
-import CardsList from "@src/components/CardsList";
-import CardsListOptions from "@src/components/CardsListOptions";
+import ViewLayout from '@src/components/ViewLayout';
+import HeaderSection from '@src/components/HeaderSection';
+import CardsList from '@src/components/CardsList';
+import CardsListOptions from '@src/components/CardsListOptions';
 
-import { Article, P, Grid, A, Button } from "@src/css/elements";
-import Icon from "@src/components/Icon";
+import {
+  Article, P, Grid, A, Button,
+} from '@src/css/elements';
+import Icon from '@src/components/Icon';
 import {
   OPTIONS_RETAIL,
   OPTIONS_GENERAL,
-  BACKGROUND_IMG
-} from "@src/utils/constants";
+  BACKGROUND_IMG,
+} from '@src/utils/constants';
 
-import { getCards } from "@src/actions/cards/actionsSideEffects";
+import { getCards } from '@src/actions/cards/actionsSideEffects';
 
 /**
  * SolutionsEndToEndRetail View Component
@@ -29,16 +31,16 @@ const SolutionsEndToEndRetail = ({
   language,
   cards,
   cardsLang,
-  handleGetCards
+  handleGetCards,
 }) => {
   const OPTIONS = [...OPTIONS_RETAIL, ...OPTIONS_GENERAL];
 
   useEffect(() => {
     if (!cards.length || cardsLang !== language) {
-      handleGetCards("retail", language);
+      handleGetCards('retail', language);
     }
   }, [language]);
-  const [title, ...first] = DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT.split(".");
+  const [title, ...first] = DIC.SOLUTIONS_END_TO_END_RETAIL_CONTENT.split('.');
   const [para1, para2] = first;
 
   return (
@@ -83,7 +85,7 @@ SolutionsEndToEndRetail.propTypes = {
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_RETAIL_LOYALTY: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION: PropTypes.string.isRequired,
-    SOLUTIONS_END_TO_END_RETAIL_CONTENT: PropTypes.string.isRequired
+    SOLUTIONS_END_TO_END_RETAIL_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
   language: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(
@@ -91,25 +93,25 @@ SolutionsEndToEndRetail.propTypes = {
       _id: PropTypes.string,
       name: PropTypes.string,
       description: PropTypes.string,
-      img: PropTypes.string
-    })
+      img: PropTypes.string,
+    }),
   ),
   cardsLang: PropTypes.string.isRequired,
-  handleGetCards: PropTypes.func.isRequired
+  handleGetCards: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ dictionary, cards }) => ({
   DIC: dictionary.data,
   language: dictionary.language,
   cards: cards.retail,
-  cardsLang: cards.lang
+  cardsLang: cards.lang,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleGetCards: (code, lang) => dispatch(getCards(code, lang))
+  handleGetCards: (code, lang) => dispatch(getCards(code, lang)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SolutionsEndToEndRetail);
