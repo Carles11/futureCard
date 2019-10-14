@@ -9,7 +9,9 @@ import HeaderSection from '@src/components/HeaderSection';
 import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
-import { A, Article, Button, P, Image, Hr } from '@src/css/elements';
+import {
+  A, Article, Button, P, Image, Hr,
+} from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
@@ -52,26 +54,27 @@ const FeaturesDesign = ({
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS} | ${DIC.NAV_LABEL_DESIGN}`}
       description={title}
-      image={BACKGROUND_IMG.DESIGN_SECURITY}>
+      image={BACKGROUND_IMG.DESIGN_SECURITY}
+    >
       <HeaderSection title={DIC.NAV_LABEL_DESIGN} subtitle={`${title}`} />
       <Article centered>
         <P>{content.join('.')}</P>
       </Article>
       <Image
-        withMargin='2rem auto'
-        withWidth='60%'
+        withMargin="2rem auto"
+        withWidth="60%"
         src={BACKGROUND_IMG.SECURITY_FEATURES_FRONT}
       />
-      <Hr withMargin='3rem auto' withSize='45%' />
+      <Hr withMargin="3rem auto" withSize="45%" />
 
       <Image
-        withMargin='3rem auto 4rem auto'
-        withWidth='60%'
+        withMargin="3rem auto 4rem auto"
+        withWidth="60%"
         src={BACKGROUND_IMG.SECURITY_FEATURES_REVERSE}
       />
       <CardsList cards={features} />
-      <Button.Centered withMargin='3.3rem'>
-        <A role='button' to='/our-solutions/card-features'>
+      <Button.Centered withMargin="3.3rem">
+        <A role="button" to="/our-solutions/card-features">
           {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_CARDS}`}
           <Icon>
             <FiArrowRightCircle />
