@@ -43,7 +43,7 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
 
         <Image
           src={IssuanceGraphic}
-          withWidth='auto'
+          withWidth='100%'
           withMargin='8rem auto'
           alt='Consulting Graphic FutureCard'
         />
