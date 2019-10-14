@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Form, Input, Label } from '@src/css/elements/form';
-import {
-  Grid, Button, H2, H3, Hr,
-} from '@src/css/elements';
+import { Grid, Button, H2, H3, Hr } from '@src/css/elements';
 import { logIn } from '@src/actions/admin/actionsSideEffects';
 
 const SignIn = ({ handleLogIn }) => {

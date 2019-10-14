@@ -10,7 +10,7 @@ import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 import {
-  A, Article, Button, P,
+  A, Article, Button, P, Image,
 } from '@src/css/elements';
 
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
@@ -60,6 +60,16 @@ const FeaturesDesign = ({
       <Article centered>
         <P>{content.join('.')}</P>
       </Article>
+      <Image
+        withMargin="2rem auto"
+        withWidth="70%"
+        src={BACKGROUND_IMG.SECURITY_FEATURES_FRONT}
+      />
+      <Image
+        withMargin="2rem auto 4rem auto"
+        withWidth="70%"
+        src={BACKGROUND_IMG.SECURITY_FEATURES_REVERSE}
+      />
       <CardsList cards={features} />
       <Button.Centered withMargin="3.3rem">
         <A role="button" to="/our-solutions/card-features">

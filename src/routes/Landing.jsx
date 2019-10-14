@@ -14,6 +14,7 @@ import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
 import useWindowSize from '@src/hooks/useWindowSize';
 import { BACKGROUND_IMG } from '@src/utils/constants';
+import arrowImg from '@src/assets/image/arrow.png';
 
 import {
   A,
@@ -26,6 +27,8 @@ import {
   Span,
   Figure,
   BackgroundImage,
+  Grid,
+  Image,
 } from '@src/css/elements';
 import { getLocation } from '@src/actions/location/actions';
 
@@ -42,6 +45,7 @@ const Landing = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
+  const [visible, setVisible] = useState(true);
   const [animate, setAnimate] = useState(false);
   const [initial, setInitial] = useState(false);
   const position = useScroll(true);
@@ -53,10 +57,12 @@ const Landing = ({
 
   useEffect(() => {
     if (!animate && position < 300) {
+      setVisible(true);
       setAnimate(true);
       setInitial(false);
     }
     if (!initial && position > 300) {
+      setVisible(false);
       setInitial(true);
       setAnimate(false);
     }
@@ -100,6 +106,9 @@ const Landing = ({
               </Span>
             </A>
           </Header>
+          <Grid heightProp="100vh">
+            <Image src={arrowImg} arrow="true" visible={visible} />
+          </Grid>
         </Fragment>
       </Background>
       <Container position={height} background>

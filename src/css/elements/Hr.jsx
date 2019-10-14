@@ -34,7 +34,7 @@ const Hr = styled.hr`
 
   ${props => props.withAlign
     && css`
-      text-align: ${props.withAlign};
+      text-align: ${props.withAlign} !important;
     `}
 
   ${props => props.invertColor

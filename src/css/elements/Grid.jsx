@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Grid = styled.div`
+  position: relative;
   display: flex;
   margin: 0 0.5rem;
   box-sizing: border-box;
