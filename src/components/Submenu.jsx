@@ -7,19 +7,19 @@ import { Grid, P, Image } from '@src/css/elements';
 import logo from '@src/assets/image/logo_transparent.png';
 
 const SubmenuComponent = ({ items, DIC }) => (
-  <Submenu vertical='center'>
-    {items.map(item => {
+  <Submenu vertical="center">
+    {items.map((item) => {
       const LABEL = `NAV_LABEL_${item.label}`;
       const TEXT = `NAV_LABEL_${item.label}_TXT`;
 
       return (
-        <Grid column lastWithMargin='0 5rem 0 0'>
+        <Grid column lastWithMargin="0 5rem 0 0">
           <Submenu.Item key={item.key} to={item.link}>
             {DIC[LABEL]}
           </Submenu.Item>
           {item.child && item.child.length ? (
             <Grid column>
-              {item.child.map(link => {
+              {item.child.map((link) => {
                 const SUB_LABEL = `NAV_LABEL_${link.label}`;
                 return (
                   <Submenu.Subitem key={link.key} to={link.link}>
@@ -29,14 +29,14 @@ const SubmenuComponent = ({ items, DIC }) => (
               })}
             </Grid>
           ) : (
-            <P tiny maxWidth='300px' withMargin='0 0 0 3rem'>
+            <P tiny maxWidth="300px" withMargin="0 0 0 3rem">
               <em>{DIC[TEXT]}</em>
             </P>
           )}
         </Grid>
       );
     })}
-    <Image menulogo src={logo} alt='logo' />
+    <Image menulogo src={logo} alt="logo" />
   </Submenu>
 );
 
