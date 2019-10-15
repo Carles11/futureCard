@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   fontWhite: '#ffffff',
   mainColor: '#fe4d10',
   background: '#0d1326',
+  backgroundLightGrey: '#FAFAFA',
 };
 
 export default function themeReducer(state = INITIAL_STATE, action) {

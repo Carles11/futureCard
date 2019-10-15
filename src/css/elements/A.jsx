@@ -28,20 +28,20 @@ const buttonDefault = css`
     border-color 0.3s ease-in-out;
 
   ${props => css`
-     background: transparent
-      color: ${props.theme.mainColor};
-      border: 2px solid ${props.theme.mainColor};
+    background: ${props.theme.backgroundLightGrey};
+    color: ${props.theme.mainColor};
+    border: 2px solid ${props.theme.mainColor};
 
     &:hover {
-    background: ${props.theme.mainColor};
-    color: white;
-    border: 2px solid ${props.theme.mainColor};
-     
+      background: ${props.theme.mainColor};
+      color: white;
+      border: 2px solid ${props.theme.mainColor};
     }
   `}
 
-  ${props => props.align
-    && css`
+  ${props =>
+    props.align &&
+    css`
       text-align: ${props.align};
     `}
 `;
@@ -62,12 +62,13 @@ const A = styled(
   }) => <Link children={children} {...rest} />,
 )`
 
-  ${props => props.role === 'button'
-    && css`
+  ${props =>
+    props.role === 'button' &&
+    css`
       ${buttonDefault}
 
-      ${props.invert
-        && css`
+      ${props.invert &&
+        css`
           color: white;
           border: 2px solid ${props.theme.mainColor};
           background: ${props.theme.mainColor};
@@ -80,8 +81,9 @@ const A = styled(
         `}
     `}
 
-  ${props => props.role === 'link'
-    && css`
+  ${props =>
+    props.role === 'link' &&
+    css`
       color: ${props.theme.mainColor};
       font-size: 1rem;
       padding-bottom: 0.5rem;
@@ -92,8 +94,9 @@ const A = styled(
       }
     `}
 
-  ${props => props.role === 'icon'
-    && `
+  ${props =>
+    props.role === 'icon' &&
+    `
       color: white;
       font-size: 1rem;
       text-decoration: none;
@@ -105,8 +108,9 @@ const A = styled(
       }
   `}
 
-  ${props => props.state === 'disabled'
-    && css`
+  ${props =>
+    props.state === 'disabled' &&
+    css`
       opacity: 0.5;
       cursor: not-allowed;
       &:hover {
@@ -114,8 +118,9 @@ const A = styled(
       }
     `}
     
-  ${props => props.withicon
-    && css`
+  ${props =>
+    props.withicon &&
+    css`
       font-size: 1.3rem;
       padding: 1rem;
       display: block;
@@ -128,24 +133,28 @@ const A = styled(
       }
     `}
 
-  ${props => props.icon
-    && css`
+  ${props =>
+    props.icon &&
+    css`
       padding-right: 3rem;
     `}
 
-    ${props => props.withmargin
-      && css`
+    ${props =>
+      props.withmargin &&
+      css`
         margin: ${props.withmargin} !important;
       `}
 
-    ${props => props.withpadding
-      && css`
+    ${props =>
+      props.withpadding &&
+      css`
         box-sizing: border-box;
         margin: ${props.withpadding} !important;
       `}
 
-    ${props => props.tiny
-      && css`
+    ${props =>
+      props.tiny &&
+      css`
         font-size: 0.8rem;
         display: block;
       `}
