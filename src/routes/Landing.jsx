@@ -148,6 +148,7 @@ Landing.propTypes = {
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
+    WELLCOME_TITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

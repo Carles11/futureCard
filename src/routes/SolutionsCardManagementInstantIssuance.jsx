@@ -65,6 +65,8 @@ const SolutionsCardManagementInstantIssuance = ({ DIC }) => {
 
 SolutionsCardManagementInstantIssuance.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
+    NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     MANAGEMENT_INSTANT_ISSUANCE: PropTypes.string.isRequired,
     MANAGEMENT_DESCRIPTION_INSTANT_ISSUANCE: PropTypes.string.isRequired,

@@ -23,7 +23,7 @@ const Contact = ({
       <Helmet
         title={DIC.NAV_LABEL_CONTACT}
         meta={[
-          { name: 'description', content: `${DIC.CONTACT_DECRIPTION}` },
+          { name: 'description', content: `${DIC.CONTACT_DESCRIPTION}` },
           {
             property: 'og:title',
             content: 'Contact page of FutureCard Industries',

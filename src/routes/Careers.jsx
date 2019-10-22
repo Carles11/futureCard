@@ -151,9 +151,12 @@ const Careers = ({
 
 Careers.propTypes = {
   DIC: PropTypes.shape({
+    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    BACK_HOME: PropTypes.string.isRequired,
+    LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
-    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
   }).isRequired,
   careers: PropTypes.arrayOf(
     PropTypes.shape({

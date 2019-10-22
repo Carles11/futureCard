@@ -16,9 +16,7 @@ import {
   Figure,
   Image,
 } from '@src/css/elements';
-import {
-  Form, Input, Label, Textarea,
-} from '@src/css/elements/form';
+import { Form, Input, Label, Textarea } from '@src/css/elements/form';
 import isAdmin from '@src/hooks/isAdmin';
 
 import {
@@ -99,9 +97,7 @@ const AdminEditCareers = ({
    * Update state if Edit Mode
    * */
   useEffect(() => {
-    const {
-      title = '', text = '', file = '', link = '',
-    } = career;
+    const { title = '', text = '', file = '', link = '' } = career;
     dispatch({
       type: 'ALL',
       title,
@@ -161,29 +157,28 @@ const AdminEditCareers = ({
           <Loader />
         </Grid>
       )}
-      {state.redirect && <Redirect to="/admin/careers" />}
-      {admin !== null && !admin && <Redirect to="/admin" />}
+      {state.redirect && <Redirect to='/admin/careers' />}
+      {admin !== null && !admin && <Redirect to='/admin' />}
       {admin && (
         <ViewLayout
-          title="Edit Careers"
-          description="FutureCard admin panel | Careers"
-        >
+          title='Edit Careers'
+          description='FutureCard admin panel | Careers'>
           <HeaderSection
-            title="Admin Careers"
-            subtitle="Publish job offers and documents from FutureCards"
+            title='Admin Careers'
+            subtitle='Publish job offers and documents from FutureCards'
           />
           <Article centered>
             <Grid column>
               <Grid middle>
-                <Grid flex="1">
-                  <H4 withMargin="1rem 0">
+                <Grid flex='1'>
+                  <H4 withMargin='1rem 0'>
                     {Object.keys(career).length
                       ? 'Update Career'
                       : 'Create Career'}
                   </H4>
                 </Grid>
-                <Grid heightProp="50px">
-                  <A role="button" to="/admin/careers">
+                <Grid heightProp='50px'>
+                  <A role='button' to='/admin/careers'>
                     Back to Careers List
                   </A>
                 </Grid>
@@ -191,22 +186,22 @@ const AdminEditCareers = ({
             </Grid>
             <Hr invertColor />
 
-            <Grid withWidth="50%" withMargin="1rem auto 3rem" vertical middle>
+            <Grid withWidth='50%' withMargin='1rem auto 3rem' vertical middle>
               <Form onSubmit={handleOnSubmit}>
-                <Label htmlFor="title">Title</Label>
+                <Label htmlFor='title'>Title</Label>
                 <Input
-                  id="title"
-                  type="text"
-                  name="title"
+                  id='title'
+                  type='text'
+                  name='title'
                   required
                   defaultValue={state.title}
                   onChange={handleInputChange}
                 />
-                <Label htmlFor="title">Text</Label>
+                <Label htmlFor='title'>Text</Label>
                 <Textarea
-                  rows="5"
-                  id="text"
-                  name="text"
+                  rows='5'
+                  id='text'
+                  name='text'
                   required
                   value={state.text}
                   onChange={handleInputChange}
@@ -227,26 +222,26 @@ const AdminEditCareers = ({
                     </Figure>
                   </Fragment>
                 )}
-                <Label htmlFor="file">Upload Image</Label>
+                <Label htmlFor='file'>Upload Image</Label>
                 <Input
-                  id="file"
-                  type="file"
-                  name="file"
+                  id='file'
+                  type='file'
+                  name='file'
                   defaultValue={state.file}
                   onChange={handleImageChange}
                 />
 
                 <Fragment>
-                  <Label htmlFor="link">External Link (Optional)</Label>
+                  <Label htmlFor='link'>External Link (Optional)</Label>
                   <Input
-                    id="link"
-                    type="text"
-                    name="link"
+                    id='link'
+                    type='text'
+                    name='link'
                     defaultValue={state.link}
                     onChange={handleInputChange}
                   />
                 </Fragment>
-                <Button contact type="submit">
+                <Button contact type='submit'>
                   {!!Object.keys(career).length && career._id
                     ? 'Update'
                     : 'Create'}
@@ -269,6 +264,11 @@ AdminEditCareers.propTypes = {
   token: PropTypes.string.isRequired,
   career: PropTypes.shape({
     _id: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    link: PropTypes.string,
+    image: PropTypes.node,
+    file: PropTypes.any,
   }),
   message: PropTypes.string,
   handleGetCareer: PropTypes.func.isRequired,

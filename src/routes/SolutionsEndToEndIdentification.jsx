@@ -89,6 +89,9 @@ const SolutionsEndToEndIdentification = ({
 
 SolutionsEndToEndIdentification.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
+    LOOKING_FOR: PropTypes.string.isRequired,
+    NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_IDENTIFICATION: PropTypes.string.isRequired,
     SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,

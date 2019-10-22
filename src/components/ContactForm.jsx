@@ -94,6 +94,7 @@ ContactForm.propTypes = {
     CONTACT_LABEL_TELEPHONE: PropTypes.string.isRequired,
     CONTACT_LABEL_MESSAGE: PropTypes.string.isRequired,
     BUTTON_SEND: PropTypes.string.isRequired,
+    BUTTON_SENT: PropTypes.string.isRequired,
     BUTTON_NOT_SENT: PropTypes.string.isRequired,
     BUTTON_SENDING: PropTypes.string.isRequired,
   }).isRequired,

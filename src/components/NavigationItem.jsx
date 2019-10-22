@@ -46,6 +46,7 @@ NavigationItem.propTypes = {
   item: PropTypes.shape({
     key: PropTypes.number.isRequired,
     link: PropTypes.string.isRequired,
+    child: PropTypes.string.isRequired,
   }),
   label: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,

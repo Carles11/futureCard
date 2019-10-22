@@ -90,6 +90,7 @@ ServicesFulfillment.propTypes = {
     BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_FULFILLMENT: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES_FULFILLMENT: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_TITLE: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_SUBTITLE: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_DESCRIPTION: PropTypes.string.isRequired,

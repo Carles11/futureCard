@@ -150,6 +150,7 @@ const SolutionsEndToEndPayment = ({
 
 SolutionsEndToEndPayment.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     LOOKING_FOR: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_PAYMENT: PropTypes.string.isRequired,

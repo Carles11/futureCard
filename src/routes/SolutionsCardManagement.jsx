@@ -102,6 +102,7 @@ SolutionsCardManagement.propTypes = {
     NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
     SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_CARD_MANAGEMENT_CONTENT: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -79,6 +79,7 @@ const FeaturesTechnology = ({
 
 FeaturesTechnology.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_CARDS: PropTypes.string.isRequired,
     NAV_LABEL_TECHNOLOGY: PropTypes.string.isRequired,
     CARD_FEATURES_TECHNOLOGY_DESCRIPTION: PropTypes.string.isRequired,

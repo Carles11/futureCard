@@ -265,6 +265,11 @@ AdminEditNews.propTypes = {
   token: PropTypes.string.isRequired,
   news: PropTypes.shape({
     _id: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    link: PropTypes.string,
+    image: PropTypes.node,
+    file: PropTypes.any,
   }),
   message: PropTypes.string,
   handleGetOneNews: PropTypes.func.isRequired,

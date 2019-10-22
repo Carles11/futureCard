@@ -83,6 +83,7 @@ ServicesPersonalization.propTypes = {
   DIC: PropTypes.shape({
     BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES_PERSONALIZATION: PropTypes.string.isRequired,
     NAV_LABEL_PERSONALIZATION: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_CONTENT: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_DESCRIPTION: PropTypes.string.isRequired,
