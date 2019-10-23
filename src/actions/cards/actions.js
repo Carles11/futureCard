@@ -9,4 +9,10 @@ export function getCards(cards, code, lang) {
   };
 }
 
-export function fakeLint() {}
+export function getAllCards(cards, count) {
+  return {
+    type: ACTION.GET_ALL_CARDS,
+    cards,
+    count,
+  };
+}

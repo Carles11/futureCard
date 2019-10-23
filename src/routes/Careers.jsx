@@ -1,33 +1,149 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import { FiArrowRightCircle } from 'react-icons/fi';
+import Icon from '@src/components/Icon';
+import Loader from '@src/components/Loader';
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
-import { Article, P } from '@src/css/elements';
+import { formatDate } from '@src/utils/helpers';
+
+import Box from '@src/css/blocks/Box';
+import {
+  A, Article, Grid, Button, H4, Hr, P,
+} from '@src/css/elements';
 
 import { getLocation } from '@src/actions/location/actions';
+import { getCareers } from '@src/actions/careers/actionsSideEffects';
 
-// @todo xvila - add redux logic for careers
+const Careers = ({
+  DIC, careers, count, handleGetCareers,
+}) => {
+  const [loading, setLoading] = useState(false);
 
-const Careers = ({ DIC }) => {
-  const [title, ...content] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
+  useEffect(() => {
+    if (!careers.success && !loading) {
+      setLoading(true);
+      handleGetCareers();
+    }
+  }, [careers]);
+  // const SECTIONS = NAVIGATION.find(nav => nav.label === 'ABOUT');
+  // const FILTERED_SECTIONS = SECTIONS.child.filter(
+  //   item => item.label !== 'CAREERS',
+  // );
+
+  const [title, ...first] = DIC.ABOUT_US_CAREERS_DESCRIPTION.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4] = second;
 
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_ABOUT} | ${DIC.NAV_LABEL_CAREERS}`}
-      description={`${title}.`}
+      description={`${title}`}
       image={BACKGROUND_IMG.CAREERS}
     >
-      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}.`} />
+      <HeaderSection title={DIC.NAV_LABEL_CAREERS} subtitle={`${title}`} />
       <Article centered>
-        <P>{content.join('.')}</P>
-        <P message>
-          Unfortunately FutureCard does not have any open position at the
-          moment.
-        </P>
+        <P>{`${para1}. ${para2}.`}</P>
+        <P withMargin="0 0 4rem">{`${para3}. ${para4}.`}</P>
+        <Grid column>
+          <Grid middle>
+            <Grid flex="1">
+              <H4 withMargin="1rem 0">{`Found ${count} job Offer/s.`}</H4>
+            </Grid>
+            <Grid heightProp="50px">
+              <Grid withMargin="0">
+                <A role="button" to="/admin/careers">
+                  Upload your CV
+                </A>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Hr invertColor />
+        {!careers.length ? (
+          <Grid withMargin="17rem" middle vertical="center">
+            <Loader />
+          </Grid>
+        ) : (
+          <Box wrap="true">
+            {careers.map(item => (
+              <Box.Link
+                to="#"
+                key={item._id}
+                with_scale="true"
+                with_background="true"
+                wrap_space="true"
+              >
+                <Box.Figure>
+                  <Box.Figure.Image src={item.image} alt={item.title} />
+                </Box.Figure>
+                <Grid vertical="center">
+                  <P tiny withMargin="1.5rem 0 0.25rem" highlight>
+                    {`${DIC.NEWS_PUBLISHED_THE} ${formatDate(item.updatedAt)}`}
+                  </P>
+                </Grid>
+
+                <H4 withMargin="0 1rem 0.5rem" centered>
+                  {item.title}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P withPadding="0 1rem 0.75rem">{item.text}</P>
+                {!!item.link && (
+                  <Grid withMargin="0 0 1.5rem" vertical="center">
+                    <A role="button" to={item.link}>
+                      {DIC.LEARN_MORE}
+                      <Icon>
+                        <FiArrowRightCircle />
+                      </Icon>
+                    </A>
+                  </Grid>
+                )}
+              </Box.Link>
+            ))}
+          </Box>
+        )}
+        {/* <Box>
+          {FILTERED_SECTIONS.map((section) => {
+            const TITLE = `NAV_LABEL_${section.label}`;
+            const CONTENT = `ABOUT_US_${section.label}_DESCRIPTION`;
+
+            return (
+              <Box.Link
+                to={section.link}
+                key={section.key}
+                with_scale="true"
+                with_background="true"
+              >
+                <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
+                  {DIC[TITLE]}
+                </H4>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                />
+                <P small centered withPadding="0 1rem 0.5rem">
+                  {`${DIC[CONTENT].split('.')[0]}.`}
+                </P>
+              </Box.Link>
+            );
+          })}
+        </Box> */}
+        <Button.Centered withMargin="3.3rem">
+          <A role="button" to="/about-futurecard">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_ABOUT}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
     </ViewLayout>
   );
@@ -35,19 +151,32 @@ const Careers = ({ DIC }) => {
 
 Careers.propTypes = {
   DIC: PropTypes.shape({
+    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    BACK_HOME: PropTypes.string.isRequired,
+    LEARN_MORE: PropTypes.string.isRequired,
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
     NAV_LABEL_CAREERS: PropTypes.string.isRequired,
-    ABOUT_US_CAREERS_DESCRIPTION: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
   }).isRequired,
+  careers: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+    }),
+  ),
+  handleGetCareers: PropTypes.func.isRequired,
+  count: PropTypes.number,
 };
 
-const mapStateToProps = ({ dictionary, location }) => ({
+const mapStateToProps = ({ dictionary, location, careers }) => ({
   DIC: dictionary.data,
   path: location.path,
+  careers: careers.data,
+  count: careers.count,
 });
 
 const mapDispatchToProps = dispatch => ({
   handleLocation: location => dispatch(getLocation(location)),
+  handleGetCareers: () => dispatch(getCareers()),
 });
 
 export default connect(

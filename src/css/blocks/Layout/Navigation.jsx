@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Navigation = styled.nav`
   position: absolute;
-  right: 2rem;
+  right: 0;
   display: flex;
   align-items: center;
   width: auto;

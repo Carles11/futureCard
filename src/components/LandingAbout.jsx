@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FiArrowRightCircle } from 'react-icons/fi';
 
 import HeaderSection from '@src/components/HeaderSection';
-import Icon from '@src/components/Icon';
+import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
 import {
-  A, Article, Grid, H3, Hr, P,
+  Article, H3, Hr, P,
 } from '@src/css/elements';
 
 const SECTIONS = [
@@ -15,53 +14,66 @@ const SECTIONS = [
     id: 1,
     title: 'SOLUTIONS',
     link: '/our-solutions',
+    bg: BACKGROUND_IMG.OUR_SOLUTIONS,
   },
   {
     id: 2,
     title: 'SERVICES',
     link: '/our-services',
+    bg: BACKGROUND_IMG.OUR_SERVICES,
   },
 ];
 
-const LandingAbout = ({ DIC }) => (
-  <Article centered>
-    <HeaderSection
-      title={DIC.NAV_LABEL_OUR_BUSINESS}
-      subtitle={DIC.ABOUT_US_DESCRIPTION}
-    />
+const LandingAbout = ({ DIC, h }) => {
+  const [para1, ...first] = DIC.ABOUT_US_CONTENT.split('.');
+  const [para2, ...second] = first;
+  const [para3, para4] = second;
 
-    <P>{DIC.ABOUT_US_CONTENT}</P>
+  return (
+    <Article centered size={h}>
+      <HeaderSection
+        title={DIC.NAV_LABEL_OUR_BUSINESS}
+        subtitle={DIC.ABOUT_US_DESCRIPTION}
+      />
+      <P>{`${para1}. ${para2}.`}</P>
+      <P>{`${para3}. ${para4}.`}</P>
+      <Box>
+        {SECTIONS.map((section, index) => {
+          const TITLE = `NAV_LABEL_${section.title}`;
+          const CONTENT = `ABOUT_US_${section.title}`;
+          const isEven = index % 2 === 0;
 
-    <Box>
-      {SECTIONS.map((section) => {
-        const TITLE = `NAV_LABEL_${section.title}`;
-        const CONTENT = `ABOUT_US_${section.title}`;
-
-        return (
-          <Box.Item key={section.id} with_background>
-            <H3 withMargin="1.5rem 0.5rem 1rem" centered>
-              {DIC[TITLE]}
-            </H3>
-            <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
-            <P small withPadding="0 1rem 0.5rem">
-              {DIC[CONTENT]}
-            </P>
-            {section.link && (
-              <Grid withMargin="0 0 1.5rem" vertical="center">
-                <A role="button" to={section.link}>
-                  {DIC.LEARN_MORE}
-                  <Icon>
-                    <FiArrowRightCircle />
-                  </Icon>
-                </A>
-              </Grid>
-            )}
-          </Box.Item>
-        );
-      })}
-    </Box>
-  </Article>
-);
+          return (
+            <Box.Link
+              to={section.link}
+              key={section.id}
+              nomargin="true"
+              with_height="325px"
+              with_scale
+              style={{ backgroundImage: `url(${section.bg})` }}
+            >
+              <Box.Wrapper>
+                <H3 withMargin="1.5rem 0.5rem 1rem" centered invertColor>
+                  {DIC[TITLE]}
+                </H3>
+                <Hr
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
+                  invertColor
+                />
+                <P small withPadding="0 3rem 0.5rem" invertColor centered>
+                  {DIC[CONTENT]}
+                </P>
+              </Box.Wrapper>
+              <Box.Wrapper.Bg isEven={isEven} />
+            </Box.Link>
+          );
+        })}
+      </Box>
+    </Article>
+  );
+};
 
 LandingAbout.propTypes = {
   DIC: PropTypes.shape({
@@ -77,6 +89,7 @@ LandingAbout.propTypes = {
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_MARKETS: PropTypes.string.isRequired,
   }).isRequired,
+  h: PropTypes.number,
 };
 
 export default LandingAbout;

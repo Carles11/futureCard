@@ -7,15 +7,19 @@ import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Icon from '@src/components/Icon';
+import PersonalizationGraphic from '@src/assets/image/graphics/Services_Personalization.png';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+  Article, A, Button, P, H4, Hr, Image,
 } from '@src/css/elements';
 
 const ServicesPersonalization = ({ DIC }) => {
   const [title, ...content] = DIC.SERVICES_PERSONALIZATION_CONTENT.split('.');
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'PERSONALIZATION',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_PERSONALIZATION}`}
@@ -27,9 +31,16 @@ const ServicesPersonalization = ({ DIC }) => {
         subtitle={DIC.SERVICES_PERSONALIZATION_SUBTITLE}
       />
       <Article centered>
+        <P>{`${title}.`}</P>
         <P>{content.join('.')}</P>
+        <Image
+          src={PersonalizationGraphic}
+          withMargin="auto"
+          graphics
+          alt="Personalization Graphic FutureCard"
+        />
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -55,15 +66,15 @@ const ServicesPersonalization = ({ DIC }) => {
             );
           })}
         </Box>
+        <Button.Centered>
+          <A role="button" to="/our-services/">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };
@@ -72,6 +83,7 @@ ServicesPersonalization.propTypes = {
   DIC: PropTypes.shape({
     BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES_PERSONALIZATION: PropTypes.string.isRequired,
     NAV_LABEL_PERSONALIZATION: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_CONTENT: PropTypes.string.isRequired,
     SERVICES_PERSONALIZATION_DESCRIPTION: PropTypes.string.isRequired,

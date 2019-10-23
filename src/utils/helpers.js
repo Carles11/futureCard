@@ -50,3 +50,24 @@ export function scrollToFn(scrollTo) {
     });
   });
 }
+
+export function formatDate(date) {
+  const dateFormat = new Date(date);
+  const day = dateFormat.getDate();
+  const month = dateFormat.getMonth() + 1;
+  const year = dateFormat.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}
+
+export function truncate(str, noWords) {
+  let final = '';
+  const strLen = str.split(' ').length;
+
+  if (strLen > noWords) final = '...';
+
+  return `${str
+    .split(' ')
+    .splice(0, noWords)
+    .join(' ')}${final}`;
+}

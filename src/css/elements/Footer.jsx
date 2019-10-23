@@ -4,6 +4,7 @@ import { hexToRgb } from '@src/utils/helpers';
 import withTheme from '@src/css/Theme';
 
 const Footer = styled.footer`
+  position: relative;
   width: 100%;
   height: auto;
 

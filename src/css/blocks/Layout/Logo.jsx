@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Logo = styled.figure`
   position: absolute;
@@ -16,6 +16,12 @@ const Image = styled.img`
   margin-bottom: 100px;
   padding: 0;
   width: 100%;
+  ${props => props.logosAdapt
+    && css`
+    height: 'auto',
+    width: '50%',
+    margin: '20px',
+    `}
 `;
 
 Logo.Image = Image;

@@ -23,18 +23,27 @@ const Link = styled(
   color: ${props => props.theme.fontColor};
   text-transform: uppercase;
   text-decoration: none;
-  margin: 0 0.25rem;
-  padding: 0.5rem 0.5rem 0.5rem;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s ease-in-out;
+  margin: 0;
+  border-top: 2px solid transparent;
+  padding: 2.25rem 1.5rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
   ${props => props.active
     && css`
-      border-bottom: 3px solid ${props.theme.mainColor};
+      border-top: 2px solid ${props.theme.mainColor};
+      background: #f3f3f3;
+      color: ${props.theme.mainColor};
+      &:hover {
+        border-top: 2px solid ${props.theme.mainColor} !important;
+        background: #f3f3f3 !important;
+        color: ${props.theme.mainColor} !important;
+      }
     `}
 
   &:hover {
-    border-bottom: 3px solid ${props => props.theme.background};
+    border-top: 2px solid ${props => props.theme.background};
+    background: #f3f3f3 !important;
+    color: ${props => props.theme.background};
   }
 
   ${props => props.with_dark

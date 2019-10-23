@@ -9,7 +9,6 @@ import {
 import Footer from '@src/components/Footer';
 import useLocation from '@src/hooks/useLocation';
 
-
 import { getLocation } from '@src/actions/location/actions';
 
 const NotFound = ({
@@ -33,7 +32,9 @@ const NotFound = ({
         <H2 withMargin="0 1rem 1rem" centered>
           {DIC.NOT_FOUND}
         </H2>
-        <P withAlign="center" withMargin="0 0 2.5rem">{DIC.NOT_FOUND_DESCRIPTION}</P>
+        <P withAlign="center" withMargin="0 0 2.5rem">
+          {DIC.NOT_FOUND_DESCRIPTION}
+        </P>
         <A role="button" to="/">
           {DIC.NOT_FOUND_LINK}
         </A>

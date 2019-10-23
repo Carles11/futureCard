@@ -61,6 +61,28 @@ const NAVIGATION = [
         ],
       },
       {
+        key: 31,
+        label: 'CARDS',
+        link: '/our-solutions/card-features',
+        child: [
+          {
+            key: 131,
+            label: 'TECHNOLOGY',
+            link: '/our-solutions/card-features/technology-materials',
+          },
+          {
+            key: 141,
+            label: 'CARD_MATERIALS',
+            link: '/our-solutions/card-features/card-materials',
+          },
+          {
+            key: 151,
+            label: 'DESIGN',
+            link: '/our-solutions/card-features/design-and-security-features',
+          },
+        ],
+      },
+      {
         key: 17,
         label: 'CARD_MANAGEMENT',
         link: '/our-solutions/card-management-systems',
@@ -125,28 +147,28 @@ const NAVIGATION = [
       },
     ],
   },
-  {
-    key: 3,
-    label: 'CARDS',
-    link: '/card-features',
-    child: [
-      {
-        key: 13,
-        label: 'TECHNOLOGY',
-        link: '/card-features/technology-materials',
-      },
-      {
-        key: 14,
-        label: 'CARD_MATERIALS',
-        link: '/card-features/card-materials',
-      },
-      {
-        key: 15,
-        label: 'DESIGN',
-        link: '/card-features/design-and-security-features',
-      },
-    ],
-  },
+  // {
+  //   key: 3,
+  //   label: "CARDS",
+  //   link: "/card-features",
+  //   child: [
+  //     {
+  //       key: 13,
+  //       label: "TECHNOLOGY",
+  //       link: "/card-features/technology-materials"
+  //     },
+  //     {
+  //       key: 14,
+  //       label: "CARD_MATERIALS",
+  //       link: "/card-features/card-materials"
+  //     },
+  //     {
+  //       key: 15,
+  //       label: "DESIGN",
+  //       link: "/card-features/design-and-security-features"
+  //     }
+  //   ]
+  // },
   {
     key: 4,
     label: 'NEWS',
@@ -169,27 +191,32 @@ const OPTIONS_PAYMENT = [
       {
         id: 1,
         label: 'PVC (Plastic)',
-        link: '/card-features/card-materials#pvc',
-      },
-      {
-        id: 2,
-        label: 'ECO PVC (Plastic)',
-        link: '/card-features/card-materials#pet-g',
-      },
-      {
-        id: 3,
-        label: 'PET-G (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pvc',
       },
       {
         id: 4,
         label: 'PET-F (Plastic)',
-        link: '/card-features/card-materials#pet-f',
+        link: '/our-solutions/card-features/card-materials#pet-f',
+      },
+      {
+        id: 5,
+        label: 'PC',
+        link: '/our-solutions/card-features/card-materials#pc',
+      },
+      {
+        id: 3,
+        label: 'PET-G (Plastic)',
+        link: '/our-solutions/card-features/card-materials#pet-g',
+      },
+      {
+        id: 2,
+        label: 'ECO PVC (Plastic)',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 5,
         label: 'Metal',
-        link: '/card-features/card-materials#metal',
+        link: '/our-solutions/card-features/card-materials#metal',
       },
     ],
   },
@@ -202,27 +229,29 @@ const OPTIONS_PAYMENT = [
       {
         id: 7,
         label: 'Contact',
-        link: '/card-features/technology-materials#contact',
+        link: '/our-solutions/card-features/technology-materials#contact',
       },
       {
         id: 8,
         label: 'Contactless',
-        link: '/card-features/technology-materials#contactless',
+        link: '/our-solutions/card-features/technology-materials#contactless',
       },
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 10,
         label: 'Hybrid',
-        link: '/card-features/technology-materials#hybrid',
+        link: '/our-solutions/card-features/technology-materials#hybrid',
       },
       {
         id: 11,
-        label: 'Magstripe',
-        link: '/card-features/technology-materials#magnetic-stripe',
+        label: 'Magnetic Stripe',
+        link:
+          '/our-solutions/card-features/technology-materials#magnetic-stripe',
       },
     ],
   },
@@ -235,47 +264,56 @@ const OPTIONS_PAYMENT = [
       {
         id: 13,
         label: 'Colored Core PVC',
-        link: '/card-features/design-and-security-features#colored-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#colored-pvc',
       },
       {
         id: 14,
         label: 'Holographic PVC',
-        link: '/card-features/design-and-security-features#holographic',
+        link:
+          '/our-solutions/card-features/design-and-security-features#holographic',
       },
       {
         id: 15,
         label: 'Transparent PVC with special IR blocker',
-        link: '/card-features/design-and-security-features#transparent-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#transparent-pvc',
       },
       {
         id: 16,
         label: 'Hot Stamping',
-        link: '/card-features/design-and-security-features#hot-stamping',
+        link:
+          '/our-solutions/card-features/design-and-security-features#hot-stamping',
       },
       {
         id: 17,
         label: 'Tactile/Spot UV',
-        link: '/card-features/design-and-security-features#tactile',
+        link:
+          '/our-solutions/card-features/design-and-security-features#tactile',
       },
       {
         id: 18,
         label: 'Special Color Magstripes',
-        link: '/card-features/design-and-security-features#magnetic-stripes',
+        link:
+          '/our-solutions/card-features/design-and-security-features#magnetic-stripes',
       },
       {
         id: 19,
         label: 'Special Die Shapes',
-        link: '/card-features/design-and-security-features#shapes-cards',
+        link:
+          '/our-solutions/card-features/design-and-security-features#shapes-cards',
       },
       {
         id: 20,
         label: 'Aromatic & Touch Effect',
-        link: '/card-features/design-and-security-features#aromatic',
+        link:
+          '/our-solutions/card-features/design-and-security-features#aromatic',
       },
       {
         id: 21,
         label: 'Bejeweled',
-        link: '/card-features/design-and-security-features#bejeweled',
+        link:
+          '/our-solutions/card-features/design-and-security-features#bejeweled',
       },
     ],
   },
@@ -291,27 +329,27 @@ const OPTIONS_IDENTIFICATION = [
       {
         id: 1,
         label: 'PVC',
-        link: '/card-features/card-materials#pvc',
+        link: '/our-solutions/card-features/card-materials#pvc',
       },
       {
         id: 2,
         label: 'ECO PVC',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 3,
         label: 'PET-G',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 4,
         label: 'PET-F',
-        link: '/card-features/card-materials#pet-f',
+        link: '/our-solutions/card-features/card-materials#pet-f',
       },
       {
         id: 5,
         label: 'PC',
-        link: '/card-features/card-materials#pc',
+        link: '/our-solutions/card-features/card-materials#pc',
       },
     ],
   },
@@ -324,22 +362,24 @@ const OPTIONS_IDENTIFICATION = [
       {
         id: 7,
         label: 'Contact',
-        link: '/card-features/technology-materials#contact',
+        link: '/our-solutions/card-features/technology-materials#contact',
       },
       {
         id: 8,
         label: 'Contactless',
-        link: '/card-features/technology-materials#contactless',
+        link: '/our-solutions/card-features/technology-materials#contactless',
       },
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 11,
-        label: 'Magstripe',
-        link: '/card-features/technology-materials#magnetic-stripe',
+        label: 'Magnetic Stripe',
+        link:
+          '/our-solutions/card-features/technology-materials#magnetic-stripe',
       },
     ],
   },
@@ -352,37 +392,41 @@ const OPTIONS_IDENTIFICATION = [
       {
         id: 13,
         label: 'Rainbow printig',
-        link: '/card-features/design-and-security-features#rainbow',
+        link:
+          '/our-solutions/card-features/design-and-security-features#rainbow',
       },
       {
         id: 14,
         label: 'Micro text',
-        link: '/card-features/design-and-security-features#micro-text',
+        link:
+          '/our-solutions/card-features/design-and-security-features#micro-text',
       },
       {
         id: 15,
         label: 'Guilloche pattern printing',
-        link: '/card-features/design-and-security-features#guilloche',
+        link:
+          '/our-solutions/card-features/design-and-security-features#guilloche',
       },
       {
         id: 16,
         label: 'OVI (Optical Variable Inks)',
-        link: '/card-features/design-and-security-features#ovi',
+        link: '/our-solutions/card-features/design-and-security-features#ovi',
       },
       {
         id: 17,
         label: 'UV (Ultra Violet) invisible printing',
-        link: '/card-features/design-and-security-features#uv',
+        link: '/our-solutions/card-features/design-and-security-features#uv',
       },
       {
         id: 18,
         label: 'In-build text',
-        link: '/card-features/design-and-security-features#in-build-text',
+        link:
+          '/our-solutions/card-features/design-and-security-features#in-build-text',
       },
       {
         id: 19,
         label: '2D and 3D holograms',
-        link: '/card-features/design-and-security-features#2d-3d',
+        link: '/our-solutions/card-features/design-and-security-features#2d-3d',
       },
     ],
   },
@@ -398,27 +442,27 @@ const OPTIONS_TRANSPORT = [
       {
         id: 1,
         label: 'PVC (Plastic)',
-        link: '/card-features/card-materials#pvc',
+        link: '/our-solutions/card-features/card-materials#pvc',
       },
       {
         id: 2,
         label: 'ECO PVC (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 3,
         label: 'PET-G (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 4,
         label: 'PET-F (Plastic)',
-        link: '/card-features/card-materials#pet-f',
+        link: '/our-solutions/card-features/card-materials#pet-f',
       },
       {
         id: 5,
         label: 'Paper',
-        link: '/card-features/card-materials#paper-cardboard',
+        link: '/our-solutions/card-features/card-materials#paper-cardboard',
       },
     ],
   },
@@ -431,22 +475,23 @@ const OPTIONS_TRANSPORT = [
       {
         id: 7,
         label: 'Contact',
-        link: '/card-features/technology-materials#contact',
+        link: '/our-solutions/card-features/technology-materials#contact',
       },
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 10,
         label: 'Contactless (Mifare)',
-        link: '/card-features/technology-materials#contactless',
+        link: '/our-solutions/card-features/technology-materials#contactless',
       },
       {
         id: 11,
         label: 'Contactless (Desfire)',
-        link: '/card-features/technology-materials#contactless',
+        link: '/our-solutions/card-features/technology-materials#contactless',
       },
     ],
   },
@@ -459,37 +504,44 @@ const OPTIONS_TRANSPORT = [
       {
         id: 13,
         label: 'Colored Core PVC',
-        link: '/card-features/design-and-security-features#colored-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#colored-pvc',
       },
       {
         id: 14,
         label: 'Holographic PVC',
-        link: '/card-features/design-and-security-features#holographic',
+        link:
+          '/our-solutions/card-features/design-and-security-features#holographic',
       },
       {
         id: 15,
         label: 'Transparent PVC with special IR blocker',
-        link: '/card-features/design-and-security-features#transparent-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#transparent-pvc',
       },
       {
         id: 16,
         label: 'Hot Stamping',
-        link: '/card-features/design-and-security-features#hot-stamping',
+        link:
+          '/our-solutions/card-features/design-and-security-features#hot-stamping',
       },
       {
         id: 17,
         label: 'Tactile/Spot UV',
-        link: '/card-features/design-and-security-features#tactile',
+        link:
+          '/our-solutions/card-features/design-and-security-features#tactile',
       },
       {
         id: 18,
         label: 'Special Color Magstripes',
-        link: '/card-features/design-and-security-features#magnetic-stripes',
+        link:
+          '/our-solutions/card-features/design-and-security-features#magnetic-stripes',
       },
       {
         id: 19,
         label: 'Special Die Shapes',
-        link: '/card-features/design-and-security-features#shapes-cards',
+        link:
+          '/our-solutions/card-features/design-and-security-features#shapes-cards',
       },
     ],
   },
@@ -505,22 +557,22 @@ const OPTIONS_TELECOM = [
       {
         id: 1,
         label: 'PVC (Plastic)',
-        link: '/card-features/card-materials#pvc',
+        link: '/our-solutions/card-features/card-materials#pvc',
       },
       {
         id: 2,
         label: 'ECO PVC (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 3,
         label: 'ABS (Plastic)',
-        link: '/card-features/card-materials#abs',
+        link: '/our-solutions/card-features/card-materials#abs',
       },
       {
         id: 5,
         label: 'Paper & Cardboard',
-        link: '/card-features/card-materials#paper-cardboard',
+        link: '/our-solutions/card-features/card-materials#paper-cardboard',
       },
     ],
   },
@@ -533,12 +585,12 @@ const OPTIONS_TELECOM = [
       {
         id: 7,
         label: 'Contact',
-        link: '/card-features/technology-materials#contact',
+        link: '/our-solutions/card-features/technology-materials#contact',
       },
       {
         id: 9,
         label: 'Scratch Panel',
-        link: '/card-features/technology-materials',
+        link: '/our-solutions/card-features/technology-materials',
       },
     ],
   },
@@ -551,12 +603,14 @@ const OPTIONS_TELECOM = [
       {
         id: 13,
         label: 'Colored Core PVC',
-        link: '/card-features/design-and-security-features#colored-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#colored-pvc',
       },
       {
         id: 19,
         label: 'Special Die Shapes',
-        link: '/card-features/design-and-security-features#shapes-cards',
+        link:
+          '/our-solutions/card-features/design-and-security-features#shapes-cards',
       },
     ],
   },
@@ -572,22 +626,22 @@ const OPTIONS_RETAIL = [
       {
         id: 1,
         label: 'PVC (Plastic)',
-        link: '/card-features/card-materials#pvc',
+        link: '/our-solutions/card-features/card-materials#pvc',
       },
       {
         id: 2,
         label: 'ECO PVC (Plastic)',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 3,
         label: 'PET-G',
-        link: '/card-features/card-materials#pet-g',
+        link: '/our-solutions/card-features/card-materials#pet-g',
       },
       {
         id: 5,
         label: 'PET-F',
-        link: '/card-features/card-materials#pet-f',
+        link: '/our-solutions/card-features/card-materials#pet-f',
       },
     ],
   },
@@ -600,22 +654,24 @@ const OPTIONS_RETAIL = [
       {
         id: 7,
         label: 'Contact',
-        link: '/card-features/technology-materials#contact',
+        link: '/our-solutions/card-features/technology-materials#contact',
       },
       {
         id: 8,
         label: 'Contactless',
-        link: '/card-features/technology-materials#contactless',
+        link: '/our-solutions/card-features/technology-materials#contactless',
       },
       {
         id: 9,
         label: 'Dual-Interface',
-        link: '/card-features/technology-materials#dual-interface',
+        link:
+          '/our-solutions/card-features/technology-materials#dual-interface',
       },
       {
         id: 11,
         label: 'Magstripe',
-        link: '/card-features/technology-materials#magnetic-stripe',
+        link:
+          '/our-solutions/card-features/technology-materials#magnetic-stripe',
       },
     ],
   },
@@ -628,47 +684,56 @@ const OPTIONS_RETAIL = [
       {
         id: 13,
         label: 'Colored Core PVC',
-        link: '/card-features/design-and-security-features#colored-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#colored-pvc',
       },
       {
         id: 14,
         label: 'Holographic PVC',
-        link: '/card-features/design-and-security-features#holographic',
+        link:
+          '/our-solutions/card-features/design-and-security-features#holographic',
       },
       {
         id: 15,
         label: 'Transparent PVC with special IR blocker',
-        link: '/card-features/design-and-security-features#transparent-pvc',
+        link:
+          '/our-solutions/card-features/design-and-security-features#transparent-pvc',
       },
       {
         id: 16,
         label: 'Hot Stamping',
-        link: '/card-features/design-and-security-features#hot-stamping',
+        link:
+          '/our-solutions/card-features/design-and-security-features#hot-stamping',
       },
       {
         id: 17,
         label: 'Tactile/Spot UV',
-        link: '/card-features/design-and-security-features#tactile',
+        link:
+          '/our-solutions/card-features/design-and-security-features#tactile',
       },
       {
         id: 18,
         label: 'Special Color Magstripes',
-        link: '/card-features/design-and-security-features#magnetic-stripes',
+        link:
+          '/our-solutions/card-features/design-and-security-features#magnetic-stripes',
       },
       {
         id: 19,
         label: 'Special Die Shapes',
-        link: '/card-features/design-and-security-features#shapes-cards',
+        link:
+          '/our-solutions/card-features/design-and-security-features#shapes-cards',
       },
       {
         id: 20,
         label: 'Aromatic & Touch Effect',
-        link: '/card-features/design-and-security-features#aromatic',
+        link:
+          '/our-solutions/card-features/design-and-security-features#aromatic',
       },
       {
         id: 21,
         label: 'Bejeweled',
-        link: '/card-features/design-and-security-features#bejeweled',
+        link:
+          '/our-solutions/card-features/design-and-security-features#bejeweled',
       },
     ],
   },
@@ -741,16 +806,16 @@ const LANGUAGE = [
     label: 'ENGLISH',
     value: 'en',
   },
-  {
-    id: 1,
-    label: 'ESPAÑOL',
-    value: 'es',
-  },
-  {
-    id: 2,
-    label: 'FRANÇAIS',
-    value: 'fr',
-  },
+  // {
+  //   id: 1,
+  //   label: 'ESPAÑOL',
+  //   value: 'es',
+  // },
+  // {
+  //   id: 2,
+  //   label: 'FRANÇAIS',
+  //   value: 'fr',
+  // },
 ];
 
 const ADDRESSES = [
@@ -803,36 +868,66 @@ const ADDRESSES = [
 ];
 
 const BACKGROUND_IMG = {
-  ABOUT_FACILITY:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569098161/futurecard.com/facility_capabilities.jpg',
+  ABOUT_US:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807382/futurecard.com/headers/about_us.jpg',
+  FACILITY:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630594/futurecard.com/headers/facility.jpg',
   CAREERS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195229/futurecard.com/careers.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879152/futurecard.com/headers/careers.jpg',
+  CARD_HOLDER:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023397/futurecard.com/headers/Card_Holder_Enrollment.jpg',
   CARD_PERSONALIZATION:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195018/futurecard.com/card-personalization.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629558/futurecard.com/headers/card_personalization.jpg',
   CARD_CONSULTING:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195398/futurecard.com/consulting.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569807894/futurecard.com/headers/consulting.jpg',
   CARD_DESIGN:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195794/futurecard.com/card-design.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023208/futurecard.com/headers/Card_Design3.5.jpg',
+  CARD_FEATURES:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879427/futurecard.com/headers/features.jpg',
+  CARD_LIFE_CYCLE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569628933/futurecard.com/headers/card_life_cycle.jpg',
   CARD_MANAGEMENT:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196285/futurecard.com/card-management.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630489/futurecard.com/headers/cms.jpg',
   CARD_MATERIALS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195995/futurecard.com/card-materials.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630300/futurecard.com/headers/materials.jpg',
+  CARD_PAYMENT:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023310/futurecard.com/headers/payment.jpg',
+  CENTRAL_ISSUANCE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569629728/futurecard.com/headers/central_issuance.jpg',
+  INSTANT_ISSUANCE:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023553/futurecard.com/headers/Instant_Issuance_high.jpg',
   CONTACT_MAP:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569105135/futurecard.com/contact-map-fci.png',
+  CONTACT_MAP_IN_CARLES_CLOUDINARY:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1569949560/FutureCard/FCI-World-Map-low.png',
   DESIGN_SECURITY:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569195584/futurecard.com/design-security.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569630039/futurecard.com/headers/design_security.jpg',
+  END_TO_END:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023105/futurecard.com/headers/End-to-End_Card_Solutions.jpg',
+  RETAIL_LOYALTY:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570022927/futurecard.com/headers/retail.jpg',
   IDENTIFICATION:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102626/futurecard.com/identification.jpg',
   NEWS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569196504/futurecard.com/news.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023655/futurecard.com/headers/News2.jpg',
   OUR_SERVICES:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197399/futurecard.com/our-services.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023773/futurecard.com/headers/services.jpg',
   OUR_SOLUTIONS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197548/futurecard.com/our-solutions.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1570023880/futurecard.com/headers/Solutions1.jpg',
   TECHNOLOGY_MATERIALS:
-    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569197692/futurecard.com/technology-materials.jpg',
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631860/futurecard.com/headers/technology_materials.jpg',
+  TELECOM:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631272/futurecard.com/headers/telecom.jpg',
+  TRANSPORT_ACCESS:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569631969/futurecard.com/headers/transport_access.jpg',
   WHO_WE_ARE:
     'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569102341/futurecard.com/who_we_are.jpg',
+  FULFILLMENT:
+    'https://res.cloudinary.com/dhjitwuqp/image/upload/v1569879271/futurecard.com/headers/fullfillment.jpg',
+  SECURITY_FEATURES_FRONT:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1571074607/FutureCard/security-features-front-RS.png',
+  SECURITY_FEATURES_REVERSE:
+    'https://res.cloudinary.com/dssldws2k/image/upload/v1571073777/FutureCard/security-features-reverse-RS.png',
 };
 
 export {

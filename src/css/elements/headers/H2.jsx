@@ -25,13 +25,13 @@ const H2 = styled.h2`
 
   ${props => props.serif
     && css`
-      font-family: 'hero_lightregular', serif;
+      font-family: "hero_lightregular", serif;
       font-weight: 100;
     `}
   
   ${props => props.sansSerif
     && css`
-      font-family: 'hero_lightregular', 'Raleway', sans-serif;
+      font-family: "hero_lightregular", "Raleway", sans-serif;
     `}
 
   ${props => props.small
@@ -41,7 +41,7 @@ const H2 = styled.h2`
 
   ${props => props.tiny
     && css`
-      font-size: calc(20px + (25 - 18) * ((100vw - 600px) / (1600 - 900)));
+      font-size: calc(18px + (20 - 16) * ((100vw - 600px) / (1600 - 900)));
     `}
   ${props => props.withMargin
     && css`

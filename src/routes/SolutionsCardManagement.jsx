@@ -8,36 +8,46 @@ import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, P, H4, Hr, Grid,
+  Article, P, H4, Hr, Grid, Image,
 } from '@src/css/elements';
+
+import CARDHOLDER from '@src/assets/CMS_icons/cardholder-icon.png';
+import CARDLIFECYCLE from '@src/assets/CMS_icons/cardlifecycle-icon.png';
+import CENTRALISSUANCE from '@src/assets/CMS_icons/centralIssuance-icon.png';
+import INSTANTISSUANCE from '@src/assets/CMS_icons/instantIssuance-icon.png';
 
 const SECTIONS = [
   {
     id: 1,
     title: 'CENTRAL_ISSUANCE',
     link: '/our-solutions/card-management-systems/central-issuance',
-    icon: '',
+    icon: CENTRALISSUANCE,
   },
   {
     id: 2,
     title: 'INSTANT_ISSUANCE',
     link: '/our-solutions/card-management-systems/instant-issuance',
-    icon: '',
+    icon: INSTANTISSUANCE,
   },
   {
     id: 3,
     title: 'CARD_HOLDER',
     link: '/our-solutions/card-management-systems/cardholder-enrollment-system',
-    icon: '',
+    icon: CARDHOLDER,
   },
   {
     id: 4,
     title: 'CARD_LIFE_CYCLE',
     link: '/our-solutions/card-management-systems/card-life-cycle-management',
-    icon: '',
+    icon: CARDLIFECYCLE,
   },
 ];
 
+const style = {
+  height: 'auto',
+  width: '75px',
+  margin: '20px',
+};
 const SolutionsCardManagement = ({ DIC }) => (
   <ViewLayout
     title={`${DIC.NAV_LABEL_SOLUTIONS} | ${DIC.NAV_LABEL_CARD_MANAGEMENT}`}
@@ -68,14 +78,14 @@ const SolutionsCardManagement = ({ DIC }) => (
                 flex={1}
                 vertical="center"
               >
-                {section.icon}
+                <Image style={style} logosAdapt src={section.icon} />
               </Grid>
               <H4 withMargin="0.5rem" centered>
                 {DIC[TITLE]}
               </H4>
               <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
               <P small withPadding="0 1rem 0.5rem">
-                {`${DIC[CONTENT].split('.')[0]}`}
+                {`${DIC[CONTENT].split('.')[1]}`}
               </P>
             </Box.Link>
           );
@@ -92,6 +102,7 @@ SolutionsCardManagement.propTypes = {
     NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
     SOLUTIONS_CARD_MANAGEMENT_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_CARD_MANAGEMENT_CONTENT: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -120,6 +120,10 @@ const Centered = styled.div`
   text-align: center;
   position: relative;
   margin-bottom: 3rem;
+  ${props => props.withMargin
+    && css`
+      margin: ${props.withMargin};
+    `}
 `;
 
 Button.Icon = Icon;

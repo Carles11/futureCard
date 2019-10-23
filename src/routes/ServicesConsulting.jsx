@@ -10,11 +10,15 @@ import Icon from '@src/components/Icon';
 import { NAVIGATION, BACKGROUND_IMG } from '@src/utils/constants';
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+  Article, A, Button, P, H4, Hr, Image,
 } from '@src/css/elements';
+import ConsultingGraphic from '@src/assets/image/graphics/Services_Consulting.png';
 
 const ServicesConsulting = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'CONSULTING',
+  );
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.SERVICES_CONSULTING_TITLE}`}
@@ -28,8 +32,14 @@ const ServicesConsulting = ({ DIC }) => {
       <Article centered>
         <P>{DIC.SERVICES_CONSULTING_CONTENT_0}</P>
         <P>{DIC.SERVICES_CONSULTING_CONTENT_1}</P>
+        <Image
+          src={ConsultingGraphic}
+          withMargin="auto"
+          graphics
+          alt="Consulting Graphic FutureCard"
+        />
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -55,15 +65,15 @@ const ServicesConsulting = ({ DIC }) => {
             );
           })}
         </Box>
+        <Button.Centered>
+          <A role="button" to="/our-services/">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };

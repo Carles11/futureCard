@@ -7,6 +7,8 @@ const INITIAL_STATE = {
   transport: [],
   telecom: [],
   retail: [],
+  all: [],
+  count: 0,
 };
 
 export default function cardsReducer(state = INITIAL_STATE, action) {
@@ -16,6 +18,12 @@ export default function cardsReducer(state = INITIAL_STATE, action) {
         ...state,
         lang: action.lang,
         [action.code]: [...action.cards],
+      };
+    case ACTION.GET_ALL_CARDS:
+      return {
+        ...state,
+        all: [...action.cards],
+        count: action.count,
       };
     default:
       return {

@@ -20,7 +20,7 @@ const CardsListOptions = memo(
             <Hr withSize="80px" withMargin="0 auto 1rem" withAlign="center" />
             <P small>{option.description}</P>
             {option.child ? (
-              <List>
+              <List link>
                 {option.child.map(link => (
                   <List.Item link key={link.id}>
                     <A role="link" to={link.link}>

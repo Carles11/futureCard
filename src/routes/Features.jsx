@@ -12,12 +12,14 @@ import {
 } from '@src/css/elements';
 
 const Features = ({ DIC }) => {
-  const SECTIONS = NAVIGATION.find(item => item.label === 'CARDS');
+  const SOLUTIONS = NAVIGATION.find(item => item.label === 'SOLUTIONS');
+  const SECTIONS = SOLUTIONS.child.find(item => item.label === 'CARDS');
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_CARDS}`}
       description={DIC.CARD_FEATURES_DESCRIPTION}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
+      image={BACKGROUND_IMG.CARD_FEATURES}
     >
       <HeaderSection
         title={DIC.NAV_LABEL_CARDS}
@@ -37,13 +39,6 @@ const Features = ({ DIC }) => {
                 with_scale="true"
                 with_background="true"
               >
-                {/* <Grid
-                  withIcon
-                  withPadding='2rem 2rem 1rem'
-                  flex={1}
-                  vertical='center'>
-                  {section.icon}
-                </Grid> */}
                 <H4 withMargin="1.5rem 0.5rem 0.5rem" centered>
                   {DIC[TITLE]}
                 </H4>
@@ -53,7 +48,7 @@ const Features = ({ DIC }) => {
                   withAlign="center"
                 />
                 <P small withPadding="0 1rem 0.5rem">
-                  {`${DIC[CONTENT].split('.')[0]}.`}
+                  {`${DIC[CONTENT].split('.')[1]}.`}
                 </P>
               </Box.Link>
             );
@@ -66,6 +61,9 @@ const Features = ({ DIC }) => {
 
 Features.propTypes = {
   DIC: PropTypes.shape({
+    CARD_FEATURES_CONTENT: PropTypes.string.isRequired,
+    CARD_FEATURES_DESCRIPTION: PropTypes.string.isRequired,
+    NAV_LABEL_CARDS: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_DESCRIPTION: PropTypes.string.isRequired,

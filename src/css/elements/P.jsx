@@ -29,14 +29,32 @@ const P = styled.p`
       }
   `}
 
+  ${props => props.maxWidth
+    && css`
+      max-width: ${props.maxWidth};
+    `}
+
+  ${props => props.flex
+    && css`
+      display: flex;
+      align-items: center;
+    `}
+
+
   ${props => !!props.bold
     && css`
       font-weight: 600;
     `}
 
+  ${props => !!props.centered
+    && css`
+      text-align: center;
+    `}
+
   ${props => !!props.invertColor
     && css`
       color: white;
+      text-shadow: 0px 0px 3px #333333;
     `}
 
   ${props => props.highlight

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-// @ts-ignore
 import { FiArrowRightCircle } from 'react-icons/fi';
 
 import LandingAbout from '@src/components/LandingAbout';
@@ -10,15 +9,27 @@ import LandingNews from '@src/components/LandingNews';
 import LandingMarkets from '@src/components/LandingMarkets';
 import Background from '@src/components/Background';
 import Footer from '@src/components/Footer';
-import Icon from '@src/components/Icon';
 import backgroundImg from '@src/assets/image/background.jpg';
 import useLocation from '@src/hooks/useLocation';
 import useScroll from '@src/hooks/useScroll';
-import logoLongDark from '@src/assets/image/FCI-logo-long-dark.png';
+import useWindowSize from '@src/hooks/useWindowSize';
+import { BACKGROUND_IMG } from '@src/utils/constants';
+import arrowImg from '@src/assets/image/arrow.png';
 
 import {
-  A, H1, H2, Hr, Header, Section,
-} from '@src/css/elements/index';
+  A,
+  Container,
+  H1,
+  H2,
+  Hr,
+  Header,
+  Section,
+  Span,
+  Figure,
+  BackgroundImage,
+  Grid,
+  Image,
+} from '@src/css/elements';
 import { getLocation } from '@src/actions/location/actions';
 
 /**
@@ -30,31 +41,32 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {string} props.location
  * @param {function} props.handleLocation
  */
-
 const Landing = ({
   DIC, path, location, handleLocation,
 }) => {
   useLocation(path, location, handleLocation);
-  const position = useScroll();
   const [visible, setVisible] = useState(true);
+  const [animate, setAnimate] = useState(false);
+  const [initial, setInitial] = useState(false);
+  const position = useScroll(true);
+  const { h: height } = useWindowSize();
 
   useEffect(() => {
-    if (position && position > 200) {
-      setVisible(false);
-    }
-    if (position && position <= 200) {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (!animate && position < 300) {
       setVisible(true);
+      setAnimate(true);
+      setInitial(false);
+    }
+    if (!initial && position > 300) {
+      setVisible(false);
+      setInitial(true);
+      setAnimate(false);
     }
   }, [position]);
-
-  /** Handles scroll position to manage big logo visibility */
-  const style = {
-    height: 'auto',
-    width: '100%',
-    visibility: 'visible',
-    margin: 'auto auto 60px auto',
-  };
-  if (!visible) style.visibility = 'hidden';
 
   return (
     <Section>
@@ -65,27 +77,65 @@ const Landing = ({
           { property: 'og:title', content: 'welcome to futurecard.com' },
         ]}
       />
-      <Background image={backgroundImg}>
-        <Header background>
-          <img src={logoLongDark} style={style} alt="Futurecard logo" />
-          <H1 invertColor sansSerif upperCase>
-            {DIC.LANDING_TITLE}
-          </H1>
-          <Hr withSize="50%" withMargin="0 0 2rem" />
-          <H2 sansSerif invertColor tiny withMargin="1rem 0 3.5rem">
-            {DIC.LANDING_SUBTITLE}
-          </H2>
-          <A role="button" to="/about-futurecard/">
-            {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
-            <Icon>
-              <FiArrowRightCircle />
-            </Icon>
-          </A>
-        </Header>
+      <Background image={backgroundImg} fixed>
+        <Fragment>
+          <Header background animate={animate} initial={initial}>
+            <H1
+              invertColor
+              sansSerif
+              firstCapital
+              withMargin="8rem auto auto auto"
+            >
+              <Span invert>FutureCard, </Span>
+              <br />
+              {DIC.LANDING_TITLE}
+            </H1>
+            <Hr
+              withMargin="3rem 0"
+              animation
+              animate={!!animate && '50%'}
+              initial={initial}
+            />
+            <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
+              {DIC.LANDING_SUBTITLE}
+            </H2>
+            <A
+              invert
+              withmargin="2rem 0"
+              icon
+              role="button"
+              to="/about-futurecard/"
+            >
+              {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
+              <Span icon>
+                <FiArrowRightCircle />
+              </Span>
+            </A>
+          </Header>
+          <Grid heightProp="100vh">
+            <Image src={arrowImg} arrow="true" visible={visible} />
+          </Grid>
+        </Fragment>
       </Background>
-      <LandingAbout DIC={DIC} />
-      <LandingMarkets DIC={DIC} />
-      <LandingNews DIC={DIC} />
+      <Container position={height} background>
+        <LandingAbout DIC={DIC} />
+      </Container>
+      <Container nopadding>
+        <Figure background body>
+          <BackgroundImage
+            position={Math.floor(position / 10)}
+            style={{
+              backgroundImage: `url(${BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY})`,
+            }}
+          />
+        </Figure>
+      </Container>
+      <Container background>
+        <LandingMarkets DIC={DIC} />
+      </Container>
+      <Container>
+        <LandingNews DIC={DIC} />
+      </Container>
       <Footer />
     </Section>
   );
@@ -98,6 +148,7 @@ Landing.propTypes = {
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
+    WELLCOME_TITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

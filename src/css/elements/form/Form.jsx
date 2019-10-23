@@ -16,9 +16,8 @@ const Form = styled.form`
       align-self: center;
       width: 70%;
     `}
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1024px) {
     width: 90%;
-
   }
 `;
 

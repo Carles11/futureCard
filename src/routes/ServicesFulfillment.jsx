@@ -10,25 +10,43 @@ import Icon from '@src/components/Icon';
 
 import Box from '@src/css/blocks/Box';
 import {
-  Article, A, Button, P, H4, Hr,
+  Article, A, Button, P, H4, Hr, Image,
 } from '@src/css/elements';
+import FulfillGraphic from '@src/assets/image/graphics/Services_Fulfillment.png';
 
 const ServicesFulfillment = ({ DIC }) => {
   const SECTIONS = NAVIGATION.find(item => item.label === 'SERVICES');
+  const FILTERED_SECTIONS = SECTIONS.child.filter(
+    item => item.label !== 'FULFILLMENT',
+  );
+  const [title, ...first] = DIC.SERVICES_FULFILLMENT_CONTENT_0.split('.');
+  const [para1, para2, ...second] = first;
+  const [para3, para4, ...third] = second;
+  const [para5, para6] = third;
+
   return (
     <ViewLayout
       title={`${DIC.NAV_LABEL_SERVICES} | ${DIC.NAV_LABEL_SERVICES_FULFILLMENT}`}
       description={DIC.SERVICES_FULFILLMENT_DESCRIPTION}
-      image={BACKGROUND_IMG.ABOUT_FACILITY}
+      image={BACKGROUND_IMG.FULFILLMENT}
     >
       <HeaderSection
         title={DIC.SERVICES_FULFILLMENT_TITLE}
         subtitle={DIC.SERVICES_FULFILLMENT_SUBTITLE}
       />
       <Article centered>
-        <P>{DIC.SERVICES_FULFILLMENT_CONTENT_0}</P>
+        <P>{`${title}. ${para1}. ${para2}.`}</P>
+        <P>{`${para3}. ${para4}.`}</P>
+        <P>{`${para5}. ${para6}.`}</P>
+
+        <Image
+          src={FulfillGraphic}
+          withMargin="auto"
+          graphics
+          alt="Fulfillment Graphic FutureCard"
+        />
         <Box>
-          {SECTIONS.child.map((section) => {
+          {FILTERED_SECTIONS.map((section) => {
             const TITLE = `SERVICES_${section.label}_TITLE`;
             const CONTENT = `SERVICES_${section.label}_DESCRIPTION`;
 
@@ -54,15 +72,15 @@ const ServicesFulfillment = ({ DIC }) => {
             );
           })}
         </Box>
+        <Button.Centered>
+          <A role="button" to="/our-services/">
+            {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
+            <Icon>
+              <FiArrowRightCircle />
+            </Icon>
+          </A>
+        </Button.Centered>
       </Article>
-      <Button.Centered>
-        <A role="button" to="/our-services/">
-          {`${DIC.BACK_HOME} ${DIC.NAV_LABEL_SERVICES}`}
-          <Icon>
-            <FiArrowRightCircle />
-          </Icon>
-        </A>
-      </Button.Centered>
     </ViewLayout>
   );
 };
@@ -72,6 +90,7 @@ ServicesFulfillment.propTypes = {
     BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_SERVICES: PropTypes.string.isRequired,
     NAV_LABEL_FULFILLMENT: PropTypes.string.isRequired,
+    NAV_LABEL_SERVICES_FULFILLMENT: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_TITLE: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_SUBTITLE: PropTypes.string.isRequired,
     SERVICES_FULFILLMENT_DESCRIPTION: PropTypes.string.isRequired,

@@ -10,7 +10,6 @@ const Careers = lazy(() => import('./Careers'));
 
 /** SOLUTIONS ROUTES */
 const Solutions = lazy(() => import('./Solutions'));
-
 const SolutionsCustomize = lazy(() => import('./SolutionsCustomize'));
 
 /** SOLUTIONS CARD MANAGEMENT ROUTES */
@@ -34,13 +33,28 @@ const ServicesConsulting = lazy(() => import('./ServicesConsulting'));
 const ServicesDesign = lazy(() => import('./ServicesDesign'));
 const ServicesFulfillment = lazy(() => import('./ServicesFulfillment'));
 const ServicesPersonalization = lazy(() => import('./ServicesPersonalization'));
+
+/** FEATURES ROUTES */
 const Features = lazy(() => import('./Features'));
 const FeaturesCard = lazy(() => import('./FeaturesCard'));
 const FeaturesDesign = lazy(() => import('./FeaturesDesign'));
 const FeaturesTechnology = lazy(() => import('./FeaturesTechnology'));
+
+/** NEWS ROUTES */
+const NewsDetail = lazy(() => import('./NewsDetail'));
 const News = lazy(() => import('./News'));
+
 const Contact = lazy(() => import('./Contact'));
 const NotFound = lazy(() => import('./NotFound'));
+
+/** ADMIN */
+const AdminEditUser = lazy(() => import('./AdminEditUser'));
+const AdminUsers = lazy(() => import('./AdminUsers'));
+const AdminEditCareers = lazy(() => import('./AdminEditCareers'));
+const AdminCareers = lazy(() => import('./AdminCareers'));
+const AdminEditNews = lazy(() => import('./AdminEditNews'));
+const AdminNews = lazy(() => import('./AdminNews'));
+const Admin = lazy(() => import('./Admin'));
 
 const Routes = () => (
   <Suspense fallback={<Loader loader />}>
@@ -104,6 +118,19 @@ const Routes = () => (
         path="/our-solutions/end-to-end-card-solutions"
         component={SolutionsEndToEnd}
       />
+      <Route
+        path="/our-solutions/card-features/technology-materials"
+        component={FeaturesTechnology}
+      />
+      <Route
+        path="/our-solutions/card-features/card-materials"
+        component={FeaturesCard}
+      />
+      <Route
+        path="/our-solutions/card-features/design-and-security-features"
+        component={FeaturesDesign}
+      />
+      <Route path="/our-solutions/card-features" component={Features} />
       <Route path="/our-solutions" component={Solutions} />
 
       {/* OUR SERVICES */}
@@ -122,20 +149,21 @@ const Routes = () => (
       />
       <Route path="/our-services" component={Services} />
 
-      {/* CARD FEATURES */}
-      <Route
-        path="/card-features/technology-materials"
-        component={FeaturesTechnology}
-      />
-      <Route path="/card-features/card-materials" component={FeaturesCard} />
-      <Route
-        path="/card-features/design-and-security-features"
-        component={FeaturesDesign}
-      />
-      <Route path="/card-features" component={Features} />
-
+      {/* NEWS */}
+      <Route path="/news/:id" component={NewsDetail} />
       <Route path="/news" component={News} />
+
       <Route path="/contact-us" component={Contact} />
+
+      {/* ADMIN  */}
+      <Route path="/admin/users/:id" component={AdminEditUser} />
+      <Route path="/admin/users" component={AdminUsers} />
+      <Route path="/admin/careers/:id" component={AdminEditCareers} />
+      <Route path="/admin/careers" component={AdminCareers} />
+      <Route path="/admin/news/:id" component={AdminEditNews} />
+      <Route path="/admin/news" component={AdminNews} />
+      <Route path="/admin" component={Admin} />
+
       <Route component={NotFound} />
     </Switch>
   </Suspense>

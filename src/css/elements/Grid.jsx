@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import withTheme from '@src/css/Theme';
 
 const Grid = styled.div`
+  position: relative;
   display: flex;
   margin: 0 0.5rem;
   box-sizing: border-box;
@@ -61,6 +62,7 @@ const Grid = styled.div`
     && css`
       width: 100%;
     `};
+  
 
 
   ${props => props.withIcon
@@ -77,6 +79,23 @@ const Grid = styled.div`
   ${props => props.withMargin
     && css`
       margin: ${props.withMargin} !important;
+    `}
+
+  ${props => props.lastWithMargin
+    && css`
+      &:last-of-type {
+        margin: ${props.lastWithMargin} !important;
+      }
+    `}
+  
+  ${props => props.withWidth
+    && css`
+      width: ${props.withWidth};
+
+      @media only screen and (max-width: 1024px) {
+        width: 100%;
+        padding: 2rem 0rem 2rem 2rem;
+      }
     `}
 
   ${props => props.middle
