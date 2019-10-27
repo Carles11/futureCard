@@ -41,9 +41,7 @@ import { getLocation } from '@src/actions/location/actions';
  * @param {string} props.location
  * @param {function} props.handleLocation
  */
-const Landing = ({
-  DIC, path, location, handleLocation,
-}) => {
+const Landing = ({ DIC, path, location, handleLocation }) => {
   useLocation(path, location, handleLocation);
   const [visible, setVisible] = useState(true);
   const [animate, setAnimate] = useState(false);
@@ -84,36 +82,34 @@ const Landing = ({
               invertColor
               sansSerif
               firstCapital
-              withMargin="8rem auto auto auto"
-            >
+              withMargin='8rem auto auto auto'>
               <Span invert>FutureCard, </Span>
               <br />
               {DIC.LANDING_TITLE}
             </H1>
             <Hr
-              withMargin="3rem 0"
+              withMargin='3rem 0'
               animation
               animate={!!animate && '50%'}
               initial={initial}
             />
-            <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
+            <H2 sansSerif invertColor tiny withMargin='1rem 0 1rem 0 '>
               {DIC.LANDING_SUBTITLE}
             </H2>
             <A
               invert
-              withmargin="2rem 0"
+              withmargin='2rem 0'
               icon
-              role="button"
-              to="/about-futurecard/"
-            >
+              role='button'
+              to='/about-futurecard/'>
               {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
               <Span icon>
                 <FiArrowRightCircle />
               </Span>
             </A>
           </Header>
-          <Grid heightProp="100vh">
-            <Image src={arrowImg} arrow="true" visible={visible} />
+          <Grid heightProp='100vh'>
+            <Image src={arrowImg} arrow='true' visible={visible} />
           </Grid>
         </Fragment>
       </Background>
@@ -123,7 +119,7 @@ const Landing = ({
       <Container nopadding>
         <Figure background body>
           <BackgroundImage
-            position={Math.floor(position / 10)}
+            position={Math.floor(position / 30)}
             style={{
               backgroundImage: `url(${BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY})`,
             }}
