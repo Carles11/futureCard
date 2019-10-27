@@ -79,9 +79,13 @@ const SolutionsEndToEndTelecom = ({
 
 SolutionsEndToEndTelecom.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
+    LOOKING_FOR: PropTypes.string.isRequired,
+    NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_TELECOM: PropTypes.string.isRequired,
     SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
+    SOLUTIONS_END_TO_END_TELECOM_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_TELECOM_CONTENT: PropTypes.string.isRequired,
   }).isRequired,
   language: PropTypes.string.isRequired,

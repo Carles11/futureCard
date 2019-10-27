@@ -97,7 +97,9 @@ const About = ({ DIC }) => (
 
 About.propTypes = {
   DIC: PropTypes.shape({
+    ABOUT_TITLE: PropTypes.string.isRequired,
     NAV_LABEL_ABOUT: PropTypes.string.isRequired,
+    NAV_LABEL_WHO_WE_ARE: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION: PropTypes.string.isRequired,
     ABOUT_US_DESCRIPTION_PAGE: PropTypes.string.isRequired,
     ABOUT_US_CONTENT_0: PropTypes.string.isRequired,

@@ -265,6 +265,11 @@ AdminEditCareers.propTypes = {
   token: PropTypes.string.isRequired,
   career: PropTypes.shape({
     _id: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    link: PropTypes.string,
+    image: PropTypes.node,
+    file: PropTypes.any,
   }),
   message: PropTypes.string,
   handleGetCareer: PropTypes.func.isRequired,

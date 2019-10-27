@@ -138,9 +138,15 @@ NewsDetail.propTypes = {
   DIC: PropTypes.shape({
     NAV_LABEL_NEWS: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
   }).isRequired,
   item: PropTypes.shape({
     _id: PropTypes.string,
+    text: PropTypes.string,
+    title: PropTypes.string,
+    image: PropTypes.node,
+    link: PropTypes.string,
+    updatedAt: PropTypes.any,
   }),
   news: PropTypes.arrayOf(
     PropTypes.shape({

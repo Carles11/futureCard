@@ -81,8 +81,13 @@ const Image = styled.img`
 
     ${props => props.graphics
       && css`
-        width: 100%;
+        margin: 100px ${props.withMargin};
+        width: 80%;
+        @media only screen and (min-width: 1024px) {
+          width: 60%;
+        }
       `}
+
 
   ${props => props.responsive
     && css`

@@ -87,6 +87,7 @@ const FeaturesCard = ({
 
 FeaturesCard.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_CARDS: PropTypes.string.isRequired,
     NAV_LABEL_CARD_MATERIALS: PropTypes.string.isRequired,
     CARD_FEATURES_CARD_MATERIALS_DESCRIPTION: PropTypes.string.isRequired,

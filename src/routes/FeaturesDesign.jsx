@@ -10,9 +10,8 @@ import CardsList from '@src/components/CardsList';
 import { scrollToFn } from '@src/utils/helpers';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 import {
-  A, Article, Button, P, Image,
+  A, Article, Button, P, Image, Hr,
 } from '@src/css/elements';
-
 import { getFeatures } from '@src/actions/features/actionsSideEffects';
 
 /**
@@ -62,12 +61,14 @@ const FeaturesDesign = ({
       </Article>
       <Image
         withMargin="2rem auto"
-        withWidth="70%"
+        withWidth="60%"
         src={BACKGROUND_IMG.SECURITY_FEATURES_FRONT}
       />
+      <Hr withMargin="3rem auto" withSize="45%" />
+
       <Image
-        withMargin="2rem auto 4rem auto"
-        withWidth="70%"
+        withMargin="3rem auto 4rem auto"
+        withWidth="60%"
         src={BACKGROUND_IMG.SECURITY_FEATURES_REVERSE}
       />
       <CardsList cards={features} />
@@ -85,6 +86,7 @@ const FeaturesDesign = ({
 
 FeaturesDesign.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
     NAV_LABEL_CARDS: PropTypes.string.isRequired,
     NAV_LABEL_DESIGN: PropTypes.string.isRequired,
     CARD_FEATURES_DESIGN_DESCRIPTION: PropTypes.string.isRequired,

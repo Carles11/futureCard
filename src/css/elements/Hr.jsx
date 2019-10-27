@@ -30,6 +30,10 @@ const Hr = styled.hr`
   ${props => props.withMargin
     && css`
       margin: ${props.withMargin};
+
+      @media only screen and (max-width: 1024px) {
+        margin: 1.5rem auto;
+      }
     `}
 
   ${props => props.withAlign

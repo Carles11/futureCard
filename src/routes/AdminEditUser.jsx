@@ -211,6 +211,9 @@ AdminEditUser.propTypes = {
   token: PropTypes.string.isRequired,
   user: PropTypes.shape({
     _id: PropTypes.string,
+    username: PropTypes.string,
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
   }),
   message: PropTypes.string,
   handleGetUser: PropTypes.func.isRequired,

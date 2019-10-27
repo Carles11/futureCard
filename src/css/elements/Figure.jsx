@@ -69,7 +69,7 @@ const Figure = styled.figure`
         && css`
           position: relative;
           width: 100%;
-          min-height: 30vh;
+          min-height: 50vh;
           overflow: hidden;
           margin: 0;
           padding: 0;

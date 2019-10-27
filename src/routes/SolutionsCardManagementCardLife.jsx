@@ -54,6 +54,8 @@ const SolutionsCardManagementCardLife = ({ DIC }) => {
 
 SolutionsCardManagementCardLife.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
+    NAV_LABEL_CARD_MANAGEMENT: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     MANAGEMENT_CARD_LIFE_CYCLE: PropTypes.string.isRequired,
     MANAGEMENT_DESCRIPTION_CARD_LIFE_CYCLE: PropTypes.string.isRequired,

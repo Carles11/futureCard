@@ -82,8 +82,12 @@ const SolutionsEndToEndRetail = ({
 
 SolutionsEndToEndRetail.propTypes = {
   DIC: PropTypes.shape({
+    BACK_HOME: PropTypes.string.isRequired,
+    LOOKING_FOR: PropTypes.string.isRequired,
+    NAV_LABEL_END_TO_END: PropTypes.string.isRequired,
     NAV_LABEL_SOLUTIONS: PropTypes.string.isRequired,
     NAV_LABEL_RETAIL_LOYALTY: PropTypes.string.isRequired,
+    SOLUTIONS_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_RETAIL_DESCRIPTION: PropTypes.string.isRequired,
     SOLUTIONS_END_TO_END_RETAIL_CONTENT: PropTypes.string.isRequired,
   }).isRequired,

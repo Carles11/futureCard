@@ -80,6 +80,9 @@ const P = styled.p`
   ${props => !!props.withPadding
     && css`
       padding: ${props.withPadding};
+      @media only screen and (max-width: 400px) {
+        padding: 0.1rem;
+      }
     `}
 
   ${props => props.small

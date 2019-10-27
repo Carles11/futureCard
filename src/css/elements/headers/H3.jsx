@@ -47,6 +47,20 @@ const H3 = styled.h3`
     && css`
       text-align: center;
     `}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+  ${props => props.align
+    && css`
+     margin-left: 1rem;
+    `}
+=======
+    ${props => props.withAlign
+      && css`
+        text-align: ${props.withAlign};
+      `}
+>>>>>>> 3b426497da0d60d2e434a5ad90154c1f7936a4cd
+=======
 
   ${props => props.withAlign
     && css`
@@ -62,6 +76,7 @@ const H3 = styled.h3`
     && css`
       font-size: calc(20px + (25 - 18) * ((100vw - 600px) / (1600 - 900)));
     `}
+>>>>>>> master
 `;
 
 export default withTheme(H3);

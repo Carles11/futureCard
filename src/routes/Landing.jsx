@@ -99,7 +99,13 @@ const Landing = ({
             <H2 sansSerif invertColor tiny withMargin="1rem 0 1rem 0 ">
               {DIC.LANDING_SUBTITLE}
             </H2>
-            <A withmargin="2rem 0" icon role="button" to="/about-futurecard/">
+            <A
+              invert
+              withmargin="2rem 0"
+              icon
+              role="button"
+              to="/about-futurecard/"
+            >
               {`${DIC.LEARN_MORE} ${DIC.ABOUT_US}`}
               <Span icon>
                 <FiArrowRightCircle />
@@ -117,7 +123,7 @@ const Landing = ({
       <Container nopadding>
         <Figure background body>
           <BackgroundImage
-            position={Math.floor(position / 10)}
+            position={Math.floor(position / 30)}
             style={{
               backgroundImage: `url(${BACKGROUND_IMG.CONTACT_MAP_IN_CARLES_CLOUDINARY})`,
             }}
@@ -142,6 +148,7 @@ Landing.propTypes = {
     LANDING_TITLE: PropTypes.string.isRequired,
     LANDING_SUBTITLE: PropTypes.string.isRequired,
     LEARN_MORE: PropTypes.string.isRequired,
+    WELLCOME_TITLE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

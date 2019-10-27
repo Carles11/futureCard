@@ -109,6 +109,7 @@ News.propTypes = {
     NEWS_SUBTITLE: PropTypes.string.isRequired,
     NEWS_DESCRIPTION: PropTypes.string.isRequired,
     NEWS_CONTENT: PropTypes.string.isRequired,
+    NEWS_PUBLISHED_THE: PropTypes.string.isRequired,
   }).isRequired,
   path: PropTypes.string.isRequired,
   handleLocation: PropTypes.func.isRequired,

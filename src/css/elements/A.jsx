@@ -28,15 +28,14 @@ const buttonDefault = css`
     border-color 0.3s ease-in-out;
 
   ${props => css`
-     background: transparent
-      color: ${props.theme.mainColor};
-      border: 2px solid ${props.theme.mainColor};
+    background: ${props.theme.backgroundLightGrey};
+    color: ${props.theme.mainColor};
+    border: 2px solid ${props.theme.mainColor};
 
     &:hover {
-    background: ${props.theme.mainColor};
-    color: white;
-    border: 2px solid ${props.theme.mainColor};
-     
+      background: ${props.theme.mainColor};
+      color: white;
+      border: 2px solid ${props.theme.mainColor};
     }
   `}
 
