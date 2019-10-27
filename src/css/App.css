@@ -419,3 +419,8 @@ template {
 [hidden] {
   display: none;
 }
+
+
+.zoom-img {
+  margin: 2rem auto;
+}

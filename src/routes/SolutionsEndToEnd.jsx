@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Magnifier from 'react-magnifier';
 
 import ViewLayout from '@src/components/ViewLayout';
 import HeaderSection from '@src/components/HeaderSection';
@@ -68,10 +69,17 @@ const SolutionsEndToEnd = ({ DIC }) => {
         <P>{`${title}. ${para1}. ${para2}.`}</P>
         <P>{`${second}`}</P>
 
-        <Image
+        {/* <Image
           src={SolutionsEndGraphic}
-          withMargin="auto"
+          withMargin='auto'
           graphics
+          alt='Solutions EndtoEnd Graphic FutureCard'
+        /> */}
+        <Magnifier
+          src={`${SolutionsEndGraphic}`}
+          className="zoom-img"
+          zoomFactor={2}
+          width="60%"
           alt="Solutions EndtoEnd Graphic FutureCard"
         />
         <Box>

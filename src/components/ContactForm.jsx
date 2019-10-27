@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 // import HeaderSection from '@src/components';
 import {
   Form, Input, Textarea, Label,
@@ -10,7 +11,6 @@ import { Button, H4 } from '@src/css/elements';
 import { connect } from 'react-redux';
 
 import { sendEmail } from '@src/actions/contact/actionsSideEffects';
-
 
 // add handleSubmit && handleChange
 
