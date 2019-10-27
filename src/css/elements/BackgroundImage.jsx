@@ -14,14 +14,13 @@ const BackgroundImage = styled.div.attrs({
   background-size: cover;
   background-repeat: no-repeat;
 
-  ${props =>
-    props.section &&
-    css`
+  ${props => props.section
+    && css`
       height: 50vh;
     `}
 
   /* eslint-ignore */
-  ${props => {
+  ${(props) => {
     if (props.blur) {
       const value = `${props.blur}px`;
 

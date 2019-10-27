@@ -5,7 +5,9 @@ import HeaderSection from '@src/components/HeaderSection';
 import { BACKGROUND_IMG } from '@src/utils/constants';
 
 import Box from '@src/css/blocks/Box';
-import { Article, H3, Hr, P } from '@src/css/elements';
+import {
+  Article, H3, Hr, P,
+} from '@src/css/elements';
 
 const SECTIONS = [
   {
@@ -45,21 +47,22 @@ const LandingAbout = ({ DIC, h }) => {
             <Box.Link
               to={section.link}
               key={section.id}
-              nomargin='true'
-              with_height='325px'
+              nomargin="true"
+              with_height="325px"
               with_scale
-              style={{ backgroundImage: `url(${section.bg})` }}>
+              style={{ backgroundImage: `url(${section.bg})` }}
+            >
               <Box.Wrapper>
-                <H3 withMargin='1.5rem 0.5rem 1rem' centered invertColor>
+                <H3 withMargin="1.5rem 0.5rem 1rem" centered invertColor>
                   {DIC[TITLE]}
                 </H3>
                 <Hr
-                  withSize='80px'
-                  withMargin='0 auto 1rem'
-                  withAlign='center'
+                  withSize="80px"
+                  withMargin="0 auto 1rem"
+                  withAlign="center"
                   invertColor
                 />
-                <P small withPadding='0 3rem 0.5rem' invertColor centered>
+                <P small withPadding="0 3rem 0.5rem" invertColor centered>
                   {DIC[CONTENT]}
                 </P>
               </Box.Wrapper>
